@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Large Language Models for Digital Humanities Research - Summer School by Dr. Christopher Pollin, September 8-11, 2025">
+    <meta name="keywords" content="LLM, Large Language Models, Digital Humanities, Summer School, Prompt Engineering, Digital Editions">
+    <meta name="author" content="Dr. Christopher Pollin, Digital Humanities Craft OG">
     <title>Large Language Models for Digital Humanities Research</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,19 +19,19 @@
             <div class="header-content">
                 <div class="logo">
                     <!-- Fallback text logo if image not available -->
-                    <a href="http://dhcraft.org/" target="_blank">
-                        <img src="img/dhcraft-logo.png" alt="DHCraft Logo" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/dhcraft-logo.png" alt="DHCraft - Digital Humanities Craft OG Logo" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
                     </a>
                     <span style="display:none; font-weight:bold; color:#2c5aa0;">DHCraft</span>
                 </div>
                 <h1 class="site-title">LLM Summer School</h1>
-                <nav class="main-nav">
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
                     <a href="#fundamentals">Fundamentals</a>
                     <a href="#prompt-engineering">Prompt Engineering</a>
-                    <a href="#llm-modeling">LLM Modeling</a>
+                    <a href="#digital-editions">Digital Editions</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
             </div>
         </div>
     </header>
@@ -37,34 +40,8 @@
     <section class="hero">
         <div class="container">
             <h1>Large Language Models for Digital Humanities Research</h1>
-            <p class="subtitle">Summer School 8.-11. September 2025</p>
+            <p class="subtitle">Summer School September 8-11, 2025</p>
             <p class="instructor">Dr. Christopher Pollin, Digital Humanities Craft OG</p>
-            
-            <div class="overview-table">
-                <h3>Course Overview</h3>
-                <table>
-                    <tr>
-                        <th>Days</th>
-                        <th>Topic</th>
-                        <th>Focus</th>
-                    </tr>
-                    <tr>
-                        <td>Day 1</td>
-                        <td>LLM Fundamentals</td>
-                        <td>Introduction to Large Language Models</td>
-                    </tr>
-                    <tr>
-                        <td>Day 2</td>
-                        <td>Prompt Engineering</td>
-                        <td>Techniques and Best Practices</td>
-                    </tr>
-                    <tr>
-                        <td>Days 3-4</td>
-                        <td>LLM-Supported Modeling</td>
-                        <td>Digital Editions and DH Applications</td>
-                    </tr>
-                </table>
-            </div>
         </div>
     </section>
 
@@ -73,8 +50,8 @@
         <div class="container">
             <div class="content-wrapper">
                 <!-- Table of Contents (Desktop Sidebar) -->
-                <aside class="toc">
-                    <h3>Contents</h3>
+                <aside class="toc" role="navigation" aria-label="Table of contents">
+                    <h2>Contents</h2>
                     <ul>
                         <li><a href="#fundamentals">1. LLM Fundamentals</a>
                             <ul>
@@ -90,11 +67,13 @@
                                 <li><a href="#prompt-evaluation">Evaluation</a></li>
                             </ul>
                         </li>
-                        <li><a href="#llm-modeling">3. LLM-Supported Modeling</a>
+                        <li><a href="#digital-editions">3. Digital Editions</a>
                             <ul>
-                                <li><a href="#modeling-digital">Digital Editions</a></li>
-                                <li><a href="#modeling-operations">Operationalization</a></li>
-                                <li><a href="#modeling-exploration">Exploration</a></li>
+                                <li><a href="#editions-overview">Overview</a></li>
+                                <li><a href="#editions-modeling">Modeling</a></li>
+                                <li><a href="#editions-operationalization">Operationalization</a></li>
+                                <li><a href="#editions-exploration">Exploration</a></li>
+                                <li><a href="#editions-future">Future Perspectives</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -113,66 +92,67 @@
                         </div>
 
                         <div class="schedule">
-                            <h3>Day 1 Schedule</h3>
+                            <h3>Day 1 - Monday, September 8, 2025</h3>
                             <table>
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Topic</th>
-                                    <th>Resources</th>
-                                </tr>
-                                <tr>
-                                    <td>09:00-10:30</td>
-                                    <td>Introduction to LLMs</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>11:00-12:30</td>
-                                    <td>Transformer Architecture</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>14:00-15:30</td>
-                                    <td>Training and Fine-tuning</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>16:00-17:00</td>
-                                    <td>Q&A and Discussion</td>
-                                    <td>-</td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Topic</th>
+                                        <th scope="col">Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="break">
+                                        <td>13:00-14:00</td>
+                                        <td>Registration (Foyer)</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00-15:30</td>
+                                        <td>Welcome / Introduction to LLMs</td>
+                                        <td><a href="#fundamentals-intro">Slides</a> | <a href="#fundamentals-intro">Notes</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>15:30-16:00</td>
+                                        <td>Coffee Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16:00-17:30</td>
+                                        <td>Transformer Architecture</td>
+                                        <td><a href="#fundamentals-architecture">Slides</a> | <a href="#fundamentals-architecture">Notes</a></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
 
                         <div class="subsection" id="fundamentals-intro">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Introduction
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="fundamentals-intro-content">
+                                    <span class="toggle-icon">+</span> Introduction to Large Language Models
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="fundamentals-intro-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>Introduction to Large Language Models</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
                                         </div>
                                     </div>
                                     <div class="resource-item">
-                                        <span class="resource-icon">📄</span>
                                         <div class="resource-details">
-                                            <h4>Course Skriptum - Chapter 1</h4>
-                                            <span class="resource-type">Google Docs</span>
-                                            <a href="#" class="resource-link">→ Read Document</a>
+                                            <h4>Course Handbook - Chapter 1</h4>
+                                            <span class="resource-type">Document</span>
+                                            <a href="#" class="resource-link">Read Chapter</a>
                                         </div>
                                     </div>
                                     <div class="resource-item">
-                                        <span class="resource-icon">📚</span>
                                         <div class="resource-details">
                                             <h4>Essential Readings</h4>
-                                            <span class="resource-type">References</span>
-                                            <a href="#" class="resource-link">→ View List</a>
+                                            <span class="resource-type">Bibliography</span>
+                                            <a href="#" class="resource-link">View Reading List</a>
                                         </div>
                                     </div>
                                 </div>
@@ -181,18 +161,24 @@
 
                         <div class="subsection" id="fundamentals-architecture">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Architecture
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="fundamentals-architecture-content">
+                                    <span class="toggle-icon">+</span> Transformer Architecture
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="fundamentals-architecture-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>Transformer Architecture Deep Dive</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Attention Mechanisms Explained</h4>
+                                            <span class="resource-type">Document</span>
+                                            <a href="#" class="resource-link">Read Guide</a>
                                         </div>
                                     </div>
                                 </div>
@@ -201,18 +187,24 @@
 
                         <div class="subsection" id="fundamentals-training">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Training
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="fundamentals-training-content">
+                                    <span class="toggle-icon">+</span> Training and Fine-tuning
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="fundamentals-training-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>Training Large Language Models</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Fine-tuning Strategies</h4>
+                                            <span class="resource-type">Document</span>
+                                            <a href="#" class="resource-link">Read Guide</a>
                                         </div>
                                     </div>
                                 </div>
@@ -226,55 +218,80 @@
                             <span class="section-number">2</span>
                             <div>
                                 <h2>Prompt Engineering</h2>
-                                <p>Mastering the art and science of effective prompt design for LLMs.</p>
+                                <p>Master the art and science of crafting effective prompts for Digital Humanities applications.</p>
                             </div>
                         </div>
 
                         <div class="schedule">
-                            <h3>Day 2 Schedule</h3>
+                            <h3>Day 2 - Tuesday, September 9, 2025</h3>
                             <table>
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Topic</th>
-                                    <th>Resources</th>
-                                </tr>
-                                <tr>
-                                    <td>09:00-10:30</td>
-                                    <td>Prompt Engineering Basics</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>11:00-12:30</td>
-                                    <td>Advanced Prompting Techniques</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>14:00-15:30</td>
-                                    <td>Hands-on Workshop</td>
-                                    <td><a href="#">Exercises</a></td>
-                                </tr>
-                                <tr>
-                                    <td>16:00-17:00</td>
-                                    <td>Best Practices Discussion</td>
-                                    <td>-</td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Topic</th>
+                                        <th scope="col">Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>09:00-10:30</td>
+                                        <td>Training and Fine-tuning</td>
+                                        <td><a href="#fundamentals-training">Slides</a> | <a href="#fundamentals-training">Notes</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>10:30-11:00</td>
+                                        <td>Coffee Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00-12:30</td>
+                                        <td>Prompt Engineering Basics</td>
+                                        <td><a href="#prompt-basics">Slides</a> | <a href="#prompt-basics">Notes</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>12:30-14:00</td>
+                                        <td>Lunch Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00-15:30</td>
+                                        <td>Advanced Prompting Techniques</td>
+                                        <td><a href="#prompt-advanced">Slides</a> | <a href="#prompt-advanced">Notes</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>15:30-16:00</td>
+                                        <td>Coffee Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16:00-17:30</td>
+                                        <td>Hands-on Prompt Engineering Workshop</td>
+                                        <td><a href="#prompt-evaluation">Exercises</a> | <a href="#prompt-evaluation">Discussion</a></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
 
                         <div class="subsection" id="prompt-basics">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="prompt-basics-content">
                                     <span class="toggle-icon">+</span> Basic Techniques
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="prompt-basics-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>Prompt Engineering Fundamentals</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Basic Prompting Exercises</h4>
+                                            <span class="resource-type">Workshop</span>
+                                            <a href="#" class="resource-link">Practice Exercises</a>
                                         </div>
                                     </div>
                                 </div>
@@ -283,18 +300,24 @@
 
                         <div class="subsection" id="prompt-advanced">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="prompt-advanced-content">
                                     <span class="toggle-icon">+</span> Advanced Strategies
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="prompt-advanced-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>Chain-of-Thought and Few-Shot Learning</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Advanced Prompting Patterns</h4>
+                                            <span class="resource-type">Document</span>
+                                            <a href="#" class="resource-link">Read Guide</a>
                                         </div>
                                     </div>
                                 </div>
@@ -303,18 +326,24 @@
 
                         <div class="subsection" id="prompt-evaluation">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Evaluation
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="prompt-evaluation-content">
+                                    <span class="toggle-icon">+</span> Evaluation Methods
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="prompt-evaluation-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        <span class="resource-icon">📄</span>
                                         <div class="resource-details">
                                             <h4>Evaluating Prompt Effectiveness</h4>
-                                            <span class="resource-type">Google Docs</span>
-                                            <a href="#" class="resource-link">→ Read Document</a>
+                                            <span class="resource-type">Document</span>
+                                            <a href="#" class="resource-link">Read Guide</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Metrics and Assessment Tools</h4>
+                                            <span class="resource-type">Toolkit</span>
+                                            <a href="#" class="resource-link">Access Tools</a>
                                         </div>
                                     </div>
                                 </div>
@@ -322,209 +351,235 @@
                         </div>
                     </section>
 
-                    <!-- Section 3: LLM-Supported Modeling -->
-                    <section id="llm-modeling" class="course-section">
+                    <!-- Section 3: Digital Editions -->
+                    <section id="digital-editions" class="course-section">
                         <div class="section-header">
                             <span class="section-number">3</span>
                             <div>
-                                <h2>LLM-Supported Modeling, Operationalization, and Exploration for Digital Editions</h2>
-                                <p>Applying LLMs to digital humanities projects with focus on digital editions.</p>
+                                <h2>LLM-Supported Digital Editions</h2>
+                                <p>Specialized workshop track focusing on modeling, operationalization, and exploration of digital editions using LLMs (Days 3-4).</p>
                             </div>
                         </div>
 
                         <div class="schedule">
-                            <h3>Days 3</h3>
+                            <h3>Day 3 - Wednesday, September 10, 2025</h3>
                             <table>
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Topic</th>
-                                    <th>Resources</th>
-                                </tr>
-                                <tr>
-                                    <td>09:00-10:30</td>
-                                    <td>Digital Editions and LLMs</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>11:00-12:30</td>
-                                    <td>Modeling</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Workshop</a></td>
-                                </tr>
-                                <tr>
-                                    <td>14:00-15:30</td>
-                                    <td>Operationalization</td>
-                                    <td><a href="#">Cases</a> | <a href="#">Discussion</a></td>
-                                </tr>
-                                <tr>
-                                    <td>16:00-17:00</td>
-                                    <td>Exploration</td>
-                                    <td><a href="#">Cases</a> | <a href="#">Discussion</a></td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Topic</th>
+                                        <th scope="col">Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>09:00-10:30</td>
+                                        <td>Digital Editions and LLMs</td>
+                                        <td><a href="#editions-overview">Slides</a> | <a href="#editions-overview">Notes</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>10:30-11:00</td>
+                                        <td>Coffee Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00-12:30</td>
+                                        <td>Modeling with LLMs</td>
+                                        <td><a href="#editions-modeling">Slides</a> | <a href="#editions-modeling">Workshop</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>12:30-14:00</td>
+                                        <td>Lunch Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00-15:30</td>
+                                        <td>Operationalization</td>
+                                        <td><a href="#editions-operationalization">Cases</a> | <a href="#editions-operationalization">Discussion</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>15:30-16:00</td>
+                                        <td>Coffee Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16:00-17:30</td>
+                                        <td>Exploration</td>
+                                        <td><a href="#editions-exploration">Cases</a> | <a href="#editions-exploration">Discussion</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>19:00-22:00</td>
+                                        <td>Dinner at Brewery</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
 
-                        <div class="subsection" id="modeling-digital">
-                            <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Digital Editions
-                                </button>
-                            </h3>
-                            <div class="subsection-content">
-                                <div class="resources">
-                                    <div class="resource-item">
-                                        
-                                        <div class="resource-details">
-                                            <h4>LLMs for Digital Edition Creation</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
-                                        </div>
-                                    </div>
-                                    <div class="resource-item">
-                                        <span class="resource-icon">📚</span>
-                                        <div class="resource-details">
-                                            <h4>Case Studies in Digital Editions</h4>
-                                            <span class="resource-type">References</span>
-                                            <a href="#" class="resource-link">→ View List</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="subsection" id="modeling-operations">
-                            <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Operationalization
-                                </button>
-                            </h3>
-                            <div class="subsection-content">
-                                <div class="resources">
-                                    <div class="resource-item">
-                                        <span class="resource-icon">📄</span>
-                                        <div class="resource-details">
-                                            <h4>Operationalizing LLMs in DH Workflows</h4>
-                                            <span class="resource-type">Google Docs</span>
-                                            <a href="#" class="resource-link">→ Read Document</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="subsection" id="modeling-exploration">
-                            <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Exploration
-                                </button>
-                            </h3>
-                            <div class="subsection-content">
-                                <div class="resources">
-                                    <div class="resource-item">
-                                        
-                                        <div class="resource-details">
-                                            <h4>Exploratory Analysis with LLMs</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Days 4 -->
-                         <div class="schedule">
-                            <h3>Day 4</h3>
+                        <div class="schedule">
+                            <h3>Day 4 - Thursday, September 11, 2025</h3>
                             <table>
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Topic</th>
-                                    <th>Resources</th>
-                                </tr>
-                                <tr>
-                                    <td>09:00-10:30</td>
-                                    <td>Digital Editions and LLMs</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Notes</a></td>
-                                </tr>
-                                <tr>
-                                    <td>11:00-12:30</td>
-                                    <td>Modeling</td>
-                                    <td><a href="#">Slides</a> | <a href="#">Workshop</a></td>
-                                </tr>
-                                <tr>
-                                    <td>14:00-15:30</td>
-                                    <td>Operationalization</td>
-                                    <td><a href="#">Cases</a> | <a href="#">Discussion</a></td>
-                                </tr>
-                                <tr>
-                                    <td>16:00-17:00</td>
-                                    <td>Exploration</td>
-                                    <td><a href="#">Cases</a> | <a href="#">Discussion</a></td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Topic</th>
+                                        <th scope="col">Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>09:00-10:30</td>
+                                        <td>Vibe Editions and Promptotyping</td>
+                                        <td><a href="#editions-future">Slides</a> | <a href="#editions-future">Notes</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>10:30-11:00</td>
+                                        <td>Coffee Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11:00-12:30</td>
+                                        <td>AI Editions: Future Perspectives</td>
+                                        <td><a href="#editions-future">Slides</a> | <a href="#editions-future">Workshop</a></td>
+                                    </tr>
+                                    <tr class="break">
+                                        <td>12:30-14:00</td>
+                                        <td>Lunch Break</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00-15:30</td>
+                                        <td>Keynote & End-of-School Session</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
 
-                        <div class="subsection" id="modeling-digital-2">
+                        <div class="subsection" id="editions-overview">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Digital Editions
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="editions-overview-content">
+                                    <span class="toggle-icon">+</span> Digital Editions Overview
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="editions-overview-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>LLMs for Digital Edition Creation</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
                                         </div>
                                     </div>
                                     <div class="resource-item">
-                                        <span class="resource-icon">📚</span>
                                         <div class="resource-details">
                                             <h4>Case Studies in Digital Editions</h4>
-                                            <span class="resource-type">References</span>
-                                            <a href="#" class="resource-link">→ View List</a>
+                                            <span class="resource-type">Bibliography</span>
+                                            <a href="#" class="resource-link">View Case Studies</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="subsection" id="modeling-operations-2">
+                        <div class="subsection" id="editions-modeling">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="editions-modeling-content">
+                                    <span class="toggle-icon">+</span> Modeling with LLMs
+                                </button>
+                            </h3>
+                            <div class="subsection-content" id="editions-modeling-content">
+                                <div class="resources">
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Text Modeling Approaches</h4>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Hands-on Modeling Workshop</h4>
+                                            <span class="resource-type">Workshop</span>
+                                            <a href="#" class="resource-link">Workshop Materials</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subsection" id="editions-operationalization">
+                            <h3>
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="editions-operationalization-content">
                                     <span class="toggle-icon">+</span> Operationalization
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="editions-operationalization-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        <span class="resource-icon">📄</span>
                                         <div class="resource-details">
                                             <h4>Operationalizing LLMs in DH Workflows</h4>
-                                            <span class="resource-type">Google Docs</span>
-                                            <a href="#" class="resource-link">→ Read Document</a>
+                                            <span class="resource-type">Document</span>
+                                            <a href="#" class="resource-link">Read Guide</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Implementation Case Studies</h4>
+                                            <span class="resource-type">Case Study</span>
+                                            <a href="#" class="resource-link">View Cases</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="subsection" id="modeling-exploration-2">
+                        <div class="subsection" id="editions-exploration">
                             <h3>
-                                <button class="subsection-toggle" aria-expanded="false">
-                                    <span class="toggle-icon">+</span> Exploration
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="editions-exploration-content">
+                                    <span class="toggle-icon">+</span> Exploration Techniques
                                 </button>
                             </h3>
-                            <div class="subsection-content">
+                            <div class="subsection-content" id="editions-exploration-content">
                                 <div class="resources">
                                     <div class="resource-item">
-                                        
                                         <div class="resource-details">
                                             <h4>Exploratory Analysis with LLMs</h4>
-                                            <span class="resource-type">Google Slides</span>
-                                            <a href="#" class="resource-link">→ View Presentation</a>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Analysis Methods and Tools</h4>
+                                            <span class="resource-type">Toolkit</span>
+                                            <a href="#" class="resource-link">Access Tools</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subsection" id="editions-future">
+                            <h3>
+                                <button class="subsection-toggle" aria-expanded="false" aria-controls="editions-future-content">
+                                    <span class="toggle-icon">+</span> Future Perspectives
+                                </button>
+                            </h3>
+                            <div class="subsection-content" id="editions-future-content">
+                                <div class="resources">
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>Vibe Editions and Promptotyping</h4>
+                                            <span class="resource-type">Presentation</span>
+                                            <a href="#" class="resource-link">View Slides</a>
+                                        </div>
+                                    </div>
+                                    <div class="resource-item">
+                                        <div class="resource-details">
+                                            <h4>AI Editions: Vision and Implementation</h4>
+                                            <span class="resource-type">Workshop</span>
+                                            <a href="#" class="resource-link">Workshop Materials</a>
                                         </div>
                                     </div>
                                 </div>
@@ -545,42 +600,45 @@
                     <p><strong>Dr. Christopher Pollin</strong><br>
                     Digital Humanities Craft OG<br>
                     Email: <a href="mailto:christopher.pollin@dhcraft.org">christopher.pollin@dhcraft.org</a><br>
-                    GitHub: <a href="https://github.com/chpollin/llmdh">github.com/chpollin/llmdh</a></p>
+                    GitHub: <a href="https://github.com/chpollin/llmdh" target="_blank" rel="noopener noreferrer">github.com/chpollin/llmdh</a></p>
                     <div class="social-links">
                         <h4>Connect</h4>
                         <a href="https://fedihum.org/@chpollin" target="_blank" rel="noopener noreferrer">Mastodon</a> |
                         <a href="https://www.linkedin.com/in/christopher-pollin-463b0a204/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
                         <a href="https://bsky.app/profile/chpollin.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
                     </div>
-                
                 </div>
                 <div class="footer-logo">
-                    <img src="img/dhcraft-logo-inverse.png" alt="DHCraft Logo" width="60" height="60">
-                    <p>Digital Humanities Craft OG
-                        <br>
-                        <a href="http://dhcraft.org/" target="_blank">http://dhcraft.org</a>
-
-                    </p>
+                    <img src="img/dhcraft-logo-inverse.png" alt="DHCraft - Digital Humanities Craft OG Logo" width="60" height="60">
+                    <p>Digital Humanities Craft OG<br>
+                    <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">dhcraft.org</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Digital Humanities Craft OG. All rights reserved.</p>
+                <p>&copy; 2025 Digital Humanities Craft OG. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('active');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('active');
         });
 
         // Subsection toggles
         document.querySelectorAll('.subsection-toggle').forEach(button => {
             button.addEventListener('click', function() {
                 const expanded = this.getAttribute('aria-expanded') === 'true';
+                const contentId = this.getAttribute('aria-controls');
+                const content = document.getElementById(contentId);
+                
                 this.setAttribute('aria-expanded', !expanded);
-                const content = this.parentElement.nextElementSibling;
                 content.style.display = expanded ? 'none' : 'block';
                 this.querySelector('.toggle-icon').textContent = expanded ? '+' : '-';
             });
@@ -593,7 +651,19 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Focus management for accessibility
+                    const focusableElement = target.querySelector('h2, h3, [tabindex]') || target;
+                    focusableElement.focus();
                 }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
     </script>
