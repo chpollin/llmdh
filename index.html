@@ -1,353 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Large Language Models for Digital Humanities Research - Summer School by Dr. Christopher Pollin, September 8-11, 2025">
-    <meta name="keywords" content="LLM, Large Language Models, Digital Humanities, Summer School, Prompt Engineering, Digital Editions">
-    <meta name="author" content="Dr. Christopher Pollin, Digital Humanities Craft OG">
-    <title>Large Language Models for Digital Humanities Research</title>
-    <link rel="stylesheet" href="assets/style.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Large Language Models for Digital Humanities Research - Summer School by Dr. Christopher Pollin, September 8-11, 2025">
+   <meta name="keywords" content="LLM, Large Language Models, Digital Humanities, Summer School, Prompt Engineering, Digital Editions">
+   <meta name="author" content="Dr. Christopher Pollin, Digital Humanities Craft OG">
+   <title>Large Language Models for Digital Humanities Research</title>
+   <link rel="stylesheet" href="assets/style.css">
 
-    <!-- Dublin Core Metadata for Zotero -->
-    <meta name="DC.title" content="Large Language Models for Digital Humanities Research">
-    <meta name="DC.creator" content="Pollin, Christopher">
-    <meta name="DC.type" content="InteractiveResource">
-    <meta name="DC.format" content="text/html">
-    <meta name="DC.language" content="en">
-    <meta name="DC.date" content="2025">
-    <meta name="DC.publisher" content="Digital Humanities Craft OG">
-    <meta name="DC.subject" content="Large Language Models; Digital Humanities; Summer School; Prompt Engineering; Digital Editions">
-    <meta name="DC.description" content="Summer School on Large Language Models for Digital Humanities Research, September 8-11, 2025, featuring sessions on LLM fundamentals, prompt engineering, and digital editions">
-    <meta name="DC.rights" content="CC-BY">
+   <!-- Dublin Core Metadata for Zotero -->
+   <meta name="DC.title" content="Large Language Models for Digital Humanities Research">
+   <meta name="DC.creator" content="Pollin, Christopher">
+   <meta name="DC.type" content="InteractiveResource">
+   <meta name="DC.format" content="text/html">
+   <meta name="DC.language" content="en">
+   <meta name="DC.date" content="2025">
+   <meta name="DC.publisher" content="Digital Humanities Craft OG">
+   <meta name="DC.subject" content="Large Language Models; Digital Humanities; Summer School; Prompt Engineering; Digital Editions">
+   <meta name="DC.description" content="Summer School on Large Language Models for Digital Humanities Research, September 8-11, 2025, featuring sessions on LLM fundamentals, prompt engineering, and digital editions">
+   <meta name="DC.rights" content="CC-BY">
 
-    <!-- Citation Metadata -->
-    <meta name="citation_title" content="Large Language Models for Digital Humanities Research">
-    <meta name="citation_author" content="Pollin, Christopher">
-    <meta name="citation_publication_date" content="2025">
-    <meta name="citation_publisher" content="Digital Humanities Craft OG">
-    <meta name="citation_language" content="en">
+   <!-- Citation Metadata -->
+   <meta name="citation_title" content="Large Language Models for Digital Humanities Research">
+   <meta name="citation_author" content="Pollin, Christopher">
+   <meta name="citation_publication_date" content="2025">
+   <meta name="citation_publisher" content="Digital Humanities Craft OG">
+   <meta name="citation_language" content="en">
 </head>
 <body>
-    <!-- Skip to Content Link -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-    
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <!-- Fallback text logo if image not available -->
-                    <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/dhcraft-logo.png" alt="Digital Humanities Craft OG Logo" width="40" height="40">
-                    </a>
-                </div>
-                <h1 class="site-title">LLM Summer School for DH</h1>
-                <nav class="main-nav" role="navigation" aria-label="Main navigation">
-                    <a href="#fundamentals">Fundamentals</a>
-                    <a href="#prompt-engineering">Prompt Engineering</a>
-                    <a href="#digital-editions">Digital Editions</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-            </div>
-        </div>
-    </header>
+   <!-- Skip to Content Link -->
+   <a href="#main-content" class="skip-to-content">Skip to main content</a>
+   
+   <!-- Header -->
+   <header class="site-header">
+       <div class="container">
+           <div class="header-content">
+               <div class="logo">
+                   <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">
+                       <img src="assets/img/dhcraft-logo.png" alt="Digital Humanities Craft OG Logo" width="40" height="40">
+                   </a>
+               </div>
+               <h1 class="site-title">LLM Summer School for DH</h1>
+               <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                   <a href="#fundamentals">Fundamentals</a>
+                   <a href="#prompt-engineering">Prompt Engineering</a>
+                   <a href="#digital-editions">Digital Editions</a>
+                   <a href="#contact">Contact</a>
+               </nav>
+               <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+           </div>
+       </div>
+   </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Large Language Models for Digital Humanities Research</h1>
-            <p class="subtitle">Summer School September 8-11, 2025</p>
-            <p class="instructor">Dr. Christopher Pollin, Digital Humanities Craft OG</p>
-        </div>
-    </section>
+   <!-- Hero Section -->
+   <section class="hero">
+       <div class="container">
+           <h1>Large Language Models for Digital Humanities Research</h1>
+           <p class="subtitle">Summer School September 8-11, 2025</p>
+           <p class="instructor">Dr. Christopher Pollin, Digital Humanities Craft OG</p>
+       </div>
+   </section>
 
-    <!-- Main Content -->
-    <main class="main-content" id="main-content">
-        <div class="container">
-            <div class="content-wrapper">
-                <!-- Table of Contents (Desktop Sidebar) -->
-                <aside class="toc" role="navigation" aria-label="Table of contents">
-                    <h2>Contents</h2>
-                    <ul>
-                        <li><a href="#fundamentals">1. LLM Fundamentals</a>
-                            <ul>
-                                <li><a href="#fundamentals-intro">Introduction</a></li>
-                                <li><a href="#fundamentals-architecture">Architecture</a></li>
-                                <li><a href="#fundamentals-training">Training</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#prompt-engineering">2. Prompt Engineering</a>
-                            <ul>
-                                <li><a href="#prompt-basics">Basic Techniques</a></li>
-                                <li><a href="#prompt-advanced">Advanced Strategies</a></li>
-                                <li><a href="#prompt-evaluation">Evaluation</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#digital-editions">3. Digital Editions</a>
-                            <ul>
-                                <li><a href="#editions-overview">Overview</a></li>
-                                <li><a href="#editions-modeling">Modeling</a></li>
-                                <li><a href="#editions-operationalization">Operationalization</a></li>
-                                <li><a href="#editions-exploration">Exploration</a></li>
-                                <li><a href="#editions-future">Future Perspectives</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </aside>
+   <!-- Main Content -->
+   <main class="main-content" id="main-content">
+       <div class="container">
+           <div class="content-wrapper">
+               <!-- Table of Contents (Desktop Sidebar) -->
+               <aside class="toc" role="navigation" aria-label="Table of contents">
+                   <h2>Contents</h2>
+                   <ul>
+                       <li><a href="#fundamentals">1. LLM Fundamentals</a></li>
+                       <li><a href="#prompt-engineering">2. Prompt Engineering</a></li>
+                       <li><a href="#digital-editions">3. Digital Editions</a></li>
+                   </ul>
+               </aside>
 
-                <!-- Main Sections -->
-                <div class="sections">
-                    <!-- Section 1: LLM Fundamentals -->
-                    <section id="fundamentals" class="course-section">
-                        <div class="section-header">
-                            <span class="section-number">1</span>
-                            <div>
-                                <h2>Large Language Models Fundamentals</h2>
-                                <p>Understanding the foundations of LLMs and their applications in Digital Humanities research.</p>
-                            </div>
-                        </div>
+               <!-- Main Sections -->
+               <div class="sections">
+                   <!-- Section 1: LLM Fundamentals -->
+                   <section id="fundamentals" class="course-section">
+                       <div class="section-header">
+                           <span class="section-number">1</span>
+                           <div>
+                               <h2>Large Language Models Fundamentals</h2>
+                               <p>Understanding the foundations of LLMs and their applications in Digital Humanities research.</p>
+                           </div>
+                       </div>
 
-                        <div class="schedule">
-                            <h3>Day 1 - Monday, September 8, 2025</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Time</th>
-                                        <th scope="col">Topic</th>
-                                        <th scope="col">Resources</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>14:00-15:30</td>
-                                        <td>Introduction</td>
-                                        <td><a href="https://docs.google.com/presentation/d/1q37t3eiHgt1464D1iJJMUFVjIC4Bp_8D50at_QlKY74/edit?usp=sharing">Slides</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>15:30-16:00</td>
-                                        <td>Coffee Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16:00-17:30</td>
-                                        <td>Large Language Models Fundamentals</td>
-                                        <td><a href="https://docs.google.com/presentation/d/1k4XoBV-NtjJds9GhtPblUFMnwMvWv_hXtkXqIRdX4tk/edit?usp=sharing">Slides</a> 
-                                            | <a href="https://docs.google.com/document/d/1NeDXOSlh1WAcHWp6lZLALsIt90YGGOtWBdrIqe6AJuM/edit?usp=sharing">Notes</a>
-                                            | <a href="https://dhcraft.org/excellence/blog/System1-42/">Blog (german)</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
+                       <div class="session-day">
+                           <h3>Day 1 - Monday, September 8, 2025</h3>
+                           
+                           <div class="session-cards-container">
+                               <button class="scroll-btn scroll-btn-left" aria-label="Scroll left">‹</button>
+                               <div class="session-cards">
+                                   <!-- Card 1: Introduction -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session1-intro.png" alt="Introduction slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Introduction</h4>
+                                           <div class="card-time">14:00-15:30</div>
+                                           <p class="card-description">Understanding LLMs: Between Fancy Autocomplete and AGI</p>
+                                           <div class="card-resources">
+                                               <a href="https://docs.google.com/presentation/d/1q37t3eiHgt1464D1iJJMUFVjIC4Bp_8D50at_QlKY74/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
 
-                    <!-- Section 2: Prompt Engineering -->
-                    <section id="prompt-engineering" class="course-section">
-                        <div class="section-header">
-                            <span class="section-number">2</span>
-                            <div>
-                                <h2>Prompt Engineering</h2>
-                                <p>Learning Objectives</p>
-                                <ul>
-                                    <li>a</li>
-                                    <li>a</li>
-                                    <li>a</li>
-                                </ul>
-                            </div>
-                        </div>
+                                   <!-- Card 2: LLM Fundamentals -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session1-fundamentals.png" alt="LLM Fundamentals slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Large Language Models Fundamentals</h4>
+                                           <div class="card-time">16:00-17:30</div>
+                                           <p class="card-description">Core concepts, architecture, and training principles of modern LLMs</p>
+                                           <div class="card-resources">
+                                               <a href="https://docs.google.com/presentation/d/1k4XoBV-NtjJds9GhtPblUFMnwMvWv_hXtkXqIRdX4tk/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                               <a href="https://docs.google.com/document/d/1NeDXOSlh1WAcHWp6lZLALsIt90YGGOtWBdrIqe6AJuM/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📝</span> Notes
+                                               </a>
+                                               <a href="https://dhcraft.org/excellence/blog/System1-42/" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📖</span> Blog
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+                               </div>
+                               <button class="scroll-btn scroll-btn-right" aria-label="Scroll right">›</button>
+                           </div>
+                       </div>
+                   </section>
 
-                        <div class="schedule">
-                            <h3>Day 2 - Tuesday, September 9, 2025</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Time</th>
-                                        <th scope="col">Topic</th>
-                                        <th scope="col">Resources</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>09:00-10:30</td>
-                                        <td>Prompt Engineering Basics</td>
-                                        <td><a href="# https://docs.google.com/presentation/d/1PQjXp3E11UvdVKlYv_d6cNqyr8pbbQH_dS-Pl9saSwE/edit?usp=sharing">Slides</a> | <a href="https://docs.google.com/document/d/1VCPGjJipMHHG5x_tBcbrTeMdDWTlfL2hVnxC4Em0_P4/edit?usp=sharing">Notes</a></td>
-                                      
-                                    </tr>
-                                    <tr class="break">
-                                        <td>10:30-11:00</td>
-                                        <td>Coffee Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11:00-12:30</td>
-                                        <td>AI Engineering & Applied Generative AI for Research Support</td>
-                                        <td><a href="https://docs.google.com/presentation/d/1ILPhtQRkt3uzQEBVSaZB9PxY0q7De2dCl_POmEG2c8k/edit?usp=sharing">Slides</a> | <a href="https://docs.google.com/document/d/15rWTq4N6-2so61WUHtH7KR8HQVm2yRKk7c-BCGhOnSU/edit?usp=sharing>Notes</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>12:30-14:00</td>
-                                        <td>Lunch Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14:00-15:30</td>
-                                        <td>Advanced Prompting Techniques</td>
-                                        <td><a href="https://docs.google.com/presentation/d/1gTIetjQWlxHhlG_eMlxQVAs4cplMaGtKxxxS3Hhf9lE/edit?usp=sharing">Slides</a> | <a href="#prompt-advanced">Notes</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>15:30-16:00</td>
-                                        <td>Coffee Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16:00-17:30</td>
-                                        <td>Hands-on DH-Workflow and Prompt Engineering Workshop</td>
-                                        <td><a href="#prompt-evaluation">Exercises</a> | <a href="#prompt-evaluation">Discussion</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
+                   <!-- Section 2: Prompt Engineering -->
+                   <section id="prompt-engineering" class="course-section">
+                       <div class="section-header">
+                           <span class="section-number">2</span>
+                           <div>
+                               <h2>Prompt Engineering</h2>
+                               <p>Mastering the art and science of effective prompt design for optimal LLM performance.</p>
+                           </div>
+                       </div>
 
-                    <!-- Section 3: Digital Editions -->
-                    <section id="digital-editions" class="course-section">
-                        <div class="section-header">
-                            <span class="section-number">3</span>
-                            <div>
-                                <h2>LLM-Supported Digital Editions</h2>
-                                <p>Specialized workshop track focusing on modeling, operationalization, and exploration of digital editions using LLMs (Days 3-4).</p>
-                            </div>
-                        </div>
+                       <div class="session-day">
+                           <h3>Day 2 - Tuesday, September 9, 2025</h3>
+                           
+                           <div class="session-cards-container">
+                               <button class="scroll-btn scroll-btn-left" aria-label="Scroll left">‹</button>
+                               <div class="session-cards">
+                                   <!-- Card 1: Prompt Engineering Basics -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session2-basics.png" alt="Prompt Engineering Basics slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Prompt Engineering Basics</h4>
+                                           <div class="card-time">09:00-10:30</div>
+                                           <p class="card-description">Fundamental techniques for crafting effective prompts</p>
+                                           <div class="card-resources">
+                                               <a href="https://docs.google.com/presentation/d/1PQjXp3E11UvdVKlYv_d6cNqyr8pbbQH_dS-Pl9saSwE/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                               <a href="https://docs.google.com/document/d/1VCPGjJipMHHG5x_tBcbrTeMdDWTlfL2hVnxC4Em0_P4/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📝</span> Notes
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
 
-                        <div class="schedule">
-                            <h3>Day 3 - Wednesday, September 10, 2025</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Time</th>
-                                        <th scope="col">Topic</th>
-                                        <th scope="col">Resources</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>09:00-10:30</td>
-                                        <td>Digital Editions and LLMs</td>
-                                        <td><a href="#editions-overview">Slides</a> | <a href="#editions-overview">Notes</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>10:30-11:00</td>
-                                        <td>Coffee Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11:00-12:30</td>
-                                        <td>Modeling with LLMs</td>
-                                        <td><a href="#editions-modeling">Slides</a> | <a href="#editions-modeling">Workshop</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>12:30-14:00</td>
-                                        <td>Lunch Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14:00-15:30</td>
-                                        <td>Operationalization</td>
-                                        <td><a href="#editions-operationalization">Cases</a> | <a href="#editions-operationalization">Discussion</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>15:30-16:00</td>
-                                        <td>Coffee Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16:00-17:30</td>
-                                        <td>Exploration</td>
-                                        <td><a href="#editions-exploration">Cases</a> | <a href="#editions-exploration">Discussion</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>19:00-22:00</td>
-                                        <td>Dinner at Brewery</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                   <!-- Card 2: AI Engineering -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session2-engineering.png" alt="AI Engineering slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>AI Engineering & Applied Generative AI</h4>
+                                           <div class="card-time">11:00-12:30</div>
+                                           <p class="card-description">Building robust AI systems for research support</p>
+                                           <div class="card-resources">
+                                               <a href="https://docs.google.com/presentation/d/1ILPhtQRkt3uzQEBVSaZB9PxY0q7De2dCl_POmEG2c8k/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                               <a href="https://docs.google.com/document/d/15rWTq4N6-2so61WUHtH7KR8HQVm2yRKk7c-BCGhOnSU/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📝</span> Notes
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
 
-                        <div class="schedule">
-                            <h3>Day 4 - Thursday, September 11, 2025</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Time</th>
-                                        <th scope="col">Topic</th>
-                                        <th scope="col">Resources</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>09:00-10:30</td>
-                                        <td>Vibe Editions and Promptotyping</td>
-                                        <td><a href="#editions-future">Slides</a> | <a href="#editions-future">Notes</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>10:30-11:00</td>
-                                        <td>Coffee Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11:00-12:30</td>
-                                        <td>AI Editions: Future Perspectives</td>
-                                        <td><a href="#editions-future">Slides</a> | <a href="#editions-future">Workshop</a></td>
-                                    </tr>
-                                    <tr class="break">
-                                        <td>12:30-14:00</td>
-                                        <td>Lunch Break</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14:00-15:30</td>
-                                        <td>Keynote & End-of-School Session</td>
-                                        <td>-</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </main>
+                                   <!-- Card 3: Advanced Prompting -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session2-advanced.png" alt="Advanced Prompting slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Advanced Prompting Techniques</h4>
+                                           <div class="card-time">14:00-15:30</div>
+                                           <p class="card-description">Chain-of-thought, few-shot learning, and complex reasoning</p>
+                                           <div class="card-resources">
+                                               <a href="https://docs.google.com/presentation/d/1gTIetjQWlxHhlG_eMlxQVAs4cplMaGtKxxxS3Hhf9lE/edit?usp=sharing" 
+                                                  class="resource-link" target="_blank" rel="noopener noreferrer">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
 
-    <!-- Footer -->
-    <footer id="contact" class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><strong>Dr. Christopher Pollin</strong><br>
-                    Digital Humanities Craft OG<br>
-                    Email: <a href="mailto:christopher.pollin@dhcraft.org">christopher.pollin@dhcraft.org</a><br>
-                    GitHub: <a href="https://github.com/chpollin/llmdh" target="_blank" rel="noopener noreferrer">github.com/chpollin/llmdh</a></p>
-                    <div class="social-links">
-                        <h4>Connect</h4>
-                        <a href="https://fedihum.org/@chpollin" target="_blank" rel="noopener noreferrer">Mastodon</a> |
-                        <a href="https://www.linkedin.com/in/christopher-pollin-463b0a204/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-                        <a href="https://bsky.app/profile/chpollin.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
-                    </div>
-                </div>
-                <div class="footer-logo">
-                    <img src="assets/img/dhcraft-logo-inverse.png" alt="DHCraft - Digital Humanities Craft OG Logo" width="60" height="60">
-                    <p>Digital Humanities Craft OG<br>
-                    <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">dhcraft.org</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Digital Humanities Craft OG. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+                                   <!-- Card 4: Workshop -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session2-workshop.png" alt="Workshop slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Hands-on DH-Workflow Workshop</h4>
+                                           <div class="card-time">16:00-17:30</div>
+                                           <p class="card-description">Practical prompt engineering for DH research workflows</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">💻</span> Exercises
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+                               </div>
+                               <button class="scroll-btn scroll-btn-right" aria-label="Scroll right">›</button>
+                           </div>
+                       </div>
+                   </section>
+
+                   <!-- Section 3: Digital Editions -->
+                   <section id="digital-editions" class="course-section">
+                       <div class="section-header">
+                           <span class="section-number">3</span>
+                           <div>
+                               <h2>LLM-Supported Digital Editions</h2>
+                               <p>Specialized workshop track focusing on modeling, operationalization, and exploration of digital editions using LLMs.</p>
+                           </div>
+                       </div>
+
+                       <div class="session-day">
+                           <h3>Day 3 - Wednesday, September 10, 2025</h3>
+                           
+                           <div class="session-cards-container">
+                               <button class="scroll-btn scroll-btn-left" aria-label="Scroll left">‹</button>
+                               <div class="session-cards">
+                                   <!-- Card 1: Digital Editions Overview -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session3-overview.png" alt="Digital Editions Overview slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Digital Editions and LLMs</h4>
+                                           <div class="card-time">09:00-10:30</div>
+                                           <p class="card-description">Introduction to LLM-enhanced digital scholarly editions</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+
+                                   <!-- Card 2: Modeling -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session3-modeling.png" alt="Modeling with LLMs slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Modeling with LLMs</h4>
+                                           <div class="card-time">11:00-12:30</div>
+                                           <p class="card-description">Semantic modeling and knowledge representation</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">💻</span> Workshop
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+
+                                   <!-- Card 3: Operationalization -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session3-operational.png" alt="Operationalization slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Operationalization</h4>
+                                           <div class="card-time">14:00-15:30</div>
+                                           <p class="card-description">Implementing LLM pipelines for edition workflows</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">📋</span> Cases
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+
+                                   <!-- Card 4: Exploration -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session3-exploration.png" alt="Exploration slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Exploration</h4>
+                                           <div class="card-time">16:00-17:30</div>
+                                           <p class="card-description">Interactive exploration and discovery in digital texts</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">📋</span> Cases
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+                               </div>
+                               <button class="scroll-btn scroll-btn-right" aria-label="Scroll right">›</button>
+                           </div>
+                       </div>
+
+                       <div class="session-day">
+                           <h3>Day 4 - Thursday, September 11, 2025</h3>
+                           
+                           <div class="session-cards-container">
+                               <button class="scroll-btn scroll-btn-left" aria-label="Scroll left">‹</button>
+                               <div class="session-cards">
+                                   <!-- Card 1: Vibe Editions -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session4-vibe.png" alt="Vibe Editions slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Vibe Editions and Promptotyping</h4>
+                                           <div class="card-time">09:00-10:30</div>
+                                           <p class="card-description">Experimental approaches to edition design with LLMs</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+
+                                   <!-- Card 2: AI Editions Future -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session4-future.png" alt="AI Editions Future slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>AI Editions: Future Perspectives</h4>
+                                           <div class="card-time">11:00-12:30</div>
+                                           <p class="card-description">Envisioning next-generation scholarly editions</p>
+                                           <div class="card-resources">
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">📄</span> Slides
+                                               </a>
+                                               <a href="#" class="resource-link">
+                                                   <span class="resource-icon">💻</span> Workshop
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </article>
+
+                                   <!-- Card 3: Closing Session -->
+                                   <article class="session-card">
+                                       <div class="card-image">
+                                           <img src="assets/img/session4-closing.png" alt="Closing Session slide preview" loading="lazy">
+                                       </div>
+                                       <div class="card-content">
+                                           <h4>Closing Session & Discussion</h4>
+                                           <div class="card-time">14:00-15:30</div>
+                                           <p class="card-description">Reflections on LLMs in Digital Humanities</p>
+                                           <div class="card-resources">
+                                               <span class="resource-link">
+                                                   <span class="resource-icon">🎤</span> Live Session
+                                               </span>
+                                           </div>
+                                       </div>
+                                   </article>
+                               </div>
+                               <button class="scroll-btn scroll-btn-right" aria-label="Scroll right">›</button>
+                           </div>
+                       </div>
+                   </section>
+
+                   <!-- Additional Information Section -->
+                   <section class="additional-info">
+                       <h2>Additional Information</h2>
+                       
+                       <div class="info-grid">
+                           <div class="info-card">
+                               <h3>Prerequisites</h3>
+                               <ul>
+                                   <li>Basic understanding of Digital Humanities methods</li>
+                                   <li>Familiarity with text processing concepts</li>
+                                   <li>No programming experience required</li>
+                               </ul>
+                           </div>
+                           
+                           <div class="info-card">
+                               <h3>What to Bring</h3>
+                               <ul>
+                                   <li>Laptop with modern web browser</li>
+                                   <li>Your research questions and use cases</li>
+                                   <li>Sample texts or datasets (optional)</li>
+                               </ul>
+                           </div>
+                           
+                           <div class="info-card">
+                               <h3>Certificate</h3>
+                               <p>Participants will receive a certificate of completion after attending all sessions and completing the practical exercises.</p>
+                           </div>
+                       </div>
+                   </section>
+               </div>
+           </div>
+       </div>
+   </main>
+
+   <!-- Footer -->
+   <footer id="contact" class="site-footer">
+       <div class="container">
+           <div class="footer-content">
+               <div class="contact-info">
+                   <h3>Contact Information</h3>
+                   <p><strong>Dr. Christopher Pollin</strong><br>
+                   Digital Humanities Craft OG<br>
+                   Email: <a href="mailto:christopher.pollin@dhcraft.org">christopher.pollin@dhcraft.org</a><br>
+                   GitHub: <a href="https://github.com/chpollin/llmdh" target="_blank" rel="noopener noreferrer">github.com/chpollin/llmdh</a></p>
+                   
+                   <h4>Course Repository</h4>
+                   <p>All course materials, code examples, and additional resources are available on GitHub.</p>
+                   
+                   <div class="social-links">
+                       <h4>Connect</h4>
+                       <a href="https://fedihum.org/@chpollin" target="_blank" rel="noopener noreferrer">Mastodon</a> |
+                       <a href="https://www.linkedin.com/in/christopher-pollin-463b0a204/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                       <a href="https://bsky.app/profile/chpollin.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+                   </div>
+               </div>
+               
+               <div class="footer-logo">
+                   <img src="assets/img/dhcraft-logo-inverse.png" alt="DHCraft - Digital Humanities Craft OG Logo" width="60" height="60">
+                   <p>Digital Humanities Craft OG<br>
+                   <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">dhcraft.org</a></p>
+               </div>
+           </div>
+           
+           <div class="footer-bottom">
+               <p>&copy; 2025 Digital Humanities Craft OG. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Use</a></p>
+           </div>
+       </div>
+   </footer>
+
+   <script src="assets/script.js"></script>
 </body>
-<script src="assets/script.js"></script>
 </html>
