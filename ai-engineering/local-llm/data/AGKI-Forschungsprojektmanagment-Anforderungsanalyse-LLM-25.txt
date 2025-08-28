@@ -1,0 +1,403 @@
+Slides were generated AI-assisted. Images are partly AI-generated.
+LLM-unterstütztes Anforderungsanalyse
+
+Angewandte Generative KI und Prompt Engineering im Forschungsprojektmanagement (Projektmanagement)
+Dr. Christopher Pollin
+https://chpollin.github.io | christopher.pollin@dhcraft.org 
+Digital Humanities Craft OGwww.dhcraft.org 
+
+Anforderungsanalyse (Requirement Engineering)
+Requirements Engineering ist ein systematischer und iterativer Prozess zur Identifikation, Dokumentation, Analyse, Priorisierung, Validierung und Verwaltung von Stakeholder-Anforderungen für die Entwicklung von Systemen, Produkten oder Software
+Broy, Manfred, und Marco Kuhrmann. 2021. „Anforderungsanalyse und Anforderungsmanagement“. In Einführung in die Softwaretechnik, herausgegeben von Manfred Broy und Marco Kuhrmann, 199–222. Xpert.press. Berlin, Heidelberg: Springer. https://doi.org/10.1007/978-3-662-50263-1_5. 
+Stakeholder
+Systeme, Produkte, Software
+
+Forscher:innen
+Forschungsdomäne
+Requirement Specification
+Antrag / Machbarkeit / Budget
+Wireframe / Prototype
+Stakeholder:innen
+“Alles im Überblick haben”
+
+DEPCHA. Ein DH Projekthttps://gams.uni-graz.at/depcha 
+
+ 
+Information Visualisation
+Search & Discovery
+Self-organisation
+
+Laban Morey Wheaton Day Book 1828-1829 & 1831-1832
+https://gams.uni-graz.at/o:depcha.wheaton.1 
+
+Requirement Engineering für DH-Projekte
+Interdisziplinarität der Stakeholder: Verschiedene Disziplinen mit unterschiedlichen Anforderungen
+Wissenschaftliche vs. technische Anforderungen: Balance zwischen Forschungszielen und technischer Umsetzbarkeit
+
+Heterogene Datenintegration: Verschiedene Formate: Texte, Bilder, Metadaten 
+
+Langzeitarchivierung: Sicherstellung langfristiger Verfügbarkeit und Nutzbarkeit 
+
+Flexibilität im Entwicklungsprozess: Iteratives Vorgehen und agile Methoden
+
+Standards und Werkzeuge: TEI XML, IIIF und weitere Standards für Interoperabilität
+
+Die vier Phasen des User-Centred Design
+Jetter, Hans-Christian. 2022. „D 3 Mensch-Computer-Interaktion, Usability und User Experience“. In Grundlagen der Informationswissenschaft, 525–34. De Gruyter Saur. https://doi.org/10.1515/9783110769043-045. 
+Nutzer:innen im Mittelpunkt des Entwicklungsprozesses
+
+Zyklischer, iterativer Prozess für kontinuierliche Verbesserung
+
+Vorteile: Verbesserte Usability, Risikominderung, Validierung von Requirement, Gesteigerte Nutzerzufriedenheit
+
+Herausforderungen: Ressourcenbedarf, Interdisziplinäre Zusammenarbeit, Interessenkonflikte
+Deep Dive
+Wireframe
+Think-Aloud
+Personas
+Methode
+
+Historians' Information-Seeking Behavior und User Requirements für digitale Forschungswerkzeuge. Oder: Wie Historiker:innen Informationen suchen und was in der Umsetzung digitale Werkzeuge wichtig ist.
+
+
+Information-Seeking Behavior (ISB)
+Prozess, wie Nutzer:innen nach Informationen suchen und diese nutzen, um Wissenslücken zu schließen.
+
+
+Informationsbedürfnis: Historiker:in fehlt detailliertes Wissen über finanzielle Transaktionen und wirtschaftliche Aktivitäten eines bestimmten Zeitraums.
+Informationssuche: Durchsuchen Rechnungsbücher nach Einträgen zu Einnahmen, Ausgaben und Transaktionen.
+Informationsbewertung: Prüfen die Relevanz und Genauigkeit der Daten, z.B. korrekte Datierung und Kontext der Beteiligten.
+Informationsnutzung: Die ausgewerteten Daten werden zur Analyse der wirtschaftlichen Entwicklung und historischen Schlussfolgerungen genutzt.
+
+Information-Seeking Behavior (ISB) und Modelle
+Lewandowski, Dirk, und Christa Womser-Hacker. 2022. „D 6 Information Seeking Behaviour“. In Grundlagen der Informationswissenschaft, 553–66. De Gruyter Saur. https://doi.org/10.1515/9783110769043-048.
+
+Kundu, Dipak Kumar. 2017. „Models of Information Seeking Behaviour: A Comparative Study“ International Journal of Library and Information Studies (7(4)). https://doi.org/10.2139/ssrn.4289303. 
+
+Historians' Information-Seeking Behavior
+WILSONS ZYKLISCHES MODELL: "Ich habe die Aufzeichnungen dieses Kaufmanns gefunden, meine Analyse abgeschlossen, was mich dann dazu führte, seinen Handelspartner zu erforschen"
+Vollständige Zyklen
+Jede Entdeckung führt zu neuem Forschungszyklus
+Klare Phasen von Bedarf, Suche, Nutzung
+ELLIS' VERHALTENSMODELL: "Ich begann mit dem Zunftregister, verknüpfte es mit Steuerlisten, durchsuchte zugehörige Briefe, behielt Archivaktualisierungen im Auge und filterte die relevanten Transaktionsdaten"
+Wechsel zwischen verschiedenen Suchaktivitäten
+Kann zwischen Aktivitäten springen nach Bedarf
+Keine feste Reihenfolge, aber spezifische Techniken
+KUHLTHAU'S MODELL: "Ich begann unsicher über mittelalterliches Bankwesen, entschied mich für eine bestimmte Bank, erkundete ihre Unterlagen, entwickelte meine Forschungsfrage zu ihren Kreditpraktiken, sammelte detaillierte Belege und fühlte mich schließlich sicher bei der Präsentation meiner Ergebnisse"
+Emotionale und kognitive Reise
+Klare Entwicklung von Unsicherheit zu Verständnis
+Strukturierte Phasen mit emotionalen Aspekten
+BATES' BERRY PICKING MODELL: "Ich fand diesen Kaufmannsnamen und begann sofort nach allen damit verbundenen Dokumenten zu suchen, wobei ich meine Suche mit jedem neuen Fund anpasste"
+Sofortige Anpassung an neue Funde
+Keine vollständigen Zyklen
+Verfolgung von Hinweisen sobald sie auftauchen
+
+Cognitive Framework of Information Search and Retrieval
+Womser-Hacker, Christa. 2022. „C 1 Informationswissenschaftliche Perspektiven des Information Retrieval“. In Grundlagen der Informationswissenschaft, 363–78. De Gruyter Saur. https://doi.org/10.1515/9783110769043-031. 
+
+Anforderungsanalyse im Projekt DEPCHA
+Identifikation: Deep Dives, PersonasHier werden die Bedürfnisse der Nutzer:innen erfasst.
+Dokumentation: User Stories, EpicsDiese Methoden dokumentieren die Anforderungen in strukturierten, klaren Beschreibungen.
+Analyse: WireframesHelfen, die Anforderungen visuell zu analysieren und erste Designentwürfe zu erstellen.
+Priorisierung: User Stories, EpicsAnforderungen werden hier nach Wichtigkeit und Nutzen priorisiert.
+Validierung: Prototypen, Feedback-SchleifenErmöglichen es, das Design zu testen und durch Feedback zu validieren.
+Verwaltung: Backlog, IterationenDie Anforderungen werden in einem Backlog verwaltet und in Iterationen umgesetzt.
+
+Eine Persona ist eine fiktive, aber realistische Darstellung eines typischen Nutzers, die auf Forschung und Beobachtungen basiert.
+Sie hilft dabei, die Anforderungen, Ziele und Herausforderungen der Nutzer:innen im Designprozess zu berücksichtigen.
+Personas repräsentieren verschiedene Nutzergruppen und ermöglichen ein besseres Verständnis ihrer Bedürfnisse bei der Nutzung von digitalen Werkzeugen.
+
+Identifikation: Persona
+Anna 
+Wirtschaftshistorikerin
+Max 
+Sozialhistoriker 
+
+Max – Sozialhistoriker
+Demografische Informationen:
+Alter: 30 Jahre
+Berufserfahrung: 3 Jahre Forschung in Sozialgeschichte und Netzwerkanalyse
+Ziele:
+Untersuchung von sozialen Netzwerken und Beziehungen, die durch finanzielle Transaktionen im Wheaton Day Book sichtbar werden.
+Erforschung der Interaktionen zwischen verschiedenen gesellschaftlichen Gruppen (Landwirte, Handwerker, Arbeiter).
+Herausforderungen:
+Verknüpfung von Transaktionen mit sozialen Netzwerken und Wiedererkennung von wiederkehrenden Partnern.
+Fehlende Visualisierung sozialer Beziehungen zwischen Akteuren.
+Benötigte Funktionen (Needs):
+Identifizierung sozialer Netzwerke: Verknüpfung von Transaktionen mit Akteuren und Analyse von Beziehungen.
+Datenfilterung nach Personengruppen (z.B. Landwirte, Arbeiter).
+Netzwerkanalyse-Tool: Um die sozialen Verbindungen der Personen im Day Book sichtbar zu machen.
+
+
+Demografische Informationen:
+Alter: 45 Jahre
+Berufserfahrung: 15 Jahre Forschung in Wirtschaftsgeschichte des 19. Jahrhunderts
+Ziele:
+Analyse finanzieller Muster und wirtschaftlicher Aktivitäten im ländlichen Massachusetts des 19. Jahrhunderts.
+Verstehen von saisonalen Trends und regionalen wirtschaftlichen Entwicklungen (z.B. Mais- und Baumwollhandel).
+Herausforderungen:
+Schwierigkeit, langfristige Trends zu erkennen, da die Daten fragmentiert sind.
+Datenfilterung für Waren, Debitoren und Kreditoren-Einträge über lange Zeiträume.
+Benötigte Funktionen (Needs):
+Filter nach Waren (z.B. Mais, Baumwolle).
+Visualisierung von Trends in Einnahmen und Ausgaben.
+Datenexport für externe Analysen in anderen Tools.
+
+Anna – Wirtschaftshistorikerin
+
+Hands-On: Persona für Forschungsprojekte
+Erstellen Sie eine Persona, die einen typischen Nutzer oder eine typische Nutzerin Ihres Forschungsprojekts darstellt. Diese Persona sollte die Anforderungen, Ziele und Herausforderungen der Nutzer:innen klar formulieren und helfen, die Funktionalitäten Ihres digitalen Werkzeugs darauf abzustimmen.
+Wählen Sie eine Persona: Überlegen Sie, welche Art von Forscher:in oder Nutzer:in Ihr Tool verwenden würde.
+Definieren Sie die Ziele: Welche Forschungsfragen will die Persona mithilfe Ihres Tools beantworten?Beispiel: „Analyse von wirtschaftlichen Trends“ oder „Erforschung sozialer Netzwerke“.
+Identifizieren Sie Herausforderungen: Was sind die Schwierigkeiten oder Hindernisse, die die Persona bei der Nutzung des Tools hat? Beispiel: „Schwierigkeit, relevante Daten zu finden“, „Komplexität der Quellensuche“.
+Bestimmen Sie die benötigten Funktionen: Welche spezifischen Funktionen braucht die Persona, um ihre Forschungsarbeit effizient zu erledigen? Beispiel: „Filterfunktionen“, „Netzwerkanalyse-Tool“, „Visualisierung von Daten“.
+Präsentation der Persona
+
+User Story
+Ist eine kurze, einfache, prägnante Beschreibung einer Produktfunktion, die aus der Perspektive der Person erzählt wird, die diese Funktion nutzt bzw. benötigt.
+Sie beinhaltern:
+User/Userin 										<who?>
+Feature - was benötigt wird							<what?>
+Satisfaction - wie das Feature ein Bedürfnis befriedigt	 		<why?>
+General User Story Pattern: 
+As a ($user) I want a ($feature) so that I can ($satisfy a need)	
+Epics sind größere Aufgabeneinheiten, die in mehrere kleinere Aufgaben (sogenannte Stories) unterteilt werden können. Sie repräsentieren umfangreichere Anforderungen oder Forschungsziele.
+
+User Story & Epic - Beispiele
+User: 		“Als Wirtschaftshistorikerin…”
+Feature: 		“...möchte ich Transaktionen nach Warengruppen und Zeiträumen filtern…”
+Satisfaction:  “...damit ich langfristige ökonomische Trends analysieren kann.”
+
+Beispiel für ein Epic:
+“Als Historiker*in möchte ich alle Transaktionen eines Rechnungsbuchs analysieren, um wirtschaftliche und soziale Muster zu identifizieren.”
+
+
+George Washington Financial Papers (1748-1799)
+Geschäfts- und Haushaltsakten des US-Präsidenten George Washington
+STERTZER, Jennifer: Working with the Financial Records of George Washington: Document vs. Data. DigitalStudies/le Champ Numérique, 2014. doi.org/10.16995/dscn.57. http://financial.gwpapers.org/ 
+Transaktionen zu “Ferriages”
+
+User Story 1
+Als Wirtschaftshistoriker*in möchte ich Kosten für den Transport (T) von Gütern und Personen im 18. Jahrhundert in den USA analysieren.
+User Story 1.1
+Ich möchte eine Aggregation aller Einnahmen, die durch T entstanden sind.
+User Story 1.2
+… eine Aggregation aller Ausgaben durch T
+User Story 1.3
+Ich möchte Einnahmen und Ausgaben für Teilbereiche im Bereich T aggregieren.
+User Story 1.4
+Ich möchte nach einzelnen Wirtschaftssubjekten und deren Beteiligung an T filtern
+User Story 1.5
+Ich möchte Kategorien von T und deren zeitliche Veränderung über Jahre untersuchen.
+Epic
+Als Historiker*in möchte ich Einnahmen/Ausgaben mit Bezug auf bestimmte Wirtschaftsobjekte analysieren.
+User Story 1.6
+...
+
+https://medium.com/fold-line-gold/four-common-types-of-software-prototypes-8fa275c0602f 
+https://www.lucidchart.com/pages/de/was-sind-website-wireframes 
+
+Ein Wireframe ist eine grundlegende, zweidimensionale, visuelle Darstellung einer Software oder einer Webseite. Der Zweck ist der eines visuellen Leitfadens, um Elemente so anzuordnen, dass sie einen bestimmten Zweck am besten erfüllen. Es skizziert die einzelnen “Views”: Bilder, Text View, Table View und andere Features.
+Frühes Feedback: Unternehmensziel | kreative Idee | Forschungsfrage
+Kommunikation: Austausch mit Stakeholdern
+pen and paper ohne “Schnickschnack”
+„Drahtgestell”
+Wireframe vs. Mockup vs. Prototype
+Low-Fidelity Wireframe vs. High-Fidelity Wireframe
+
+Definition Wireframe
+https://de.wikipedia.org/wiki/Drahtgittermodell 
+JAYE HANNAH: What Exactly Is Wireframing? A Comprehensive Guide, https://careerfoundry.com/en/blog/ux-design/what-is-a-wireframe-guide/#what-is-a-wireframe. 
+Wikipdia: Website wireframe, https://en.wikipedia.org/wiki/Website_wireframe.
+Wireframing
+Um vorab sicherzustellen, dass Entwickler und Client wirklich vom selben reden
+Wireframing = eine visuelle Blaupause wie eine Webseite funktionieren sollte und es funktioniert als ein Schema für die Funktionalität eines Systems, für eine bessere Darstellung was ab geht
+Lässt sich gut einfach zeichnen
+Wireframe hat nichts mit Deisgn zu tun, nur wie die Seite funktioniert
+
+
+Prototype, Mockup und Wireframe
+Wireframe ist eine erste einfache grafische Darstellung. Sie ist sehr schlicht und soll dazu dienen, dem Kunden/Betrachter das Grundkonzept näherzubringen. Gestaltung und Funktion spielen noch keine Rolle, sondern z.B. Benutzer*innenführung.
+Ein Mockup ist eine ausgereifte grafische Darstellungen und baut (falls vorhanden) auf einem Wireframe auf. Durch den Einsatz von Farben, Verwendung von Inhalten, Bildern, Typografien und der Darstellung der Grundfunktionen.
+Mit Prototyping wird meist ein nicht klar definiertes Vorgehensmodell beschrieben, bei dem eine Reihe von lauffähigen Modellen des Endprodukts mit wachsendem Funktionsumfang entwickelt und dem Kunden präsentiert werden.
+→ in der Softwareentwicklung gerne ein: “lauffähiges Stück Software”  
+https://www.projektmagazin.de/glossarterm/prototyping 
+
+Wireframes sollen diese Fragen beantworten...
+Was ist die wichtigste Aktion, die eine Userin auf dem Bildschirm ausführen sollte?
+Was ist das wichtigste Feature / Inhalt / Information / UI-Element auf dem Bildschirm?
+Was passiert, wenn die Userin auf ein bestimmtes UI-Element klickt? Was kommt ins Blickfeld?
+Was sollte die Userin hier tun?
+
+https://en.wikipedia.org/wiki/Website_wireframe 
+Mike Rohde, https://www.flickr.com/photos/rohdesign/3307874546 
+
+Ein Beispiel: DEPCHA
+
+Was ist DEPCHA und was sind die Kernfeatures?
+Warum mache ich DEPCHA?
+Wer ist das Zielpublikum / User?
+Was wollen User damit machen?
+Was wollen die Stakeholder?
+
+DEPCHA
+
+The Atlas of Economic Complexity. https://atlas.cid.harvard.edu/explore 
+User Story 1.3
+Ich möchte Einnahmen und Ausgaben für Teilbereiche im Bereich T aggregieren.
+User Story 1.5
+Ich möchte Kategorien von T und deren zeitlichen Veränderung über Jahre untersuchen.
+
+User Story 1.x
+Ich möchte die Entwicklung der Einnahmen untersuchen.
+User Story 1.x
+Ich möchte Ausgaben nach bestimmten Unterkategorien über die Zeit hinweg vergleichen.
+
+You are an expert in wireframing and user stories. I give you the text of a research proposal. Analyze the text carefully and analyze the research questions, then create user stories (As a ($user) I want a ($feature) so that I can ($satisfy a need)) from a researcher's perspective.
+
+Use perspectives from research focusing on prosopography, social history, and historical communication processes.
+
+Return the User Story als Markdown table.
+
+proposal:
+´´´
+´´´
+
+Take a deep breath and lets work on this step by step. 
+
+
+Pen & Paper Wireframe
+Ausrüstung analog: 
+Papier A4
+Schere
+Bleistift, Farbstift
+Smartphone Kamera
+Google Drive
+Ausrüstung digital: 
+https://concepts.app/de/ 
+Drawing Pad
+Figma
+…
+
+
+Sitemap
+Eine Sitemap ist eine Kategorisierung von Seiten, die aufzeigt, welche Seiten zu welchem Inhalt einer Website gehören. Anhand einer Sitemap können Benutzer*innen das Layout ihrer Seiten und die Reihenfolge ihrer Hierarchie erkennen.
+
+
+
+Home
+Collection
+Discovery
+Ontology
+About
+Tutorial
+Einstieg + 5 Hauptseiten
+Sitemap
+
+
+
+Von Collection kommt man auf die einzelnen Collections, also die Projekte.
+Jede Collection besteht aus min. einem Objekt. Daraus werden ein Data View und ein Edition View erzeugt. 
+
+Von Discovery kommt man auf Collections bzw. auf die Data View.
+Die weiteren Unterseiten.
+
+Home
+Databasket
+Tutorial
+About
+Model
+Project
+Literature
+Howto
+Discovery
+Collections
+Collection Data
+Dataset
+Collection Overview
+
+Home
+… Buttons
+… Headings - h2, h3
+… Text
+… Logo
+… Image Grid
+Homepage
+Header, Footer
+12 columns, bootstrap als orientierung
+Wireframes zeigen nur basic representations , platzhalter, (L) --- Logo Rechtecke sind Nav
+Main Hero Image → Menu top des header images, Slide Image <- ->
+Hero banner
+Section Break
+Logo, Imprint, Contact Form,. Sitemap
+Footer mit dunklerer Farbe, durch Schattierung, 
+Contact
+Benamsund der Sections und Teil des Wireframes ist wichtig, Contact Form. Sitemap, Buisness Contact Info, Fotter, Header,
+Wahl der Bilder ist noch egal, 
+
+
+Navigation
+Footer
+Home
+Info zu Collection, Discovery, Model, About
+Collections
+
+Collections
+Eine Card für eine Collection. Angezeigt wird z.B.:
+Filter / Suche / Info
+
+Collection - Data
+Datatable mit den Transaktionen.
+Überblick / Anzahl der Transaktionen, Wirtschaftssubjekte, - objecte etc. 
+Dashboard mit Informations-visualisierungen
+
+Navigation → Databasket
+
+Screenshot aus Adrian Twarog: UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma, https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t
+
+Verlinkungen von Collection → Collection Data bzw. Collection Overview
+Verlinkungen von Collection Views auf die Data Views.
+Databasket
+
+
+Screenshot aus Adrian Twarog: UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma, https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t
+
+2. Iteration des DEPCHA Designs: Wireframe mit Figma
+
+
+
+Prototyping Software
+Axure  			https://www.axure.com/ 
+Adobe XD 		https://www.adobe.com/at/products/xd.html 
+Balsamiq			https://balsamiq.com/ 
+Figma 			https://www.figma.com/prototyping/ 
+HotGloo 			https://www.hotgloo.com/ 
+Invision 			https://www.invisionapp.com/
+Justinmind 		https://www.justinmind.com/free-wireframing-tool 
+Mockflow 		https://www.mockflow.com/ 
+Mockingbird 		https://gomockingbird.com/home
+Mockplus			https://www.mockplus.com/ 
+Moqups 			https://moqups.com/ 
+Principle (Mac) 	https://principleformac.com/ 
+Proto.io 			https://proto.io/ 
+Wireframe|cc 		https://wireframe.cc/ 
+
+
+Desktop 1980 x 1980
+12 column Grid für Bootstrap
+https://www.figma.com/file/pA9y7i64DL4V1bMgIq0dKw/DEPCHA 
+
+https://www.figma.com/file/pA9y7i64DL4V1bMgIq0dKw/DEPCHA?node-id=0%3A1 
+
+Bootstrap 5
+
+Bootstrap 5
+
+
+
+Ressourcen
+Adrian Twarog: UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma, https://www.youtube.com/watch?v=c9Wg6Cb_YlU&t=28s 
+Maioli, L. (2018). Fixing Bad UX Designs: Master proven approaches, tools, and techniques to make your user experience great again. Packt Publishing Ltd.
+https://www.figma.com
+Wireframe & Paper-Prototype für User-Stories erstellen, https://www.youtube.com/watch?v=vTTkZ3YTEB4 
+Webinar: user stories and wireframing, https://www.youtube.com/watch?v=K3Zcz_mkuKk  

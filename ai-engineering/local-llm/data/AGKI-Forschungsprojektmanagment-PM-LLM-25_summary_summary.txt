@@ -1,0 +1,1 @@
+The Waterfall Methodology is a structured software development approach that consists of six phases: requirements gathering and analysis, design, development, testing, deployment, and maintenance. During each phase, project stakeholders work together to ensure that the system being developed meets their needs and specifications.

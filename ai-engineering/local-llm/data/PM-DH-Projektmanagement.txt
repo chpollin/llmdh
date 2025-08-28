@@ -1,0 +1,631 @@
+Projektmanagement. Planung, Umsetzung, Evaluierung von DH-Projekten
+Projektmanagement
+
+Sarah LangChristopher Pollin
+
+Institut für Digitale Geisteswissenschaften,https://digital-humanities.uni-graz.at
+Folien wurden KI-assistiert erzeugt.
+Tiny project manager conducting project planning inside an isometric office, Papercraft texture, Earth tone palette, Circular composition, Soft ambient lighting, Miniature office ecosystem, White background, People of colour, Female
+
+Cremer, Fabian, Swantje Dogunke, Anna Maria Neubert, und Thorsten Wübbena, Hrsg. 2024. Projektmanagement und Digital Humanities: Zur klugen Gestaltung der Zusammenarbeit. Bielefeld University Press. https://doi.org/10.1515/9783839469675.
+
+https://www.transcript-verlag.de/978-3-8376-6967-1/projektmanagement-und-digital-humanities/?c=331021469 
+
+
+Planungswerkzeuge
+
+Werkzeuge des PM
+https://claude.site/artifacts/db898737-940d-48ec-bd29-df3f6a9514f7 
+
+Definition: Hierarchische Aufgliederung des Gesamtprojekts in kleinere, handhabbare Arbeitspakete
+Hauptziel: Vollständige und einmalige Erfassung aller relevanten Tätigkeiten eines Projektes
+Erstellung:
+Top-Down: Geeignet für Standardprojekte
+Bottom-Up: Empfohlen für sehr innovative Projekte
+Yo-Yo-Methode: Kombination aus beiden Ansätzen
+Vorteile:
+Projekt ist vollständig erfasst
+Klarheit über zu leistende Arbeiten
+Annäherung an die Kostensituation
+Überblick über benötigte Ressourcen
+Verbesserte Kommunikation im Projektteam
+Unterstützt Planung, Kontrolle und Steuerung
+Projektstrukturplan (PSP)
+
+Projektstrukturplan (PSP)
+Greinacher, Robert: Einführung in das Projektmanagement, Teil 3: https://www.youtube.com/watch?v=w6YNtPf87So&list=PLaHADNRco7n1i6I82hPIrxFT7ksgLSXer&index=5 
+Projektstrukturplan am Beispiel eines Umzugs eines Büros. https://de.wikipedia.org/wiki/Projektstrukturplan 
+
+Projektstrukturplan (PSP)
+Hauptmerkmale:
+Hierarchische Struktur
+Vollständigkeit
+Eindeutigkeit
+Orientierung an Ergebnissen
+Ebenen:
+Gesamtprojekt
+Teilprojekte
+Arbeitspakete
+Vorgänge/Aktivitäten
+Darstellungsformen:
+Baumstruktur
+Gliederung
+Mindmap
+Grenzen: 
+Der Ablaufplan für das Projektgeschehen bleibt tendenziell unberücksichtigt
+Tipps:
+Eindeutige Nummerierung verwenden
+Verben für Aktivitäten nutzen
+Regelmäßig aktualisieren
+Team in Erstellung einbeziehen
+
+PSP mit GPT oder Claude erzeugen
+You are an expert project manager. Generate a Work breakdown structure (WBS) from the given project proposal.´´´{https://docs.google.com/document/d/1cKpiZA5Ifncx1uRqeGUcNSIojRVnPNCm7byBK8jlUWw/edit?usp=sharing} ´´´
+1. Analyze proposal:
+   • Extract: objectives, scope, deliverables, timelines
+   • Identify explicit/implicit elements
+   • Apply semantic analysis
+
+2. Create hierarchical PSP:
+   • Project name (top level)
+   • Main deliverables (level 1)
+   • Work packages (level 2+)
+   • Ensure: mutually exclusive, collectively exhaustive
+
+3. For each element, provide:
+   • Concise description
+   • Duration/effort (if available)
+   • Dependencies (if applicable)
+
+4. Output:
+   • Visual: ASCII diagram (default)
+   • Include: element numbers, confidence levels (H/M/L)
+
+5. Handle ambiguities:
+   • Make reasonable assumptions
+   • Mark assumptions clearly
+   • Request clarification if critical
+
+Example structure:
+Project
+├─1. Deliverable1
+│ ├─1.1 WorkPackage1
+│ └─1.2 WorkPackage2
+└─2. Deliverable2
+  ├─2.1 WorkPackage3
+  └─2.2 WorkPackage4
+
+Adapt to project complexity. Prioritize clarity and completeness. Let's do this step by step!
+Expert-Persona 
+Hauptaufgabe
+
+Templates
+
+Spezifikationen
+
+Chain of Thought
+
+5 min
+
+CROWN Project
+│
+├─1. Domain Modeling [2 months] (H)
+│  ├─1.1 Requirements Analysis
+│  │  ├─1.1.1 Stakeholder Interviews
+│  │  └─1.1.2 Existing Data Structure Review
+│  ├─1.2 Ontology Development
+│  │  ├─1.2.1 Core Concepts Definition
+│  │  └─1.2.2 Relationships Mapping
+│  └─1.3 Ontology Linking
+│     ├─1.3.1 CIDOC-CRM Integration
+│     └─1.3.2 BFO Integration
+│
+├─2. Data Transformation [3 months] (H)
+│  ├─2.1 TMS Data Export
+│  │  ├─2.1.1 Data Selection
+│  │  └─2.1.2 CSV Export Process
+│  ├─2.2 CSV to RDF Conversion Workflow
+│  │  ├─2.2.1 Python Script Development (rdflib, pandas)
+│  │  └─2.2.2 Conversion Process Testing
+│  └─2.3 RDF Structure Implementation
+│     ├─2.3.1 RDF Schema Definition
+│     └─2.3.2 Data Validation
+│
+├─3. Semantic Enrichment [3 months] (M)
+│  ├─3.1 Wikidata Integration
+│  │  ├─3.1.1 Relevant Entity Identification
+│  │  └─3.1.2 SPARQL Query Development
+│  ├─3.2 Entity Reconciliation
+│  │  ├─3.2.1 Reconciliation Tool Setup
+│  │  └─3.2.2 Automated Matching Process
+│  ├─3.3 Data Normalization
+│  │  ├─3.3.1 Standard Vocabulary Application
+│  │  └─3.3.2 Data Cleaning
+│  └─3.4 TMS Data Reintegration
+│     ├─3.4.1 Enriched Data Mapping
+│     └─3.4.2 TMS Update Process
+├─4. Proof-of-Concept Prototype [3 months] (M)
+│  ├─4.1 User Interface Design
+│  │  ├─4.1.1 Requirements Gathering
+│  │  └─4.1.2 Wireframe Creation
+│  ├─4.2 Data Representation Implementation
+│  │  ├─4.2.1 Data Visualization Development
+│  │  └─4.2.2 Search and Filter Functionality
+│  └─4.3 GAMS Integration
+│     ├─4.3.1 GAMS Setup
+│     └─4.3.2 Long-term Access Configuration
+│
+├─5. Documentation [1 month] (H)
+│  ├─5.1 Workflow Documentation
+│  │  ├─5.1.1 Process Description
+│  │  └─5.1.2 Technical Guide
+│  ├─5.2 Data Usage Guidelines
+│  │  ├─5.2.1 Access Instructions
+│  │  └─5.2.2 Best Practices
+│  └─5.3 Ontology Documentation
+│     ├─5.3.1 Concept Definitions
+│     └─5.3.2 Usage Examples
+│
+└─6. Project Management [Ongoing] (M)
+   ├─6.1 Coordination
+   │  ├─6.1.1 Team Meetings
+   │  └─6.1.2 Progress Tracking
+   ├─6.2 Quality Assurance
+   │  ├─6.2.1 Deliverable Review
+   │  └─6.2.2 Testing Oversight
+   └─6.3 Stakeholder Communication
+      ├─6.3.1 Regular Updates
+      └─6.3.2 Feedback Integration
+Confidence levels: (H) High, (M) Medium, (L) Low 
+
+Dependencies: - 2 depends on 1 - 3 depends on 2 - 4 can start after 2, but benefits from 3 - 5 should be ongoing but finalized after 1-4 - 6 is ongoing throughout the project
+Claude 3.5 Sonnet
+
+GANTT Chart
+DH Lab Gantt, Unicorn 2021, https://docs.google.com/spreadsheets/d/176gQ5KDovKygY06SROq3g-c1LJ23iw8Cgg7GaHIFgw8/edit?usp=sharing https://en.wikipedia.org/wiki/Gantt_chart 
+
+o1-preview
+1. Modelling and Formalising the Domain as an Ontology (Duration: 2 months)
+1.1. Review Existing Ontologies and Standards
+Study CIDOC-CRM, Basic Formal Ontology (BFO), and other relevant ontologies.
+1.2. Analyze Specific Requirements of the CROWN Project
+Gather detailed information on the scientific, historical, and art-historical data related to the crown's 2000+ components.
+1.3. Identify and Formalize Special Phenomena
+Pinpoint unique aspects of museum research data lacking standard representations.
+1.4. Develop the Domain-Specific Ontology
+Create an ontology tailored to the CROWN project's data and research needs.
+1.5. Link Ontology to Top-Level Ontologies
+Ensure interoperability by connecting the domain-specific ontology to CIDOC-CRM and BFO.
+1.6. Validate the Ontology with Domain Experts
+Collaborate with experts to review and refine the ontology for accuracy and completeness.
+2. Mapping, Exporting, and Transforming Data into LOD and FAIR Dataset (Duration: 3 months)
+https://chatgpt.com/share/e/66e88ae2-96c0-800b-b1ba-33ba227b203a 
+
+Milestones, Tasks und Working Packages
+Eine Task kann im Projektmanagement als die kleinste Einheit verstanden werden, die ein Teil eines Arbeitspaketes ist. Die Tasks sind Leistungen, die in einem Arbeitspaket zu erbringen sind.
+Das Arbeitspaket (AP, Working Packages) ist ein plan- und kontrollierbares Element in einem Projekt. Es beinhaltet Ergebnisziele und beschreibt Leistungen, die unter vorgegebenen Bedingungen zu erreichen sind. Die Arbeitspakete sind die Basis für die später durchzuführende Termin- und Ablaufplanung, Ressourceneinplanung und Kostenplanung.
+Ein Milestone ist ein Ereignis von besonderer Bedeutung im Projektmanagement. Milestones teilen den Projektverlauf in Etappen mit überprüfbaren Zwischenzielen und erleichtern damit sowohl die Projektplanung als auch die Kontrolle des Projektfortschritts.
+What is a Work Package in Project Management? https://www.wrike.com/project-management-guide/faq/what-is-a-work-package-in-project-management/Meilenstein (Projektmanagement). https://de.wikipedia.org/wiki/Meilenstein_(Projektmanagement) 
+
+Milestones Beispiele
+♦ 	Alle Digitalisate der mittelalterlichen Kochrezepte sind digitalisiert, haben 	Metadaten und liegen auf einem Server bereit.
+♦ 	Es gibt den ersten Prototypen für das Dashboard der Rechnungsbücher. 	Jetzt können wir es einmal testen.
+♦ 	Die Daten sind nach der Datenbereinigung und Modellierung, zwar noch 	nicht perfekt, aber an der Struktur ändert sich nichts mehr. Jetzt können 	die Informationsvisualisierungs-Expert*innen mit den Programmier*innen das 	Interface entwickeln.
+♦ 	...
+
+Beispiele für Tasks
+Meistens: für eine Person, in einer bestimmten Zeit, “eine” Aufgabe
+Einfügen aller GND-IDs für Personen in den XML/TEI der digitalen Edition
+Das Python Script, das aus dem CSV ein RDF macht.
+Das ER-Diagram
+Die grundlegende Bootstrap HTML/CSS Struktur
+Modellierung des Werkindex in XML/TEI
+… 
+
+Arbeitspaketbeschreibung
+Title
+Verantwortlicher
+Inhalt: um was geht es?
+Ergebnisse: was ist das Ziel? Z.B. was ist das Output-File?
+Nicht-Inhalte: was ist kein Ziel?
+Ressourcen (Mitarbeiter*in etc.): was steht zur Verfügung?
+Leistungsfortschritmessen
+Start- und Enddatum
+Methode: wie komme ich zum Ergebnis (z.B. Recherche, Interview, Coding, … )
+https://de.wikipedia.org/wiki/Arbeitspaket 
+
+Arbeitspakete -  Am Beispiel von DigEdTnT-Projekt
+WP1 - 	Requirement analysis 
+WP2 - 	Evaluation of the provided tools
+WP3 - 	Development of best practice solutions 
+WP4 - 	Transferring knowledge and validation best practice
+WP5 - 	Completion of the training material and best practice guidelines 		and publication
+
+WP1 - Requirement analysis - Beispiel
+Title
+WP1 - Requirement analysis
+Date
+Jänner-Februar 2023
+Responsibility
+Christopher Pollin
+Content
+Die Anforderungen digitaler Editionsprojekte werden analysiert. Dazu werden internes Wissen und Erfahrungen und externe aus abgeschlossenen bzw. laufenden Editionsprojekten zusammengeführt. Dies passiert auf abstrakter Ebene, um zu beschreiben, mit welchen Anforderungen und Herausforderungen Editionsvorhaben verbunden sind.
+Result
+Feststellung des IST-Zustands bei Workflows zur Umsetzung von Editionen. Übersicht und Beschreibung der existierenden Anforderungen.
+Method
+Literaturrecherche, Expert*innen Interviews
+Output
+Requirement Specification Dokument [Google Docs]
+
+WP2 - Evaluation of the provided tools - Beispiel
+Title
+WP2 - Evaluation of the provided tools
+Date
+Februar-April 2023
+Responsibility
+Christopher Pollin, Christian Steiner
+Content
+Sichtung, Beschreibung und Evaluierung der existierenden Tools, um die Anforderungen aus WP1 umzusetzen. Dazu werden die Tools mit den aus den Beispielprojekten vorabdefinierten Material erprobt und die Ergebnisse dokumentiert. Gleichzeitig wird das Expert*innenwissen der Tool-Entwickler*innen miteinbezogen.
+Result
+Wissen über die Tools: wo und wie sie eingesetzt werden können. Evaluierung der Tools hinsichtlich Anforderungen von Editionsvorhaben.
+Method
+Literaturrecherche, Expert*innen Interviews, Tools erproben, Workshop
+Output
+Tool Dokumentations Dokumente [Google Docs]
+
+Meilensteinplan 
+Überblick über die zeitlich Dimension des Projekts.
+Milestone: keine Dauer, Ergebnis von besonderer Bedeutung.
+Abschluss eines Teilprojektes ist normalerweise ein Milestone. Muss aber nicht. 
+
+Arbeitspakete und Tasks als Issues auf GitHub
+https://github.com/DHLab-Graz/Start-Up-Werkstatt/issues 
+
+Milestones auf GitHub
+https://github.com/DHLab-Graz/Start-Up-Werkstatt/milestones 
+
+Milestones, Tasks und Working Packages
+
+Arbeitspakete: Anschlüsse, Gebäude, Zufahrt, PM
+
+Task:Strom, Wasser, Telefon, etc.
+
+Milestones setzen wir dort, wo wir mit unseren Stakeholdern wieder reden, wo ein Prototyp fertig ist, wo wichtige Aspekte des Projektes zusammenkommen, …  
+
+https://www.youtube.com/watch?v=f4oPXHPpyms&list=PLFdnENWvfgPwYknfl25l_eVuufaeemdjl&index=3 
+
+Pflichten und Lastenheft
+Pflichten- und Lastenheft regeln und fixieren die konkreten Aspekte der Auftragsbeziehung von Auftraggeber*innen und Auftragnehmer*innen.
+Im Lastenheft werden die konkreten Forderungen der Auftraggeber*innen fixiert, also WAS zu entwickeln ist.
+Im Pflichtenheft definieren die Auftragnehmer_innen, wie sie diese Forderungen zu erfüllen gedenken (WIE, WOMIT).
+Lasten- und Pflichtenhefte sollten übersichtlich, vollständig und korrekt sein. Sie werden präzise, knapp und eindeutig formuliert. Die darin formulierten Ziele müssen überprüfbar und realisierbar sein.
+Pflichten- und Lastenheft sind oft Teil eines Vertrages, sie stellen immer eine verbindliche Vereinbarung dar und sind somit juristisch relevant.
+Bea, Franz Xaver, Steffen Scheurer, and Sabine Hesselmann. Projektmanagement (3. Auflage, 2020).
+
+Pflichtenheft - Aufbau
+Kurze Projektbeschreibung → Projektbeschreibung
+Erfassung des IST-Zustands (Daten, Texte, Bilder, was kommt woher?) → Projektbeschreibung
+Funktionalen Anforderungen: Auflistung der Funktionalität (z.B. Webseite) und wie es umgesetzt werden soll:
+Userverwaltung? 
+Welches Backend?
+CMS?
+Warenkorb?
+...
+Nicht funktionalen Anforderungen (Qualitätsmerkmale)
+wie performant ist die Webseite
+valides HTML
+auf welchen Browsern läuft es
+
+https://www.youtube.com/watch?v=-4Tq83wZFw8 
+
+Nichtfunktionale Anforderungen
+beschreiben, wie gut das System die Leistung erbringen soll; sie werden vielfach als Randbedingungen und Qualitätseigenschaften verstanden:	„Das Produkt soll dem Anwender innerhalb 		von einer Sekunde antworten.“
+ 
+Zuverlässigkeit
+Performance
+ Portierbarkeit und Responsiveness
+Usability
+Erweiterbarkeit
+Mehrsprachigkeit
+Accessability
+
+Funktionale Anforderungen
+Eine funktionale Anforderung legt fest, was das Produkt tun soll.	„Das Produkt soll den Saldo eines Kontos zu 		einem Stichtag berechnen.“
+
+Datenkorb
+Auswahl von Einträgen/Objekten
+Clientseitig für eine Session (Local Storage) speichern
+Export der hinzugefügten Objekte
+PDF (SuperCoolExport.js)
+Excel
+…
+… 
+
+
+ 
+
+
+https://de.wikipedia.org/wiki/Anforderung_(Informatik) 
+
+Vorgehensmodelle und Steuerungsmethoden 
+Vorgehensmodelle sind standardisierte Methoden, die den Ablauf eines Projekts von Anfang bis Ende definieren. Sie sollen Transparenz schaffen, Risiken minimieren und die Wahrscheinlichkeit eines erfolgreichen Projektabschlusses erhöhen. Beispiele sind das Wasserfallmodell, Scrum, PRINCE2 und das V-Modell
+Steuerungsmethoden im Projektmanagement sind Techniken zur Überwachung und Kontrolle des Projektfortschritts. Sie umfassen die kontinuierliche Überprüfung von Leistung, Qualität, Kosten und Zeitplan sowie die Anpassung des Projektplans bei Abweichungen. Ein Beispiel ist die offene Wirkungsweise (Open Loop Control), bei der Eingangsgrößen Ausgangsgrößen beeinflussen, ohne dass eine direkte Rückkopplung stattfindet.
+
+Modelle und Methoden des PM
+
+Klassisches vs. Agiles Projektmanagement
+Im klassischen Projektmanagement sind die Zielvorgaben von vornherein bekannt. Zumindest ist das die Idealvorstellung: Das Projektteam weiß über die Anforderungen an das Endprodukt schon vor Arbeitsbeginn im Detail Bescheid. Darauf aufbauend können definierte Prozesse entwickelt werden, die dann sequenziell abgearbeitet werden. 
+Im agilen Projektmanagement liegt der Schwerpunkt nicht auf dem Endprodukt, sondern auf dem Kundennutzen. In der Praxis heißt das, dass das Projekt nicht anhand definierter Vorgaben und Prozesse erarbeitet wird, sondern mittels innovativer Methoden. Zudem werden die Prozesse nicht einzeln abgearbeitet (sequenziell), sondern iterativ, d.h. in kleinen Schritten und teilweise parallel.
+Windolph, Andrea (2020): Unterschiede zwischen klassischem und agilem Projektmanagement. In: https://projekte-leicht-gemacht.de/blog/pm-methoden-erklaert/klassisch-agiles-projektmanagement-1 
+Strasser, Johann (2020): Projektmanagement-Methoden im Vergleich: Agil, klassisch oder hybrid? (Update 2020). Was ist der Unterschied zwischen agilen, klassischen und hybriden Methoden? Wann Sie welche Projektmanagement-Methode nutzen. In: https://www.theprojectgroup.com/blog/agile-klassische-oder-hybride-projektmanagement-methoden 
+
+Windolph, Andrea (2020): Unterschiede zwischen klassischem und agilem Projektmanagement. In: https://projekte-leicht-gemacht.de/blog/pm-methoden-erklaert/klassisch-agiles-projektmanagement-1/ (letzter Aufruf am 19.10.2020)
+Klassisches vs. Agiles Projektmanagement
+
+Völl, W. Hybrid-agiles Projekt-Management. Control Manag Rev 64, 42–50 (2020). https://doi.org/10.1007/s12176-020-0121-7 
+
+Klassisches vs. Agiles Projektmanagement
+
+Agil und klassisch?
+Spezialanfertigung einer Pumpe für ein Klärwerk mit klaren technischen Anforderungen und Spezifikationen
+klassisch
+Durchführung eines Marketingevents zur Einführung eines neuen Smartphones
+klassisch
+Entwicklung einer Webseite mit Online-Shop und zahlreichen weiteren Detailfunktionalitäten
+agil
+Schulung der Mitarbeiter einer Behörde zum Thema „Neue Datenschutzregeln“
+klassisch
+Entwicklung einer Steuersoftware für ein neues Motorendesign
+agil
+Planung eines Einfamilienhauses durch ein Architekturbüro
+agil
+
+Wasserfall-Modell
+https://www.ionos.at/digitalguide/websites/web-entwicklung/wasserfallmodell/
+https://de.wikipedia.org/wiki/Wasserfallmodell
+Ist ein lineares, (nicht iteratives; und idealistisches) Vorgehensmodell, das vor allem in der Softwareentwicklung Verwendung findet. 
+
+Entwicklungsprozesse sind in aufeinander folgende Projektphasen unterteilt
+ER-Diagramm UML, etc.
+
+V-Modell
+https://wirtschaftslexikon.gabler.de/definition/v-modell-53467/version-276556 https://de.wikipedia.org/wiki/V-Modell 
+= Implementierung
+
+V-Modell
+
+Spiral-Modell
+Kuster, Jürg: Handbuch Projektmanagement, Agil – Klassisch – Hybrid. 4.Aufl. Berlin: Springer, 2019. Internet: https://doi.org/10.1007/978-3-662-57878-0.
+
+Agiles Manifest
+Agiles PM beruht darauf
+4 Leitsätze
+12 Prinzipien
+https://agilemanifesto.org/iso/de/manifesto.html 
+
+Agiles Manifest - Leitsätze
+Individuen und Interaktionen mehr als Prozesse und Werkzeuge
+Funktionierende Software mehr als umfassende Dokumentation
+Zusammenarbeit mit dem Kunden mehr als Vertragsverhandlung
+Reagieren auf Veränderung mehr als das Befolgen eines Plans
+
+Agiles Manifest - Prinzipien, https://agilemanifesto.org/iso/de/principles.html 
+Unsere höchste Priorität ist es, den Kunden durch frühe und kontinuierliche Auslieferung wertvoller Software zufriedenzustellen
+Heiße Anforderungsänderungen selbst spät in der Entwicklung willkommen. Agile Prozesse nutzen Veränderungen zum Wettbewerbsvorteil des Kunden.
+Liefere funktionierende Software regelmäßig innerhalb weniger Wochen oder Monate und bevorzuge dabei die kürzere Zeitspanne.
+Fachexperten und Entwickler müssen während des Projektes täglich zusammenarbeiten.
+Errichte Projekte rund um motivierte Individuen. Gib ihnen das Umfeld und die Unterstützung, die sie benötigen und vertraue darauf, dass sie die Aufgabe erledigen.
+Die effizienteste und effektivste Methode, Informationen an und innerhalb eines Entwicklungsteams zu übermitteln, ist im Gespräch von Angesicht zu Angesicht.
+Funktionierende Software ist das wichtigste Fortschrittsmaß.
+Agile Prozesse fördern nachhaltige Entwicklung. Die Auftraggeber, Entwickler und Benutzer sollten ein gleichmäßiges Tempo auf unbegrenzte Zeit halten können.
+Ständiges Augenmerk auf technische Exzellenz und gutes Design fördert Agilität.
+Einfachheit -- die Kunst, die Menge nicht getaner Arbeit zu maximieren -- ist essenziell.
+Die besten Architekturen, Anforderungen und Entwürfe entstehen durch selbstorganisierte Teams.
+In regelmäßigen Abständen reflektiert das Team, wie es effektiver werden kann und passt sein Verhalten entsprechend an.
+
+Scrum
+
+Scrum
+https://www.business-wissen.de/artikel/agiles-projektmanagement-so-funktioniert-scrum/ 
+eine Phase = Projekt-Sprint 
+In jedem Sprint gibt es die täglichen Meetings, das Daily Scrum.
+drei Rollen
+Product Owner (~Stakeholderin)
+Scrum-Master(PM, Moderatorin)
+Projektmitglied
+Product Backlog= dynamische Anforderungsanalys
+Sprint Backlog = “was gehen wir konkret an!?”
+Sprint - Arbeit + Daily Scrum
+Sprint Review - “hat es gepasst”
+Sprint Retrospective - “was haben wir gelernt”
+
+Kanban
+Dechange, André: Projektmanagement – Schnell erfasst. Berlin: Springer, 2020
+Kuster, Jürg: Handbuch Projektmanagement, Agil – Klassisch – Hybrid. 4.Aufl. Berlin: Springer, 2019. Internet: https://doi.org/10.1007/978-3-662-57878-0 
+
+Ass 2
+Erstellt, ausgehend von eurem Antrag/Short Proposal, einen Projektplan für euer Projekt. Diese Projektpläne werden präsentiert.
+
+Inhalt des Projektplans sind.
+
+Projektbeschreibung
+Projektdefinition
+Projektziele
+Projektorganisation
+Situationsanalyse/IST-Zustand
+Definition der Projektrollen
+Kontakte, externe Akteure
+Wissenschaftlicher Mehrwert/Zielgruppen
+Projektstrukturplan
+Working Packages/Projektphasen 
+Definition und Beschreibung der Working Packages
+Zugeordnete der Personen aus dem Projektteam
+Zuordnung der Tasks und Milestones
+Visuelle Darstellung des Projektstrukturplan (z.B. als Baum)
+Grobe Aufwands- und Risikoabschätzung der Tasks bzw. Feststellen kritischer Tasks und möglicher Alternativen 
+
+3 . 	Ablaufplan
+Zeitliche Verordnung und Abhängigkeit der Working Packages
+Visuelle Darstellung
+Festmachen kritischer Zeitpunkte
+4.	Anhang
+Literatur
+Abkürzungen
+Glossar
+
+Projektbeschreibung
+Projektdefinition und Projektziele und Projektorganisation (Entscheidungskompetenz)
+~ Short Proposal
+Hauptziele, ggf. “nicht-Ziele”
+Wie werden Entscheidungen getroffen; Kompetenzen
+Situationsanalyse/IST-Zustand
+~ Short Proposal
+Beschreibung eurer Ausgangssituation
+Was sind eure Daten/Texte/Materialien/Geräte etc.? 
+Wann, wie und wo stehen die zur Verfügung?
+Mit welche Institutionen/Personen etc. müsst ihr interagieren?
+… 
+Definition der Projektrollen
+Welche Rollen gibt es, wie sind die Rollen definiert?
+Welche Verantwortungen übernehmen sie?
+Was ist ihr Aufgabenbereich?
+Was ihre Entscheidungskompetenzen?
+Kontakte, externe Akteure  
+Zielgruppe/Wissenschaftlicher Mehrwert
+
+
+Dokumentation
+Es existiert eine ausführliche Dokumentation des Projektes, um die Übertragung der Daten, der Workflows, der Ergebnisse der Implementierung zu einem späteren Zeitpunkt gewährleisten zu können.
+Datenmodellierung
+Die im Projekt generierten Daten aus dem Nachlass von Stefan Zweig und aus Sekundärquellen werden standardbasiert (XML/TEI) modelliert.
+
+Nicht-Ziel
+
+Umsetzung einer digitalen Edition der Manuskripte 
+Projektziele - Beispiele
+
+Situationsanalyse/IST-Zustand - Beispiele
+Die gesamte Datenerfassung erfolgt an der Universität Salzburg über das Bibliothekssystem Aleph. Daten werden im Aleph-Format bzw. Excel-Sheets, die sich an diesem Format orientieren (gleiche Felder), an den Auftragnehmer übermittelt. Partnerinstitutionen übermitteln Katalogisate in einer mit der Universität Salzburg abgesprochener Weise. Die an den Auftraggeber übermittelten Daten sind normalisiert und redaktionell überarbeitet. Der Auftraggeber verpflichtet sich, Datenformate und Modellierungsrichtlinien grundsätzlich mit dem Auftragnehmer abzusprechen.
+ 
+Scans
+Die Universitätsbibliothek Salzburg ist mit der Erstellung der Digitalisate der Objekte (Briefe, Handschriften, etc.) im Nachlass zuständig. Diese Scans werden an den Auftragnehmer als TIFF übermittelt.
+
+Nachlasskatalog
+Der Nachlasskatalog ist eine Katalogisierung der Objekte, die sich im Nachlass Stefan Zweigs befanden und die heute noch erhalten sind. Die Daten werden im Aleph-Format übergeben. In diesem Prozess gibt es weitere Partner (State University New York in Fredonia, USA), die ihre Daten als Excel-Sheets (orientiert am Aleph-Format) übergebens
+
+Projektstrukturplan
+Working Packages 
+Definition und Beschreibung der Working Packages
+Zugeordnete Personen aus dem Projektteam
+Zuordnung der Tasks und Milestones
+Visuelle Darstellung des Projektstrukturplans (z.B. als Baum)
+Grobe Aufwands- und Risikoabschätzung der Tasks Feststellen kritischer Tasks und möglicher Alternativen
+[~frei: nach Erfahrungswerten; es muss keine Methode verwendet werden, kann aber]
+https://www.projektmagazin.de/glossarterm/projektstrukturplanhttps://projekte-leicht-gemacht.de/blog/pm-methoden-erklaert/der-projektstrukturplan-teil-1-nutzen-aufbau-vorlage/  
+“Freunde der agilen Methoden werden die Hände über dem Kopf zusammenschlagen ob des Versuchs, ein Projekt schon von Beginn an komplett darzustellen.”
+
+Definition und Beschreibung der Working Packages
+1.5.2 Datenmodellierung (SZD)
+Die Datenmodellierung beschreibt alle Arbeitsbereiche, die notwendig sind, um aus den Rohdaten standardisierte und strukturierte Daten zu gewinnen, die für den Ingest in die GAMS-Infrastruktur geeignet sind. Für die Modellierung werden vonseiten der Universität Salzburg Vorschläge erarbeitet, die bei der Projektrealisierung Berücksichtigung finden.
+
+Analyse und Dokumentation (Kriminalmuseum)
+Dieses Work-Package bearbeitet die inhaltliche Erschließung des Kriminalmuseums. Dies umfasst die Sichtung, Erschließung, Dokumentation und Ordnung des Bestandes bzw. alle Vorarbeiten, die benötigt werden um daraus eine digitale Sammlung erstellen zu können. Es soll die erschlossenen Daten an die technische Umsetzung weitergeben. Dieser Punkt umfasst auch die Überlegungen und Umsetzung von Ordnungsprinzipien, -strukturen (z.B. Thesaurus, Klassifikation, Kategorien), die von der technischen Umsetzung 1 “digitalisiert” werden. Hinzu kommt die Erschließung von Informationen aus unterschiedlichsten Quellen wie z.B. Interviews. Weiters umfasst dieser Punkt die Recherche und Verwendung anderer Quellen (z.B. Kriminologie Forensik heute), die notwendig sind um die Darstellung adäquat gestalten zu können. 
+
+
+
+Zuordnung der Tasks und Milestones
+Work Packages/Projektphasen= Kanban Column?= Label auf GitHub?Haben min. einen Milestone
+Tasks = Issues auf Github= - [ ] ; Task List in Issue
+
+
+Aufwandsabschätzung (auf Basis meiner Erfahrungswerte)
+WORK-PACKAGES                                        	 			[Zeitaufwand/h]	
+Dynamische Anzeige der Suchergebnisse			[220h]
+o   RDF-Daten modellieren			
+Mehrfachzuordnungen in Datenbeständen			[220h]
+o   RDF-Daten modellieren
+Aufnahme Datenbestände					[160h]
+o   Repräsentation
+o   Datenmodell
+o   Workflow, Ingest
+Aufsatzablage (als Ergänzung der Werkliste)	
+Objekte (als Ergänzung der Autographen)		    
+Korrespondenzen (nur Test-Datensatz)          	    	
+Erstausgaben							
+Werkindex								
+Biographie (Resource Discovery)				[50h] 
+Präsentation, Tagungen, Weiterbildung			[50h]
+Antragstellung							[50h]
+Laufende Betreuung, Datenübernahme, Einschulung	[50h]
+STEFAN ZWEIG DIGITAL, Pflichtenheft, 2020/21
+ 
+01.01.2020 – 31.12.2021
+10 h/Woche auf zwei Jahre
+800 Arbeitsstunden
+
+Aufwandsabschätzung
+Hinzu kommt eine Aufwandsabschätzung der einzelnen Tasks, die in eckigen Klammern nach dem Task angegeben wird. Dafür werden drei Kategorien unterschieden: Low, Medium und High.
+
+[Low]
+Dieser Task ist in kurzer Zeit (1 Woche) erledigt und bedarf keiner zusätzlichen Kompetenz.
+
+[Medium]
+Dieser Task umfasst einen mittleren Zeitaufwand (1-3 Wochen). Darin befindet sich womöglich eine Einarbeitungszeit in eine bestimmte Kompetenz. 
+
+[High]
+Dieser Task ist sehr zeitintensiv (über 3 Wochen) und bedarf eine Einarbeitung in eine neue Materie.
+Tasks:
+Vorhandene Informationen
+Sichtung der Excel-Listen [High]
+Sichtung vorhandener Wordlisten [Low]
+Konzeption Thesaurus [Low]
+Sichtung Multimediale Objekte [Medium]
+Sichtung Karteikarten [High]
+Transikiption Karteikarten Wildererbestand [Medium]
+Möglichkeiten: Digitale Edition Karteikarten [High]
+Identifikation der Karteikarten (nicht alle Karteikarten sind Objekten zugeordnet) [Medium]
+Klärung rechtlicher Fragen [Low]
+Interview mit BACHHIESL, Informationsgewinn [Medium]
+Interview mit der Restauratorin, Informationsgewinn [Medium]
+Ordnungssystem
+Erhebung bestehender Ordnungssysteme [Medium]
+Möglichkeiten: gewünschte Suchfunktionen (simple, advanced, browsing, filter) [Medium]
+Recherche
+Wilderer Steiermark [Medium]
+Rechtliche Fragen damals [Medium]
+Rechtliche Fragen heute [Medium]
+Rechtliche Fragen (Fotos, Museum allg., Impressum) [Low]
+Waffentechnik [Medium]
+
+(Projekt)Ablaufplan
+
+Zeitliche Verordnung und Abhängigkeit der Working Packages
+Was muss vorher erledigt sein?
+was läuft parallel?
+Visuelle Darstellung
+Festmachen kritischer Zeitpunkte
+Referenzen
+https://www.projektmagazin.de/glossarterm/ablaufplan 
+Tool um Issues aus GitHub als GANTT darzustellen: https://www.ganttlab.com/ 
+GANTT CHART TEMPLATE  
+
+
+Einfaches Beispiel
+
+
+
+Referenzen
+Glossar - Begriffe	Persistent Identifier PID
+        	Eine eindeutige Identifikation eines digitalen Objekts.
+        	Bsp.: http://gams.uni-graz.at/o:ufbas.1563
+ 
+Resource Discovery
+Versteht alle Funktionalitäten des Entdeckens und Stöberns auf der Seite, die einem User, vor allem dem Public User, ermöglichen sollen den Bestand kennen zu lernen und Retrieval Möglichkeiten zu eröffnen.
+ 
+SKOS: Simple Knowledge Organization System
+http://www.w3.org/2004/02/skos
+ 
+TEI: Text Encoding Initiative
+http://tei-c.org
+
+… 

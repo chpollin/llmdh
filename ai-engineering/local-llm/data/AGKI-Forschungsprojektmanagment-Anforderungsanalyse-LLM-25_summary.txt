@@ -1,0 +1,9 @@
+User Story 1.1
+As a researcher in the field of historical communication processes, I want to create a wireframe of my proposed study so that I can effectively plan and design my data collection methods.
+
+| Feature | Satisfy Need |
+| --- | --- |
+| Wireframe software | Allow for visual planning and organization of data collection methods |
+| 1980 x 1980 resolution | Ensure compatibility with various devices and screen sizes |
+| Bootstrap 5 integration | Enable seamless integration with existing research tools and methodologies |
+| User-friendly interface | Facilitate efficient and effective use of the wireframe tool |

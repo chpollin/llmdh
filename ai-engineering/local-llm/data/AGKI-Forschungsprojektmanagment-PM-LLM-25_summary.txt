@@ -1,0 +1,9 @@
+
+The Waterfall Methodology is a sequential approach to software development that follows the following phases:
+
+1. Requirements gathering and analysis: In this phase, project stakeholders collect requirements for the system to be developed, and then analyze them to ensure they are complete, accurate, and feasible.
+2. Design: The design phase involves creating a high-level architecture of the system, defining data models, interfaces, algorithms, and other technical specifications.
+3. Development: In this phase, software developers build the system based on the design created in the previous phase. They write code, create databases, and test the system to ensure it meets requirements.
+4. Testing: The testing phase involves verifying that the system works correctly and meets requirements. It includes unit testing, integration testing, system testing, acceptance testing, and performance testing.
+5. Deployment: In this phase, the completed software is deployed to the production environment, where users can access it and start using it.
+6. Maintenance: The maintenance phase involves ongoing support of the system, including bug fixes, updates, security patches, and other enhancements. It also includes training end-users on how to use the system effectively.

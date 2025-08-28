@@ -1,0 +1,1 @@
+The user story describes a researcher's need to create a wireframe for their historical communication study. The wireframe should facilitate planning and organizing data collection methods, be compatible with various devices and screen sizes, integrate with existing research tools, and have an efficient interface.
