@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Laban Morey Wheaton Day Book (1828-1829 &amp; 1831-1832)</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Digital edition of manuscript day book</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Transcribed from original manuscript</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <pb n="1"/>
+      
+      <div type="entry" when="1828-09-15">
+        <date when="1828-09-15">Monday September-15th-1828</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t001">
+          <note type="settled">Settled</note>
+          <persName ref="#drake">Derius Drake</persName>
+          <desc>To ax dlvd By Puffer 9/1</desc>
+          <measure type="currency" unit="dollar" quantity="1.50">1 50</measure>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t002">
+          <note type="settled">Settled</note>
+          <persName ref="#drake">Derius Drake</persName>
+          <desc>By cutting two sticks</desc>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t003">
+          <persName ref="#puffer" n="109">Pliny Puffer</persName>
+          <desc>By 1 ax dlv.d. Drake 9/</desc>
+          <measure type="currency" unit="dollar" quantity="1.50">1 50</measure>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t004">
+          <persName ref="#danforth_asa" n="342">Asa Danforth</persName>
+          <desc>By drawing two logs from Rogers</desc>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-09-22">
+        <date when="1828-09-22">Monday Sept. 22d 1828</date>
+        
+        <div type="transaction" ana="#credit" xml:id="t005">
+          <persName ref="#danforth_asa" n="342">Asa Danforth</persName>
+          <desc>By 1 Days work with oxen, wheels, &amp;</desc>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t006">
+          <note type="settled">Settled</note>
+          <persName ref="#drake">Derius Drake</persName>
+          <desc>To order upon <persName ref="#smith_t">T. Smith</persName> for 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t007">
+          <persName ref="#drake">Derius Drake</persName>
+          <desc>By 1 Days work</desc>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-10-03">
+        <date when="1828-10-03">October 3d 1828</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t008">
+          <persName ref="#danforth_thomas" n="25">Thomas Danforth 2d</persName>
+          <desc>To 1 lb. 4d Cut Nails .8</desc>
+          <measure type="currency" unit="dollar" quantity="0.08">8</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t009">
+          <persName ref="#danforth_thomas" n="25">Thomas Danforth 2d</persName>
+          <desc>1 Buss. Rye 90t</desc>
+          <measure type="currency" unit="dollar" quantity="0.98">90 98</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t010">
+          <note type="settled">Settled</note>
+          <persName ref="#lincoln">Nathaniel Lincoln</persName>
+          <desc>To cash 8/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t011">
+          <persName ref="#danforth_asa" n="342">Asa Danforth</persName>
+          <desc>By drawing two sticks from Mss Bowend</desc>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-10-04">
+        <date when="1828-10-04">4.</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t012">
+          <persName ref="#deane" n="139">John Deane</persName>
+          <desc>To cash 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-10-07">
+        <date when="1828-10-07">7</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t013">
+          <persName ref="#perry" n="126">Ms Fanny Perry</persName>
+          <desc>To1 Crane</desc>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-10-21">
+        <date when="1828-10-21">21</date>
+        
+        <div type="transaction" ana="#credit" xml:id="t014">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>By work from this day</desc>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t015">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> for 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">.50</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t016">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> for 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">.50</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t017">
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>upon <persName ref="#smith_t">T. Smith</persName> 8/</desc>
+          <measure type="currency" unit="dollar" quantity="1.34">1.34</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t018">
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>upon <persName ref="#smith_t">T. Smith</persName> 8/</desc>
+          <measure type="currency" unit="dollar" quantity="1.34">1.34</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t019">
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>½ Buss. Rye</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t020">
+          <persName ref="#wilbur">Amos Wilham</persName>
+          <desc>½ Buss. Rye</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t021">
+          <note type="settled">Settled</note>
+          <persName ref="#clapp">Oliver Clapp</persName>
+          <desc>By work from Oct. 14th 1828 16 Days</desc>
+          <measure type="currency" unit="dollar" quantity="16.00">16 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t022">
+          <persName ref="#richmond" n="369">Holmes Richmond</persName>
+          <desc>Toa Heiffer &amp;Calf</desc>
+          <measure type="currency" unit="dollar" quantity="20.00">20 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t023">
+          <persName ref="#white" n="100">Earl O White</persName>
+          <desc>To Cash lent 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-10-27">
+        <date when="1828-10-27">27</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t024">
+          <persName ref="#deane" n="139">John Deane</persName>
+          <desc>To cash 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t025">
+          <persName ref="#richmond" n="367">Holmes Richmond</persName>
+          <desc>To cash 30/</desc>
+          <measure type="currency" unit="dollar" quantity="5.00">5 00</measure>
+        </div>
+      </div>
+      
+      <pb n="2"/>
+      
+      <div type="entry" when="1828-10-29">
+        <date when="1828-10-29">Wednesday Oct. 29th 1828</date>
+        
+        <div type="transaction" ana="#credit" xml:id="t026">
+          <note type="settled">Settled</note>
+          <persName ref="#walker">James Walker</persName>
+          <desc>By work from this day at $13.00 pr month</desc>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-10-30">
+        <date when="1828-10-30">30</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t027">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilber</persName>
+          <desc>To1 Buss. Potatoes 2/6</desc>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t028">
+          <persName ref="#wilbur">Amos Wilber</persName>
+          <desc>cash 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.42">1 42</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-01">
+        <date when="1828-11-01">Nov. 1st 1828</date>
+        
+        <div type="transaction" ana="#credit" xml:id="t029">
+          <note type="settled">Settled</note>
+          <persName ref="#walker">James Walker</persName>
+          <desc>left off work at noon</desc>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t030">
+          <persName ref="#wilbur">Amos Wilber</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> for 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t031">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilber</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> for 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t032">
+          <persName ref="#smith_t" n="368">Timothy Smith</persName>
+          <desc>To1 ink Stand Iron returned</desc>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t033">
+          <persName ref="#smith_t" n="368">Timothy Smith</persName>
+          <desc>1 Day Book 10/6</desc>
+          <measure type="currency" unit="dollar" quantity="1.75">1 75</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t034">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilbur</persName>
+          <desc>Tothree pecks Rye 90t</desc>
+          <measure type="currency" unit="dollar" quantity="0.68">68</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-02">
+        <date when="1828-11-02">2</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t035">
+          <persName ref="#crocker" n="348">Samuely Crocker</persName>
+          <desc>To sulkey to Tauton T pr ml.</desc>
+          <measure type="currency" unit="dollar" quantity="0.67">67</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t036">
+          <persName ref="#smith_t" n="368">Timothy Smith</persName>
+          <desc>To twenty three Dollars for <unclear>borthetion</unclear> my colt and his cow horse</desc>
+          <measure type="currency" unit="dollar" quantity="23.00">23 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t037">
+          <note type="settled">settled</note>
+          <persName ref="#wilbur">Amos Wilbur</persName>
+          <desc>To order upon <persName ref="#smith_t">T Smith</persName> 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-06">
+        <date when="1828-11-06">6</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t038">
+          <persName ref="#deane" n="139">John Deane</persName>
+          <desc>To cash lent 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-08">
+        <date when="1828-11-08">8</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t039">
+          <persName ref="#lothrop" n="340">Edmond Lothrop</persName>
+          <desc>To cash 60/</desc>
+          <measure type="currency" unit="dollar" quantity="10.00">10 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t040">
+          <note type="settled">settled</note>
+          <persName ref="#wilbur">Amos Wilber</persName>
+          <desc>To cash 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-10">
+        <date when="1828-11-10">Nov 10 - 1828</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t041">
+          <persName ref="#perry" n="126">Mrs Fanny Perry</persName>
+          <desc>To 6 ½ lbs 6 Nails 10t</desc>
+          <measure type="currency" unit="dollar" quantity="0.65">65</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-12">
+        <date when="1828-11-12">12</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t042">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilbur</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t043">
+          <persName ref="#danforth_thomas" n="25">Thomas Danforth 2d</persName>
+          <desc>To1 Buss. Rye 100t</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-13">
+        <date when="1828-11-13">13</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t044">
+          <persName ref="#richmond" n="367">Holmes Richmond</persName>
+          <desc>To1 Buss. Rye 6/</desc>
+          <measure type="currency" unit="dollar" quantity="1.00">1 00</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-15">
+        <date when="1828-11-15">15</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t045">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilbur</persName>
+          <desc>To order upon <persName ref="#bates">D. Bates</persName> for two Dollars</desc>
+          <measure type="currency" unit="dollar" quantity="2.00">2 00</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t046">
+          <persName ref="#stacey" n="361">Charles Stacey</persName>
+          <desc>To order upon <persName ref="#smith_t">T. Smith</persName></desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#credit" xml:id="t047">
+          <persName ref="#smith_t" n="368">Timothy Smith</persName>
+          <desc>By order paid Stacey 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+      </div>
+      
+      <div type="entry" when="1828-11-21">
+        <date when="1828-11-21">21</date>
+        
+        <div type="transaction" ana="#debit" xml:id="t048">
+          <note type="settled">Settled</note>
+          <persName ref="#wilbur">Amos Wilbur</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+        
+        <div type="transaction" ana="#debit" xml:id="t049">
+          <persName ref="#wilbur">Amos Wilbur</persName>
+          <desc>To an order upon <persName ref="#bates">D. Bates</persName> 3/</desc>
+          <measure type="currency" unit="dollar" quantity="0.50">50</measure>
+        </div>
+      </div>
+      
+    </body>
+  </text>
+</TEI>
