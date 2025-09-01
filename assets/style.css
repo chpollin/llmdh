@@ -115,6 +115,7 @@ a:hover {
 .main-content {
    padding: 60px 0;
    min-height: calc(100vh - 300px);
+   overflow-x: hidden;
 }
 
 .content-wrapper {
@@ -162,6 +163,7 @@ a:hover {
 /* Sections */
 .sections {
    flex: 1;
+   overflow-x: hidden;
 }
 
 .course-section {
@@ -204,8 +206,9 @@ a:hover {
 /* Session Cards Container */
 .session-cards-container {
    position: relative;
-   margin: 0 -20px;
-   padding: 0 20px;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
 }
 
 .session-cards {
@@ -417,6 +420,7 @@ a:hover {
    color: #ffffff;
    padding: 40px 0 20px;
    margin-top: 80px;
+   overflow-x: hidden;
 }
 
 .footer-content {
