@@ -1,0 +1,2 @@
+
+The Waterfall model is a sequential approach to project management where all phases must be finished before proceeding to the next one. It has distinct stages for different tasks and is commonly utilized in software development projects including requirements gathering, analysis, design, implementation, testing, and deployment.

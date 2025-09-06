@@ -1,0 +1,1 @@
+A user story outlines a researcher's requirements for a website, including a sitemap, homepage, collection view, data view, and navigation for easy access to information.
