@@ -1,0 +1,484 @@
+/* Glossary-specific styles */
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.lang-btn {
+    padding: 8px 20px;
+    background: #ffffff;
+    border: 2px solid #2c5aa0;
+    border-radius: 4px;
+    color: #2c5aa0;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #e8f0ff;
+}
+
+.lang-btn.active {
+    background: #2c5aa0;
+    color: #ffffff;
+}
+
+/* Glossary Layout */
+.glossary-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.glossary-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Filter Sections */
+.filter-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-section:last-of-type {
+    border-bottom: none;
+}
+
+.filter-section h2 {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: #2c5aa0;
+}
+
+/* Search Input */
+.search-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.95em;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.1);
+}
+
+/* Filter Options */
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.filter-option:hover span {
+    color: #2c5aa0;
+}
+
+/* Tag Filters */
+.tag-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tag-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 0.9em;
+}
+
+.tag-filter input {
+    cursor: pointer;
+}
+
+.tag-filter label {
+    cursor: pointer;
+    flex: 1;
+}
+
+.tag-filter .tag-count {
+    color: #999;
+    font-size: 0.85em;
+}
+
+/* Reset Button */
+.reset-filters {
+    width: 100%;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.reset-filters:hover {
+    background: #2c5aa0;
+    color: #ffffff;
+    border-color: #2c5aa0;
+}
+
+/* Results Info */
+.results-info {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border-left: 3px solid #2c5aa0;
+    border-radius: 4px;
+}
+
+.results-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Glossary Entries */
+.glossary-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Entry Card */
+.entry-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    scroll-margin-top: 100px;
+}
+
+.entry-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-color: #2c5aa0;
+}
+
+.entry-card.highlighted {
+    border-color: #2c5aa0;
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+    animation: highlight-pulse 1s ease;
+}
+
+@keyframes highlight-pulse {
+    0%, 100% {
+        background: #ffffff;
+    }
+    50% {
+        background: rgba(44, 90, 160, 0.05);
+    }
+}
+
+/* Entry Header */
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.entry-title {
+    font-size: 1.5em;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Level Badge */
+.level-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.level-badge.basic {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.level-badge.intermediate {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.level-badge.research {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+/* WIP Badge */
+.wip-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+    background: #fff9e6;
+    color: #856404;
+    border: 1px solid #ffc107;
+}
+
+/* Entry Body */
+.entry-body {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: #1a1a1a;
+}
+
+.entry-body a {
+    color: #2c5aa0;
+    text-decoration: underline;
+}
+
+.entry-body a:hover {
+    color: #1a3d6b;
+}
+
+/* Tags */
+.entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.tag:not(.tag-wip):hover {
+    background: #e8f0ff;
+    border-color: #2c5aa0;
+    color: #2c5aa0;
+}
+
+.tag-wip {
+    background: #fff9e6;
+    border-color: #ffc107;
+    color: #856404;
+}
+
+/* Sources */
+.entry-sources {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.entry-sources h4 {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.entry-sources ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.entry-sources li {
+    padding: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.entry-sources a {
+    color: #2c5aa0;
+}
+
+/* Related Terms */
+.entry-related {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.entry-related h4 {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.related-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.related-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #2c5aa0;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.related-link:hover {
+    background: #e8f0ff;
+    border-color: #2c5aa0;
+    text-decoration: none;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.no-results p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.no-results button {
+    padding: 10px 20px;
+    background: #2c5aa0;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+
+.no-results button:hover {
+    background: #1a3d6b;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .glossary-sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .glossary-sidebar {
+        padding: 15px;
+    }
+
+    .entry-card {
+        padding: 20px;
+    }
+
+    .entry-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .entry-title {
+        font-size: 1.3em;
+    }
+
+    .language-switcher {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .lang-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .entry-card {
+        padding: 15px;
+    }
+
+    .entry-title {
+        font-size: 1.2em;
+    }
+
+    .entry-body {
+        font-size: 0.95em;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .glossary-sidebar,
+    .language-switcher,
+    .results-info {
+        display: none !important;
+    }
+
+    .entry-card {
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        box-shadow: none;
+    }
+
+    .entry-card:hover {
+        box-shadow: none;
+        border-color: #ccc;
+    }
+
+    .entry-body a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .entry-sources a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}

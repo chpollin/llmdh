@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Glossary of Generative AI and Large Language Models - Summer School by Dr. Christopher Pollin">
+        <meta name="keywords"
+            content="LLM, Glossary, Generative AI, Prompt Engineering, RAG, Context Window">
+        <meta name="author" content="Dr. Christopher Pollin, Digital Humanities Craft OG">
+        <title>Glossary - LLM Summer School for DH</title>
+        <link rel="stylesheet" href="../assets/style.css">
+        <link rel="stylesheet" href="../assets/glossary.css">
+        <!-- Dublin Core Metadata -->
+        <meta name="DC.title" content="Glossary - Large Language Models for Digital Humanities">
+        <meta name="DC.creator" content="Pollin, Christopher">
+        <meta name="DC.type" content="InteractiveResource">
+        <meta name="DC.format" content="text/html">
+        <meta name="DC.language" content="en">
+        <meta name="DC.date" content="2025">
+        <meta name="DC.publisher" content="Digital Humanities Craft OG">
+        <meta name="DC.subject" content="Large Language Models; Generative AI; Glossary">
+        <meta name="DC.rights" content="CC-BY">
+    </head>
+    <body>
+        <!-- Skip to Content Link -->
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+        <!-- Header -->
+        <header class="site-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/img/dhcraft-logo.png"
+                                alt="Digital Humanities Craft OG Logo" width="40" height="40">
+                        </a>
+                    </div>
+                    <h1 class="site-title">LLM Summer School for DH</h1>
+                    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html#fundamentals">Fundamentals</a>
+                        <a href="../index.html#prompt-engineering">Prompt Engineering</a>
+                        <a href="../index.html#digital-editions">Digital Editions</a>
+                        <a href="index.html" class="active">Glossary</a>
+                        <a href="../index.html#contact">Contact</a>
+                    </nav>
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu"
+                        aria-expanded="false">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Glossary of Generative AI & Large Language Models</h1>
+                <p class="subtitle">Structured reference for concepts, techniques, and terminology</p>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en" aria-pressed="true">English</button>
+                    <button class="lang-btn" data-lang="de" aria-pressed="false">Deutsch</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- Sidebar: Filters -->
+                    <aside class="glossary-sidebar" role="complementary" aria-label="Filters and search">
+                        <div class="filter-section">
+                            <h2>Search</h2>
+                            <input type="text" id="search-input" class="search-input"
+                                placeholder="Search terms..." aria-label="Search glossary terms">
+                        </div>
+
+                        <div class="filter-section">
+                            <h2>Level</h2>
+                            <div class="level-filters">
+                                <label class="filter-option">
+                                    <input type="radio" name="level" value="all" checked>
+                                    <span>All levels</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="level" value="basic">
+                                    <span>Basic only</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="level" value="basic-intermediate">
+                                    <span>Basic + Intermediate</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h2>Tags</h2>
+                            <div id="tag-filters" class="tag-filters">
+                                <!-- Dynamically populated -->
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <label class="filter-option">
+                                <input type="checkbox" id="hide-wip">
+                                <span>Hide work in progress</span>
+                            </label>
+                        </div>
+
+                        <button class="reset-filters" id="reset-filters">Reset all filters</button>
+                    </aside>
+
+                    <!-- Main: Glossary Entries -->
+                    <div class="glossary-content">
+                        <div class="results-info">
+                            <p id="results-count">Loading entries...</p>
+                        </div>
+
+                        <div id="glossary-entries" class="glossary-entries">
+                            <!-- Dynamically populated -->
+                        </div>
+
+                        <div id="no-results" class="no-results" style="display: none;">
+                            <p>No entries found matching your criteria.</p>
+                            <button onclick="document.getElementById('reset-filters').click()">Reset filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><strong>Dr. Christopher Pollin</strong><br> Digital Humanities Craft
+                            OG<br> Email: <a href="mailto:christopher.pollin@dhcraft.org"
+                                >christopher.pollin@dhcraft.org</a><br> GitHub: <a
+                                href="https://github.com/chpollin/llmdh" target="_blank"
+                                rel="noopener noreferrer">github.com/chpollin/llmdh</a></p>
+                    </div>
+                    <div class="footer-logo">
+                        <img src="../assets/img/dhcraft-logo-inverse.png"
+                            alt="DHCraft - Digital Humanities Craft OG Logo" width="60" height="60">
+                        <p>Digital Humanities Craft OG<br>
+                            <a href="http://dhcraft.org/" target="_blank" rel="noopener noreferrer"
+                                >dhcraft.org</a></p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Digital Humanities Craft OG. All materials are licensed
+                        under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+                            rel="noopener noreferrer">CC BY 4.0</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../assets/script.js"></script>
+        <script src="../assets/glossary.js"></script>
+    </body>
+</html>
