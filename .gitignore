@@ -3,3 +3,4 @@
 __pycache__/
 *.pyc
 .claude/settings.local.json
+ai-engineering/agentic coding/demo-2/.claude/settings.local.json
