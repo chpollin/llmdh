@@ -146,6 +146,7 @@ level: advanced
 Grokking bezeichnet ein kontraintuitives Phänomen beim Training neuronaler Netze, bei dem die Generalisierungsfähigkeit (das Verständnis für neue Daten) erst sprunghaft einsetzt, lange nachdem das Modell die Trainingsdaten bereits perfekt auswendig gelernt hat (Overfitting). Während klassische Lehrmeinungen empfehlen, das Training zu stoppen, sobald das Modell beginnt, die Trainingsdaten bloß zu memorieren, zeigen Power et al. (2022), dass bei extrem langer fortgesetzter Optimierung plötzlich ein Übergang stattfinden kann: Das Modell verwirft die „auswendig gelernte" komplexe Lösung und findet die einfachere, wahre Regel (den Algorithmus) hinter den Daten. Dies deutet darauf hin, dass "Verstehen" im Lösungsraum oft schwerer zu finden ist als Memorieren und Geduld beim Training erfordert.
 
 * Power, Alethea, et al. „Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets". _arXiv preprint_, 2022. [https://arxiv.org/abs/2201.02177](https://arxiv.org/abs/2201.02177).
+* Video: [Grokking erklärt](https://youtu.be/D8GOeCFFby4)
 
 ## Many-Shot
 id: many-shot
