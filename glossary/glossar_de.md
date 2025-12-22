@@ -224,6 +224,17 @@ level: basic
 
 Bezeichnet die absolute Spitzenklasse der KI-Entwicklung zu einem gegebenen Zeitpunkt. Frontier Models sind jene Modelle, die die aktuellen Grenzen dessen, was KI kann, verschieben.
 
+## Jagged Frontier
+id: jagged-frontier
+en: Jagged Frontier
+tags: fundamentals, evaluation
+level: intermediate
+
+Die **Jagged Frontier** (gezackte Grenze) ist ein von Ethan Mollick geprägtes Konzept, das die unvorhersehbare und ungleichmäßige Natur der KI-Fähigkeiten beschreibt. Mollick verwendet die Metapher einer **Festungsmauer**: Man stelle sich eine Burgmauer vor, bei der einige Türme und Zinnen weit in die Landschaft hinausragen, während andere zum Zentrum der Burg zurückweichen. Diese Mauer repräsentiert die Fähigkeitsgrenze der KI – je weiter vom Zentrum entfernt, desto schwieriger die Aufgabe. Innerhalb der Mauer brilliert KI; außerhalb kämpft sie und neigt zu Fehlern. Das Problem: Diese Grenze ist unsichtbar, und Aufgaben, die gleich schwer erscheinen, können auf verschiedenen Seiten der Frontier liegen. KI kann beispielsweise bei komplexen Strategieaufgaben brillieren, aber bei einfachen Wortspielen oder dem Zählen von Buchstaben scheitern. Das Konzept unterstreicht die Notwendigkeit kontinuierlicher Experimente, um die Konturen dieser gezackten Grenze durch Versuch und Irrtum zu kartieren.
+
+* Dell'Acqua, Fabrizio, Edward McFowland III, Ethan Mollick, et al. „Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality". Harvard Business School Working Paper, No. 24-013, September 2023.
+* Mollick, Ethan. „Centaurs and Cyborgs on the Jagged Frontier". _One Useful Thing_, 2023. [https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged](https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged).
+
 ## LLM-as-a-Judge
 id: llm-as-judge
 en: LLM-as-a-Judge

@@ -224,6 +224,17 @@ level: basic
 
 Refers to the absolute cutting edge of AI development at any given time. Frontier Models are those models that push the current boundaries of what AI can do.
 
+## Jagged Frontier
+id: jagged-frontier
+en: Jagged Frontier
+tags: fundamentals, evaluation
+level: intermediate
+
+The **Jagged Frontier** is a concept coined by Ethan Mollick that describes the unpredictable and uneven nature of AI capabilities. Mollick uses the metaphor of a **fortress wall**: imagine a castle wall with some towers and battlements jutting out into the countryside while others fold back toward the center of the castle. This wall represents the capability boundary of AI—the further from the center, the harder the task. Inside the wall, AI excels; outside, it struggles and is prone to errors. The challenge is that this wall is invisible, and tasks that seem equally difficult can fall on different sides of the frontier. For instance, AI might excel at complex strategy tasks but fail at simple word games or counting letters. The concept underscores the necessity of continuous experimentation to map out the contours of this jagged frontier through trial and error.
+
+* Dell'Acqua, Fabrizio, Edward McFowland III, Ethan Mollick, et al. "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality". Harvard Business School Working Paper, No. 24-013, September 2023.
+* Mollick, Ethan. "Centaurs and Cyborgs on the Jagged Frontier". _One Useful Thing_, 2023. [https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged](https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged).
+
 ## LLM-as-a-Judge
 id: llm-as-judge
 en: LLM-as-a-Judge
