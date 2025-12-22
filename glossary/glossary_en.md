@@ -112,9 +112,10 @@ en: Red Teaming
 tags: safety, evaluation
 level: intermediate
 
-A structured security process in which a group of experts (or other AI models) deliberately attempts to attack, manipulate, or provoke harmful outputs from an AI system ("Adversarial Testing"). The goal is to identify weaknesses, biases, and security vulnerabilities _before_ release to make the model more robust against [[#Jailbreak]] and [[#Prompt Injection]].
+Structured adversarial testing of AI systems in which individuals attempt to provoke harmful, undesirable, or erroneous outputs to identify, measure, and reduce vulnerabilities. Unlike traditional cybersecurity red teaming, it encompasses both security-related and content-related risks such as [[#Bias]], misinformation, or toxic content. The goal is to identify weaknesses _before_ release to make the model more robust against [[#Jailbreak]] and [[#Prompt Injection]].
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned". arXiv:2209.07858. Preprint, arXiv, November 22, 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
+* Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
 ## Prompt Engineering
 id: prompt-engineering
@@ -667,19 +668,22 @@ en: Prompt Injection
 tags: safety
 level: intermediate
 
-Prompt Injection refers to an attack technique on Large Language Models (LLMs) that uses deliberately constructed inputs to override the developer-specified system instructions and hijack the model's original objective. By exploiting the flexibility of natural language input, the attacker causes the model to ignore its actual task and instead execute commands hidden in the prompt, often leading to leaking internal instructions or manipulating application logic.
+An attack vector where malicious natural language inputs override an LLM's original instructions and cause the model to exhibit unintended behavior. The attack exploits the architectural inability of LLMs to distinguish between trusted developer instructions and untrusted user inputs. A distinction is made between **direct prompt injection** (malicious input by the user) and **indirect prompt injection** (hidden instructions in external data sources such as websites or documents).
 
-* Greshake, Kai, et al. "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". _arXiv preprint_, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Perez, Fábio & Ribeiro, Ian. "Ignore Previous Prompt: Attack Techniques for Language Models". NeurIPS ML Safety Workshop 2022. [https://arxiv.org/abs/2211.09527](https://arxiv.org/abs/2211.09527).
+* Greshake, Kai, et al. "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security, 2023, 79–90. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
-## Jailbreak
+## Jailbreaking
 id: jailbreak
-en: Jailbreak
+en: Jailbreaking
 tags: safety
 level: intermediate
 
-A special form of adversarial prompting that primarily aims to circumvent a model's implemented safety filters and content restrictions. By embedding requests in hypothetical scenarios, complex role-plays, or simulated "developer modes," the model is manipulated to temporarily suspend its safety guidelines and generate uncensored outputs that would normally be blocked.
+An adversarial attack technique where specially constructed prompts bypass an LLM's safety mechanisms to force outputs that would normally be blocked or censored. Unlike [[#Prompt Injection]], jailbreaking explicitly targets circumventing trained-in safety guardrails (safety training/[[#Alignment]]), rather than overriding system instructions. Wei et al. identify two failure modes: **competing objectives** (conflict between capabilities and safety goals) and **mismatched generalization** (safety training fails in domains where the model has capabilities).
 
-* Greshake, Kai, et al. "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". _arXiv preprint_, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Wei, Alexander, Nika Haghtalab & Jacob Steinhardt. "Jailbroken: How Does LLM Safety Training Fail?" Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [https://arxiv.org/abs/2307.02483](https://arxiv.org/abs/2307.02483).
+* Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
 ## Model Collapse
 id: model-collapse
