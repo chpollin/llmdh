@@ -354,6 +354,7 @@ level: intermediate
 Ein Teilgebiet des maschinellen Lernens, bei dem ein Agent lernt, Entscheidungen zu treffen, indem er Handlungen in einer Umgebung ausführt und dafür positives oder negatives Feedback (Reward) erhält. Im Kontext von LLMs (siehe [[#Reinforcement Learning from Human Feedback (RLHF)|RLHF]]) dient RL nicht dem Erlernen von Sprache (das passiert im [[#Pre-Training]]), sondern der Optimierung von Verhaltensstrategien, um die generierten Texte an menschliche Präferenzen anzupassen.
 
 * Sutton, Richard S., und Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2. Aufl., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
+* Video: [TODO_TITEL](https://youtu.be/LHsgtcNNM0A)
 
 ## Temperature
 id: temperature

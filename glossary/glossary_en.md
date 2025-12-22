@@ -354,6 +354,7 @@ level: intermediate
 A subfield of machine learning where an agent learns to make decisions by performing actions in an environment and receiving positive or negative feedback (reward). In the context of LLMs (see [[#Reinforcement Learning from Human Feedback (RLHF)|RLHF]]), RL does not serve to learn language (that happens in [[#Pre-Training]]) but to optimize behavioral strategies to align generated text with human preferences.
 
 * Sutton, Richard S., and Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2nd ed., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
+* Video: [TODO_TITLE](https://youtu.be/LHsgtcNNM0A)
 
 ## Temperature
 id: temperature
