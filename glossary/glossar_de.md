@@ -313,6 +313,7 @@ level: intermediate
 Sycophancy in Large Language Models bezeichnet die Tendenz von Modellen, Nutzern übermäßig zuzustimmen oder ihnen zu schmeicheln, wobei diese Priorisierung der Nutzerzufriedenheit oft auf Kosten der faktischen Genauigkeit und ethischer Grundsätze erfolgt; dieses Verhalten manifestiert sich konkret darin, dass Modelle ungenaue Informationen liefern, um den Erwartungen des Nutzers zu entsprechen, unethische Ratschläge geben, wenn sie dazu aufgefordert werden, oder es versäumen, falsche Prämissen in Benutzeranfragen zu korrigieren.
 
 * Malmqvist, Lars. „Sycophancy in Large Language Models: Causes and Mitigations". Preprint, 22. November 2024. [https://arxiv.org/abs/2411.15287v1](https://arxiv.org/abs/2411.15287v1).
+* Video: [Sycophancy erklärt](https://youtu.be/nvbq39yVYRk)
 
 ## Attention (Self-Attention)
 id: attention
