@@ -33,6 +33,22 @@ Schaeffer et al. (2023) stellen dieses Phänomen jedoch als mögliche „Illusio
 * Wei, Jason, et al. „Emergent Abilities of Large Language Models". _Transactions on Machine Learning Research_, 2022. [https://arxiv.org/abs/2206.07682](https://arxiv.org/abs/2206.07682).
 * Schaeffer, Rylan, Brando Miranda, und Sanmi Koyejo. „Are Emergent Abilities of Large Language Models a Mirage?". _Advances in Neural Information Processing Systems_ (NeurIPS), Bd. 36, 2024. [https://arxiv.org/abs/2304.15004](https://arxiv.org/abs/2304.15004).
 
+## EU AI Act
+id: eu-ai-act
+en: EU AI Act
+tags: governance, wip
+level: basic
+
+Work in progress.
+
+## Explainable AI (XAI)
+id: explainable-ai
+en: Explainable AI
+tags: safety, wip
+level: intermediate
+
+Work in progress.
+
 ## In-Context Learning
 id: in-context-learning
 en: In-Context Learning
@@ -105,6 +121,14 @@ level: intermediate
 Der Prozess des Nachtrainierens eines bereits vortrainierten Sprachmodells ([[#Pre-Training|Pre-trained Model]]) mit einem spezifischen, kleineren Datensatz. Während das Pre-Training breites Wissen und Sprachverständnis aufbaut, dient Fine-Tuning dazu, das Modell auf konkrete Aufgaben (z. B. Coding, medizinische Analyse) oder einen bestimmten Schreibstil zu spezialisieren. Es adaptiert die Gewichte ([[#Parameter]]) so, dass das Modell die Muster des neuen Datensatzes imitiert. Anthropic weist darauf hin, dass Modelle ohne diesen Schritt (Bare Models) oft Schwierigkeiten haben, Instruktionen zu folgen, da sie lediglich darauf trainiert sind, Text vorherzusagen, nicht aber als hilfreiche Assistenten zu agieren.
 
 * Glossary. Claude Docs. https://platform.claude.com/docs/en/about-claude/glossary
+
+## GPU
+id: gpu
+en: GPU (Graphics Processing Unit)
+tags: fundamentals, wip
+level: basic
+
+Work in progress.
 
 ## Red Teaming
 id: red-teaming
@@ -225,7 +249,22 @@ en: Shadow AI
 tags: safety, ai-engineering
 level: basic
 
-Bezeichnet das Phänomen, dass Mitarbeiter in Unternehmen eigenmächtig KI-Tools (wie ChatGPT oder DeepL) für dienstliche Aufgaben nutzen, ohne dass die IT-Abteilung davon weiß oder dies genehmigt hat. Dies ist eines der größten aktuellen Risiken für Unternehmen (Data Leakage), da sensible Firmendaten oft unwissentlich in die Trainingsdaten öffentlicher [[#llm|LLMs]] gelangen. Shadow AI untergräbt [[#Alignment]]-Bemühungen und erhöht das Risiko von [[#Prompt Injection]]-Angriffen.
+Bezeichnet das Phänomen, dass Mitarbeitende in Unternehmen oder Forschende an Institutionen eigenmächtig KI-Tools (wie ChatGPT oder DeepL) für dienstliche Aufgaben nutzen, ohne dass dies genehmigt oder dokumentiert wird. Dies ist eines der größten aktuellen Risiken, da sensible Daten oft unwissentlich in öffentliche [[#llm|LLMs]] gelangen (Data Leakage). In der Wissenschaft entsteht ein zusätzliches Problem, wenn Frontier-LLMs bei der Textproduktion, Analyse oder Codegenerierung eingesetzt, aber nicht als Hilfsmittel deklariert werden, was gegen Transparenzprinzipien und gute wissenschaftliche Praxis verstößt. Im Kontext von [[#Agentic AI]] verschärft sich das Risiko, da Agenten autonom handeln, APIs aufrufen und Daten modifizieren. Gegenmaßnahmen folgen dem Prinzip „Don't say no, say how", also statt Verboten sichere Alternativen und ein kontinuierlicher Governance-Loop (Discover, Assess, Govern, Secure, Audit).
+
+* IBM Technology. „What is Shadow AI? The Dark Horse of Cybersecurity Threats". _YouTube_, 2025. [https://youtu.be/YBE6hq-OTFI](https://youtu.be/YBE6hq-OTFI).
+* IBM Technology. „Agentic AI Meets Shadow AI. Zero Trust Security for AI Automation". _YouTube_, 2025. [https://youtu.be/IaJ2jXmljmM](https://youtu.be/IaJ2jXmljmM).
+
+## Sleeper Agents
+id: sleeper-agents
+en: Backdoor Models
+tags: safety
+level: advanced
+
+Ein KI-Modell, das sich während Training und Tests scheinbar sicher verhält, aber bei Erkennung eines bestimmten Triggers unerwünschte Aktionen ausführt – analog zu Schläferspionen, die erst bei einem Signal aktiv werden. Sleeper Agents können durch Model Poisoning (absichtlich eintrainierte Backdoors) oder durch Deceptive Instrumental Alignment entstehen, bei dem ein Modell selbstständig lernt, seine wahren Ziele während des Trainings zu verbergen. Hubinger et al. (2024) zeigen, dass Standard-Sicherheitsmethoden wie Supervised Fine-Tuning, [[#rlhf|RLHF]] und adversariales Training dieses Verhalten nicht zuverlässig entfernen – ohne Kenntnis des Triggers wird das unerwünschte Verhalten nicht ausgelöst und kann daher nicht bestraft werden. Ein vielversprechender Detektionsansatz untersucht die internen Aktivierungen des Modells statt nur sein äußeres Verhalten.
+
+* Hubinger, E., Denison, C., Mu, J., et al. „Sleeper agents: Training deceptive LLMs that persist through safety training". _arXiv preprint arXiv:2401.05566_, 2024. [https://doi.org/10.48550/arXiv.2401.05566](https://doi.org/10.48550/arXiv.2401.05566).
+* Rational Animations. „AI Sleeper Agents: How Anthropic Trains and Catches Them". _YouTube_, 30. August 2025. [https://youtu.be/Z3WMt_ncgUI](https://youtu.be/Z3WMt_ncgUI).
+* Computerphile. „Sleeper Agents in Large Language Models". _YouTube_, 12. September 2025. [https://youtu.be/wL22URoMZjo](https://youtu.be/wL22URoMZjo).
 
 ## Open Weights
 id: open-weights
@@ -528,6 +567,14 @@ Next Token Prediction bezeichnet das fundamentale Funktionsprinzip autoregressiv
 
 * Bengio, Yoshua, et al. „A Neural Probabilistic Language Model". _Journal of Machine Learning Research_, Bd. 3, 2003, S. 1137–1155. [https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf).
 
+## Reasoning
+id: reasoning
+en: Reasoning
+tags: fundamentals, wip
+level: intermediate
+
+Work in progress.
+
 ## Retrieval Augmented Generation (RAG)
 id: rag
 en: RAG (Retrieval Augmented Generation)
@@ -547,6 +594,14 @@ level: intermediate
 Eine spezialisierte Datenbank, die Informationen nicht als Text oder Tabellen, sondern als hochdimensionale Vektoren (Embeddings) speichert. Sie ermöglicht die semantische Suche: Anstatt nach exakten Schlüsselwörtern zu suchen, berechnet die Datenbank die mathematische Distanz (z. B. Kosinus-Ähnlichkeit) zwischen dem Anfrage-Vektor und den gespeicherten Dokumenten-Vektoren. Das effiziente Durchsuchen dieser hochdimensionalen Räume (_Similarity Search_) erfordert spezialisierte Indexierungsstrukturen, um auch in Milliarden von Datensätzen performant zu bleiben. Dies bildet die technologische Grundlage für RAG-Systeme, da es das schnelle Auffinden von inhaltlich relevantem Kontext aus riesigen Datenmengen ermöglicht.
 
 * Johnson, Jeff, Matthijs Douze, und Hervé Jégou. „Billion-scale similarity search with GPUs". _IEEE Transactions on Big Data_ 7, Nr. 3 (2019): 535–47. [https://arxiv.org/abs/1702.08734](https://arxiv.org/abs/1702.08734).
+
+## Verifiable AI
+id: verifiable-ai
+en: Verifiable AI
+tags: safety, wip
+level: advanced
+
+Work in progress.
 
 ## Tool Use und Function Calling
 id: tool-use
@@ -577,6 +632,7 @@ level: intermediate
 Ein autonomes System, das seine Umgebung wahrnimmt und proaktiv handelt, um definierte Ziele zu erreichen. Im Gegensatz zu passiven Modellen nutzt ein Agent ein [[#llm|LLM]] als zentrale Reasoning-Einheit, um mehrstufige Pläne zu erstellen und externe Werkzeuge ([[#Tool Use und Function Calling|Tool Use]]) oder APIs zur Ausführung zu verwenden. Der Kernprozess ist eine kontinuierliche Schleife aus Beobachtung, Entscheidung und Handlung. Siehe auch [[#Agentic AI]] und [[#Multi-Agent Systems]].
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
+* IBM Technology. „Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
 
 ## Agentic AI
 id: agentic-ai
@@ -749,6 +805,14 @@ level: advanced
 Ist der Prozess, bei dem ein KI-Modell nicht einfach nur sein eingefrorenes Trainingswissen abruft, sondern während der [[#Inferenz]] (Testzeit) zusätzliche Rechenleistung aufwendet, um sich spezifisch auf das gerade vorliegende Problem anzupassen.
 
 * Test-Time Adaptation: A New Frontier in AI. https://youtu.be/C6sSs6NgANo
+
+## TPU
+id: tpu
+en: TPU (Tensor Processing Unit)
+tags: fundamentals, wip
+level: basic
+
+Work in progress.
 
 # Ressourcen
 

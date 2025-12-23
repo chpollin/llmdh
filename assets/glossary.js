@@ -219,7 +219,7 @@ function buildTagFilters() {
 
         const label = document.createElement('label');
         label.htmlFor = `tag-${tag}`;
-        label.textContent = tag;
+        label.textContent = formatTagDisplay(tag);
 
         const count = document.createElement('span');
         count.className = 'tag-count';
@@ -337,7 +337,10 @@ function createEntryCard(entry) {
     entry.tags.forEach(tag => {
         const tagSpan = document.createElement('span');
         tagSpan.className = tag === 'wip' ? 'tag tag-wip' : 'tag';
-        tagSpan.textContent = tag;
+        tagSpan.textContent = formatTagDisplay(tag);
+        tagSpan.dataset.tag = tag;
+        tagSpan.style.cursor = 'pointer';
+        tagSpan.addEventListener('click', () => filterByTag(tag));
         tagsDiv.appendChild(tagSpan);
     });
     card.appendChild(tagsDiv);
@@ -365,33 +368,6 @@ function createEntryCard(entry) {
         });
         sourcesDiv.appendChild(sourcesList);
         card.appendChild(sourcesDiv);
-    }
-
-    // Related terms
-    const related = findRelatedTerms(entry);
-    if (related.length > 0) {
-        const relatedDiv = document.createElement('div');
-        relatedDiv.className = 'entry-related';
-
-        const relatedTitle = document.createElement('h4');
-        relatedTitle.textContent = currentLang === 'de' ? 'Verwandte Begriffe' : 'Related Terms';
-        relatedDiv.appendChild(relatedTitle);
-
-        const relatedTerms = document.createElement('div');
-        relatedTerms.className = 'related-terms';
-        related.forEach(relEntry => {
-            const link = document.createElement('a');
-            link.href = `#${relEntry.id}`;
-            link.className = 'related-link';
-            link.textContent = relEntry.title;
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                scrollToEntry(relEntry.id);
-            });
-            relatedTerms.appendChild(link);
-        });
-        relatedDiv.appendChild(relatedTerms);
-        card.appendChild(relatedDiv);
     }
 
     return card;
@@ -428,38 +404,6 @@ function linkifyTerms(text, currentEntryId) {
     });
 
     return linkedText;
-}
-
-/**
- * Find related terms based on shared tags
- * Rule: Related terms should have a close connection but NOT appear in the body text
- * (terms mentioned in the body are already directly linked)
- */
-function findRelatedTerms(entry, maxResults = 5) {
-    const bodyLower = entry.body.toLowerCase();
-
-    const related = allEntries
-        .filter(e => e.id !== entry.id)
-        // Exclude terms that are already mentioned/linked in the body text
-        // Check both: title in body OR id in link syntax [[#id|...]]
-        .filter(e => {
-            const titleInBody = bodyLower.includes(e.title.toLowerCase());
-            const idInLink = bodyLower.includes(`[[#${e.id}`);
-            return !titleInBody && !idInLink;
-        })
-        .map(e => {
-            // Count shared tags (excluding 'wip')
-            const sharedTags = e.tags.filter(tag =>
-                tag !== 'wip' && entry.tags.includes(tag)
-            ).length;
-            return { entry: e, score: sharedTags };
-        })
-        .filter(r => r.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, maxResults)
-        .map(r => r.entry);
-
-    return related;
 }
 
 /**
@@ -593,4 +537,41 @@ function debounce(func, wait) {
  */
 function escapeRegex(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Format tag display name (ai-engineering -> AI-Engineering, etc.)
+ */
+function formatTagDisplay(tag) {
+    const displayNames = {
+        'ai-engineering': 'AI-Engineering',
+        'fundamentals': 'Fundamentals',
+        'architecture': 'Architecture',
+        'training': 'Training',
+        'prompting': 'Prompting',
+        'agents': 'Agents',
+        'safety': 'Safety',
+        'evaluation': 'Evaluation',
+        'governance': 'Governance'
+    };
+    return displayNames[tag] || tag.charAt(0).toUpperCase() + tag.slice(1);
+}
+
+/**
+ * Filter by specific tag (called when clicking a tag)
+ */
+function filterByTag(tag) {
+    // Clear existing tag filters and set only this one
+    activeFilters.tags.clear();
+    activeFilters.tags.add(tag);
+
+    // Update checkboxes
+    document.querySelectorAll('#tag-filters input[type="checkbox"]').forEach(cb => {
+        cb.checked = cb.value === tag;
+    });
+
+    // Scroll to top
+    document.getElementById('glossary-entries').scrollIntoView({ behavior: 'smooth' });
+
+    applyFilters();
 }

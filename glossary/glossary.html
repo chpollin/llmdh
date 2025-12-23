@@ -138,10 +138,14 @@
             }
 
             /* Alphabet Grid */
+            .alphabet-section {
+                padding-top: 0;
+            }
+
             .alpha-grid {
                 display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 4px;
+                grid-template-columns: repeat(9, 1fr);
+                gap: 3px;
             }
 
             .alpha-btn {
@@ -412,10 +416,29 @@
                 line-height: 1.3;
             }
 
-            .term-title-en {
-                font-size: 0.85em;
-                color: var(--text-muted);
-                font-style: italic;
+            .term-categories {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-top: 4px;
+            }
+
+            .term-category {
+                padding: 2px 8px;
+                background: transparent;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                font-size: 0.75em;
+                color: #888;
+                cursor: pointer;
+                transition: all 0.15s ease;
+                font-style: normal;
+            }
+
+            .term-category:hover {
+                border-color: var(--primary);
+                color: var(--primary);
+                background: #f7fafc;
             }
 
             .term-level {
@@ -510,23 +533,6 @@
                 border-color: var(--accent);
             }
 
-            /* Tags - Minimal inline style */
-            .term-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                margin-top: 16px;
-            }
-
-            .term-tag {
-                padding: 3px 8px;
-                background: transparent;
-                border: 1px solid #ddd;
-                border-radius: 3px;
-                font-size: 0.75em;
-                color: #888;
-            }
-
             /* Sources - Compact inline style */
             .term-sources {
                 margin-top: 16px;
@@ -586,44 +592,6 @@
             .term-sources .source-icon.paper { color: #2c5aa0; }
             .term-sources .source-icon.web { color: #666; }
 
-            /* Related Terms - Compact style */
-            .term-related {
-                margin-top: 12px;
-                padding-top: 12px;
-                border-top: 1px solid #eee;
-            }
-
-            .term-related h4 {
-                font-size: 0.75em;
-                font-weight: 500;
-                color: #999;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                margin-bottom: 8px;
-            }
-
-            .related-links {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-
-            .related-link {
-                padding: 4px 10px;
-                background: #f5f5f5;
-                border: none;
-                border-radius: 4px;
-                font-size: 0.8em;
-                color: var(--primary);
-                text-decoration: none;
-                transition: all 0.15s ease;
-            }
-
-            .related-link:hover {
-                background: var(--primary);
-                color: white;
-            }
-
             /* ========================================
                RESPONSIVE
                ======================================== */
@@ -646,6 +614,10 @@
 
                 .alpha-grid {
                     grid-template-columns: repeat(13, 1fr);
+                }
+
+                .alphabet-section {
+                    padding-top: 12px;
                 }
 
                 .category-list {
@@ -789,7 +761,6 @@
                     </svg>
                     <input type="text" id="search" placeholder="Begriff suchen..." aria-label="Glossar durchsuchen">
                 </div>
-                <p class="search-hint"><kbd>Ctrl</kbd> + <kbd>K</kbd> zum Suchen</p>
             </div>
         </section>
 
@@ -809,8 +780,7 @@
                 </div>
 
                 <!-- Alphabet -->
-                <div class="nav-section">
-                    <h3>Alphabet</h3>
+                <div class="nav-section alphabet-section">
                     <div class="alpha-grid">
                         <a href="#letter-A" class="alpha-btn">A</a>
                         <a href="#letter-B" class="alpha-btn">B</a>
@@ -882,7 +852,7 @@
 
                 <!-- Level -->
                 <div class="nav-section">
-                    <h3>Schwierigkeit</h3>
+                    <h3>Level</h3>
                     <div class="level-list">
                         <div class="level-item active" data-level="basic">
                             <span class="level-dot basic"></span>
@@ -1023,7 +993,10 @@
                                 entry.en = line.replace('en:', '').trim();
                             } else if (line.startsWith('tags:')) {
                                 entry.tags = line.replace('tags:', '').split(',').map(t => t.trim());
-                                entry.tags.forEach(tag => this.allTags.add(tag));
+                                // Add to allTags but exclude 'wip' (it's a status marker, not a category)
+                                entry.tags.forEach(tag => {
+                                    if (tag !== 'wip') this.allTags.add(tag);
+                                });
                             } else if (line.startsWith('level:')) {
                                 entry.level = line.replace('level:', '').trim();
                             } else if (line === '') {
@@ -1125,22 +1098,13 @@
                         </div>
                     ` : '';
 
-                    const relatedTerms = this.findRelatedTerms(entry);
-                    const relatedHtml = relatedTerms.length > 0 ? `
-                        <div class="term-related">
-                            <h4>Verwandte Begriffe</h4>
-                            <div class="related-links">
-                                ${relatedTerms.map(r => `<a href="#${r.id}" class="related-link">${r.title}</a>`).join('')}
-                            </div>
-                        </div>
-                    ` : '';
-
+                    
                     return `
                         <article class="term-card" id="${entry.id}">
                             <div class="term-header">
                                 <div class="term-title-group">
                                     <h3 class="term-title">${entry.title}</h3>
-                                    ${entry.en ? `<span class="term-title-en">${entry.en}</span>` : ''}
+                                    ${entry.tags.length > 0 ? `<div class="term-categories">${entry.tags.map(t => `<span class="term-category" data-tag="${t}">${this.formatTagDisplay(t)}</span>`).join('')}</div>` : ''}
                                 </div>
                                 <span class="term-level ${entry.level}">${this.capitalizeFirst(entry.level)}</span>
                                 <div class="expand-toggle">
@@ -1152,11 +1116,7 @@
                             <p class="term-preview">${preview}</p>
                             <div class="term-body">
                                 <div class="term-definition">${bodyHtml}</div>
-                                <div class="term-tags">
-                                    ${entry.tags.map(t => `<span class="term-tag">${t}</span>`).join('')}
-                                </div>
                                 ${sourcesHtml}
-                                ${relatedHtml}
                             </div>
                         </article>
                     `;
@@ -1232,34 +1192,13 @@
                         icon = '<i class="fas fa-link source-icon web"></i>';
                     }
 
-                    // Convert markdown links to HTML and prepend icon
-                    const formatted = source.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+                    // Convert markdown to HTML
+                    let formatted = source;
+                    // Convert markdown links [text](url) to HTML
+                    formatted = formatted.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+                    // Convert markdown italic _text_ to HTML <em>
+                    formatted = formatted.replace(/_([^_]+)_/g, '<em>$1</em>');
                     return icon + formatted;
-                },
-
-                // Find related terms based on shared tags
-                // Rule: Related terms should have a close connection but NOT appear in the body text
-                // (terms mentioned in the body are already directly linked)
-                findRelatedTerms(entry, max = 4) {
-                    const bodyLower = entry.body.toLowerCase();
-
-                    return this.entries
-                        .filter(e => e.id !== entry.id)
-                        // Exclude terms that are already mentioned/linked in the body text
-                        // Check both: title in body OR id in link syntax [[#id|...]]
-                        .filter(e => {
-                            const titleInBody = bodyLower.includes(e.title.toLowerCase());
-                            const idInLink = bodyLower.includes(`[[#${e.id}`);
-                            return !titleInBody && !idInLink;
-                        })
-                        .map(e => ({
-                            entry: e,
-                            score: e.tags.filter(t => entry.tags.includes(t)).length
-                        }))
-                        .filter(r => r.score > 0)
-                        .sort((a, b) => b.score - a.score)
-                        .slice(0, max)
-                        .map(r => r.entry);
                 },
 
                 // Get filtered entries based on current filters
@@ -1317,13 +1256,16 @@
 
                     this.entries.forEach(entry => {
                         entry.tags.forEach(tag => {
-                            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                            // Exclude 'wip' from categories - it's a status marker, not a category
+                            if (tag !== 'wip') {
+                                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                            }
                         });
                     });
 
                     const sortedTags = Object.entries(tagCounts)
                         .sort((a, b) => b[1] - a[1])
-                        .slice(0, 8);
+                        .slice(0, 10);
 
                     let html = `
                         <div class="category-item active" data-category="all">
@@ -1335,7 +1277,7 @@
                     sortedTags.forEach(([tag, count]) => {
                         html += `
                             <div class="category-item" data-category="${tag}">
-                                <span>${this.capitalizeFirst(tag)}</span>
+                                <span>${this.formatTagDisplay(tag)}</span>
                                 <span class="count">${count}</span>
                             </div>
                         `;
@@ -1442,6 +1384,20 @@
                             const id = e.target.getAttribute('href').substring(1);
                             this.scrollToEntry(id);
                         }
+                        // Handle clicks on category tags - filter by that tag
+                        if (e.target.classList.contains('term-category')) {
+                            e.stopPropagation(); // Don't toggle card expansion
+                            const tag = e.target.dataset.tag;
+                            this.filterByTag(tag);
+                        }
+                    });
+
+                    // Handle hashchange for back/forward navigation
+                    window.addEventListener('hashchange', () => {
+                        if (window.location.hash) {
+                            const id = window.location.hash.substring(1);
+                            this.scrollToEntry(id);
+                        }
                     });
                 },
 
@@ -1449,11 +1405,15 @@
                 scrollToEntry(id) {
                     const element = document.getElementById(id);
                     if (element) {
-                        // Update URL
-                        history.pushState(null, null, `#${id}`);
+                        // Only apply effects for actual entries, not letter sections
+                        const isEntry = !id.startsWith('letter-');
 
-                        // Expand the card
-                        element.classList.add('expanded');
+                        if (isEntry) {
+                            // Update URL
+                            history.pushState(null, null, `#${id}`);
+                            // Expand the card
+                            element.classList.add('expanded');
+                        }
 
                         // Scroll with offset for fixed header
                         const headerOffset = 90;
@@ -1465,11 +1425,13 @@
                             behavior: 'smooth'
                         });
 
-                        // Highlight effect
-                        element.style.boxShadow = '0 0 0 3px var(--primary-light)';
-                        setTimeout(() => {
-                            element.style.boxShadow = '';
-                        }, 2000);
+                        // Highlight effect only for entries
+                        if (isEntry) {
+                            element.style.boxShadow = '0 0 0 3px var(--primary-light)';
+                            setTimeout(() => {
+                                element.style.boxShadow = '';
+                            }, 2000);
+                        }
                     }
                 },
 
@@ -1479,6 +1441,43 @@
                         const id = window.location.hash.substring(1);
                         setTimeout(() => this.scrollToEntry(id), 300);
                     }
+                },
+
+                // Filter by specific tag (called when clicking a tag)
+                filterByTag(tag) {
+                    // Update filter
+                    this.activeFilters.category = tag;
+
+                    // Update category list UI
+                    document.querySelectorAll('.category-item').forEach(item => {
+                        item.classList.remove('active');
+                        if (item.dataset.category === tag) {
+                            item.classList.add('active');
+                        }
+                    });
+
+                    // Scroll to top of entries
+                    document.querySelector('.glossary-content').scrollIntoView({ behavior: 'smooth' });
+
+                    // Re-render
+                    this.renderEntries();
+                    this.updateStats();
+                },
+
+                // Format tag display name (ai-engineering -> AI-Engineering, etc.)
+                formatTagDisplay(tag) {
+                    const displayNames = {
+                        'ai-engineering': 'AI-Engineering',
+                        'fundamentals': 'Fundamentals',
+                        'architecture': 'Architecture',
+                        'training': 'Training',
+                        'prompting': 'Prompting',
+                        'agents': 'Agents',
+                        'safety': 'Safety',
+                        'evaluation': 'Evaluation',
+                        'governance': 'Governance'
+                    };
+                    return displayNames[tag] || this.capitalizeFirst(tag);
                 },
 
                 // Utility: capitalize first letter
