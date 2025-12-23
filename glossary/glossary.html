@@ -1238,9 +1238,20 @@
                 },
 
                 // Find related terms based on shared tags
+                // Rule: Related terms should have a close connection but NOT appear in the body text
+                // (terms mentioned in the body are already directly linked)
                 findRelatedTerms(entry, max = 4) {
+                    const bodyLower = entry.body.toLowerCase();
+
                     return this.entries
                         .filter(e => e.id !== entry.id)
+                        // Exclude terms that are already mentioned/linked in the body text
+                        // Check both: title in body OR id in link syntax [[#id|...]]
+                        .filter(e => {
+                            const titleInBody = bodyLower.includes(e.title.toLowerCase());
+                            const idInLink = bodyLower.includes(`[[#${e.id}`);
+                            return !titleInBody && !idInLink;
+                        })
                         .map(e => ({
                             entry: e,
                             score: e.tags.filter(t => entry.tags.includes(t)).length

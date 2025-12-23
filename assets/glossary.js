@@ -440,8 +440,13 @@ function findRelatedTerms(entry, maxResults = 5) {
 
     const related = allEntries
         .filter(e => e.id !== entry.id)
-        // Exclude terms that are already mentioned in the body text
-        .filter(e => !bodyLower.includes(e.title.toLowerCase()))
+        // Exclude terms that are already mentioned/linked in the body text
+        // Check both: title in body OR id in link syntax [[#id|...]]
+        .filter(e => {
+            const titleInBody = bodyLower.includes(e.title.toLowerCase());
+            const idInLink = bodyLower.includes(`[[#${e.id}`);
+            return !titleInBody && !idInLink;
+        })
         .map(e => {
             // Count shared tags (excluding 'wip')
             const sharedTags = e.tags.filter(tag =>
