@@ -6,6 +6,7 @@
         <meta name="description"
             content="Glossar: Generative KI und Large Language Models - Summer School by Dr. Christopher Pollin">
         <title>Glossar - LLM Summer School for DH</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../assets/style.css">
         <style>
             /* ========================================
@@ -558,9 +559,7 @@
             }
 
             .term-sources li::before {
-                content: "→";
-                margin-right: 4px;
-                color: #ccc;
+                content: none;
             }
 
             .term-sources a {
@@ -571,6 +570,21 @@
             .term-sources a:hover {
                 text-decoration: underline;
             }
+
+            /* Source Icons */
+            .term-sources .source-icon {
+                margin-right: 6px;
+                width: 14px;
+                text-align: center;
+                display: inline-block;
+            }
+
+            .term-sources .source-icon.youtube { color: #FF0000; }
+            .term-sources .source-icon.arxiv { color: #B31B1B; }
+            .term-sources .source-icon.github { color: #333; }
+            .term-sources .source-icon.book { color: #8B4513; }
+            .term-sources .source-icon.paper { color: #2c5aa0; }
+            .term-sources .source-icon.web { color: #666; }
 
             /* Related Terms - Compact style */
             .term-related {
@@ -756,7 +770,7 @@
                         <a href="../index.html#fundamentals">Fundamentals</a>
                         <a href="../index.html#prompt-engineering">Prompt Engineering</a>
                         <a href="../index.html#digital-editions">Digital Editions</a>
-                        <a href="index.html" class="active">Glossary</a>
+                        <a href="glossary.html" class="active">Glossary</a>
                         <a href="../index.html#contact">Contact</a>
                     </nav>
                     <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
@@ -1198,10 +1212,29 @@
                     return html;
                 },
 
-                // Format source citations
+                // Format source citations with icons
                 formatSource(source) {
-                    // Convert markdown links to HTML
-                    return source.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+                    // Determine icon based on URL or content
+                    let icon = '';
+                    const lowerSource = source.toLowerCase();
+
+                    if (lowerSource.includes('youtube.com') || lowerSource.includes('youtu.be')) {
+                        icon = '<i class="fab fa-youtube source-icon youtube"></i>';
+                    } else if (lowerSource.includes('arxiv.org') || lowerSource.includes('arxiv.')) {
+                        icon = '<i class="fas fa-file-alt source-icon arxiv"></i>';
+                    } else if (lowerSource.includes('github.com') || lowerSource.includes('github.io')) {
+                        icon = '<i class="fab fa-github source-icon github"></i>';
+                    } else if (lowerSource.includes('deeplearningbook') || lowerSource.includes('mit press') || lowerSource.includes('_book_') || source.includes('MIT Press') || source.includes('Springer') || source.includes('O\'Reilly')) {
+                        icon = '<i class="fas fa-book source-icon book"></i>';
+                    } else if (lowerSource.includes('doi.org') || lowerSource.includes('acm.org') || lowerSource.includes('ieee.org') || lowerSource.includes('aclanthology') || lowerSource.includes('proceedings') || lowerSource.includes('journal') || lowerSource.includes('conference')) {
+                        icon = '<i class="fas fa-scroll source-icon paper"></i>';
+                    } else {
+                        icon = '<i class="fas fa-link source-icon web"></i>';
+                    }
+
+                    // Convert markdown links to HTML and prepend icon
+                    const formatted = source.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+                    return icon + formatted;
                 },
 
                 // Find related terms based on shared tags

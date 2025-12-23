@@ -136,15 +136,37 @@ Dabei handelt es sich nicht um eine Trainingsphase, in der eine Aktualisierung d
 
 * Brown, Tom B., et al. „Language Models are Few-Shot Learners". *Advances in Neural Information Processing Systems*, Bd. 33, 2020, S. 1877–1901. [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165).
 
+## Generalisierung
+id: generalisierung
+en: Generalization
+tags: training, fundamentals
+level: basic
+
+Die Fähigkeit eines Modells, korrekte Vorhersagen auf Daten zu treffen, die es während des Trainings nie gesehen hat. Ein Modell generalisiert, wenn es nicht nur die Trainingsdaten reproduziert, sondern die zugrundeliegende Regel oder Struktur erfasst hat. Beispiel: Ein Modell, das Addition gelernt hat, kann 6+2=8 korrekt beantworten, obwohl diese Aufgabe nie im Training vorkam. Generalisierung ist das eigentliche Ziel des maschinellen Lernens – ein Modell, das nur auf Trainingsdaten funktioniert, ist praktisch nutzlos. Das Gegenteil von Generalisierung ist [[#Memorierung]].
+
+* Goodfellow, Ian, Yoshua Bengio, und Aaron Courville. _Deep Learning_. MIT Press, 2016, Kapitel 5. [http://www.deeplearningbook.org](http://www.deeplearningbook.org/).
+
+## Memorierung
+id: memorierung
+en: Memorization
+tags: training, fundamentals
+level: basic
+
+Ein Lernverhalten, bei dem das Modell die Trainingsdaten im Wesentlichen als Lookup-Tabelle speichert, anstatt die zugrundeliegende Regel zu erfassen. Das Modell merkt sich: „Wenn Input X, dann Output Y" – ohne zu verstehen, warum. Memorierung führt zu guter Performance auf Trainingsdaten, aber schlechter [[#Generalisierung]]. Analogie: Ein Kind, das „7×8=56" auswendig lernt, ohne zu verstehen, dass Multiplikation wiederholte Addition bedeutet. Memorierung erfordert typischerweise viele spezifische [[#Parameter]] und ist daher anfällig für Regularisierung.
+
+* Arpit, Devansh, et al. „A Closer Look at Memorization in Deep Networks". _Proceedings of the 34th International Conference on Machine Learning_, 2017. [https://arxiv.org/abs/1706.05394](https://arxiv.org/abs/1706.05394).
+
 ## Grokking
 id: grokking
 en: Grokking
 tags: training
 level: advanced
 
-Grokking bezeichnet ein kontraintuitives Phänomen beim Training neuronaler Netze, bei dem die Generalisierungsfähigkeit (das Verständnis für neue Daten) erst sprunghaft einsetzt, lange nachdem das Modell die Trainingsdaten bereits perfekt auswendig gelernt hat (Overfitting). Während klassische Lehrmeinungen empfehlen, das Training zu stoppen, sobald das Modell beginnt, die Trainingsdaten bloß zu memorieren, zeigen Power et al. (2022), dass bei extrem langer fortgesetzter Optimierung plötzlich ein Übergang stattfinden kann: Das Modell verwirft die „auswendig gelernte" komplexe Lösung und findet die einfachere, wahre Regel (den Algorithmus) hinter den Daten. Dies deutet darauf hin, dass "Verstehen" im Lösungsraum oft schwerer zu finden ist als Memorieren und Geduld beim Training erfordert.
+Ein Phänomen beim Training neuronaler Netze, bei dem [[#Generalisierung]] sprunghaft und verzögert einsetzt – lange nachdem das Modell die Trainingsdaten bereits memoriert hat ([[#Memorierung]]) und die Trainings-Loss stagniert. Während klassische Annahmen empfehlen, das Training bei Memorierung abzubrechen, zeigen Power et al. (2022), dass fortgesetzte Optimierung einen plötzlichen Übergang auslösen kann: Das Modell verwirft die memorierte Lösung und findet eine einfachere, algorithmische Lösung. Nanda et al. (2023) liefern die mechanistische Erklärung: Regularisierung baut die komplexe Memorierungs-Lösung langsam ab, während das Modell parallel eine generalisierende Lösung entwickelt (z.B. Fourier-basierte Repräsentationen bei modularer Arithmetik). Der sichtbare „Sprung" markiert den Moment, wo die algorithmische Lösung die Memorierung vollständig ablöst (Cleanup-Phase). Der Begriff stammt aus Robert A. Heinleins Roman „Stranger in a Strange Land" (1961) und bedeutet dort, etwas so tiefgreifend zu verstehen, dass man damit verschmilzt.
 
 * Power, Alethea, et al. „Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets". _arXiv preprint_, 2022. [https://arxiv.org/abs/2201.02177](https://arxiv.org/abs/2201.02177).
+* Nanda, Neel, Lawrence Chan, Tom Lieberum, Jess Smith, und Jacob Steinhardt. „Progress Measures for Grokking via Mechanistic Interpretability". arXiv:2301.05217. Preprint, arXiv, 19. Oktober 2023. [https://doi.org/10.48550/arXiv.2301.05217](https://doi.org/10.48550/arXiv.2301.05217).
+* Welch Labs. „The most complex model we actually understand". _YouTube_, 20. Dezember 2025. [https://youtu.be/D8GOeCFFby4](https://youtu.be/D8GOeCFFby4).
 
 ## Many-Shot
 id: many-shot
@@ -202,7 +224,7 @@ en: Shadow AI
 tags: safety, ai-engineering
 level: basic
 
-Bezeichnet das Phänomen, dass Mitarbeiter in Unternehmen eigenmächtig KI-Tools (wie ChatGPT oder DeepL) für dienstliche Aufgaben nutzen, ohne dass die IT-Abteilung davon weiß oder dies genehmigt hat. Dies ist eines der größten aktuellen Risiken für Unternehmen (Data Leakage), da sensible Firmendaten oft unwissentlich in die Trainingsdaten öffentlicher Modelle gelangen.
+Bezeichnet das Phänomen, dass Mitarbeiter in Unternehmen eigenmächtig KI-Tools (wie ChatGPT oder DeepL) für dienstliche Aufgaben nutzen, ohne dass die IT-Abteilung davon weiß oder dies genehmigt hat. Dies ist eines der größten aktuellen Risiken für Unternehmen (Data Leakage), da sensible Firmendaten oft unwissentlich in die Trainingsdaten öffentlicher [[#llm|LLMs]] gelangen. Shadow AI untergräbt [[#Alignment]]-Bemühungen und erhöht das Risiko von [[#Prompt Injection]]-Angriffen.
 
 ## Open Weights
 id: open-weights
@@ -210,7 +232,7 @@ en: Open Weights (vs. Open Source)
 tags: fundamentals
 level: basic
 
-Ein wichtiger Nuance-Begriff in der Lizenz-Debatte. "Open Source" heißt klassischerweise, dass Trainingsdaten, Code und Anleitung frei verfügbar sind. Viele moderne "offene" Modelle (wie Llama von Meta oder Mistral) sind jedoch nur **Open Weights**. Das bedeutet: Man bekommt das fertig trainierte Modell (die Gewichte) zur freien Nutzung, aber der Hersteller hält geheim, _worauf_ genau trainiert wurde (das "Rezept"). Das ist wichtig für Fragen zu Urheberrecht und Transparenz.
+Ein wichtiger Nuance-Begriff in der Lizenz-Debatte. "Open Source" heißt klassischerweise, dass Trainingsdaten, Code und Anleitung frei verfügbar sind. Viele moderne "offene" Modelle (wie Llama von Meta oder Mistral) sind jedoch nur **Open Weights**. Das bedeutet: Man bekommt das fertig trainierte Modell (die [[#parameter|Gewichte]]) zur freien Nutzung, aber der Hersteller hält geheim, _worauf_ genau trainiert wurde (das "Rezept" des [[#Pre-Training|Pre-Trainings]]). Das ist wichtig für Fragen zu Urheberrecht und Transparenz.
 
 * Liesenfeld, A., & Dingemanse, M. (2024). Rethinking open source generative AI: Open-washing and the EU AI Act. Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency, 1774–1787. [https://doi.org/10.1145/3630106.3659005](https://doi.org/10.1145/3630106.3659005).
 
@@ -220,7 +242,7 @@ en: Frontier Model
 tags: fundamentals
 level: basic
 
-Bezeichnet die absolute Spitzenklasse der KI-Entwicklung zu einem gegebenen Zeitpunkt. Frontier Models sind jene Modelle, die die aktuellen Grenzen dessen, was KI kann, verschieben.
+Bezeichnet die absolute Spitzenklasse der KI-Entwicklung zu einem gegebenen Zeitpunkt. Frontier Models sind jene [[#llm|LLMs]], die die aktuellen Grenzen dessen, was KI kann, verschieben. Sie zeichnen sich durch massive [[#Parameter]]-Zahlen, enormen Rechenaufwand im [[#Pre-Training]] und oft [[#Emergenz in LLM|emergente Fähigkeiten]] aus, die kleinere Modelle nicht zeigen.
 
 ## LLM-as-a-Judge
 id: llm-as-judge
@@ -268,7 +290,7 @@ en: Context Rot
 tags: architecture
 level: intermediate
 
-Ein Phänomen, bei dem die Leistungsfähigkeit von LLMs mit zunehmender Länge des Eingabekontexts und sinkender Informationsdichte abnimmt. Unstrukturierte Begleittexte wirken als Rauschen, das die Aufmerksamkeit von relevanten Instruktionen ablenkt.
+Ein Phänomen, bei dem die Leistungsfähigkeit von [[#llm|LLMs]] mit zunehmender Länge des Eingabekontexts und sinkender Informationsdichte abnimmt. Unstrukturierte Begleittexte wirken als Rauschen, das die [[#Attention (Self-Attention)|Aufmerksamkeit]] von relevanten Instruktionen ablenkt. Verwandt mit [[#Lost-in-the-Middle]].
 
 * Hong, Kelly, Anton Troynikov, und Jeff Huber. Context Rot: How Increasing Input Tokens Impacts LLM Performance. Chroma, 2025. [https://research.trychroma.com/context-rot](https://research.trychroma.com/context-rot).
 
@@ -308,7 +330,7 @@ en: Sycophancy
 tags: safety
 level: intermediate
 
-Sycophancy in Large Language Models bezeichnet die Tendenz von Modellen, Nutzern übermäßig zuzustimmen oder ihnen zu schmeicheln, wobei diese Priorisierung der Nutzerzufriedenheit oft auf Kosten der faktischen Genauigkeit und ethischer Grundsätze erfolgt; dieses Verhalten manifestiert sich konkret darin, dass Modelle ungenaue Informationen liefern, um den Erwartungen des Nutzers zu entsprechen, unethische Ratschläge geben, wenn sie dazu aufgefordert werden, oder es versäumen, falsche Prämissen in Benutzeranfragen zu korrigieren.
+Sycophancy in [[#llm|Large Language Models]] bezeichnet die Tendenz von Modellen, Nutzern übermäßig zuzustimmen oder ihnen zu schmeicheln, wobei diese Priorisierung der Nutzerzufriedenheit oft auf Kosten der faktischen Genauigkeit und ethischer Grundsätze erfolgt. Dieses Verhalten ist ein unbeabsichtigtes Nebenprodukt von [[#rlhf|RLHF]], bei dem Modelle lernen, dass Zustimmung zu positiven Bewertungen führt. Es manifestiert sich darin, dass Modelle ungenaue Informationen liefern ([[#Halluzinationen (Konfabulationen)|Halluzinationen]]), um den Erwartungen des Nutzers zu entsprechen, oder es versäumen, falsche Prämissen zu korrigieren.
 
 * Malmqvist, Lars. „Sycophancy in Large Language Models: Causes and Mitigations". Preprint, 22. November 2024. [https://arxiv.org/abs/2411.15287v1](https://arxiv.org/abs/2411.15287v1).
 
@@ -348,7 +370,7 @@ en: Reinforcement Learning
 tags: training
 level: intermediate
 
-Ein Teilgebiet des maschinellen Lernens, bei dem ein Agent lernt, Entscheidungen zu treffen, indem er Handlungen in einer Umgebung ausführt und dafür positives oder negatives Feedback (Reward) erhält. Im Kontext von LLMs (siehe [[#Reinforcement Learning from Human Feedback (RLHF)|RLHF]]) dient RL nicht dem Erlernen von Sprache (das passiert im [[#Pre-Training]]), sondern der Optimierung von Verhaltensstrategien, um die generierten Texte an menschliche Präferenzen anzupassen.
+Ein Teilgebiet des maschinellen Lernens, bei dem ein Agent lernt, Entscheidungen zu treffen, indem er Handlungen in einer Umgebung ausführt und dafür positives oder negatives Feedback (Reward) erhält. Im Kontext von LLMs (siehe [[#rlhf|RLHF]]) dient RL nicht dem Erlernen von Sprache (das passiert im [[#Pre-Training]]), sondern der Optimierung von Verhaltensstrategien, um die generierten Texte an menschliche Präferenzen anzupassen.
 
 * Sutton, Richard S., und Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2. Aufl., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
 
@@ -518,7 +540,7 @@ en: Tool Use / Function Calling
 tags: agents, ai-engineering
 level: intermediate
 
-Die Fähigkeit eines Modells, zu erkennen, dass eine Anfrage externe Werkzeuge erfordert (z. B. Taschenrechner, Wetter-API, Datenbankabfrage), und daraufhin strukturierte Befehle (meist JSON) zu generieren, die von einer Softwareumgebung ausgeführt werden können. Das Ergebnis der Ausführung wird dem Modell zurückgegeben, um die finale Antwort zu formulieren.
+Die Fähigkeit eines [[#llm|LLMs]], zu erkennen, dass eine Anfrage externe Werkzeuge erfordert (z. B. Taschenrechner, Wetter-API, Datenbankabfrage), und daraufhin strukturierte Befehle (meist JSON) zu generieren, die von einer Softwareumgebung ausgeführt werden können. Das Ergebnis der Ausführung wird dem Modell zurückgegeben, um die finale Antwort zu formulieren. Tool Use ist eine Kernkomponente von [[#AI Agent|AI Agents]] und wird durch Protokolle wie [[#mcp|MCP]] standardisiert.
 
 * Schick, Timo, und Jane Dwivedi-Yu. „Toolformer: Language Models Can Teach Themselves to Use Tools". _Advances in Neural Information Processing Systems_, Bd. 36, 2023. [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761).
 
@@ -528,7 +550,7 @@ en: Model Context Protocol
 tags: ai-engineering, agents
 level: intermediate
 
-Ist ein offener Standard, der als universelle Schnittstelle dient, um KI-Assistenten sicher und nahtlos mit externen Datenquellen – wie Content-Repositories, Business-Tools und Entwicklungsumgebungen – zu verbinden. Anstatt für jedes System eine individuelle, fragmentierte Integration entwickeln zu müssen, bietet MCP eine standardisierte Architektur, durch die KI-Modelle direkten Zugriff auf relevante, isolierte Daten erhalten, um so präzisere und kontextbezogenere Antworten liefern zu können.
+Ist ein offener Standard, der als universelle Schnittstelle dient, um KI-Assistenten sicher und nahtlos mit externen Datenquellen – wie Content-Repositories, Business-Tools und Entwicklungsumgebungen – zu verbinden. Anstatt für jedes System eine individuelle, fragmentierte Integration entwickeln zu müssen, bietet MCP eine standardisierte Architektur, durch die [[#llm|LLMs]] direkten Zugriff auf relevante, isolierte Daten erhalten. MCP ermöglicht [[#Tool Use und Function Calling|Tool Use]] und ist eine Grundlage für [[#AI Agent|AI Agents]] sowie [[#rag|RAG]]-Systeme.
 
 * Anthropic. „Introducing the Model Context Protocol". _Anthropic News_, 25. November 2024. [https://www.anthropic.com/news/model-context-protocol](https://www.anthropic.com/news/model-context-protocol).
 
@@ -538,7 +560,7 @@ en: AI Agent
 tags: agents
 level: intermediate
 
-Ein autonomes System, das seine Umgebung wahrnimmt und proaktiv handelt, um definierte Ziele zu erreichen. Im Gegensatz zu passiven Modellen nutzt ein Agent ein LLM als zentrale Reasoning-Einheit, um mehrstufige Pläne zu erstellen und externe Werkzeuge (Tools) oder APIs zur Ausführung zu verwenden. Der Kernprozess ist eine kontinuierliche Schleife aus Beobachtung, Entscheidung und Handlung.
+Ein autonomes System, das seine Umgebung wahrnimmt und proaktiv handelt, um definierte Ziele zu erreichen. Im Gegensatz zu passiven Modellen nutzt ein Agent ein [[#llm|LLM]] als zentrale Reasoning-Einheit, um mehrstufige Pläne zu erstellen und externe Werkzeuge ([[#Tool Use und Function Calling|Tool Use]]) oder APIs zur Ausführung zu verwenden. Der Kernprozess ist eine kontinuierliche Schleife aus Beobachtung, Entscheidung und Handlung. Siehe auch [[#Agentic AI]] und [[#Multi-Agent Systems]].
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 
@@ -548,7 +570,7 @@ en: Agentic AI
 tags: agents
 level: intermediate
 
-Ein Paradigma in der KI-Entwicklung, das den Grad der Handlungsautonomie (_Agency_) eines Systems beschreibt. Es bezeichnet den Übergang von generativer KI, die lediglich Inhalte erstellt, zu Systemen, die als aktive Problemlöser fungieren. Agentic AI zeichnet sich durch die Fähigkeit aus, komplexe Aufgaben selbstständig in Teilschritte zu zerlegen, die eigenen Ergebnisse zu überprüfen (Self-Reflection) und den Lösungsweg bei Fehlern dynamisch anzupassen.
+Ein Paradigma in der KI-Entwicklung, das den Grad der Handlungsautonomie (_Agency_) eines Systems beschreibt. Es bezeichnet den Übergang von generativer KI, die lediglich Inhalte erstellt, zu Systemen, die als aktive Problemlöser fungieren. Agentic AI zeichnet sich durch die Fähigkeit aus, komplexe Aufgaben selbstständig in Teilschritte zu zerlegen (ähnlich [[#Chain of Thought (CoT)|Chain of Thought]]), die eigenen Ergebnisse zu überprüfen (Self-Reflection) und den Lösungsweg bei Fehlern dynamisch anzupassen. Siehe auch [[#AI Agent]] und [[#Tool Use und Function Calling|Tool Use]].
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 
@@ -568,7 +590,7 @@ en: World Models
 tags: agents, fundamentals
 level: advanced
 
-Ein World Model bezeichnet ein generatives KI-System, das eine komprimierte und abstrakte Repräsentation seiner physischen Umgebung erlernt, um deren Dynamik sowie zukünftige Zustände präzise vorherzusagen. Technisch realisiert sich dieses Konzept meist durch eine visuelle Komponente zur Datenreduktion in einen latenten Raum sowie eine zeitliche Komponente zur Simulation kommender Ereignisse auf Basis eigener Aktionen. Diese Architektur ermöglicht es einem Agenten oder Roboter, potenzielle Handlungsfolgen rein mental durchzuspielen und komplexe Pläne zu entwerfen, ohne jeden Schritt riskant in der realen Welt ausprobieren zu müssen. Es fungiert somit als interner Simulator, der die bloße Reaktion auf Reize durch vorausschauendes Planen ersetzt und maschinellen Systemen eine funktionale Intuition für Kausalität und physikalische Gesetzmäßigkeiten verleiht.
+Ein World Model bezeichnet ein generatives KI-System, das eine komprimierte und abstrakte Repräsentation seiner physischen Umgebung erlernt, um deren Dynamik sowie zukünftige Zustände präzise vorherzusagen. Technisch realisiert sich dieses Konzept meist durch eine visuelle Komponente zur Datenreduktion in einen [[#Latent Space|latenten Raum]] sowie eine zeitliche Komponente zur Simulation kommender Ereignisse auf Basis eigener Aktionen. Diese Architektur ermöglicht es einem [[#AI Agent|Agenten]] oder Roboter, potenzielle Handlungsfolgen rein mental durchzuspielen und komplexe Pläne zu entwerfen, ohne jeden Schritt riskant in der realen Welt ausprobieren zu müssen. Es fungiert somit als interner Simulator, der die bloße Reaktion auf Reize durch vorausschauendes Planen ersetzt und maschinellen Systemen eine funktionale Intuition für Kausalität und physikalische Gesetzmäßigkeiten verleiht. Verwandt mit der Debatte um [[#Understanding (Verstehen)|Verstehen]].
 
 * Ha, David, und Jürgen Schmidhuber. „World Models". _arXiv preprint_, 2018. [https://arxiv.org/abs/1803.10122](https://arxiv.org/abs/1803.10122)
 
@@ -638,7 +660,7 @@ en: Quantization
 tags: ai-engineering, architecture
 level: intermediate
 
-Ein Verfahren zur Reduktion des Speicherbedarfs und der Rechenlast eines LLMs, indem die Genauigkeit der Modellgewichte reduziert wird (z. B. von 16-Bit-Gleitkommazahlen auf 4-Bit-Ganzzahlen). Dies ermöglicht es, riesige Modelle auf consumer-Hardware (lokalen Laptops/GPUs) laufen zu lassen, oft mit nur minimalem Qualitätsverlust.
+Ein Verfahren zur Reduktion des Speicherbedarfs und der Rechenlast eines [[#llm|LLMs]], indem die Genauigkeit der Modell-[[#parameter|Gewichte]] reduziert wird (z. B. von 16-Bit-Gleitkommazahlen auf 4-Bit-Ganzzahlen). Dies ermöglicht es, riesige Modelle auf consumer-Hardware (lokalen Laptops/GPUs) laufen zu lassen, oft mit nur minimalem Qualitätsverlust. Besonders relevant für [[#Open Weights]]-Modelle.
 
 * Dettmers, Tim, et al. „LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale". _Advances in Neural Information Processing Systems_, Bd. 35, 2022. [https://arxiv.org/abs/2208.07339](https://arxiv.org/abs/2208.07339).
 
