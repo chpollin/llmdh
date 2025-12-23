@@ -254,6 +254,16 @@ Bezeichnet das Phänomen, dass Mitarbeitende in Unternehmen oder Forschende an I
 * IBM Technology. „What is Shadow AI? The Dark Horse of Cybersecurity Threats". _YouTube_, 2025. [https://youtu.be/YBE6hq-OTFI](https://youtu.be/YBE6hq-OTFI).
 * IBM Technology. „Agentic AI Meets Shadow AI. Zero Trust Security for AI Automation". _YouTube_, 2025. [https://youtu.be/IaJ2jXmljmM](https://youtu.be/IaJ2jXmljmM).
 
+## SimpleBench
+id: simplebench
+en: SimpleBench
+tags: benchmarks, evaluation, wip
+level: intermediate
+
+Work in progress.
+
+* https://simple-bench.com
+
 ## Sleeper Agents
 id: sleeper-agents
 en: Backdoor Models
@@ -314,6 +324,16 @@ level: intermediate
 Eine Prompting-Technik, die Large Language Models (LLMs) dazu veranlasst, komplexe Aufgabenstellungen in eine Sequenz intermediärer, natürlichsprachlicher Denkschritte („Gedankenkette") zu zerlegen, bevor die finale Antwort generiert wird. Diese Methode, die laut Wei et al. (2022) als [[#Emergenz in LLM|emergente Fähigkeit]] erst in ausreichend großen Modellen effektiv auftritt, ermöglicht signifikante Leistungssteigerungen bei mathematischen und schlussfolgernden Problemen, indem sie menschliche Problemlösungsprozesse emuliert. Technisch betrachtet handelt es sich dabei jedoch nicht um formale symbolische Logik, sondern um eine probabilistische Simulation von Argumentationsmustern, weshalb die generierten Schritte zwar kohärent wirken, aber anfällig für logische Halluzinationen („Unfaithful Reasoning") sein können.
 
 * Wei, Jason, et al. „Chain-of-Thought Prompting Elicits Reasoning in Large Language Models". *Advances in Neural Information Processing Systems*, Bd. 35, 2022. [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903).
+
+## Chatbot Arena
+id: chatbot-arena
+en: Chatbot Arena / LMSys
+tags: benchmarks, evaluation, wip
+level: basic
+
+Work in progress.
+
+* https://lmarena.ai
 
 ## Context Engineering
 id: context-engineering
@@ -495,7 +515,7 @@ level: advanced
 Constitutional AI (CAI) ist eine von Anthropic entwickelte Trainingsmethode, bei der ein KI-System primär durch eine Liste von in natürlicher Sprache verfassten Regeln oder Prinzipien – eine sogenannte „Verfassung" – gesteuert wird, anstatt sich auf menschliche Labels zur Identifizierung schädlicher Ausgaben zu verlassen. Der Prozess erfolgt in zwei Phasen: Zunächst nutzt das Modell in einer überwachten Lernphase die Verfassung, um seine eigenen Antworten zu kritisieren und zu überarbeiten (Self-Improvement); anschließend wird in einer [[#Reinforcement Learning]]-Phase (RLAIF) ein Präferenzmodell verwendet, das auf Feedback einer KI (statt auf menschlichem Feedback) basiert, um das Modell so zu trainieren, dass es harmlose, transparente und hilfreiche Antworten gibt, ohne dabei ausweichend zu sein.
 
 * Bai, Yuntao, Saurav Kadavath, Sandipan Kundu, u. a. „Constitutional AI: Harmlessness from AI Feedback". arXiv:2212.08073. Preprint, arXiv, 15. Dezember 2022. [https://doi.org/10.48550/arXiv.2212.08073](https://doi.org/10.48550/arXiv.2212.08073).
-* Claude's Constitution. https://www.anthropic.com/news/claudes-constitution
+* Claude's Constitution. https://www.anthropic.com/research/claudes-constitution
 
 ## Character (Persona)
 id: character
@@ -634,6 +654,16 @@ Ein autonomes System, das seine Umgebung wahrnimmt und proaktiv handelt, um defi
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * IBM Technology. „Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
 
+## ARC-AGI
+id: arc-agi
+en: ARC-AGI (Abstraction and Reasoning Corpus)
+tags: benchmarks, evaluation, wip
+level: intermediate
+
+Work in progress.
+
+* https://arcprize.org
+
 ## Agentic AI
 id: agentic-ai
 en: Agentic AI
@@ -673,6 +703,16 @@ level: basic
 Das Generieren von Inhalten, die grammatikalisch und semantisch plausibel klingen, aber faktisch falsch sind oder nicht auf den Trainingsdaten/Quellen basieren. Der Begriff „Konfabulation" wird zunehmend bevorzugt (z. B. von Geoffrey Hinton), da er den Prozess des „Lückenfüllens" ohne Realitätsbezug treffender beschreibt als eine Wahrnehmungsstörung.
 
 * Ji, Ziwei, et al. „Survey of Hallucination in Natural Language Generation". _ACM Computing Surveys_, Bd. 55, Nr. 12, 2023. [https://arxiv.org/abs/2202.03629](https://arxiv.org/abs/2202.03629).
+
+## Humanities Last Exam
+id: humanities-last-exam
+en: Humanities Last Exam
+tags: benchmarks, evaluation, wip
+level: intermediate
+
+Work in progress.
+
+* https://lastexam.ai
 
 ## Understanding (Verstehen)
 id: understanding

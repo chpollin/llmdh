@@ -254,6 +254,16 @@ The phenomenon where employees in companies or researchers at institutions indep
 * IBM Technology. "What is Shadow AI? The Dark Horse of Cybersecurity Threats". _YouTube_, 2025. [https://youtu.be/YBE6hq-OTFI](https://youtu.be/YBE6hq-OTFI).
 * IBM Technology. "Agentic AI Meets Shadow AI. Zero Trust Security for AI Automation". _YouTube_, 2025. [https://youtu.be/IaJ2jXmljmM](https://youtu.be/IaJ2jXmljmM).
 
+## SimpleBench
+id: simplebench
+en: SimpleBench
+tags: benchmarks, evaluation, wip
+level: intermediate
+
+Work in progress.
+
+* https://simple-bench.com
+
 ## Sleeper Agents
 id: sleeper-agents
 en: Backdoor Models
@@ -314,6 +324,16 @@ level: intermediate
 A prompting technique that causes Large Language Models (LLMs) to decompose complex tasks into a sequence of intermediate, natural language reasoning steps ("thought chain") before generating the final answer. This method, which according to Wei et al. (2022) only appears effectively as an [[#Emergence in LLMs|emergent ability]] in sufficiently large models, enables significant performance improvements on mathematical and reasoning problems by emulating human problem-solving processes. Technically, however, this is not formal symbolic logic but a probabilistic simulation of argumentation patterns, which is why the generated steps may appear coherent but can be susceptible to logical hallucinations ("Unfaithful Reasoning").
 
 * Wei, Jason, et al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models". *Advances in Neural Information Processing Systems*, Vol. 35, 2022. [https://arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903).
+
+## Chatbot Arena
+id: chatbot-arena
+en: Chatbot Arena / LMSys
+tags: benchmarks, evaluation, wip
+level: basic
+
+Work in progress.
+
+* https://lmarena.ai
 
 ## Context Engineering
 id: context-engineering
@@ -495,7 +515,7 @@ level: advanced
 Constitutional AI (CAI) is a training method developed by Anthropic where an AI system is primarily guided by a list of rules or principles written in natural language—a so-called "constitution"—rather than relying on human labels to identify harmful outputs. The process occurs in two phases: First, in a supervised learning phase, the model uses the constitution to critique and revise its own responses (self-improvement); then, in a [[#Reinforcement Learning]] phase (RLAIF), a preference model is used that is based on AI feedback (rather than human feedback) to train the model to give harmless, transparent, and helpful answers without being evasive.
 
 * Bai, Yuntao, Saurav Kadavath, Sandipan Kundu, et al. "Constitutional AI: Harmlessness from AI Feedback". arXiv:2212.08073. Preprint, arXiv, December 15, 2022. [https://doi.org/10.48550/arXiv.2212.08073](https://doi.org/10.48550/arXiv.2212.08073).
-* Claude's Constitution. https://www.anthropic.com/news/claudes-constitution
+* Claude's Constitution. https://www.anthropic.com/research/claudes-constitution
 
 ## Character (Persona)
 id: character
@@ -634,6 +654,16 @@ An autonomous system that perceives its environment and proactively acts to achi
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * IBM Technology. "Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
 
+## ARC-AGI
+id: arc-agi
+en: ARC-AGI (Abstraction and Reasoning Corpus)
+tags: benchmarks, evaluation, wip
+level: intermediate
+
+Work in progress.
+
+* https://arcprize.org
+
 ## Agentic AI
 id: agentic-ai
 en: Agentic AI
@@ -673,6 +703,16 @@ level: basic
 The generation of content that sounds grammatically and semantically plausible but is factually incorrect or not based on the training data/sources. The term "confabulation" is increasingly preferred (e.g., by Geoffrey Hinton) as it more accurately describes the process of "filling in gaps" without reference to reality than a perceptual disorder would.
 
 * Ji, Ziwei, et al. "Survey of Hallucination in Natural Language Generation". _ACM Computing Surveys_, Vol. 55, No. 12, 2023. [https://arxiv.org/abs/2202.03629](https://arxiv.org/abs/2202.03629).
+
+## Humanities Last Exam
+id: humanities-last-exam
+en: Humanities Last Exam
+tags: benchmarks, evaluation, wip
+level: intermediate
+
+Work in progress.
+
+* https://lastexam.ai
 
 ## Understanding
 id: understanding

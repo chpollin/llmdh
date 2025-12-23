@@ -552,7 +552,8 @@ function formatTagDisplay(tag) {
         'agents': 'Agents',
         'safety': 'Safety',
         'evaluation': 'Evaluation',
-        'governance': 'Governance'
+        'governance': 'Governance',
+        'benchmarks': 'Benchmarks'
     };
     return displayNames[tag] || tag.charAt(0).toUpperCase() + tag.slice(1);
 }
