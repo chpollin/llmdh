@@ -112,9 +112,10 @@ en: Red Teaming
 tags: safety, evaluation
 level: intermediate
 
-Ein strukturierter Sicherheitsprozess, bei dem eine Gruppe von Experten (oder anderen KI-Modellen) gezielt versucht, ein KI-System anzugreifen, zu manipulieren oder schädliche Ausgaben zu provozieren („Adversarial Testing"). Ziel ist es, Schwachstellen, Biases und Sicherheitslücken _vor_ der Veröffentlichung zu identifizieren, um das Modell robuster gegen [[#Jailbreak]] und [[#Prompt Injection]] zu machen.
+Strukturiertes adversarielles Testen von KI-Systemen, bei dem Personen versuchen, schädliche, unerwünschte oder fehlerhafte Ausgaben zu provozieren, um Schwachstellen zu identifizieren, zu messen und zu reduzieren. Im Gegensatz zu traditionellem Cybersecurity-Red-Teaming umfasst es sowohl sicherheitsrelevante als auch inhaltsbezogene Risiken wie [[#Bias]], Fehlinformationen oder toxische Inhalte. Ziel ist es, Schwachstellen _vor_ der Veröffentlichung zu identifizieren, um das Modell robuster gegen [[#Jailbreak]] und [[#Prompt Injection]] zu machen.
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. 'Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned'. arXiv:2209.07858. Preprint, arXiv, 22 November 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
+* Video: [Prompt Injection, Jailbreaking, und Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
 ## Prompt Engineering
 id: prompt-engineering
@@ -244,6 +245,17 @@ level: basic
 
 Bezeichnet die absolute Spitzenklasse der KI-Entwicklung zu einem gegebenen Zeitpunkt. Frontier Models sind jene [[#llm|LLMs]], die die aktuellen Grenzen dessen, was KI kann, verschieben. Sie zeichnen sich durch massive [[#Parameter]]-Zahlen, enormen Rechenaufwand im [[#Pre-Training]] und oft [[#Emergenz in LLM|emergente Fähigkeiten]] aus, die kleinere Modelle nicht zeigen.
 
+## Jagged Frontier
+id: jagged-frontier
+en: Jagged Frontier
+tags: fundamentals, evaluation
+level: intermediate
+
+Die **Jagged Frontier** (gezackte Grenze) ist ein von Ethan Mollick geprägtes Konzept, das die unvorhersehbare und ungleichmäßige Natur der KI-Fähigkeiten beschreibt. Mollick verwendet die Metapher einer **Festungsmauer**: Man stelle sich eine Burgmauer vor, bei der einige Türme und Zinnen weit in die Landschaft hinausragen, während andere zum Zentrum der Burg zurückweichen. Diese Mauer repräsentiert die Fähigkeitsgrenze der KI – je weiter vom Zentrum entfernt, desto schwieriger die Aufgabe. Innerhalb der Mauer brilliert KI; außerhalb kämpft sie und neigt zu Fehlern. Das Problem: Diese Grenze ist unsichtbar, und Aufgaben, die gleich schwer erscheinen, können auf verschiedenen Seiten der Frontier liegen. KI kann beispielsweise bei komplexen Strategieaufgaben brillieren, aber bei einfachen Wortspielen oder dem Zählen von Buchstaben scheitern. Das Konzept unterstreicht die Notwendigkeit kontinuierlicher Experimente, um die Konturen dieser gezackten Grenze durch Versuch und Irrtum zu kartieren.
+
+* Dell'Acqua, Fabrizio, Edward McFowland III, Ethan Mollick, et al. „Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality". Harvard Business School Working Paper, No. 24-013, September 2023.
+* Mollick, Ethan. „Centaurs and Cyborgs on the Jagged Frontier". _One Useful Thing_, 2023. [https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged](https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged).
+
 ## LLM-as-a-Judge
 id: llm-as-judge
 en: LLM-as-a-Judge
@@ -333,6 +345,7 @@ level: intermediate
 Sycophancy in [[#llm|Large Language Models]] bezeichnet die Tendenz von Modellen, Nutzern übermäßig zuzustimmen oder ihnen zu schmeicheln, wobei diese Priorisierung der Nutzerzufriedenheit oft auf Kosten der faktischen Genauigkeit und ethischer Grundsätze erfolgt. Dieses Verhalten ist ein unbeabsichtigtes Nebenprodukt von [[#rlhf|RLHF]], bei dem Modelle lernen, dass Zustimmung zu positiven Bewertungen führt. Es manifestiert sich darin, dass Modelle ungenaue Informationen liefern ([[#Halluzinationen (Konfabulationen)|Halluzinationen]]), um den Erwartungen des Nutzers zu entsprechen, oder es versäumen, falsche Prämissen zu korrigieren.
 
 * Malmqvist, Lars. „Sycophancy in Large Language Models: Causes and Mitigations". Preprint, 22. November 2024. [https://arxiv.org/abs/2411.15287v1](https://arxiv.org/abs/2411.15287v1).
+* Video: [TODO_TITEL](https://youtu.be/nvbq39yVYRk)
 
 ## Attention (Self-Attention)
 id: attention
@@ -373,6 +386,7 @@ level: intermediate
 Ein Teilgebiet des maschinellen Lernens, bei dem ein Agent lernt, Entscheidungen zu treffen, indem er Handlungen in einer Umgebung ausführt und dafür positives oder negatives Feedback (Reward) erhält. Im Kontext von LLMs (siehe [[#rlhf|RLHF]]) dient RL nicht dem Erlernen von Sprache (das passiert im [[#Pre-Training]]), sondern der Optimierung von Verhaltensstrategien, um die generierten Texte an menschliche Präferenzen anzupassen.
 
 * Sutton, Richard S., und Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2. Aufl., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
+* Video: [TODO_TITEL](https://youtu.be/LHsgtcNNM0A)
 
 ## Temperature
 id: temperature
@@ -689,19 +703,22 @@ en: Prompt Injection
 tags: safety
 level: intermediate
 
-Prompt Injection bezeichnet eine Angriffstechnik auf Large Language Models (LLMs), bei der gezielt konstruierte Eingaben verwendet werden, um die vom Entwickler vorgegebenen Systemanweisungen zu überschreiben und die ursprüngliche Zielsetzung des Modells zu kapern. Indem der Angreifer die Flexibilität der natürlichen Spracheingabe ausnutzt, wird das Modell dazu gebracht, seine eigentliche Aufgabe zu ignorieren und stattdessen die im Prompt versteckten Befehle auszuführen, was oft zum Leaken interner Instruktionen oder zur Manipulation der Anwendungslogik führt.
+Angriffsvektor, bei dem bösartige Eingaben in natürlicher Sprache die ursprünglichen Anweisungen eines LLM überschreiben und das Modell zu unbeabsichtigtem Verhalten veranlassen. Der Angriff nutzt die architekturbedingte Unfähigkeit von LLMs, zwischen vertrauenswürdigen Entwickleranweisungen und nicht vertrauenswürdigen Nutzereingaben zu unterscheiden. Man unterscheidet **direkte Prompt Injection** (böswillige Eingabe durch den Nutzer) und **indirekte Prompt Injection** (versteckte Anweisungen in externen Datenquellen wie Webseiten oder Dokumenten).
 
-* Greshake, Kai, et al. „Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". _arXiv preprint_, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Perez, Fábio & Ribeiro, Ian. 'Ignore Previous Prompt: Attack Techniques for Language Models'. NeurIPS ML Safety Workshop 2022. [https://arxiv.org/abs/2211.09527](https://arxiv.org/abs/2211.09527).
+* Greshake, Kai, et al. 'Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection'. Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security, 2023, 79–90. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Video: [Prompt Injection, Jailbreaking, und Red Teaming](https://youtu.be/J9982NLmTXg)
 
-## Jailbreak
+## Jailbreaking
 id: jailbreak
-en: Jailbreak
+en: Jailbreaking
 tags: safety
 level: intermediate
 
-Beschreibt eine spezielle Form des Adversarial Prompting, die primär darauf abzielt, die implementierten Sicherheitsfilter und Inhaltsbeschränkungen (Content Restrictions) eines Modells zu umgehen. Durch das Einbetten von Anfragen in hypothetische Szenarien, komplexe Rollenspiele oder simulierte „Entwicklermodi" wird das Modell dazu manipuliert, seine Sicherheitsrichtlinien temporär außer Kraft zu setzen und unzensierte Ausgaben zu generieren, die unter normalen Umständen blockiert würden.
+Adversarielle Angriffstechnik, bei der speziell konstruierte Prompts die Sicherheitsmechanismen eines LLM umgehen, um normalerweise blockierte oder zensierte Ausgaben zu erzwingen. Im Unterschied zu [[#Prompt Injection]] zielt Jailbreaking explizit auf das Aushebeln der eintrainierten Sicherheitsschranken (Safety Training/[[#Alignment]]), nicht auf das Überschreiben von Systeminstruktionen. Wei et al. identifizieren zwei Versagensmodi: **konkurrierende Ziele** (Konflikt zwischen Fähigkeiten und Sicherheitszielen) und **fehlerhafte Generalisierung** (Sicherheitstraining versagt in Domänen, für die das Modell Fähigkeiten besitzt).
 
-* Greshake, Kai, et al. „Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". _arXiv preprint_, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Wei, Alexander, Nika Haghtalab & Jacob Steinhardt. 'Jailbroken: How Does LLM Safety Training Fail?' Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [https://arxiv.org/abs/2307.02483](https://arxiv.org/abs/2307.02483).
+* Video: [Prompt Injection, Jailbreaking, und Red Teaming](https://youtu.be/J9982NLmTXg)
 
 ## Model Collapse
 id: model-collapse

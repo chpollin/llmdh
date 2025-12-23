@@ -112,9 +112,10 @@ en: Red Teaming
 tags: safety, evaluation
 level: intermediate
 
-A structured security process in which a group of experts (or other AI models) deliberately attempts to attack, manipulate, or provoke harmful outputs from an AI system ("Adversarial Testing"). The goal is to identify weaknesses, biases, and security vulnerabilities _before_ release to make the model more robust against [[#Jailbreak]] and [[#Prompt Injection]].
+Structured adversarial testing of AI systems in which individuals attempt to provoke harmful, undesirable, or erroneous outputs to identify, measure, and reduce vulnerabilities. Unlike traditional cybersecurity red teaming, it encompasses both security-related and content-related risks such as [[#Bias]], misinformation, or toxic content. The goal is to identify weaknesses _before_ release to make the model more robust against [[#Jailbreak]] and [[#Prompt Injection]].
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned". arXiv:2209.07858. Preprint, arXiv, November 22, 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
+* Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
 ## Prompt Engineering
 id: prompt-engineering
@@ -244,6 +245,17 @@ level: basic
 
 Refers to the absolute cutting edge of AI development at any given time. Frontier Models are those [[#llm|LLMs]] that push the current boundaries of what AI can do. They are characterized by massive [[#Parameter]] counts, enormous compute requirements during [[#Pre-Training]], and often [[#Emergence in LLMs|emergent capabilities]] that smaller models don't exhibit.
 
+## Jagged Frontier
+id: jagged-frontier
+en: Jagged Frontier
+tags: fundamentals, evaluation
+level: intermediate
+
+The **Jagged Frontier** is a concept coined by Ethan Mollick that describes the unpredictable and uneven nature of AI capabilities. Mollick uses the metaphor of a **fortress wall**: imagine a castle wall with some towers and battlements jutting out into the countryside while others fold back toward the center of the castle. This wall represents the capability boundary of AI—the further from the center, the harder the task. Inside the wall, AI excels; outside, it struggles and is prone to errors. The challenge is that this wall is invisible, and tasks that seem equally difficult can fall on different sides of the frontier. For instance, AI might excel at complex strategy tasks but fail at simple word games or counting letters. The concept underscores the necessity of continuous experimentation to map out the contours of this jagged frontier through trial and error.
+
+* Dell'Acqua, Fabrizio, Edward McFowland III, Ethan Mollick, et al. "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality". Harvard Business School Working Paper, No. 24-013, September 2023.
+* Mollick, Ethan. "Centaurs and Cyborgs on the Jagged Frontier". _One Useful Thing_, 2023. [https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged](https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged).
+
 ## LLM-as-a-Judge
 id: llm-as-judge
 en: LLM-as-a-Judge
@@ -333,6 +345,7 @@ level: intermediate
 Sycophancy in [[#llm|Large Language Models]] refers to the tendency of models to excessively agree with or flatter users, where this prioritization of user satisfaction often comes at the expense of factual accuracy and ethical principles. This behavior is an unintended side effect of [[#rlhf|RLHF]], where models learn that agreement leads to positive ratings. It manifests in models providing inaccurate information ([[#Hallucinations (Confabulations)|hallucinations]]) to meet user expectations, or failing to correct false premises in user queries.
 
 * Malmqvist, Lars. "Sycophancy in Large Language Models: Causes and Mitigations". Preprint, November 22, 2024. [https://arxiv.org/abs/2411.15287v1](https://arxiv.org/abs/2411.15287v1).
+* Video: [TODO_TITLE](https://youtu.be/nvbq39yVYRk)
 
 ## Attention (Self-Attention)
 id: attention
@@ -373,6 +386,7 @@ level: intermediate
 A subfield of machine learning where an agent learns to make decisions by performing actions in an environment and receiving positive or negative feedback (reward). In the context of LLMs (see [[#rlhf|RLHF]]), RL does not serve to learn language (that happens in [[#Pre-Training]]) but to optimize behavioral strategies to align generated text with human preferences.
 
 * Sutton, Richard S., and Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2nd ed., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
+* Video: [TODO_TITLE](https://youtu.be/LHsgtcNNM0A)
 
 ## Temperature
 id: temperature
@@ -689,19 +703,22 @@ en: Prompt Injection
 tags: safety
 level: intermediate
 
-Prompt Injection refers to an attack technique on Large Language Models (LLMs) that uses deliberately constructed inputs to override the developer-specified system instructions and hijack the model's original objective. By exploiting the flexibility of natural language input, the attacker causes the model to ignore its actual task and instead execute commands hidden in the prompt, often leading to leaking internal instructions or manipulating application logic.
+An attack vector where malicious natural language inputs override an LLM's original instructions and cause the model to exhibit unintended behavior. The attack exploits the architectural inability of LLMs to distinguish between trusted developer instructions and untrusted user inputs. A distinction is made between **direct prompt injection** (malicious input by the user) and **indirect prompt injection** (hidden instructions in external data sources such as websites or documents).
 
-* Greshake, Kai, et al. "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". _arXiv preprint_, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Perez, Fábio & Ribeiro, Ian. "Ignore Previous Prompt: Attack Techniques for Language Models". NeurIPS ML Safety Workshop 2022. [https://arxiv.org/abs/2211.09527](https://arxiv.org/abs/2211.09527).
+* Greshake, Kai, et al. "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security, 2023, 79–90. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
-## Jailbreak
+## Jailbreaking
 id: jailbreak
-en: Jailbreak
+en: Jailbreaking
 tags: safety
 level: intermediate
 
-A special form of adversarial prompting that primarily aims to circumvent a model's implemented safety filters and content restrictions. By embedding requests in hypothetical scenarios, complex role-plays, or simulated "developer modes," the model is manipulated to temporarily suspend its safety guidelines and generate uncensored outputs that would normally be blocked.
+An adversarial attack technique where specially constructed prompts bypass an LLM's safety mechanisms to force outputs that would normally be blocked or censored. Unlike [[#Prompt Injection]], jailbreaking explicitly targets circumventing trained-in safety guardrails (safety training/[[#Alignment]]), rather than overriding system instructions. Wei et al. identify two failure modes: **competing objectives** (conflict between capabilities and safety goals) and **mismatched generalization** (safety training fails in domains where the model has capabilities).
 
-* Greshake, Kai, et al. "Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection". _arXiv preprint_, 2023. [https://arxiv.org/abs/2302.12173](https://arxiv.org/abs/2302.12173).
+* Wei, Alexander, Nika Haghtalab & Jacob Steinhardt. "Jailbroken: How Does LLM Safety Training Fail?" Advances in Neural Information Processing Systems 36 (NeurIPS 2023). [https://arxiv.org/abs/2307.02483](https://arxiv.org/abs/2307.02483).
+* Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
 
 ## Model Collapse
 id: model-collapse

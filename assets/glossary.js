@@ -432,10 +432,16 @@ function linkifyTerms(text, currentEntryId) {
 
 /**
  * Find related terms based on shared tags
+ * Rule: Related terms should have a close connection but NOT appear in the body text
+ * (terms mentioned in the body are already directly linked)
  */
 function findRelatedTerms(entry, maxResults = 5) {
+    const bodyLower = entry.body.toLowerCase();
+
     const related = allEntries
         .filter(e => e.id !== entry.id)
+        // Exclude terms that are already mentioned in the body text
+        .filter(e => !bodyLower.includes(e.title.toLowerCase()))
         .map(e => {
             // Count shared tags (excluding 'wip')
             const sharedTags = e.tags.filter(tag =>
