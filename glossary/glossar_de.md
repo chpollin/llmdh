@@ -632,14 +632,22 @@ RAG bezeichnet einen Ansatz, der generative Sprachmodelle mit einem externen Inf
 * Lewis, Patrick, et al. „Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks". _Advances in Neural Information Processing Systems_, Bd. 33, 2020. [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401).
 
 ## Vektordatenbank
-id: vektordatenbank
+id: vector-database
 en: Vector Database
 tags: ai-engineering
 level: intermediate
 
-Eine spezialisierte Datenbank, die Informationen nicht als Text oder Tabellen, sondern als hochdimensionale Vektoren (Embeddings) speichert. Sie ermöglicht die semantische Suche: Anstatt nach exakten Schlüsselwörtern zu suchen, berechnet die Datenbank die mathematische Distanz (z. B. Kosinus-Ähnlichkeit) zwischen dem Anfrage-Vektor und den gespeicherten Dokumenten-Vektoren. Das effiziente Durchsuchen dieser hochdimensionalen Räume (_Similarity Search_) erfordert spezialisierte Indexierungsstrukturen, um auch in Milliarden von Datensätzen performant zu bleiben. Dies bildet die technologische Grundlage für RAG-Systeme, da es das schnelle Auffinden von inhaltlich relevantem Kontext aus riesigen Datenmengen ermöglicht.
+Eine spezialisierte Datenbank, die Informationen nicht als Text oder Tabellen, sondern als hochdimensionale Vektoren ([[#embedding|Embeddings]]) speichert. Sie ermöglicht die semantische Suche: Anstatt nach exakten Schlüsselwörtern zu suchen, berechnet die Datenbank die mathematische Distanz (z. B. Kosinus-Ähnlichkeit) zwischen dem Anfrage-Vektor und den gespeicherten Dokumenten-Vektoren.
 
-* Johnson, Jeff, Matthijs Douze, und Hervé Jégou. „Billion-scale similarity search with GPUs". _IEEE Transactions on Big Data_ 7, Nr. 3 (2019): 535–47. [https://arxiv.org/abs/1702.08734](https://arxiv.org/abs/1702.08734).
+Das effiziente Durchsuchen dieser hochdimensionalen Räume (Similarity Search) erfordert spezialisierte Indexierungsstrukturen, um auch in Milliarden von Datensätzen performant zu bleiben. Hierfür kommen Algorithmen zum Einsatz, die auf Approximate Nearest Neighbor (ANN) Suche optimiert sind und Geschwindigkeit gegen exakte Ergebnisse eintauschen.
+
+Vektordatenbanken bilden die technologische Grundlage für [[#rag|RAG]]-Systeme, da sie das schnelle Auffinden von inhaltlich relevantem Kontext aus großen Datenmengen ermöglichen. Weng (2023) beschreibt sie als Komponente des Long-term Memory von LLM-gesteuerten [[#ai-agent|Agenten]].
+
+Beispiele für Vektordatenbanken sind Pinecone, Milvus, Qdrant, Chroma und Weaviate sowie Vektorsuch-Erweiterungen für bestehende Datenbanken wie pgvector für PostgreSQL.
+
+* Johnson, Jeff, Matthijs Douze, und Hervé Jégou. „Billion-Scale Similarity Search with GPUs". _IEEE Transactions on Big Data_ 7, Nr. 3 (2019): 535–47. [https://arxiv.org/abs/1702.08734](https://arxiv.org/abs/1702.08734).
+* Pinecone. „What is a Vector Database?". _Pinecone Learning Center_. [https://www.pinecone.io/learn/vector-database/](https://www.pinecone.io/learn/vector-database/).
+* Weng, Lilian. „LLM Powered Autonomous Agents". _Lil'Log_, Juni 2023. [https://lilianweng.github.io/posts/2023-06-23-agent/](https://lilianweng.github.io/posts/2023-06-23-agent/).
 
 ## Verifiable AI
 id: verifiable-ai
@@ -655,9 +663,14 @@ en: Tool Use / Function Calling
 tags: agents, ai-engineering
 level: intermediate
 
-Die Fähigkeit eines [[#llm|LLMs]], zu erkennen, dass eine Anfrage externe Werkzeuge erfordert (z. B. Taschenrechner, Wetter-API, Datenbankabfrage), und daraufhin strukturierte Befehle (meist JSON) zu generieren, die von einer Softwareumgebung ausgeführt werden können. Das Ergebnis der Ausführung wird dem Modell zurückgegeben, um die finale Antwort zu formulieren. Tool Use ist eine Kernkomponente von [[#AI Agent|AI Agents]] und wird durch Protokolle wie [[#mcp|MCP]] standardisiert.
+Die Fähigkeit eines [[#llm|LLMs]], zu erkennen, dass eine Anfrage externe Werkzeuge erfordert (z. B. Taschenrechner, Wetter-API, Datenbankabfrage), und daraufhin strukturierte Befehle (meist JSON) zu generieren, die von einer Softwareumgebung ausgeführt werden können. Das Ergebnis der Ausführung wird dem Modell zurückgegeben, um die finale Antwort zu formulieren.
 
-* Schick, Timo, und Jane Dwivedi-Yu. „Toolformer: Language Models Can Teach Themselves to Use Tools". _Advances in Neural Information Processing Systems_, Bd. 36, 2023. [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761).
+Die Begriffe Tool Use und Function Calling werden oft synonym verwendet. Konzeptuell bezeichnet Tool Use die übergeordnete Fähigkeit zur Werkzeugnutzung, während Function Calling den spezifischen technischen Mechanismus beschreibt. Das LLM selbst führt keine Funktionen aus, sondern generiert strukturierten Output, der spezifiziert, welche Funktion mit welchen Argumenten aufgerufen werden soll. Eine umgebende Softwareschicht interpretiert diesen Output und führt die entsprechende Funktion aus.
+
+Tool Use ist eine Kernkomponente von [[#ai-agent|AI Agents]]. Weng (2023) beschreibt sie neben Planning und Memory als eine der drei Schlüsselkomponenten LLM-gesteuerter autonomer Agenten. Die Standardisierung der Schnittstellen zwischen LLMs und externen Werkzeugen erfolgt zunehmend durch Protokolle wie [[#mcp|MCP (Model Context Protocol)]].
+
+* Schick, Timo, et al. „Toolformer: Language Models Can Teach Themselves to Use Tools". arXiv:2302.04761 (2023). [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761).
+* Weng, Lilian. „LLM Powered Autonomous Agents". _Lil'Log_, Juni 2023. [https://lilianweng.github.io/posts/2023-06-23-agent/](https://lilianweng.github.io/posts/2023-06-23-agent/).
 
 ## Model Context Protocol (MCP)
 id: mcp
@@ -665,9 +678,14 @@ en: Model Context Protocol
 tags: ai-engineering, agents
 level: intermediate
 
-Ist ein offener Standard, der als universelle Schnittstelle dient, um KI-Assistenten sicher und nahtlos mit externen Datenquellen – wie Content-Repositories, Business-Tools und Entwicklungsumgebungen – zu verbinden. Anstatt für jedes System eine individuelle, fragmentierte Integration entwickeln zu müssen, bietet MCP eine standardisierte Architektur, durch die [[#llm|LLMs]] direkten Zugriff auf relevante, isolierte Daten erhalten. MCP ermöglicht [[#Tool Use und Function Calling|Tool Use]] und ist eine Grundlage für [[#AI Agent|AI Agents]] sowie [[#rag|RAG]]-Systeme.
+Ein von Anthropic entwickeltes offenes Protokoll, das eine standardisierte Schnittstelle zwischen LLM-Anwendungen und externen Datenquellen oder Werkzeugen definiert. MCP adressiert das Problem fragmentierter Integrationen, bei denen jede Verbindung zwischen einem KI-System und einer externen Ressource individuell implementiert werden muss.
+
+Die Architektur folgt einem Client-Server-Modell. MCP Hosts sind LLM-Anwendungen (z. B. Claude Desktop, IDEs), die Verbindungen zu MCP Servers initiieren. Diese Server stellen spezifische Fähigkeiten bereit, etwa Zugriff auf Dateisysteme, Datenbanken oder APIs. Das Protokoll definiert, wie Ressourcen exponiert, Werkzeuge aufgerufen und Kontextinformationen ausgetauscht werden.
+
+MCP standardisiert [[#tool-use|Tool Use]], indem es ein einheitliches Format für die Kommunikation zwischen LLM-Anwendungen und externen Diensten bereitstellt. Es kann als Infrastrukturschicht für [[#ai-agent|AI Agents]] und [[#rag|RAG]]-Systeme dienen, ist aber nicht deren einzige oder notwendige Grundlage.
 
 * Anthropic. „Introducing the Model Context Protocol". _Anthropic News_, 25. November 2024. [https://www.anthropic.com/news/model-context-protocol](https://www.anthropic.com/news/model-context-protocol).
+* Model Context Protocol. „Documentation". [https://modelcontextprotocol.io/](https://modelcontextprotocol.io/).
 
 ## AI Agent
 id: ai-agent
@@ -690,12 +708,24 @@ Sapkota et al. (2025) schlagen eine taxonomische Unterscheidung vor, bei der AI 
 ## ARC-AGI
 id: arc-agi
 en: ARC-AGI (Abstraction and Reasoning Corpus)
-tags: benchmarks, evaluation, wip
+tags: benchmarks, evaluation
 level: intermediate
 
-Work in progress.
+Ein [[#benchmark|Benchmark]] zur Messung allgemeiner fluider Intelligenz, entwickelt von François Chollet und erstmals 2019 in seinem Paper „On the Measure of Intelligence" vorgestellt. ARC-AGI basiert auf der These, dass Intelligenz nicht durch Leistung bei spezifischen Aufgaben gemessen werden sollte, sondern durch die Effizienz des Skill-Erwerbs bei unbekannten Aufgaben.
 
-* https://arcprize.org
+Der Benchmark besteht aus gitterbasierten visuellen Reasoning-Aufgaben. Jede Aufgabe zeigt wenige Input-Output-Paare (typischerweise zwei bis fünf), aus denen der Testnehmer die zugrundeliegende Transformationsregel abstrahieren und auf neue Inputs anwenden muss. Das Format ist inspiriert von Raven's Progressive Matrices aus der psychometrischen Forschung.
+
+Die Aufgaben setzen ausschließlich „Core Knowledge Priors" voraus, also kognitive Grundbausteine wie Objektpersistenz, räumliche Beziehungen, Zahlen und Zählen. Kulturspezifisches Wissen oder Sprache werden bewusst ausgeschlossen, um einen fairen Vergleich zwischen Menschen und KI-Systemen zu ermöglichen. Menschen lösen die Aufgaben typischerweise mit hoher Trefferquote, während KI-Systeme trotz Fortschritten weiterhin Schwierigkeiten mit der [[#generalisierung|Generalisierung]] aus wenigen Beispielen zeigen.
+
+ARC-AGI existiert in mehreren Versionen. ARC-AGI-2 (2025) enthält Aufgaben, die resistenter gegen Brute-Force-Ansätze sind. ARC-AGI-3 soll interaktive Reasoning-Umgebungen einführen.
+
+* Chollet, François. „On the Measure of Intelligence". _arXiv preprint_, 2019. [https://doi.org/10.48550/arXiv.1911.01547](https://doi.org/10.48550/arXiv.1911.01547).
+* Chollet, François, et al. „ARC-AGI-2: A New Challenge for Frontier AI Reasoning Systems". _arXiv preprint_, 2025. [https://arxiv.org/abs/2505.11831](https://arxiv.org/abs/2505.11831).
+* ARC Prize Foundation. [https://arcprize.org](https://arcprize.org).
+* Video: „I've updated my AGI timeline" – François Chollet & Dwarkesh Patel. [https://www.youtube.com/watch?v=1if6XbzD5Yg](https://www.youtube.com/watch?v=1if6XbzD5Yg).
+* Video: Pattern Recognition vs True Intelligence – François Chollet. [https://youtu.be/JTU8Ha4Jyfc](https://youtu.be/JTU8Ha4Jyfc).
+* Video: François Chollet on OpenAI o-models and ARC. [https://youtu.be/w9WE1aOPjHc?t=3412](https://youtu.be/w9WE1aOPjHc?t=3412).
+* Video: Interactive Reasoning Benchmarks – ARC-AGI-3 Preview. [https://youtu.be/3T4OwBp6d90](https://youtu.be/3T4OwBp6d90).
 
 ## Agentic AI
 id: agentic-ai
