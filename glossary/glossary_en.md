@@ -234,6 +234,7 @@ level: basic
 A pejorative term (analogous to "spam" for emails) for mass-generated, low-quality AI content flooding the internet. Slop is characterized by appearing superficially like useful content (often SEO-optimized) but being redundant, imprecise, or meaningless in substance. Unlike [[#Hallucinations (Confabulations)|hallucinations]] (which are errors), slop is the result of careless or malicious use of LLMs merely to generate attention without added value.
 
 * Simon Willison. "Slop is the new name for unwanted AI-generated content". _Simon Willison's Weblog_, May 8, 2024. [https://simonwillison.net/2024/May/8/slop/](https://simonwillison.net/2024/May/8/slop/).
+* Video: [What is AI Slop? Low-Quality AI Content Causes, Signs, & Fixes](https://youtu.be/hl6mANth6oA)
 
 ## Latent Space
 id: latent-space
