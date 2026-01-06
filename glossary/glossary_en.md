@@ -86,8 +86,9 @@ en: AI Engineering
 tags: ai-engineering, fundamentals
 level: basic
 
-An interdisciplinary field that combines methods from systems engineering, software engineering, computer science, and human-centered design to develop, deploy, and maintain AI systems. Unlike pure model development, AI Engineering encompasses the entire lifecycle—from prototype to production. The focus is on creating robust, scalable, and trustworthy systems that reliably solve real problems and are aligned with human needs and operational goals—especially in high-stakes environments.
+An interdisciplinary field that combines methods from systems engineering, software engineering, computer science, and human-centered design to develop, deploy, and maintain AI systems. Unlike pure model development, AI Engineering encompasses the entire lifecycle—from prototype to production. The focus is on creating robust, scalable, and trustworthy systems that reliably solve real problems and are aligned with human needs and operational goals—especially in high-stakes environments. Conceptually, the building blocks of generative AI systems can be organized into abstraction levels: from atomic primitives (prompts, [[#Embedding|embeddings]], [[#Large Language Model (LLM)|LLMs]]) through compositions (such as [[#Retrieval Augmented Generation (RAG)|RAG]] or [[#Tool Use and Function Calling|function calling]]) to production-ready deployment patterns ([[#AI Agent|agents]], [[#Fine-Tuning]])—an organizing principle that facilitates systematic analysis and communication of AI architectures.
 
+* Video: [AI Periodic Table Explained: Mapping LLMs, RAG & AI Agent Frameworks](https://youtu.be/ESBMgZHzfG0)
 * Carnegie Mellon Software Engineering Institute - AI Engineering Current (2025). https://www.sei.cmu.edu/artificial-intelligence-engineering/
 * MIT Professional Education - What is Artificial Intelligence Engineering? October 2, 2023. https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/
 * CMU Course - Machine Learning in Production / AI Engineering Spring 2025. https://mlip-cmu.github.io/s2025/
@@ -140,6 +141,17 @@ Structured adversarial testing of AI systems in which individuals attempt to pro
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned". arXiv:2209.07858. Preprint, arXiv, November 22, 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
 * Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
+
+## Guardrails
+id: guardrails
+en: Guardrails
+tags: safety, ai-engineering
+level: intermediate
+
+Runtime safety mechanisms placed between user inputs and model outputs to prevent undesirable behavior. Unlike [[#Red Teaming]] (pre-deployment testing) and [[#Alignment]] (training-time alignment), guardrails operate during [[#Inference]] and encompass both input validation (e.g., detecting [[#Prompt Injection]] attempts) and output control (e.g., blocking toxic content, schema validation of structured outputs). Typical implementations use rule-based filters, additional classification models, or the LLM itself for self-checking. However, practice shows that guardrails are more vulnerable than often assumed: the HackAPrompt study demonstrates that even sophisticated protection mechanisms can be bypassed through creative [[#Jailbreak|jailbreaks]], as the underlying language models cannot distinguish between legitimate and manipulative requests. Guardrails therefore form a complementary but not infallible protection layer in production LLM systems.
+
+* Rebedea, Traian, et al. "NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails". _Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations_, 2023. [https://arxiv.org/abs/2310.10501](https://arxiv.org/abs/2310.10501).
+* Video: [Why securing AI is harder than anyone expected and guardrails are failing – Sander Schulhoff (HackAPrompt)](https://youtu.be/J9982NLmTXg)
 
 ## Prompt Engineering
 id: prompt-engineering
@@ -601,7 +613,7 @@ en: RAG (Retrieval Augmented Generation)
 tags: ai-engineering
 level: intermediate
 
-RAG is an approach that couples generative language models with an external information retrieval system (retriever). In this method, the model generates answers not exclusively from internal parameters stored during training but first retrieves relevant documents from an external knowledge base (e.g., a vector database). These retrieved text passages are fed into the generation process as additional context. This method can increase the factual accuracy of generated texts and reduce the tendency for hallucinations. Additionally, the approach enables updating available knowledge by simply exchanging the document index without retraining the neural network.
+RAG is an approach that couples generative language models with an external information retrieval system (retriever). The typical data flow proceeds in multiple stages: documents are first converted into [[#Embedding|embeddings]] and stored in a [[#Vector Database|vector database]]; upon a query, semantically relevant text passages are retrieved, combined with the original prompt, and passed to the [[#Large Language Model (LLM)|LLM]] for generation—optionally filtered through [[#Guardrails]]. This method can increase the factual accuracy of generated texts and reduce the tendency for [[#Hallucinations (Confabulations)|hallucinations]]. Additionally, the approach enables updating available knowledge by simply exchanging the document index without retraining the neural network.
 
 * Lewis, Patrick, et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks". _Advances in Neural Information Processing Systems_, Vol. 33, 2020. [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401).
 
@@ -649,7 +661,7 @@ en: AI Agent
 tags: agents
 level: intermediate
 
-An autonomous system that perceives its environment and proactively acts to achieve defined goals. Unlike passive models, an agent uses an [[#llm|LLM]] as a central reasoning unit to create multi-step plans and use external tools ([[#Tool Use and Function Calling|Tool Use]]) or APIs for execution. The core process is a continuous loop of observation, decision, and action. See also [[#Agentic AI]] and [[#Multi-Agent Systems]].
+An autonomous system that perceives its environment and proactively acts to achieve defined goals. Unlike passive models, an agent uses an [[#llm|LLM]] as a central reasoning unit to create multi-step plans and use external tools ([[#Tool Use and Function Calling|Tool Use]]) or APIs for execution. The core process is an iterative Think-Act-Observe loop: the system analyzes the current state (Think), executes an action (Act), observes the result (Observe), and repeats this cycle until goal achievement. This architecture distinguishes agents from simple prompt-response systems through their capacity for autonomous error correction and dynamic plan adaptation. See also [[#Agentic AI]] and [[#Multi-Agent Systems]].
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * IBM Technology. "Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
