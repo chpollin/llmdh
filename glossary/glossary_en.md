@@ -651,12 +651,18 @@ An open standard that serves as a universal interface to securely and seamlessly
 ## AI Agent
 id: ai-agent
 en: AI Agent
-tags: agents
+tags: agents, fundamentals
 level: intermediate
 
-An autonomous system that perceives its environment and proactively acts to achieve defined goals. Unlike passive models, an agent uses an [[#llm|LLM]] as a central reasoning unit to create multi-step plans and use external tools ([[#Tool Use and Function Calling|Tool Use]]) or APIs for execution. The core process is an iterative Think-Act-Observe loop: the system analyzes the current state (Think), executes an action (Act), observes the result (Observe), and repeats this cycle until goal achievement. This architecture distinguishes agents from simple prompt-response systems through their capacity for autonomous error correction and dynamic plan adaptation. See also [[#Agentic AI]] and [[#Multi-Agent Systems]].
+An autonomous software system that executes goal-directed tasks in defined environments. AI Agents typically operate in a loop of thinking, acting, and observing (Think-Act-Observe) until the goal is achieved.
 
-* Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
+Three properties characterize AI Agents: They operate largely independently after initialization (**Autonomy**). They are specialized for repeatable tasks in limited domains, such as email filtering or calendar coordination (**Task Specificity**). They respond to inputs and adapt their behavior through feedback (**Reactivity**).
+
+Modern AI Agents use [[#llm|LLMs]] as a reasoning component and extend their capabilities through [[#Tool Use and Function Calling|Tool Use]], i.e., connecting external tools and APIs.
+
+The central difference from [[#Agentic AI]] lies in system architecture: AI Agents operate as single systems without structured communication with other agents. They are suitable for modular, tool-supported tasks. Scenarios with task interdependence and dynamic role distribution require Agentic AI architectures instead.
+
+* Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * IBM Technology. "Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
 
 ## ARC-AGI
@@ -675,18 +681,29 @@ en: Agentic AI
 tags: agents
 level: intermediate
 
-A paradigm in AI development that describes the degree of action autonomy (_agency_) of a system. It refers to the transition from generative AI, which merely creates content, to systems that function as active problem solvers. Agentic AI is characterized by the ability to independently decompose complex tasks into sub-steps (similar to [[#Chain of Thought (CoT)|Chain of Thought]]), verify its own results (self-reflection), and dynamically adapt the solution path when errors occur. See also [[#AI Agent]] and [[#Tool Use and Function Calling|Tool Use]].
+A class of AI systems in which multiple specialized agents work together in a coordinated manner to achieve complex goals. Agentic AI marks the architectural transition from [[#AI Agent|AI Agents]] as single systems to orchestrated multi-agent ecosystems.
 
-* Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
+Four characteristics define Agentic AI: Multiple agents work together under central or decentralized coordination (**Multi-Agent Collaboration**). User goals are automatically decomposed into subtasks and distributed among agents (**Dynamic Task Decomposition**). Different memory types maintain context across interactions (**Persistent Memory Structures**). Agents verify their own results and adapt solution paths when errors occur (**Self-Reflection**).
+
+An orchestration layer or meta-agent handles role assignment, dependency management, and conflict resolution. This architecture enables emergent system behavior that exceeds the sum of individual agents. However, it also carries risks such as error cascades between agents and unpredictable emergent behavior.
+
+* Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 
 ## Multi-Agent Systems
 id: multi-agent-systems
 en: Multi-Agent Systems
-tags: agents
+tags: agents, ai-engineering
 level: advanced
 
-Systems in which multiple specialized AI agents interact with each other (cooperate, debate, or compete) to solve complex problems. Through role division (e.g., a coder, a reviewer), often better results can be achieved than with a single, monolithic agent.
+Architectures in which multiple specialized agents interact to solve problems that would overwhelm individual agents. Multi-Agent Systems form the technical foundation for [[#Agentic AI]].
 
+Four components characterize these architectures: Meta-agents or coordination layers assign tasks, manage dependencies, and resolve conflicts (**Orchestration**). Agents communicate via message queues, shared memory, or structured output exchanges (**Inter-Agent Communication**). Agents take on specialized functions such as planner, retriever, or verifier (**Role Distribution**). Shared memory structures ensure cross-agent context preservation (**Shared Context**).
+
+Coordination strategies include cooperative approaches with shared goals, competitive approaches as in game environments, and hybrid combinations of both.
+
+Multi-Agent Systems introduce new security risks, as compromising one agent can endanger the entire system.
+
+* Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * Li, Guohao, et al. "CAMEL: Communicative Agents for 'Mind' Exploration of Large Language Model Society". _Advances in Neural Information Processing Systems_, Vol. 36, 2023. [https://arxiv.org/abs/2303.17760](https://arxiv.org/abs/2303.17760).
 
 ## World Models
