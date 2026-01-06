@@ -545,9 +545,14 @@ en: AI Alignment
 tags: safety, training
 level: intermediate
 
-Alignment is defined as the orientation of AI systems toward complex human intentions and values, concretely operationalized through the principles "helpful, honest, and harmless" (HHH). Since these qualitative goals cannot be specified through handwritten rules or simple mathematical functions, alignment is technically solved as a "preference modeling" problem: the system learns not through mere imitation of data but through iterative human feedback (comparisons of action options) to approximate an internal reward function. This method bridges the communication gap between vague human intent and machine optimization by ensuring that the model learns even nuanced, hard-to-define safety and utility standards in a scalable way that would not be robustly representable through pure supervised learning.
+The alignment of AI systems with human intentions, values, and safety requirements. The problem divides into two dimensions: **Outer Alignment** asks whether the specified objective function actually correctly represents human values. **Inner Alignment** asks whether the trained system robustly pursues this objective function or develops other goals internally.
+
+Since complex human values cannot be fully specified through explicit rules, alignment research addresses this problem through various approaches: **Preference Modeling**, concretely operationalized through [[#rlhf|RLHF]], learns a reward function from human comparative judgments. [[#constitutional-ai|Constitutional AI]] instead uses an explicit constitution of principles against which the system evaluates its own outputs. **Direct Alignment Algorithms** like DPO optimize models directly on preference data without a separate reward model.
+
+These methods often operationalize the principles "helpful, honest, and harmless" (HHH), but have known limitations including amplification of majority opinions, [[#sycophancy|Sycophancy]], and lack of robustness under distribution shift. Alignment remains an open research problem, particularly regarding the question of how oversight can be scaled for increasingly capable systems.
 
 * Askell, Amanda, et al. "A General Language Assistant as a Laboratory for Alignment". *Anthropic*, 2021. [https://arxiv.org/abs/2112.00861](https://arxiv.org/abs/2112.00861).
+* YouTube Channel: [Rational Animations](https://www.youtube.com/@RationalAnimations) – Channel with many informative videos on AI Alignment and Safety.
 
 ## Large Language Model (LLM)
 id: llm

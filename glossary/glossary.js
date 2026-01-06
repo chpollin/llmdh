@@ -224,17 +224,20 @@ const GlossaryApp = {
         let html = body
             // Convert [[#id|text]] to links (skip self-references)
             .replace(/\[\[#([^\]|]+)\|([^\]]+)\]\]/g, (match, id, text) => {
-                if (id === currentEntryId) return text; // No link for self-reference
-                return `<a href="#${id}" class="term-link">${text}</a>`;
+                // Find entry by id or title to get the correct id
+                const entry = this.entries.find(e => e.id === id || e.title === id || e.title.toLowerCase() === id.toLowerCase());
+                const targetId = entry ? entry.id : id;
+                if (targetId === currentEntryId) return text; // No link for self-reference
+                return `<a href="#${targetId}" class="term-link">${text}</a>`;
             })
             // Convert [[#id]] to links (skip self-references)
             .replace(/\[\[#([^\]]+)\]\]/g, (match, id) => {
-                const entry = this.entries.find(e => e.id === id || e.title.toLowerCase() === id.toLowerCase());
+                const entry = this.entries.find(e => e.id === id || e.title === id || e.title.toLowerCase() === id.toLowerCase());
                 const text = entry ? entry.title : id;
+                const targetId = entry ? entry.id : id;
                 // Skip self-references
-                if (entry && entry.id === currentEntryId) return text;
-                if (id === currentEntryId) return text;
-                return `<a href="#${id}" class="term-link">${text}</a>`;
+                if (targetId === currentEntryId) return text;
+                return `<a href="#${targetId}" class="term-link">${text}</a>`;
             })
             // Bold text
             .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
