@@ -765,6 +765,7 @@ level: intermediate
 Der Begriff ist umstritten und nicht einheitlich definiert. Nach Bennett (2025) ist AGI kein reines Software-Konstrukt, sondern ein physisch verankertes Gesamtsystem (Hardware und Software), das die Autonomie und Anpassungsfähigkeit eines „künstlichen Wissenschaftlers" besitzt. Anstatt Intelligenz lediglich über die menschliche Leistung bei bekannten Aufgaben zu definieren, bestimmt Bennett AGI als die Fähigkeit, in einer breiten Palette unbekannter Umgebungen Ziele zu erreichen, wobei der wahre Gradmesser nicht die reine Rechenkraft, sondern die **Sample-Effizienz** (Lernen aus wenigen Daten) und die **Energieeffizienz** bei der Adaptation an neue Probleme ist.
 
 * Bennett, Michael Timothy. _What the F*ck Is Artificial General Intelligence?_ Bd. 16057. 2026. [https://doi.org/10.1007/978-3-032-00686-8_4](https://doi.org/10.1007/978-3-032-00686-8_4).
+* Video: [The arrival of AGI – Shane Legg (co-founder of DeepMind)](https://youtu.be/l3u_FAv33G0)
 
 ## Parameter
 id: parameter
