@@ -231,7 +231,13 @@ en: AI Slop
 tags: safety
 level: basic
 
-Ein abwertender Begriff (analog zu „Spam" für E-Mails) für massenhaft generierte, qualitativ minderwertige KI-Inhalte, die das Internet fluten. Slop zeichnet sich dadurch aus, dass er oberflächlich wie nützlicher Inhalt aussieht (oft SEO-optimiert), aber inhaltlich redundant, unpräzise oder sinnlos ist. Im Gegensatz zu [[#Halluzinationen (Konfabulationen)|Halluzinationen]] (die Fehler sind) ist Slop das Ergebnis von nachlässigem oder böswilligem Einsatz von LLMs zur bloßen Erzeugung von Aufmerksamkeit ohne Mehrwert.
+Umgangssprachlicher Begriff für qualitativ minderwertige KI-generierte Inhalte, die formelhaft, generisch, fehleranfällig und substanzarm sind. Der Begriff entstand 2024 in Analogie zu „Spam" für unerwünschte E-Mails.
+
+AI Slop zeigt sich auf zwei Ebenen. Auf der **Ebene der Formulierung** finden sich aufgeblähte Phrasen („it is important to note that", „in the realm of"), formelhafte Konstrukte („not only but also"), übertriebene Adjektive („ever-evolving", „game-changing") und bestimmte Signalwörter wie „delve", das 2024 in Publikationen 25-mal häufiger auftrat als in Vorjahren. Auf der **Ebene des Inhalts** zeigen sich Verbosität ohne Informationsgehalt, [[#Halluzinationen (Konfabulationen)|Halluzinationen]] und generische Antworten ohne Substanz.
+
+Die Ursachen liegen in der Funktionsweise von LLMs: Token-by-Token-Generierung produziert output-getriebene statt zielgetriebene Texte. Training Data Bias reproduziert überrepräsentierte Phrasen aus den Trainingsdaten. [[#Reinforcement Learning from Human Feedback (RLHF)|RLHF]]-Optimierung auf „hilfreich klingende" Antworten führt zu uniformem Stil.
+
+Gegenmaßnahmen umfassen auf **Nutzerseite** spezifische Prompts mit Zielgruppe und Tonalität, Beispiele für gewünschten Stil und iterative Überarbeitung im Dialog mit dem Modell. Auf **Entwicklerseite** helfen kuratierte Trainingsdaten ohne minderwertige Webtexte, Multi-Objective-RLHF mit separaten Achsen für Hilfsbereitschaft, Korrektheit und Kürze sowie [[#Retrieval Augmented Generation (RAG)|RAG]]-Integration zur Reduktion von Halluzinationen.
 
 * Simon Willison. „Slop is the new name for unwanted AI-generated content". _Simon Willison's Weblog_, 8. Mai 2024. [https://simonwillison.net/2024/May/8/slop/](https://simonwillison.net/2024/May/8/slop/).
 * Video: [What is AI Slop? Low-Quality AI Content Causes, Signs, & Fixes](https://youtu.be/hl6mANth6oA)
