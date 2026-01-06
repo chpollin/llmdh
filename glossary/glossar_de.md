@@ -86,8 +86,9 @@ en: AI Engineering
 tags: ai-engineering, fundamentals
 level: basic
 
-Bezeichnet eine interdisziplinäre Fachrichtung, die Methoden aus Systems Engineering, Software Engineering, Informatik und menschenzentriertem Design (Human-Centered Design) verknüpft, um KI-Systeme zu entwickeln, bereitzustellen und zu warten. Im Gegensatz zur reinen Modellentwicklung umfasst AI Engineering den gesamten Lebenszyklus – vom Prototyp bis zur Produktion. Der Fokus liegt dabei auf der Schaffung robuster, skalierbarer und vertrauenswürdiger Systeme, die reale Probleme zuverlässig lösen und an menschlichen Bedürfnissen sowie operativen Zielen ausgerichtet sind – insbesondere in sicherheitskritischen Umgebungen (_High-Stakes Environments_).
+Bezeichnet eine interdisziplinäre Fachrichtung, die Methoden aus Systems Engineering, Software Engineering, Informatik und menschenzentriertem Design (Human-Centered Design) verknüpft, um KI-Systeme zu entwickeln, bereitzustellen und zu warten. Im Gegensatz zur reinen Modellentwicklung umfasst AI Engineering den gesamten Lebenszyklus – vom Prototyp bis zur Produktion. Der Fokus liegt dabei auf der Schaffung robuster, skalierbarer und vertrauenswürdiger Systeme, die reale Probleme zuverlässig lösen und an menschlichen Bedürfnissen sowie operativen Zielen ausgerichtet sind – insbesondere in sicherheitskritischen Umgebungen (_High-Stakes Environments_). Konzeptuell lassen sich die Bausteine generativer KI-Systeme in Abstraktionsstufen ordnen: von atomaren Primitiven (Prompts, [[#Embedding|Embeddings]], [[#Large Language Model (LLM)|LLMs]]) über Kompositionen (wie [[#Retrieval Augmented Generation (RAG)|RAG]] oder [[#Tool Use und Function Calling|Function Calling]]) bis hin zu produktionsreifen Deployment-Mustern ([[#AI Agent|Agents]], [[#Fine-Tuning]]) – ein Ordnungsprinzip, das die systematische Analyse und Kommunikation von KI-Architekturen erleichtert.
 
+* Video: [AI Periodic Table Explained: Mapping LLMs, RAG & AI Agent Frameworks](https://youtu.be/ESBMgZHzfG0)
 * Carnegie Mellon Software Engineering Institute - AI Engineering Current (2025). https://www.sei.cmu.edu/artificial-intelligence-engineering/
 * MIT Professional Education - What is Artificial Intelligence Engineering? October 2, 2023. https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/
 * CMU Course - Machine Learning in Production / AI Engineering Spring 2025. https://mlip-cmu.github.io/s2025/
@@ -140,6 +141,17 @@ Strukturiertes adversarielles Testen von KI-Systemen, bei dem Personen versuchen
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. 'Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned'. arXiv:2209.07858. Preprint, arXiv, 22 November 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
 * Video: [Prompt Injection, Jailbreaking, und Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
+
+## Guardrails
+id: guardrails
+en: Guardrails
+tags: safety, ai-engineering
+level: intermediate
+
+Laufzeit-Sicherheitsmechanismen, die zwischen Nutzereingaben und Modellausgaben geschaltet werden, um unerwünschtes Verhalten zu verhindern. Im Gegensatz zu [[#Red Teaming]] (Pre-Deployment-Testing) und [[#Alignment]] (Trainingszeit-Ausrichtung) operieren Guardrails während der [[#Inferenz]] und umfassen sowohl Input-Validierung (z. B. Erkennung von [[#Prompt Injection]]-Versuchen) als auch Output-Kontrolle (z. B. Blockierung toxischer Inhalte, Schema-Validierung strukturierter Ausgaben). Typische Implementierungen nutzen regelbasierte Filter, zusätzliche Klassifikationsmodelle oder das LLM selbst zur Selbstüberprüfung. Allerdings zeigt die Praxis, dass Guardrails anfälliger sind als oft angenommen: Die HackAPrompt-Studie demonstriert, dass selbst ausgefeilte Schutzmechanismen durch kreative [[#Jailbreak|Jailbreaks]] umgangen werden können, da die zugrundeliegenden Sprachmodelle nicht zwischen legitimen und manipulativen Anfragen unterscheiden können. Guardrails bilden daher eine komplementäre, aber keine unfehlbare Schutzschicht in produktiven LLM-Systemen.
+
+* Rebedea, Traian, et al. „NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails". _Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations_, 2023. [https://arxiv.org/abs/2310.10501](https://arxiv.org/abs/2310.10501).
+* Video: [Why securing AI is harder than anyone expected and guardrails are failing – Sander Schulhoff (HackAPrompt)](https://youtu.be/J9982NLmTXg)
 
 ## Prompt Engineering
 id: prompt-engineering
@@ -601,7 +613,7 @@ en: RAG (Retrieval Augmented Generation)
 tags: ai-engineering
 level: intermediate
 
-RAG bezeichnet einen Ansatz, der generative Sprachmodelle mit einem externen Informationsabrufsystem (Retriever) koppelt. Bei diesem Verfahren generiert das Modell Antworten nicht ausschließlich aus den während des Trainings gespeicherten internen Parametern, sondern ruft zunächst relevante Dokumente aus einer externen Wissensbasis (z. B. eine Vektor-Datenbank) ab. Diese abgerufenen Textpassagen werden als zusätzlicher Kontext in den Generierungsprozess eingespeist. Durch diese Methode lässt sich die faktische Genauigkeit der generierten Texte erhöhen und die Neigung zu Halluzinationen verringern. Zudem ermöglicht der Ansatz die Aktualisierung des verfügbaren Wissens durch den einfachen Austausch des Dokumentenindex, ohne dass das neuronale Netz neu trainiert werden muss.
+RAG bezeichnet einen Ansatz, der generative Sprachmodelle mit einem externen Informationsabrufsystem (Retriever) koppelt. Der typische Datenfluss verläuft in mehreren Stufen: Dokumente werden zunächst in [[#Embedding|Embeddings]] überführt und in einer [[#Vektordatenbank]] gespeichert; bei einer Anfrage werden semantisch relevante Textpassagen abgerufen, mit dem ursprünglichen Prompt kombiniert und dem [[#Large Language Model (LLM)|LLM]] zur Generierung übergeben – optional gefiltert durch [[#Guardrails]]. Durch diese Methode lässt sich die faktische Genauigkeit der generierten Texte erhöhen und die Neigung zu [[#Halluzinationen (Konfabulationen)|Halluzinationen]] verringern. Zudem ermöglicht der Ansatz die Aktualisierung des verfügbaren Wissens durch den einfachen Austausch des Dokumentenindex, ohne dass das neuronale Netz neu trainiert werden muss.
 
 * Lewis, Patrick, et al. „Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks". _Advances in Neural Information Processing Systems_, Bd. 33, 2020. [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401).
 
@@ -649,7 +661,7 @@ en: AI Agent
 tags: agents
 level: intermediate
 
-Ein autonomes System, das seine Umgebung wahrnimmt und proaktiv handelt, um definierte Ziele zu erreichen. Im Gegensatz zu passiven Modellen nutzt ein Agent ein [[#llm|LLM]] als zentrale Reasoning-Einheit, um mehrstufige Pläne zu erstellen und externe Werkzeuge ([[#Tool Use und Function Calling|Tool Use]]) oder APIs zur Ausführung zu verwenden. Der Kernprozess ist eine kontinuierliche Schleife aus Beobachtung, Entscheidung und Handlung. Siehe auch [[#Agentic AI]] und [[#Multi-Agent Systems]].
+Ein autonomes System, das seine Umgebung wahrnimmt und proaktiv handelt, um definierte Ziele zu erreichen. Im Gegensatz zu passiven Modellen nutzt ein Agent ein [[#llm|LLM]] als zentrale Reasoning-Einheit, um mehrstufige Pläne zu erstellen und externe Werkzeuge ([[#Tool Use und Function Calling|Tool Use]]) oder APIs zur Ausführung zu verwenden. Der Kernprozess ist eine iterative Think-Act-Observe-Schleife: Das System analysiert den aktuellen Zustand (Think), führt eine Aktion aus (Act), beobachtet das Ergebnis (Observe) und wiederholt diesen Zyklus bis zur Zielerreichung. Diese Architektur unterscheidet Agents von einfachen Prompt-Antwort-Systemen durch ihre Fähigkeit zur autonomen Fehlerkorrektur und dynamischen Plananpassung. Siehe auch [[#Agentic AI]] und [[#Multi-Agent Systems]].
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (September 2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * IBM Technology. „Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
