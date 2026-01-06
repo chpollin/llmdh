@@ -590,7 +590,7 @@ en: Embedding
 tags: architecture, ai-engineering
 level: intermediate
 
-A mathematical representation of [[#Token|tokens]] or text passages as vectors in a high-dimensional space. In this space, semantically similar concepts (e.g., "king" and "emperor") lie geometrically close together, allowing the model to compute semantic relationships.
+Learned numerical representations of linguistic units as vectors in a high-dimensional space. The vectors are trained such that semantically or functionally similar units lie geometrically close together. This structure allows models to work computationally with meaning relationships.
 
 * Mikolov, Tomas, et al. "Efficient Estimation of Word Representations in Vector Space". _arXiv preprint_, 2013. [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781).
 
