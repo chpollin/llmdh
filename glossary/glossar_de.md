@@ -23,7 +23,7 @@ Ein **Stochastic Parrot** (stochastischer Papagei) bezeichnet [[#Large Language 
 ## Emergenz in LLM
 id: emergenz
 en: Emergence in LLMs
-tags: fundamentals, training
+tags: fundamentals, training, contested
 level: advanced
 
 Das phänomenologische Auftreten komplexer Fähigkeiten (z. B. arithmetisches Rechnen, logisches Schließen, Theory of Mind) in großen Modellen, die in kleineren Modellen derselben Architektur nicht oder nur zufällig vorhanden waren. Nach Wei et al. (2022) skalieren diese Fähigkeiten nicht linear, sondern zeigen einen **Phasenübergang**: Die Leistung bleibt lange nahe Null und springt ab einer kritischen Schwelle von Parametern und Rechenleistung (Compute) abrupt an.
@@ -69,6 +69,28 @@ level: basic
 Der Prozess, bei dem ein bereits fertig trainiertes KI-Modell verwendet wird, um neue Eingaben zu verarbeiten und Ergebnisse zu liefern. Im Gegensatz zum Training (wie [[#Pre-Training]] oder [[#Fine-Tuning]]), bei dem das Modell lernt und seine internen Verschaltungen ändert, bleibt das Wissen des Modells während der [[#Inferenz]] statisch (eingefroren).
 
 * Pope, Reiner, et al. „Efficiently Scaling Transformer Inference". _Proceedings of Machine Learning and Systems_, Bd. 5, 2023. [https://arxiv.org/abs/2211.05102](https://arxiv.org/abs/2211.05102).
+
+## Intelligenz
+id: intelligenz
+en: Intelligence
+tags: fundamentals, contested
+level: intermediate
+
+Intelligenz bezeichnet die Fähigkeit eines Agenten, Ziele in einer Vielzahl von Umgebungen zu erreichen. Diese Definition von Legg und Hutter (2007) versucht, einen gemeinsamen Kern aus über 70 verschiedenen Definitionen zu destillieren. Im Bereich KI bleibt der Begriff jedoch konzeptuell umstritten – ähnlich wie „[[#reasoning|Reasoning]]" oder „[[#agi|AGI]]" existiert keine einheitliche Definition.
+
+Die psychologische Intelligenzforschung hat eigene Traditionen. Charles Spearman postulierte 1904 einen allgemeinen Intelligenzfaktor (_g_), der die Leistung über verschiedene kognitive Tests hinweg erklärt. Raymond Cattell und John Horn differenzierten später zwischen **fluider Intelligenz** (Problemlösen in neuen Situationen) und **kristalliner Intelligenz** (akkumuliertes Wissen und Fertigkeiten). Die Cattell-Horn-Carroll-Theorie (CHC) integriert diese Ansätze in ein hierarchisches Modell mit _g_ an der Spitze und mehreren Schichten spezifischerer Fähigkeiten darunter.
+
+François Chollet (2019) definiert Intelligenz als _Effizienz beim Erwerb neuer Fähigkeiten_. Diese Definition betont [[#generalisierung|Generalisierung]]: Nicht die Leistung bei bekannten Aufgaben zählt, sondern wie schnell und mit wie wenig Erfahrung ein System neue, unbekannte Probleme lösen kann. Chollet operationalisiert diesen Ansatz mit dem Abstraction and Reasoning Corpus ([[#arc-agi|ARC]]).
+
+Die APA-Definition (Neisser et al. 1996) charakterisiert Intelligenz breiter als Fähigkeit, komplexe Ideen zu verstehen, sich effektiv an die Umgebung anzupassen, aus Erfahrung zu lernen, verschiedene Formen des [[#reasoning|Schlussfolgerns]] einzusetzen und Hindernisse durch Nachdenken zu überwinden.
+
+Für [[#benchmark|Benchmarks]] hat das praktische Konsequenzen: Ein hoher Score bei einem bekannten Test misst möglicherweise nur Spezialisierung, nicht Intelligenz im Sinne von Transferfähigkeit. Kritiker argumentieren, dass aktuelle LLMs besser darin sind, bekannte Muster zu reproduzieren als neue Probleme zu lösen.
+
+* Legg, Shane, und Marcus Hutter. „Universal Intelligence: A Definition of Machine Intelligence". _Minds and Machines_ 17, Nr. 4 (2007): 391–444. [https://doi.org/10.1007/s11023-007-9079-x](https://doi.org/10.1007/s11023-007-9079-x).
+* Chollet, François. „On the Measure of Intelligence". arXiv:1911.01547 (2019). [https://arxiv.org/abs/1911.01547](https://arxiv.org/abs/1911.01547).
+* Cattell, Raymond B. „Theory of Fluid and Crystallized Intelligence: A Critical Experiment". _Journal of Educational Psychology_ 54, Nr. 1 (1963): 1–22.
+* Wikipedia. „Cattell-Horn-Carroll Theory". [https://en.wikipedia.org/wiki/Cattell–Horn–Carroll_theory](https://en.wikipedia.org/wiki/Cattell–Horn–Carroll_theory).
+* Neisser, Ulric, et al. „Intelligence: Knowns and Unknowns". _American Psychologist_ 51, Nr. 2 (1996): 77–101. [https://doi.org/10.1037/0003-066X.51.2.77](https://doi.org/10.1037/0003-066X.51.2.77).
 
 ## Synthetische Daten
 id: synthetische-daten
@@ -616,10 +638,24 @@ Next Token Prediction bezeichnet das fundamentale Funktionsprinzip autoregressiv
 ## Reasoning
 id: reasoning
 en: Reasoning
-tags: fundamentals, wip
+tags: fundamentals, ai-engineering, contested
 level: intermediate
 
-Work in progress.
+Reasoning bezeichnet im weitesten Sinne den Prozess, aus vorhandenem Wissen Schlussfolgerungen zu ziehen, Vorhersagen zu treffen oder Erklärungen zu konstruieren. Der Begriff gehört zu den konzeptuell umstrittenen Kernbegriffen der KI-Forschung, für die ähnlich wie bei „Intelligenz" oder „[[#agi|AGI]]" keine einheitliche Definition existiert.
+
+In der klassischen Logik und Philosophie unterscheidet man drei Grundformen. **Deduktion** leitet aus allgemeinen Prämissen notwendig wahre Schlüsse ab. **Induktion** schließt von spezifischen Beobachtungen auf allgemeine Regeln, wobei die Schlüsse wahrscheinlich, aber nicht notwendig wahr sind. **Abduktion** wählt die plausibelste Erklärung für eine Beobachtung aus mehreren möglichen, ohne Gewissheit zu garantieren.
+
+Im Kontext von LLMs hat der Begriff seit 2024 eine spezifische technische Bedeutung erhalten. „Reasoning Models" (auch Large Reasoning Models, LRMs) bezeichnen Modelle, die vor der finalen Antwort explizite Zwischenschritte generieren. Diese „Reasoning Traces" oder „Chains of Thought" sollen komplexe Probleme durch schrittweise Zerlegung lösen. Technisch wird dies durch [[#test-time-compute|Inference-Time Scaling]] erreicht, also erhöhten Rechenaufwand während der Generierung, sowie durch [[#reinforcement-learning|Reinforcement Learning]], das die Modelle auf die Produktion strukturierter Zwischenschritte trainiert. Prominente Beispiele sind OpenAIs o1/o3-Serie und DeepSeek-R1.
+
+Ob diese Modelle tatsächlich „reasonen" oder elaborierte Mustererkennung betreiben, ist umstritten. Kritiker wie François Chollet argumentieren, dass LLMs fundamentale Schwierigkeiten mit [[#generalisierung|Generalisierung]] auf unbekannte Probleme haben. Apples Paper „The Illusion of Thinking" (Shojaee et al. 2025) zeigte, dass Reasoning-Modelle bei steigender Problemkomplexität zunächst mehr Tokens für das „Denken" aufwenden, ab einem Schwellenwert jedoch vollständig scheitern. Befürworter halten dagegen, dass die Definition von „echtem Reasoning" selbst unklar ist und dass funktionale Problemlösungsfähigkeit praktisch relevanter sei als philosophische Abgrenzungen.
+
+Sebastian Raschka definiert Reasoning pragmatisch als „den Prozess, Fragen zu beantworten, die komplexe, mehrstufige Generierung mit Zwischenschritten erfordern." Diese operationale Definition umgeht die Frage, ob das Modell „wirklich denkt", und fokussiert auf beobachtbares Verhalten.
+
+* Raschka, Sebastian. „Understanding Reasoning LLMs". Februar 2025. [https://magazine.sebastianraschka.com/p/understanding-reasoning-llms](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms).
+* Shojaee, Parshin, et al. „The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity". _arXiv preprint_, 2025. [https://arxiv.org/abs/2506.06941](https://arxiv.org/abs/2506.06941).
+* Wikipedia. „Reasoning model". [https://en.wikipedia.org/wiki/Reasoning_model](https://en.wikipedia.org/wiki/Reasoning_model).
+* Stanford Encyclopedia of Philosophy. „Abduction". [https://plato.stanford.edu/entries/abduction/](https://plato.stanford.edu/entries/abduction/).
+* Video: Pattern Recognition vs True Intelligence – François Chollet. [https://youtu.be/JTU8Ha4Jyfc](https://youtu.be/JTU8Ha4Jyfc).
 
 ## Retrieval Augmented Generation (RAG)
 id: rag
@@ -791,7 +827,7 @@ Work in progress.
 ## Understanding (Verstehen)
 id: understanding
 en: Understanding
-tags: fundamentals, safety
+tags: fundamentals, safety, contested
 level: advanced
 
 Ein hochumstrittener Begriff in der KI-Forschung. Während LLMs eine hohe _funktionale Kompetenz_ (Output ist korrekt) zeigen, bestreiten Kritiker, dass sie eine _formale Kompetenz_ (Verständnis der Bedeutung/Semantik) besitzen. Oft wird argumentiert, dass Modelle nur statistische Papageien sind, die Formen manipulieren, ohne deren Inhalt zu erfassen.
@@ -801,7 +837,7 @@ Ein hochumstrittener Begriff in der KI-Forschung. Während LLMs eine hohe _funkt
 ## Bewusstsein und LLM
 id: bewusstsein
 en: Consciousness in LLMs
-tags: fundamentals, safety
+tags: fundamentals, safety, contested
 level: advanced
 
 Die Debatte, ob Sprachmodelle über subjektives Erleben (_Subjective Experience_ oder _Sentience_) verfügen. Der Philosoph David Chalmers analysiert dies anhand notwendiger Indikatoren (_Feature X_), die aktuellen Modellen fehlen. Er argumentiert, dass heutigen LLMs das Bewusstsein mit hoher Wahrscheinlichkeit fehlt, da sie primär **Feed-Forward-Systeme** ohne Gedächtnisschleifen (**Rekurrenz**) sind und keine robusten **Selbstmodelle** (internes Monitoring) oder eine **einheitliche Agentenschaft** (_Unified Agency_) besitzen. Chalmers skizziert jedoch eine Roadmap zu **LLM+** (erweiterte multimodale Systeme), bei denen durch technische Ergänzungen wie eine _Global Workspace Architektur_ oder verkörperte Interaktion (_Embodiment_) in virtuellen Welten echte Bewusstseinskandidaten entstehen könnten.
@@ -811,7 +847,7 @@ Die Debatte, ob Sprachmodelle über subjektives Erleben (_Subjective Experience_
 ## AGI (Artificial General Intelligence)
 id: agi
 en: AGI (Artificial General Intelligence)
-tags: fundamentals
+tags: fundamentals, contested
 level: intermediate
 
 Der Begriff bezeichnet hypothetische KI-Systeme, die kognitive Aufgaben mindestens so flexibel bewältigen wie Menschen. Eine einheitliche Definition existiert nicht. Einige Forschende bezweifeln, dass der Begriff überhaupt sinnvoll definierbar ist. Mitchell beschreibt AGI als „ein wenig nebulös", da verschiedene Leute ihn unterschiedlich definieren und es schwer sei, Fortschritt für etwas zu messen, das nicht gut definiert ist.

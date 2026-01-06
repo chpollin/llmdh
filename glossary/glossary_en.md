@@ -23,7 +23,7 @@ A **Stochastic Parrot** refers to [[#Large Language Model (LLM)|Large Language M
 ## Emergence in LLMs
 id: emergenz
 en: Emergence in LLMs
-tags: fundamentals, training
+tags: fundamentals, training, contested
 level: advanced
 
 The phenomenological appearance of complex capabilities (e.g., arithmetic, logical reasoning, Theory of Mind) in large models that were absent or only randomly present in smaller models of the same architecture. According to Wei et al. (2022), these abilities do not scale linearly but show a **phase transition**: performance remains near zero for a long time and jumps abruptly once a critical threshold of parameters and compute is reached.
@@ -69,6 +69,28 @@ level: basic
 The process by which an already fully trained AI model is used to process new inputs and deliver results. In contrast to training (such as [[#Pre-Training]] or [[#Fine-Tuning]]), where the model learns and changes its internal connections, the model's knowledge remains static (frozen) during [[#Inference]].
 
 * Pope, Reiner, et al. "Efficiently Scaling Transformer Inference". _Proceedings of Machine Learning and Systems_, Vol. 5, 2023. [https://arxiv.org/abs/2211.05102](https://arxiv.org/abs/2211.05102).
+
+## Intelligence
+id: intelligenz
+en: Intelligence
+tags: fundamentals, contested
+level: intermediate
+
+Intelligence refers to an agent's ability to achieve goals across a wide variety of environments. This definition by Legg and Hutter (2007) attempts to distill a common core from over 70 different definitions. In the AI field, however, the term remains conceptually contested—similar to "[[#reasoning|Reasoning]]" or "[[#agi|AGI]]," no unified definition exists.
+
+Psychological intelligence research has its own traditions. Charles Spearman postulated in 1904 a general intelligence factor (_g_) that explains performance across different cognitive tests. Raymond Cattell and John Horn later differentiated between **fluid intelligence** (problem-solving in new situations) and **crystallized intelligence** (accumulated knowledge and skills). The Cattell-Horn-Carroll theory (CHC) integrates these approaches into a hierarchical model with _g_ at the top and several layers of more specific abilities beneath.
+
+François Chollet (2019) defines intelligence as _efficiency in acquiring new skills_. This definition emphasizes [[#generalization|generalization]]: what matters is not performance on known tasks but how quickly and with how little experience a system can solve new, unfamiliar problems. Chollet operationalizes this approach with the Abstraction and Reasoning Corpus ([[#arc-agi|ARC]]).
+
+The APA definition (Neisser et al. 1996) characterizes intelligence more broadly as the ability to understand complex ideas, adapt effectively to the environment, learn from experience, engage in various forms of [[#reasoning|reasoning]], and overcome obstacles through deliberation.
+
+For [[#benchmark|benchmarks]], this has practical consequences: a high score on a known test may only measure specialization, not intelligence in the sense of transfer capability. Critics argue that current LLMs are better at reproducing known patterns than solving new problems.
+
+* Legg, Shane, and Marcus Hutter. "Universal Intelligence: A Definition of Machine Intelligence". _Minds and Machines_ 17, No. 4 (2007): 391–444. [https://doi.org/10.1007/s11023-007-9079-x](https://doi.org/10.1007/s11023-007-9079-x).
+* Chollet, François. "On the Measure of Intelligence". arXiv:1911.01547 (2019). [https://arxiv.org/abs/1911.01547](https://arxiv.org/abs/1911.01547).
+* Cattell, Raymond B. "Theory of Fluid and Crystallized Intelligence: A Critical Experiment". _Journal of Educational Psychology_ 54, No. 1 (1963): 1–22.
+* Wikipedia. "Cattell-Horn-Carroll Theory". [https://en.wikipedia.org/wiki/Cattell–Horn–Carroll_theory](https://en.wikipedia.org/wiki/Cattell–Horn–Carroll_theory).
+* Neisser, Ulric, et al. "Intelligence: Knowns and Unknowns". _American Psychologist_ 51, No. 2 (1996): 77–101. [https://doi.org/10.1037/0003-066X.51.2.77](https://doi.org/10.1037/0003-066X.51.2.77).
 
 ## Synthetic Data
 id: synthetische-daten
@@ -616,10 +638,24 @@ Next Token Prediction refers to the fundamental operating principle of autoregre
 ## Reasoning
 id: reasoning
 en: Reasoning
-tags: fundamentals, wip
+tags: fundamentals, ai-engineering, contested
 level: intermediate
 
-Work in progress.
+Reasoning refers in the broadest sense to the process of drawing conclusions from existing knowledge, making predictions, or constructing explanations. The term is one of the conceptually contested core concepts in AI research, for which—similar to "intelligence" or "[[#agi|AGI]]"—no unified definition exists.
+
+In classical logic and philosophy, three basic forms are distinguished. **Deduction** derives necessarily true conclusions from general premises. **Induction** infers general rules from specific observations, where conclusions are probable but not necessarily true. **Abduction** selects the most plausible explanation for an observation from several possibilities, without guaranteeing certainty.
+
+In the context of LLMs, the term has acquired a specific technical meaning since 2024. "Reasoning Models" (also Large Reasoning Models, LRMs) refer to models that generate explicit intermediate steps before the final answer. These "Reasoning Traces" or "Chains of Thought" are intended to solve complex problems through stepwise decomposition. Technically, this is achieved through [[#test-time-compute|Inference-Time Scaling]]—increased computational effort during generation—as well as [[#reinforcement-learning|Reinforcement Learning]] that trains models to produce structured intermediate steps. Prominent examples include OpenAI's o1/o3 series and DeepSeek-R1.
+
+Whether these models actually "reason" or perform elaborate pattern recognition is disputed. Critics like François Chollet argue that LLMs have fundamental difficulties with [[#generalization|generalization]] to unknown problems. Apple's paper "The Illusion of Thinking" (Shojaee et al. 2025) showed that reasoning models initially expend more tokens for "thinking" as problem complexity increases, but completely fail beyond a threshold. Proponents counter that the definition of "real reasoning" itself is unclear and that functional problem-solving ability is more practically relevant than philosophical distinctions.
+
+Sebastian Raschka defines reasoning pragmatically as "the process of answering questions that require complex, multi-step generation with intermediate steps." This operational definition sidesteps the question of whether the model "really thinks" and focuses on observable behavior.
+
+* Raschka, Sebastian. "Understanding Reasoning LLMs". February 2025. [https://magazine.sebastianraschka.com/p/understanding-reasoning-llms](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms).
+* Shojaee, Parshin, et al. "The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity". _arXiv preprint_, 2025. [https://arxiv.org/abs/2506.06941](https://arxiv.org/abs/2506.06941).
+* Wikipedia. "Reasoning model". [https://en.wikipedia.org/wiki/Reasoning_model](https://en.wikipedia.org/wiki/Reasoning_model).
+* Stanford Encyclopedia of Philosophy. "Abduction". [https://plato.stanford.edu/entries/abduction/](https://plato.stanford.edu/entries/abduction/).
+* Video: Pattern Recognition vs True Intelligence – François Chollet. [https://youtu.be/JTU8Ha4Jyfc](https://youtu.be/JTU8Ha4Jyfc).
 
 ## Retrieval Augmented Generation (RAG)
 id: rag
@@ -791,7 +827,7 @@ Work in progress.
 ## Understanding
 id: understanding
 en: Understanding
-tags: fundamentals, safety
+tags: fundamentals, safety, contested
 level: advanced
 
 A highly contested term in AI research. While LLMs show high _functional competence_ (output is correct), critics dispute that they possess _formal competence_ (understanding of meaning/semantics). It is often argued that models are merely statistical parrots that manipulate forms without grasping their content.
@@ -801,7 +837,7 @@ A highly contested term in AI research. While LLMs show high _functional compete
 ## Consciousness and LLMs
 id: bewusstsein
 en: Consciousness in LLMs
-tags: fundamentals, safety
+tags: fundamentals, safety, contested
 level: advanced
 
 The debate about whether language models possess subjective experience (_Subjective Experience_ or _Sentience_). Philosopher David Chalmers analyzes this using necessary indicators (_Feature X_) that current models lack. He argues that current LLMs most likely lack consciousness because they are primarily **feed-forward systems** without memory loops (**recurrence**) and possess no robust **self-models** (internal monitoring) or **unified agency**. However, Chalmers sketches a roadmap to **LLM+** (extended multimodal systems), where through technical additions like a _Global Workspace Architecture_ or embodied interaction (_Embodiment_) in virtual worlds, genuine consciousness candidates could emerge.
@@ -811,7 +847,7 @@ The debate about whether language models possess subjective experience (_Subject
 ## AGI (Artificial General Intelligence)
 id: agi
 en: AGI (Artificial General Intelligence)
-tags: fundamentals
+tags: fundamentals, contested
 level: intermediate
 
 The term refers to hypothetical AI systems that can handle cognitive tasks at least as flexibly as humans. No uniform definition exists. Some researchers doubt whether the term can be meaningfully defined at all. Mitchell describes AGI as "a bit nebulous," since different people define it differently and it is difficult to measure progress for something that is not well defined.

@@ -20,7 +20,8 @@ const GlossaryApp = {
             sources: 'Quellen',
             noResults: 'Keine Einträge gefunden.',
             loadError: 'Fehler beim Laden des Glossars.',
-            loading: 'Glossar wird geladen...'
+            loading: 'Glossar wird geladen...',
+            contested: 'Umstrittener Begriff'
         },
         en: {
             term: 'Term',
@@ -28,7 +29,8 @@ const GlossaryApp = {
             sources: 'Sources',
             noResults: 'No entries found.',
             loadError: 'Error loading glossary.',
-            loading: 'Loading glossary...'
+            loading: 'Loading glossary...',
+            contested: 'Contested concept'
         }
     },
 
@@ -140,9 +142,9 @@ const GlossaryApp = {
                     entry.en = line.replace('en:', '').trim();
                 } else if (line.startsWith('tags:')) {
                     entry.tags = line.replace('tags:', '').split(',').map(t => t.trim());
-                    // Add to allTags but exclude 'wip' (it's a status marker, not a category)
+                    // Add to allTags but exclude status markers (not categories)
                     entry.tags.forEach(tag => {
-                        if (tag !== 'wip') this.allTags.add(tag);
+                        if (tag !== 'wip' && tag !== 'contested') this.allTags.add(tag);
                     });
                 } else if (line.startsWith('level:')) {
                     entry.level = line.replace('level:', '').trim();
@@ -261,14 +263,27 @@ const GlossaryApp = {
             </div>
         ` : '';
 
+        // Status badges (contested, wip)
+        const isContested = entry.tags.includes('contested');
+        const isWip = entry.tags.includes('wip');
+        const badgesHtml = (isContested || isWip) ? `
+            <div class="term-badges">
+                ${isContested ? `<span class="term-badge contested" title="${this.t('contested')}"><i class="fas fa-question-circle"></i> ${this.t('contested')}</span>` : ''}
+                ${isWip ? `<span class="term-badge wip"><i class="fas fa-wrench"></i> WIP</span>` : ''}
+            </div>
+        ` : '';
+
+        // Filter out status tags from displayed categories
+        const displayTags = entry.tags.filter(t => t !== 'wip' && t !== 'contested');
 
         return `
             <article class="term-card" id="${entry.id}">
                 <div class="term-header">
                     <div class="term-title-group">
                         <h3 class="term-title">${entry.title}</h3>
-                        ${entry.tags.length > 0 ? `<div class="term-categories">${entry.tags.map(t => `<span class="term-category" data-tag="${t}">${this.formatTagDisplay(t)}</span>`).join('')}</div>` : ''}
+                        ${displayTags.length > 0 ? `<div class="term-categories">${displayTags.map(t => `<span class="term-category" data-tag="${t}">${this.formatTagDisplay(t)}</span>`).join('')}</div>` : ''}
                     </div>
+                    ${badgesHtml}
                     <span class="term-level ${entry.level}">${this.capitalizeFirst(entry.level)}</span>
                     <div class="expand-toggle">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -421,8 +436,8 @@ const GlossaryApp = {
 
         this.entries.forEach(entry => {
             entry.tags.forEach(tag => {
-                // Exclude 'wip' from categories - it's a status marker, not a category
-                if (tag !== 'wip') {
+                // Exclude status markers from categories
+                if (tag !== 'wip' && tag !== 'contested') {
                     tagCounts[tag] = (tagCounts[tag] || 0) + 1;
                 }
             });
