@@ -696,11 +696,11 @@ en: Agentic AI
 tags: agents
 level: intermediate
 
-A class of AI systems in which multiple specialized agents work together in a coordinated manner to achieve complex goals. Agentic AI marks the architectural transition from [[#AI Agent|AI Agents]] as single systems to orchestrated multi-agent ecosystems.
+The term "agentic AI" refers to AI systems that act autonomously, plan, and use tools. Usage in the literature is inconsistent, ranging from individual agents with action autonomy to orchestrated multi-agent systems.
 
-Four characteristics define Agentic AI: Multiple agents work together under central or decentralized coordination (**Multi-Agent Collaboration**). User goals are automatically decomposed into subtasks and distributed among agents (**Dynamic Task Decomposition**). Different memory types maintain context across interactions (**Persistent Memory Structures**). Agents verify their own results and adapt solution paths when errors occur (**Self-Reflection**).
+Sapkota et al. (2025) propose a taxonomic distinction where "Agentic AI" specifically designates multi-agent architectures and is differentiated from "AI Agents" as single systems. According to this taxonomy, four characteristics define Agentic AI. First, multi-agent collaboration, where multiple agents work together under central or decentralized coordination. Second, dynamic task decomposition, where user goals are automatically broken down into subtasks and distributed among agents. Third, persistent memory structures, where different memory types maintain context across interactions. Fourth, self-reflection, where agents verify their own results and adapt solution paths when errors occur.
 
-An orchestration layer or meta-agent handles role assignment, dependency management, and conflict resolution. This architecture enables emergent system behavior that exceeds the sum of individual agents. However, it also carries risks such as error cascades between agents and unpredictable emergent behavior.
+An orchestration layer or meta-agent handles role assignment, dependency management, and conflict resolution in such architectures. This architecture carries risks such as error cascades between agents and difficult-to-predict system behavior.
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 
@@ -777,9 +777,25 @@ en: AGI (Artificial General Intelligence)
 tags: fundamentals
 level: intermediate
 
-The term is controversial and not uniformly defined. According to Bennett (2025), AGI is not a pure software construct but a physically anchored complete system (hardware and software) that possesses the autonomy and adaptability of an "artificial scientist." Instead of defining intelligence merely through human performance on known tasks, Bennett defines AGI as the ability to achieve goals in a broad range of unknown environments, where the true measure is not raw compute but **sample efficiency** (learning from few data) and **energy efficiency** in adapting to new problems.
+The term refers to hypothetical AI systems that can handle cognitive tasks at least as flexibly as humans. No uniform definition exists. Some researchers doubt whether the term can be meaningfully defined at all. Mitchell describes AGI as "a bit nebulous," since different people define it differently and it is difficult to measure progress for something that is not well defined.
 
-* Bennett, Michael Timothy. _What the F*ck Is Artificial General Intelligence?_ Vol. 16057. 2026. [https://doi.org/10.1007/978-3-032-00686-8_4](https://doi.org/10.1007/978-3-032-00686-8_4).
+Various definitional approaches compete in the literature.
+
+The **anthropocentric definition** determines AGI through human-like performance across a broad range of tasks. This approach is intuitive but difficult to quantify and takes human cognition as an unquestioned benchmark.
+
+The **Legg-Hutter definition** (2007) formalizes intelligence mathematically as an agent's ability to achieve goals across a broad range of environments. The authors extract essential features from informal expert definitions of human intelligence and translate these into a general measure of machine intelligence. Critics argue that this definition relies on Kolmogorov complexity and is therefore not computable.
+
+The **OpenAI definition** (2018) determines AGI as "highly autonomous systems that outperform humans at most economically valuable work." This definition focuses on performance independent of underlying mechanisms and offers economic value as a measurable benchmark. Critics argue that it fails to capture aspects of intelligence without clearly defined economic value, such as artistic creativity or emotional intelligence.
+
+**Chollet's skill-acquisition definition** (2019) understands intelligence as efficiency in acquiring new skills. AGI would accordingly be a system that can do this at least as well as a human. Chollet argues that merely measuring skills on specific tasks is insufficient because skills are strongly modulated by prior knowledge and experience. He operationalizes his approach with the Abstraction and Reasoning Corpus ([[#arc-agi|ARC]]).
+
+**Bennett's adaptation definition** (2025) criticizes the tendency to treat intelligence as a property of disembodied software, separate from hardware and environment. He defines AGI as a physically anchored complete system with the adaptability of an "artificial scientist." The decisive benchmark is not computational power but sample efficiency (learning from few data) and energy efficiency in adapting to new problems.
+
+* Bennett, Michael Timothy. "What the F*ck Is Artificial General Intelligence?" arXiv:2503.23923 (2025). [https://arxiv.org/abs/2503.23923](https://arxiv.org/abs/2503.23923).
+* Chollet, François. "On the Measure of Intelligence." arXiv:1911.01547 (2019). [https://arxiv.org/abs/1911.01547](https://arxiv.org/abs/1911.01547).
+* Legg, Shane, and Marcus Hutter. "Universal Intelligence: A Definition of Machine Intelligence." _Minds and Machines_ 17, No. 4 (2007): 391–444. [https://doi.org/10.1007/s11023-007-9079-x](https://doi.org/10.1007/s11023-007-9079-x).
+* Morris, Meredith Ringel, et al. "Levels of AGI for Operationalizing Progress on the Path to AGI." arXiv:2311.02462 (2023). [https://arxiv.org/abs/2311.02462](https://arxiv.org/abs/2311.02462).
+* OpenAI. "OpenAI Charter." April 2018. [https://openai.com/charter/](https://openai.com/charter/).
 * Video: [The arrival of AGI – Shane Legg (co-founder of DeepMind)](https://youtu.be/l3u_FAv33G0)
 
 ## Parameters
