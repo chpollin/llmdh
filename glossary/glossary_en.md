@@ -86,12 +86,18 @@ en: AI Engineering
 tags: ai-engineering, fundamentals
 level: basic
 
-An interdisciplinary field that combines methods from systems engineering, software engineering, computer science, and human-centered design to develop, deploy, and maintain AI systems. Unlike pure model development, AI Engineering encompasses the entire lifecycle—from prototype to production. The focus is on creating robust, scalable, and trustworthy systems that reliably solve real problems and are aligned with human needs and operational goals—especially in high-stakes environments. Conceptually, the building blocks of generative AI systems can be organized into abstraction levels: from atomic primitives (prompts, [[#Embedding|embeddings]], [[#Large Language Model (LLM)|LLMs]]) through compositions (such as [[#Retrieval Augmented Generation (RAG)|RAG]] or [[#Tool Use and Function Calling|function calling]]) to production-ready deployment patterns ([[#AI Agent|agents]], [[#Fine-Tuning]])—an organizing principle that facilitates systematic analysis and communication of AI architectures.
+An interdisciplinary field that combines methods from systems engineering, software engineering, computer science, and human-centered design to develop, deploy, and maintain AI systems. Unlike pure model development, AI Engineering encompasses the entire lifecycle from prototype to production.
 
-* Video: [AI Periodic Table Explained: Mapping LLMs, RAG & AI Agent Frameworks](https://youtu.be/ESBMgZHzfG0)
-* Carnegie Mellon Software Engineering Institute - AI Engineering Current (2025). https://www.sei.cmu.edu/artificial-intelligence-engineering/
-* MIT Professional Education - What is Artificial Intelligence Engineering? October 2, 2023. https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/
-* CMU Course - Machine Learning in Production / AI Engineering Spring 2025. https://mlip-cmu.github.io/s2025/
+The Carnegie Mellon Software Engineering Institute structures AI Engineering along three pillars. **Human-centered AI** investigates how AI systems can be designed to align with people, their behavior, and their values. **Scalable AI** addresses the reusability of AI infrastructure, data, and models across problem domains and deployments. **Robust and Secure AI** investigates how resilient AI systems can be developed and tested to function reliably even outside controlled laboratory and test environments.
+
+The focus is on creating trustworthy systems that reliably solve real problems and are aligned with human needs and operational goals. This applies particularly to safety-critical environments such as national security or medical applications.
+
+The video "AI Periodic Table Explained" (IBM Technology) proposes an organizing principle for the building blocks of generative AI systems. It distinguishes atomic primitives (prompts, [[#embedding|embeddings]], [[#llm|LLMs]]), compositions (such as [[#rag|RAG]] or [[#tool-use|function calling]]), and production-ready deployment patterns ([[#ai-agent|agents]], [[#fine-tuning|fine-tuning]]). These abstraction levels are intended to facilitate systematic analysis and communication of AI architectures.
+
+* Carnegie Mellon Software Engineering Institute. "AI Engineering". 2025. [https://www.sei.cmu.edu/artificial-intelligence-engineering/](https://www.sei.cmu.edu/artificial-intelligence-engineering/).
+* CMU Course. "Machine Learning in Production / AI Engineering". Spring 2025. [https://mlip-cmu.github.io/s2025/](https://mlip-cmu.github.io/s2025/).
+* IBM Technology. "AI Periodic Table Explained: Mapping LLMs, RAG & AI Agent Frameworks". _YouTube_. [https://youtu.be/dGM484P0Xvc](https://youtu.be/dGM484P0Xvc).
+* MIT Professional Education. "What is Artificial Intelligence Engineering?". October 2023. [https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/](https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/).
 
 ## System Prompt
 id: system-prompt
@@ -669,15 +675,16 @@ en: AI Agent
 tags: agents, fundamentals
 level: intermediate
 
-An autonomous software system that executes goal-directed tasks in defined environments. AI Agents typically operate in a loop of thinking, acting, and observing (Think-Act-Observe) until the goal is achieved.
+An autonomous software system that executes goal-directed tasks by designing workflows with available tools. AI Agents encompass functions such as decision-making, problem-solving, interaction with external environments, and action execution.
 
-Three properties characterize AI Agents: They operate largely independently after initialization (**Autonomy**). They are specialized for repeatable tasks in limited domains, such as email filtering or calendar coordination (**Task Specificity**). They respond to inputs and adapt their behavior through feedback (**Reactivity**).
+Modern AI Agents use [[#llm|LLMs]] as their central reasoning component. Weng (2023) describes three key components of such systems. **Planning** involves decomposing large tasks into manageable subgoals and self-reflection on past actions to refine future steps. **Memory** distinguishes short-term context ([[#in-context-learning|In-Context Learning]]) from long-term storage via external [[#vector-database|vector databases]] with fast retrieval. **[[#tool-use|Tool Use]]** extends model capabilities by connecting external APIs for information not contained in the model weights.
 
-Modern AI Agents use [[#llm|LLMs]] as a reasoning component and extend their capabilities through [[#Tool Use and Function Calling|Tool Use]], i.e., connecting external tools and APIs.
+In practice, AI Agents typically operate in a loop of perceiving, planning, and acting until the goal is achieved. Frameworks like [[#react|ReAct]] formalize this cycle, while [[#chain-of-thought|Chain-of-Thought]] prompting improves reasoning quality. For accessing external knowledge sources, many agents utilize [[#rag|RAG]] architectures.
 
-The central difference from [[#Agentic AI]] lies in system architecture: AI Agents operate as single systems without structured communication with other agents. They are suitable for modular, tool-supported tasks. Scenarios with task interdependence and dynamic role distribution require Agentic AI architectures instead.
+Sapkota et al. (2025) propose a taxonomic distinction where AI Agents operate as single systems without structured communication with other agents, while [[#agentic-ai|Agentic AI]] denotes orchestrated multi-agent architectures. This distinction is not generally established in the broader literature. Other sources use "agentic" as a property (autonomy, goal-directedness, adaptability) that can characterize both individual agents and multi-agent systems.
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, and Manoj Karkee. "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
+* Weng, Lilian. "LLM Powered Autonomous Agents". _Lil'Log_, June 2023. [https://lilianweng.github.io/posts/2023-06-23-agent/](https://lilianweng.github.io/posts/2023-06-23-agent/).
 * IBM Technology. "Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
 
 ## ARC-AGI

@@ -86,12 +86,18 @@ en: AI Engineering
 tags: ai-engineering, fundamentals
 level: basic
 
-Bezeichnet eine interdisziplinäre Fachrichtung, die Methoden aus Systems Engineering, Software Engineering, Informatik und menschenzentriertem Design (Human-Centered Design) verknüpft, um KI-Systeme zu entwickeln, bereitzustellen und zu warten. Im Gegensatz zur reinen Modellentwicklung umfasst AI Engineering den gesamten Lebenszyklus – vom Prototyp bis zur Produktion. Der Fokus liegt dabei auf der Schaffung robuster, skalierbarer und vertrauenswürdiger Systeme, die reale Probleme zuverlässig lösen und an menschlichen Bedürfnissen sowie operativen Zielen ausgerichtet sind – insbesondere in sicherheitskritischen Umgebungen (_High-Stakes Environments_). Konzeptuell lassen sich die Bausteine generativer KI-Systeme in Abstraktionsstufen ordnen: von atomaren Primitiven (Prompts, [[#Embedding|Embeddings]], [[#Large Language Model (LLM)|LLMs]]) über Kompositionen (wie [[#Retrieval Augmented Generation (RAG)|RAG]] oder [[#Tool Use und Function Calling|Function Calling]]) bis hin zu produktionsreifen Deployment-Mustern ([[#AI Agent|Agents]], [[#Fine-Tuning]]) – ein Ordnungsprinzip, das die systematische Analyse und Kommunikation von KI-Architekturen erleichtert.
+Eine interdisziplinäre Fachrichtung, die Methoden aus Systems Engineering, Software Engineering, Informatik und Human-Centered Design verknüpft, um KI-Systeme zu entwickeln, bereitzustellen und zu warten. Im Gegensatz zur reinen Modellentwicklung umfasst AI Engineering den gesamten Lebenszyklus vom Prototyp bis zur Produktion.
 
-* Video: [AI Periodic Table Explained: Mapping LLMs, RAG & AI Agent Frameworks](https://youtu.be/ESBMgZHzfG0)
-* Carnegie Mellon Software Engineering Institute - AI Engineering Current (2025). https://www.sei.cmu.edu/artificial-intelligence-engineering/
-* MIT Professional Education - What is Artificial Intelligence Engineering? October 2, 2023. https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/
-* CMU Course - Machine Learning in Production / AI Engineering Spring 2025. https://mlip-cmu.github.io/s2025/
+Das Carnegie Mellon Software Engineering Institute strukturiert AI Engineering entlang dreier Säulen. **Human-centered AI** untersucht, wie KI-Systeme so gestaltet werden, dass sie mit Menschen, deren Verhalten und Werten übereinstimmen. **Scalable AI** adressiert die Wiederverwendbarkeit von KI-Infrastruktur, Daten und Modellen über Problemdomänen und Deployments hinweg. **Robust and Secure AI** untersucht, wie resiliente KI-Systeme entwickelt und getestet werden, die auch außerhalb kontrollierter Labor- und Testumgebungen zuverlässig funktionieren.
+
+Der Fokus liegt auf der Schaffung vertrauenswürdiger Systeme, die reale Probleme zuverlässig lösen und an menschlichen Bedürfnissen sowie operativen Zielen ausgerichtet sind. Dies gilt insbesondere für sicherheitskritische Umgebungen wie nationale Sicherheit oder medizinische Anwendungen.
+
+Das Video „AI Periodic Table Explained" (IBM Technology) schlägt ein Ordnungsprinzip für die Bausteine generativer KI-Systeme vor. Es unterscheidet atomare Primitive (Prompts, [[#embedding|Embeddings]], [[#llm|LLMs]]), Kompositionen (wie [[#rag|RAG]] oder [[#tool-use|Function Calling]]) und produktionsreife Deployment-Muster ([[#ai-agent|Agents]], [[#fine-tuning|Fine-Tuning]]). Diese Abstraktionsstufen sollen die systematische Analyse und Kommunikation von KI-Architekturen erleichtern.
+
+* Carnegie Mellon Software Engineering Institute. „AI Engineering". 2025. [https://www.sei.cmu.edu/artificial-intelligence-engineering/](https://www.sei.cmu.edu/artificial-intelligence-engineering/).
+* CMU Course. „Machine Learning in Production / AI Engineering". Spring 2025. [https://mlip-cmu.github.io/s2025/](https://mlip-cmu.github.io/s2025/).
+* IBM Technology. „AI Periodic Table Explained: Mapping LLMs, RAG & AI Agent Frameworks". _YouTube_. [https://youtu.be/dGM484P0Xvc](https://youtu.be/dGM484P0Xvc).
+* MIT Professional Education. „What is Artificial Intelligence Engineering?". Oktober 2023. [https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/](https://professionalprograms.mit.edu/blog/technology/artificial-intelligence-engineering/).
 
 ## System Prompt
 id: system-prompt
@@ -669,15 +675,16 @@ en: AI Agent
 tags: agents, fundamentals
 level: intermediate
 
-Ein autonomes Softwaresystem, das zielgerichtete Aufgaben in definierten Umgebungen ausführt. AI Agents arbeiten typischerweise in einer Schleife aus Denken, Handeln und Beobachten (Think-Act-Observe), bis das Ziel erreicht ist.
+Ein autonomes Softwaresystem, das zielgerichtete Aufgaben ausführt, indem es Workflows mit verfügbaren Werkzeugen entwirft. AI Agents umfassen Funktionen wie Entscheidungsfindung, Problemlösung, Interaktion mit externen Umgebungen und Ausführung von Aktionen.
 
-Drei Eigenschaften kennzeichnen AI Agents: Sie operieren nach Initialisierung weitgehend selbstständig (**Autonomie**). Sie sind auf wiederholbare Aufgaben in begrenzten Domänen spezialisiert, etwa E-Mail-Filterung oder Kalenderkoordination (**Aufgabenspezifität**). Sie reagieren auf Eingaben und passen ihr Verhalten durch Feedback an (**Reaktivität**).
+Moderne AI Agents nutzen [[#llm|LLMs]] als zentrale Reasoning-Komponente. Weng (2023) beschreibt drei Schlüsselkomponenten solcher Systeme. **Planning** umfasst die Zerlegung großer Aufgaben in handhabbare Teilziele sowie Selbstreflexion über vergangene Aktionen zur Verfeinerung zukünftiger Schritte. **Memory** unterscheidet kurzfristigen Kontext ([[#in-context-learning|In-Context Learning]]) und langfristige Speicherung über externe [[#vector-database|Vektordatenbanken]] mit schnellem Retrieval. **[[#tool-use|Tool Use]]** erweitert die Modellfähigkeiten durch Anbindung externer APIs für Informationen, die in den Modellgewichten nicht enthalten sind.
 
-Moderne AI Agents nutzen [[#llm|LLMs]] als Reasoning-Komponente und erweitern deren Fähigkeiten durch [[#Tool Use und Function Calling|Tool Use]], also die Anbindung externer Werkzeuge und APIs.
+In der Praxis arbeiten AI Agents typischerweise in einer Schleife aus Wahrnehmen, Planen und Handeln, bis das Ziel erreicht ist. Frameworks wie [[#react|ReAct]] formalisieren diesen Zyklus, während [[#chain-of-thought|Chain-of-Thought]]-Prompting die Reasoning-Qualität verbessert. Für den Zugriff auf externe Wissensquellen nutzen viele Agenten [[#rag|RAG]]-Architekturen.
 
-Der zentrale Unterschied zu [[#Agentic AI]] liegt in der Systemarchitektur: AI Agents operieren als Einzelsysteme ohne strukturierte Kommunikation mit anderen Agenten. Sie eignen sich für modulare, werkzeuggestützte Aufgaben. Szenarien mit Aufgabeninterdependenz und dynamischer Rollenverteilung erfordern hingegen Agentic-AI-Architekturen.
+Sapkota et al. (2025) schlagen eine taxonomische Unterscheidung vor, bei der AI Agents als Einzelsysteme ohne strukturierte Kommunikation mit anderen Agenten operieren, während [[#agentic-ai|Agentic AI]] orchestrierte Multi-Agent-Architekturen bezeichnet. Diese Unterscheidung ist in der breiteren Literatur nicht allgemein etabliert. Andere Quellen verwenden „agentic" als Eigenschaft (Autonomie, Zielgerichtetheit, Anpassungsfähigkeit), die sowohl einzelne Agenten als auch Multi-Agent-Systeme kennzeichnen kann.
 
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
+* Weng, Lilian. „LLM Powered Autonomous Agents". _Lil'Log_, Juni 2023. [https://lilianweng.github.io/posts/2023-06-23-agent/](https://lilianweng.github.io/posts/2023-06-23-agent/).
 * IBM Technology. „Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
 
 ## ARC-AGI
