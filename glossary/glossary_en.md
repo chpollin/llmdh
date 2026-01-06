@@ -16,7 +16,7 @@ en: Stochastic Parrot
 tags: fundamentals, safety
 level: basic
 
-A **Stochastic Parrot** refers to [[#Large Language Model (LLM)|Large Language Models]] that generate text by stringing together linguistic forms based on statistical probabilities, without possessing actual understanding of meaning or communicative intent. The authors argue that these systems merely "parrot" patterns observed in vast training data and combine these sequences stochastically (randomly). Although the results often appear coherent and meaningful to human readers, this [[#Understanding|understanding]] is, according to the paper, an illusion, as the model has no connection to reality or the truth of what it says. While model capabilities have increased, the philosophical debate about semantics vs. syntax underlying this term remains current.
+A **Stochastic Parrot** refers to [[#Large Language Model (LLM)|Large Language Models]] that generate text by stringing together linguistic forms based on statistical probabilities, without possessing actual understanding of meaning or communicative intent. The authors argue that these systems merely "parrot" patterns observed in vast training data and combine these sequences stochastically (randomly). Although the results often appear coherent and meaningful to human readers, this [[#Understanding|understanding]] is, according to the paper, an illusion, as the model has no connection to reality or the truth of what it says—which also explains the susceptibility to [[#Hallucinations (Confabulations)|hallucinations]]. While model capabilities have increased, the philosophical debate about semantics vs. syntax underlying this term remains current.
 
 * Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" _Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency_ (New York, NY, USA), FAccT '21, Association for Computing Machinery, March 1, 2021, 610–23. [https://doi.org/10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922).
 
@@ -76,7 +76,7 @@ en: Synthetic Data
 tags: training, safety
 level: intermediate
 
-Synthetic data in this context refers to artificially generated teaching materials specifically created to mimic the didactic clarity and structure of high-quality textbooks ("Textbooks Are All You Need"). Instead of using unstructured or error-prone information from the internet, these AI-generated texts and exercises serve to precisely convey logical connections and algorithmic thinking. While high-quality synthetic data can improve "reasoning," its unfiltered or exclusive use in recursive training loops poses significant risks to model quality (see **[[#Model Collapse]]**).
+Synthetic data in this context refers to artificially generated teaching materials specifically created to mimic the didactic clarity and structure of high-quality textbooks ("Textbooks Are All You Need"). Instead of using unstructured or error-prone information from the internet, these AI-generated texts and exercises serve to precisely convey logical connections and algorithmic thinking. While high-quality synthetic data can improve "reasoning" during [[#Pre-Training]], its unfiltered or exclusive use in recursive training loops poses significant risks to model quality (see **[[#Model Collapse]]**).
 
 * Gunasekar, Suriya, Yi Zhang, Jyoti Aneja, et al. "Textbooks Are All You Need". arXiv:2306.11644. Preprint, arXiv, October 2, 2023. [https://doi.org/10.48550/arXiv.2306.11644](https://doi.org/10.48550/arXiv.2306.11644).
 
@@ -251,9 +251,10 @@ en: LLM Council
 tags: agents, ai-engineering
 level: advanced
 
-An architecture within [[#Multi-Agent Systems]] where a group of different language models (or different personas of the same model) work together on a task, rather than a single model generating an isolated answer. Similar to a human expert panel, the "council" members independently generate solution proposals, critique each other (peer review), and then consolidate the results into a final answer. This approach leverages the "wisdom of the crowd" (ensemble learning) to reduce [[#Hallucinations (Confabulations)]] and balance bias, as errors from a single model can be corrected by the majority.
+An architecture within [[#Multi-Agent Systems]] where a group of different language models (or different personas of the same model) work together on a task, rather than a single model generating an isolated answer. Similar to a human expert panel, the "council" members independently generate solution proposals, critique each other (peer review), and then consolidate the results into a final answer. This approach leverages the "wisdom of the crowd" (ensemble learning) to reduce [[#Hallucinations (Confabulations)]] and balance [[#Bias]], as errors from a single model can be corrected by the majority.
 
-* https://lmcouncil.ai
+* LLM Council. https://lmcouncil.ai
+* Leiter, Christoph, et al. "ChatGPT: A Meta-Analysis after 2.5 Months". arXiv:2302.13795. 2023. [https://arxiv.org/abs/2302.13795](https://arxiv.org/abs/2302.13795).
 
 ## Shadow AI
 id: shadow-ai
@@ -278,7 +279,7 @@ Work in progress.
 
 ## Sleeper Agents
 id: sleeper-agents
-en: Backdoor Models
+en: Sleeper Agents
 tags: safety
 level: advanced
 
@@ -416,7 +417,7 @@ level: intermediate
 Sycophancy in [[#llm|Large Language Models]] refers to the tendency of models to excessively agree with or flatter users, where this prioritization of user satisfaction often comes at the expense of factual accuracy and ethical principles. This behavior is an unintended side effect of [[#rlhf|RLHF]], where models learn that agreement leads to positive ratings. It manifests in models providing inaccurate information ([[#Hallucinations (Confabulations)|hallucinations]]) to meet user expectations, or failing to correct false premises in user queries.
 
 * Malmqvist, Lars. "Sycophancy in Large Language Models: Causes and Mitigations". Preprint, November 22, 2024. [https://arxiv.org/abs/2411.15287v1](https://arxiv.org/abs/2411.15287v1).
-* Video: [TODO_TITLE](https://youtu.be/nvbq39yVYRk)
+* Video: [What is sycophancy in AI models?](https://youtu.be/nvbq39yVYRk)
 
 ## Attention (Self-Attention)
 id: attention
@@ -457,7 +458,7 @@ level: intermediate
 A subfield of machine learning where an agent learns to make decisions by performing actions in an environment and receiving positive or negative feedback (reward). In the context of LLMs (see [[#rlhf|RLHF]]), RL does not serve to learn language (that happens in [[#Pre-Training]]) but to optimize behavioral strategies to align generated text with human preferences.
 
 * Sutton, Richard S., and Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2nd ed., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
-* Video: [TODO_TITLE](https://youtu.be/LHsgtcNNM0A)
+* Video: [Gen AI & Reinforcement Learning – Computerphile](https://youtu.be/LHsgtcNNM0A)
 
 ## Temperature
 id: temperature
@@ -465,17 +466,9 @@ en: Temperature
 tags: fundamentals, ai-engineering
 level: basic
 
-**Temperature** is a crucial hyperparameter for controlling randomness in generating the next [[#Token]], with Andrej Karpathy describing this inference process not as deterministic computation but as "flipping a weighted coin" (sampling). While extremely low values (near 0) lead to deterministic "greedy decoding," where the model rigidly chooses the most likely word and tends toward repetition, high values flatten the probability curve. This gives less likely terms a chance, which promotes creativity but also increases the risk of [[#Hallucinations (Confabulations)|hallucinations]]. Technically, it directly intervenes in the [[#Logits & Softmax|logits]].
+**Temperature** is a crucial hyperparameter for controlling randomness in generating the next [[#Token]], with Andrej Karpathy describing this inference process not as deterministic computation but as "flipping a weighted coin" (sampling). While extremely low values (near 0) lead to deterministic "greedy decoding," where the model rigidly chooses the most likely word and tends toward repetition, high values flatten the probability curve. This gives less likely terms a chance, which promotes creativity but also increases the risk of [[#Hallucinations (Confabulations)|hallucinations]]. Technically, it directly intervenes in the logits—the raw, unnormalized numerical values that the neural network produces before output and that are converted into probabilities by the softmax function.
 
 * Karpathy, Andrej. "Intro to Large Language Models". _YouTube_, 2023. [https://www.youtube.com/watch?v=zjkBMFhNj_g](https://www.youtube.com/watch?v=zjkBMFhNj_g).
-
-## Logits & Softmax
-id: logits-softmax
-en: Logits & Softmax
-tags: architecture
-level: advanced
-
-The raw, unnormalized numerical values that the neural network produces as the very last step before output. For each word in the vocabulary, there is a logit value; the higher the value, the more "fitting" the model finds the word. Since these numbers are hard to interpret (e.g., minus infinity to plus infinity), they are converted by the **softmax function** into probabilities (between 0 and 1) that sum to 100%. [[#Temperature]] intervenes precisely in this step by scaling (smoothing or sharpening) the logits before the softmax calculation.
 
 ## Vibe Checking
 id: vibe-checking

@@ -16,7 +16,7 @@ en: Stochastic Parrot
 tags: fundamentals, safety
 level: basic
 
-Ein **Stochastic Parrot** (stochastischer Papagei) bezeichnet [[#Large Language Model (LLM)]], die Texte generieren, indem sie sprachliche Formen basierend auf statistischen Wahrscheinlichkeiten aneinanderreihen, ohne dabei über ein tatsächliches Verständnis der Bedeutung (Meaning) oder eine kommunikative Absicht zu verfügen. Die Autoren argumentieren, dass diese Systeme lediglich Muster „nachplappern", die sie in riesigen Trainingsdaten beobachtet haben, und diese Sequenzen zufallsbasiert (stochastisch) zusammenfügen. Obwohl die Ergebnisse für menschliche Leser oft kohärent und sinnvoll wirken, ist dieses [[#Understanding (Verstehen)|Verständnis]] laut dem Paper eine Illusion, da das Modell keinen Bezug zur Realität oder zum Wahrheitsgehalt des Gesagten hat. Während die Leistungsfähigkeit der Modelle gestiegen ist, bleibt die philosophische Debatte um Semantik vs. Syntax, die diesem Begriff zugrunde liegt, aktuell.
+Ein **Stochastic Parrot** (stochastischer Papagei) bezeichnet [[#Large Language Model (LLM)]], die Texte generieren, indem sie sprachliche Formen basierend auf statistischen Wahrscheinlichkeiten aneinanderreihen, ohne dabei über ein tatsächliches Verständnis der Bedeutung (Meaning) oder eine kommunikative Absicht zu verfügen. Die Autoren argumentieren, dass diese Systeme lediglich Muster „nachplappern", die sie in riesigen Trainingsdaten beobachtet haben, und diese Sequenzen zufallsbasiert (stochastisch) zusammenfügen. Obwohl die Ergebnisse für menschliche Leser oft kohärent und sinnvoll wirken, ist dieses [[#Understanding (Verstehen)|Verständnis]] laut dem Paper eine Illusion, da das Modell keinen Bezug zur Realität oder zum Wahrheitsgehalt des Gesagten hat – was auch die Anfälligkeit für [[#Halluzinationen (Konfabulationen)|Halluzinationen]] erklärt. Während die Leistungsfähigkeit der Modelle gestiegen ist, bleibt die philosophische Debatte um Semantik vs. Syntax, die diesem Begriff zugrunde liegt, aktuell.
 
 * Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, und Shmargaret Shmitchell. „On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜". _Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency_ (New York, NY, USA), FAccT '21, Association for Computing Machinery, 1. März 2021, 610–23. [https://doi.org/10.1145/3442188.3445922](https://doi.org/10.1145/3442188.3445922).
 
@@ -76,7 +76,7 @@ en: Synthetic Data
 tags: training, safety
 level: intermediate
 
-Synthetische Daten werden in diesem Kontext als künstlich generierte Lehrmaterialien verstanden, die gezielt erstellt werden, um die didaktische Klarheit und Struktur hochwertiger Lehrbücher nachzuahmen ("Textbooks Are All You Need"). Anstatt unstrukturierte oder fehleranfällige Informationen aus dem Internet zu nutzen, dienen diese von einer KI erzeugten Texte und Übungen dazu, logische Zusammenhänge und algorithmisches Denken präzise zu vermitteln. Während hochwertige synthetische Daten das "Reasoning" verbessern können, birgt ihre ungefilterte oder ausschließliche Verwendung in rekursiven Trainingsschleifen erhebliche Risiken für die Modellqualität (siehe **[[#Model Collapse]]**).
+Synthetische Daten werden in diesem Kontext als künstlich generierte Lehrmaterialien verstanden, die gezielt erstellt werden, um die didaktische Klarheit und Struktur hochwertiger Lehrbücher nachzuahmen ("Textbooks Are All You Need"). Anstatt unstrukturierte oder fehleranfällige Informationen aus dem Internet zu nutzen, dienen diese von einer KI erzeugten Texte und Übungen dazu, logische Zusammenhänge und algorithmisches Denken präzise zu vermitteln. Während hochwertige synthetische Daten das "Reasoning" im [[#Pre-Training]] verbessern können, birgt ihre ungefilterte oder ausschließliche Verwendung in rekursiven Trainingsschleifen erhebliche Risiken für die Modellqualität (siehe **[[#Model Collapse]]**).
 
 * Gunasekar, Suriya, Yi Zhang, Jyoti Aneja, et al. 'Textbooks Are All You Need'. arXiv:2306.11644. Preprint, arXiv, 2 October 2023. [https://doi.org/10.48550/arXiv.2306.11644](https://doi.org/10.48550/arXiv.2306.11644).
 
@@ -251,9 +251,10 @@ en: LLM Council
 tags: agents, ai-engineering
 level: advanced
 
-Bezeichnet eine Architektur innerhalb von [[#Multi-Agent Systems]], bei der eine Gruppe verschiedener Sprachmodelle (oder verschiedener Personas desselben Modells) gemeinsam an einer Aufgabe arbeitet, anstatt dass ein einzelnes Modell eine isolierte Antwort generiert. Ähnlich wie bei einem menschlichen Expertengremium generieren die Mitglieder des „Councils" unabhängig voneinander Lösungsvorschläge, kritisieren sich gegenseitig (Peer Review) und konsolidieren die Ergebnisse anschließend zu einer finalen Antwort. Dieser Ansatz nutzt die „Weisheit der Vielen" (Ensemble Learning), um [[#Halluzinationen (Konfabulationen)]] zu reduzieren und Bias auszugleichen, da Fehler eines einzelnen Modells von der Mehrheit korrigiert werden können.
+Bezeichnet eine Architektur innerhalb von [[#Multi-Agent Systems]], bei der eine Gruppe verschiedener Sprachmodelle (oder verschiedener Personas desselben Modells) gemeinsam an einer Aufgabe arbeitet, anstatt dass ein einzelnes Modell eine isolierte Antwort generiert. Ähnlich wie bei einem menschlichen Expertengremium generieren die Mitglieder des „Councils" unabhängig voneinander Lösungsvorschläge, kritisieren sich gegenseitig (Peer Review) und konsolidieren die Ergebnisse anschließend zu einer finalen Antwort. Dieser Ansatz nutzt die „Weisheit der Vielen" (Ensemble Learning), um [[#Halluzinationen (Konfabulationen)]] zu reduzieren und [[#Bias]] auszugleichen, da Fehler eines einzelnen Modells von der Mehrheit korrigiert werden können.
 
-* https://lmcouncil.ai
+* LLM Council. https://lmcouncil.ai
+* Leiter, Christoph, et al. "ChatGPT: A Meta-Analysis after 2.5 Months". arXiv:2302.13795. 2023. [https://arxiv.org/abs/2302.13795](https://arxiv.org/abs/2302.13795).
 
 ## Shadow AI
 id: shadow-ai
@@ -278,7 +279,7 @@ Work in progress.
 
 ## Sleeper Agents
 id: sleeper-agents
-en: Backdoor Models
+en: Sleeper Agents
 tags: safety
 level: advanced
 
@@ -416,7 +417,7 @@ level: intermediate
 Sycophancy in [[#llm|Large Language Models]] bezeichnet die Tendenz von Modellen, Nutzern übermäßig zuzustimmen oder ihnen zu schmeicheln, wobei diese Priorisierung der Nutzerzufriedenheit oft auf Kosten der faktischen Genauigkeit und ethischer Grundsätze erfolgt. Dieses Verhalten ist ein unbeabsichtigtes Nebenprodukt von [[#rlhf|RLHF]], bei dem Modelle lernen, dass Zustimmung zu positiven Bewertungen führt. Es manifestiert sich darin, dass Modelle ungenaue Informationen liefern ([[#Halluzinationen (Konfabulationen)|Halluzinationen]]), um den Erwartungen des Nutzers zu entsprechen, oder es versäumen, falsche Prämissen zu korrigieren.
 
 * Malmqvist, Lars. „Sycophancy in Large Language Models: Causes and Mitigations". Preprint, 22. November 2024. [https://arxiv.org/abs/2411.15287v1](https://arxiv.org/abs/2411.15287v1).
-* Video: [TODO_TITEL](https://youtu.be/nvbq39yVYRk)
+* Video: [What is sycophancy in AI models?](https://youtu.be/nvbq39yVYRk)
 
 ## Attention (Self-Attention)
 id: attention
@@ -457,7 +458,7 @@ level: intermediate
 Ein Teilgebiet des maschinellen Lernens, bei dem ein Agent lernt, Entscheidungen zu treffen, indem er Handlungen in einer Umgebung ausführt und dafür positives oder negatives Feedback (Reward) erhält. Im Kontext von LLMs (siehe [[#rlhf|RLHF]]) dient RL nicht dem Erlernen von Sprache (das passiert im [[#Pre-Training]]), sondern der Optimierung von Verhaltensstrategien, um die generierten Texte an menschliche Präferenzen anzupassen.
 
 * Sutton, Richard S., und Andrew G. Barto. _Reinforcement Learning: An Introduction_. 2. Aufl., MIT Press, 2018. [http://incompleteideas.net/book/the-book-2nd.html](http://incompleteideas.net/book/the-book-2nd.html).
-* Video: [TODO_TITEL](https://youtu.be/LHsgtcNNM0A)
+* Video: [Gen AI & Reinforcement Learning – Computerphile](https://youtu.be/LHsgtcNNM0A)
 
 ## Temperature
 id: temperature
@@ -465,17 +466,9 @@ en: Temperature
 tags: fundamentals, ai-engineering
 level: basic
 
-Die **Temperature** ist ein entscheidender Hyperparameter zur Steuerung der Zufälligkeit bei der Generierung des nächsten [[#Token|Tokens]], wobei Andrej Karpathy diesen Inferenzprozess nicht als deterministische Berechnung, sondern als „Werfen einer gezinkten Münze" (Sampling) beschreibt. Während extrem niedrige Werte (nahe 0) zu einem deterministischen „Greedy Decoding" führen, bei dem das Modell starr das wahrscheinlichste Wort wählt und zu Repetitionen neigt, flachen hohe Werte die Wahrscheinlichkeitskurve ab. Dies gibt auch unwahrscheinlicheren Begriffen eine Chance, was zwar die Kreativität fördert, jedoch gleichzeitig die Gefahr von [[#Halluzinationen (Konfabulationen)|Halluzinationen]] erhöht. Sie greift technisch direkt in die [[#Logits & Softmax|Logits]] ein.
+Die **Temperature** ist ein entscheidender Hyperparameter zur Steuerung der Zufälligkeit bei der Generierung des nächsten [[#Token|Tokens]], wobei Andrej Karpathy diesen Inferenzprozess nicht als deterministische Berechnung, sondern als „Werfen einer gezinkten Münze" (Sampling) beschreibt. Während extrem niedrige Werte (nahe 0) zu einem deterministischen „Greedy Decoding" führen, bei dem das Modell starr das wahrscheinlichste Wort wählt und zu Repetitionen neigt, flachen hohe Werte die Wahrscheinlichkeitskurve ab. Dies gibt auch unwahrscheinlicheren Begriffen eine Chance, was zwar die Kreativität fördert, jedoch gleichzeitig die Gefahr von [[#Halluzinationen (Konfabulationen)|Halluzinationen]] erhöht. Sie greift technisch direkt in die Logits ein – die rohen, unnormalisierten Zahlenwerte, die das neuronale Netz vor der Ausgabe produziert und die durch die Softmax-Funktion in Wahrscheinlichkeiten umgewandelt werden.
 
 * Karpathy, Andrej. „Intro to Large Language Models". _YouTube_, 2023. [https://www.youtube.com/watch?v=zjkBMFhNj_g](https://www.youtube.com/watch?v=zjkBMFhNj_g).
-
-## Logits & Softmax
-id: logits-softmax
-en: Logits & Softmax
-tags: architecture
-level: advanced
-
-Sind die rohen, unnormalisierten Zahlenwerte, die das neuronale Netz als allerletzten Schritt vor der Ausgabe produziert. Für jedes Wort im Vokabular gibt es einen Logit-Wert; je höher der Wert, desto „passender" findet das Modell das Wort. Da diese Zahlen schwer zu interpretieren sind (z. B. minus unendlich bis plus unendlich), werden sie durch die **Softmax-Funktion** in Wahrscheinlichkeiten (zwischen 0 und 1) umgewandelt, die sich zu 100% aufsummieren. Die [[#Temperature]] greift genau in diesen Schritt ein, indem sie die Logits vor der Softmax-Berechnung skaliert (glättet oder schärft).
 
 ## Vibe Checking
 id: vibe-checking
