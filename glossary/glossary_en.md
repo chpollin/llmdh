@@ -126,10 +126,13 @@ The process of continuing to train an already pre-trained language model ([[#Pre
 ## GPU
 id: gpu
 en: GPU (Graphics Processing Unit)
-tags: fundamentals, wip
+tags: fundamentals
 level: basic
 
-Work in progress.
+A specialized processor originally developed for graphics calculations that executes thousands of simple computational operations in parallel. This architecture is ideal for training neural networks, which at their core consists of massively parallelizable matrix multiplications. Since around 2012, the GPU has established itself as the central hardware resource for AI development, as CPUs would be orders of magnitude slower for these tasks. GPU availability is now a limiting factor for training large models, and the high costs of the required compute clusters concentrate the development of powerful AI systems among a few resource-rich actors.
+
+* Wikipedia. "Graphics processing unit". [https://en.wikipedia.org/wiki/Graphics_processing_unit](https://en.wikipedia.org/wiki/Graphics_processing_unit).
+* Wikipedia. "General-purpose computing on graphics processing units". [https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units).
 
 ## Red Teaming
 id: red-teaming
@@ -137,7 +140,7 @@ en: Red Teaming
 tags: safety, evaluation
 level: intermediate
 
-Structured adversarial testing of AI systems in which individuals attempt to provoke harmful, undesirable, or erroneous outputs to identify, measure, and reduce vulnerabilities. Unlike traditional cybersecurity red teaming, it encompasses both security-related and content-related risks such as [[#Bias]], misinformation, or toxic content. The goal is to identify weaknesses _before_ release to make the model more robust against [[#Jailbreak]] and [[#Prompt Injection]].
+Structured adversarial testing of AI systems in which individuals attempt to provoke harmful, undesirable, or erroneous outputs to identify, measure, and reduce vulnerabilities. Unlike traditional cybersecurity red teaming, it encompasses both security-related and content-related risks such as [[#Bias]], misinformation, or toxic content. The goal is to identify weaknesses _before_ release to make the model more robust against [[#jailbreak|Jailbreaking]] and [[#Prompt Injection]].
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned". arXiv:2209.07858. Preprint, arXiv, November 22, 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
 * Video: [Prompt Injection, Jailbreaking, and Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
@@ -312,7 +315,7 @@ en: Frontier Model
 tags: fundamentals
 level: basic
 
-Refers to the absolute cutting edge of AI development at any given time. Frontier Models are those [[#llm|LLMs]] that push the current boundaries of what AI can do. They are characterized by massive [[#Parameter]] counts, enormous compute requirements during [[#Pre-Training]], and often [[#Emergence in LLMs|emergent capabilities]] that smaller models don't exhibit.
+Refers to the most capable AI models at a given point in time, defining the current state of the art in their respective application areas. Frontier Models typically require significant computational resources for training and demonstrate capabilities that exceed previous model generations. The term is frequently used in the context of AI safety and regulation to identify models with potentially higher risk profiles. It originates from the self-description of leading AI labs and is criticized for conveying a progress narrative and leaving the authority to define the state of the art with commercially interested actors.
 
 ## Jagged Frontier
 id: jagged-frontier
@@ -884,10 +887,12 @@ The process by which an AI model does not simply retrieve its frozen training kn
 ## TPU
 id: tpu
 en: TPU (Tensor Processing Unit)
-tags: fundamentals, wip
+tags: fundamentals
 level: basic
 
-Work in progress.
+A processor developed by Google specifically designed for machine learning. Unlike the [[#gpu|GPU]], which was originally conceived for graphics and later adapted for AI, the TPU is optimized from the ground up for tensor operations—the multidimensional matrix calculations of neural networks. TPUs achieve higher energy efficiency than GPUs for typical AI workloads and are primarily deployed in Google's cloud infrastructure. Their existence illustrates the trend toward increasingly specialized hardware for AI applications.
+
+* Wikipedia. "Tensor Processing Unit". [https://en.wikipedia.org/wiki/Tensor_Processing_Unit](https://en.wikipedia.org/wiki/Tensor_Processing_Unit).
 
 # Resources
 

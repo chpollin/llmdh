@@ -126,10 +126,13 @@ Der Prozess des Nachtrainierens eines bereits vortrainierten Sprachmodells ([[#P
 ## GPU
 id: gpu
 en: GPU (Graphics Processing Unit)
-tags: fundamentals, wip
+tags: fundamentals
 level: basic
 
-Work in progress.
+Ein spezialisierter Prozessor, der ursprünglich für Grafikberechnungen entwickelt wurde und tausende einfacher Rechenoperationen parallel ausführt. Diese Architektur eignet sich ideal für das Training neuronaler Netze, das im Kern aus massiv parallelisierbaren Matrixmultiplikationen besteht. Seit etwa 2012 hat sich die GPU zur zentralen Hardware-Ressource der KI-Entwicklung etabliert, da CPUs für diese Aufgaben um Größenordnungen langsamer wären. Die Verfügbarkeit von GPUs ist heute ein limitierender Faktor für das Training großer Modelle, und die hohen Kosten der benötigten Rechencluster konzentrieren die Entwicklung leistungsfähiger KI-Systeme bei wenigen ressourcenstarken Akteuren.
+
+* Wikipedia. „Graphics processing unit". [https://en.wikipedia.org/wiki/Graphics_processing_unit](https://en.wikipedia.org/wiki/Graphics_processing_unit).
+* Wikipedia. „General-purpose computing on graphics processing units". [https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units](https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units).
 
 ## Red Teaming
 id: red-teaming
@@ -137,7 +140,7 @@ en: Red Teaming
 tags: safety, evaluation
 level: intermediate
 
-Strukturiertes adversarielles Testen von KI-Systemen, bei dem Personen versuchen, schädliche, unerwünschte oder fehlerhafte Ausgaben zu provozieren, um Schwachstellen zu identifizieren, zu messen und zu reduzieren. Im Gegensatz zu traditionellem Cybersecurity-Red-Teaming umfasst es sowohl sicherheitsrelevante als auch inhaltsbezogene Risiken wie [[#Bias]], Fehlinformationen oder toxische Inhalte. Ziel ist es, Schwachstellen _vor_ der Veröffentlichung zu identifizieren, um das Modell robuster gegen [[#Jailbreak]] und [[#Prompt Injection]] zu machen.
+Strukturiertes adversarielles Testen von KI-Systemen, bei dem Personen versuchen, schädliche, unerwünschte oder fehlerhafte Ausgaben zu provozieren, um Schwachstellen zu identifizieren, zu messen und zu reduzieren. Im Gegensatz zu traditionellem Cybersecurity-Red-Teaming umfasst es sowohl sicherheitsrelevante als auch inhaltsbezogene Risiken wie [[#Bias]], Fehlinformationen oder toxische Inhalte. Ziel ist es, Schwachstellen _vor_ der Veröffentlichung zu identifizieren, um das Modell robuster gegen [[#jailbreak|Jailbreaking]] und [[#Prompt Injection]] zu machen.
 
 * Ganguli, Deep, Liane Lovitt, Jackson Kernion, et al. 'Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned'. arXiv:2209.07858. Preprint, arXiv, 22 November 2022. [https://doi.org/10.48550/arXiv.2209.07858](https://doi.org/10.48550/arXiv.2209.07858).
 * Video: [Prompt Injection, Jailbreaking, und Red Teaming – Sander Schulhoff](https://youtu.be/J9982NLmTXg)
@@ -312,7 +315,7 @@ en: Frontier Model
 tags: fundamentals
 level: basic
 
-Bezeichnet die absolute Spitzenklasse der KI-Entwicklung zu einem gegebenen Zeitpunkt. Frontier Models sind jene [[#llm|LLMs]], die die aktuellen Grenzen dessen, was KI kann, verschieben. Sie zeichnen sich durch massive [[#Parameter]]-Zahlen, enormen Rechenaufwand im [[#Pre-Training]] und oft [[#Emergenz in LLM|emergente Fähigkeiten]] aus, die kleinere Modelle nicht zeigen.
+Bezeichnet die leistungsfähigsten KI-Modelle eines gegebenen Zeitpunkts, die den aktuellen Stand der Technik in ihren jeweiligen Anwendungsbereichen definieren. Frontier Models erfordern typischerweise erhebliche Rechenressourcen im Training und zeigen Fähigkeiten, die über frühere Modellgenerationen hinausgehen. Der Begriff wird häufig im Kontext von KI-Sicherheit und Regulierung verwendet, um Modelle mit potenziell höherem Risikoprofil zu kennzeichnen. Er stammt aus der Selbstbeschreibung führender KI-Labore und wird kritisiert, weil er eine Fortschrittsnarrative transportiert und die Definitionshoheit über den Stand der Technik bei kommerziell interessierten Akteuren belässt.
 
 ## Jagged Frontier
 id: jagged-frontier
@@ -884,10 +887,12 @@ Ist der Prozess, bei dem ein KI-Modell nicht einfach nur sein eingefrorenes Trai
 ## TPU
 id: tpu
 en: TPU (Tensor Processing Unit)
-tags: fundamentals, wip
+tags: fundamentals
 level: basic
 
-Work in progress.
+Ein von Google entwickelter, speziell für maschinelles Lernen entworfener Prozessor. Im Unterschied zur [[#gpu|GPU]], die ursprünglich für Grafik konzipiert und später für KI adaptiert wurde, ist die TPU von Grund auf für Tensoroperationen optimiert, also für die mehrdimensionalen Matrixberechnungen neuronaler Netze. TPUs erreichen bei typischen KI-Workloads eine höhere Energieeffizienz als GPUs und werden primär in Googles Cloud-Infrastruktur eingesetzt. Ihre Existenz illustriert den Trend zu immer stärker spezialisierter Hardware für KI-Anwendungen.
+
+* Wikipedia. „Tensor Processing Unit". [https://en.wikipedia.org/wiki/Tensor_Processing_Unit](https://en.wikipedia.org/wiki/Tensor_Processing_Unit).
 
 # Ressourcen
 

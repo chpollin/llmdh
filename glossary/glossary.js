@@ -458,10 +458,12 @@ const GlossaryApp = {
 
         // Handle clicks on internal links
         document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('term-link') || e.target.classList.contains('related-link')) {
+            // Use closest() to handle clicks on child elements within links
+            const termLink = e.target.closest('.term-link, .related-link');
+            if (termLink) {
                 e.preventDefault();
-                const id = e.target.getAttribute('href').substring(1);
-                this.scrollToEntry(id);
+                const id = termLink.getAttribute('href').substring(1);
+                this.navigateToEntry(id);
             }
             // Handle clicks on category tags - filter by that tag
             if (e.target.classList.contains('term-category')) {
@@ -478,6 +480,46 @@ const GlossaryApp = {
                 this.scrollToEntry(id);
             }
         });
+    },
+
+    // Navigate to an entry - resets filters if needed and scrolls to it
+    navigateToEntry(id) {
+        // First check if the entry exists in our data
+        const entry = this.entries.find(e => e.id === id);
+        if (!entry) {
+            console.warn(`Entry not found: ${id}`);
+            return;
+        }
+
+        // Check if element is currently in the DOM
+        let element = document.getElementById(id);
+
+        if (!element) {
+            // Entry exists but is filtered out - reset filters to show it
+            this.activeFilters.search = '';
+            this.activeFilters.category = 'all';
+            this.activeFilters.levels = new Set(['basic', 'intermediate', 'advanced']);
+
+            // Update UI elements
+            document.getElementById('search').value = '';
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.category === 'all');
+            });
+            document.querySelectorAll('.level-item').forEach(item => {
+                item.classList.add('active');
+            });
+
+            // Re-render entries
+            this.renderEntries();
+            this.updateStats();
+
+            // Now get the element
+            element = document.getElementById(id);
+        }
+
+        if (element) {
+            this.scrollToEntry(id);
+        }
     },
 
     // Scroll to and highlight an entry
