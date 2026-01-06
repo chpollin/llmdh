@@ -3,6 +3,53 @@
 // ========================================
 
 const GlossaryApp = {
+    // Configuration
+    config: {
+        debounceMs: 200,
+        headerOffset: 90,
+        highlightDurationMs: 2000,
+        hashScrollDelayMs: 300,
+        maxCategories: 10
+    },
+
+    // Localization strings
+    i18n: {
+        de: {
+            term: 'Begriff',
+            terms: 'Begriffe',
+            sources: 'Quellen',
+            noResults: 'Keine Einträge gefunden.',
+            loadError: 'Fehler beim Laden des Glossars.',
+            loading: 'Glossar wird geladen...'
+        },
+        en: {
+            term: 'Term',
+            terms: 'Terms',
+            sources: 'Sources',
+            noResults: 'No entries found.',
+            loadError: 'Error loading glossary.',
+            loading: 'Loading glossary...'
+        }
+    },
+
+    // Tag display names
+    tagDisplayNames: {
+        'ai-engineering': 'AI-Engineering',
+        'fundamentals': 'Fundamentals',
+        'architecture': 'Architecture',
+        'training': 'Training',
+        'prompting': 'Prompting',
+        'agents': 'Agents',
+        'safety': 'Safety',
+        'evaluation': 'Evaluation',
+        'governance': 'Governance',
+        'benchmarks': 'Benchmarks'
+    },
+
+    // DOM element cache
+    dom: {},
+
+    // State
     entries: [],
     allTags: new Set(),
     currentLang: 'de',
@@ -12,8 +59,32 @@ const GlossaryApp = {
         levels: new Set(['basic', 'intermediate', 'advanced'])
     },
 
+    // Get localized string
+    t(key) {
+        return this.i18n[this.currentLang]?.[key] || this.i18n.de[key] || key;
+    },
+
+    // Cache DOM elements
+    cacheDOM() {
+        this.dom = {
+            entriesContainer: document.getElementById('glossary-entries'),
+            searchInput: document.getElementById('search'),
+            statTerms: document.getElementById('stat-terms'),
+            statCategories: document.getElementById('stat-categories'),
+            categoryList: document.querySelector('.category-list'),
+            alphaButtons: document.querySelectorAll('.alpha-btn'),
+            levelItems: document.querySelectorAll('.level-item'),
+            langButtons: document.querySelectorAll('.lang-btn'),
+            glossaryContent: document.querySelector('.glossary-content'),
+            introDe: document.getElementById('glossary-intro-de'),
+            introEn: document.getElementById('glossary-intro-en'),
+            statLabels: document.querySelectorAll('.stat-label[data-de]')
+        };
+    },
+
     // Initialize the application
     async init() {
+        this.cacheDOM();
         await this.loadGlossary();
         this.setupEventListeners();
         this.handleUrlHash();
@@ -32,8 +103,8 @@ const GlossaryApp = {
             this.updateUI();
         } catch (error) {
             console.error('Error loading glossary:', error);
-            document.getElementById('glossary-entries').innerHTML =
-                '<div class="loading-state"><p>Fehler beim Laden des Glossars.</p></div>';
+            this.dom.entriesContainer.innerHTML =
+                `<div class="loading-state"><p>${this.t('loadError')}</p></div>`;
         }
     },
 
@@ -108,6 +179,7 @@ const GlossaryApp = {
 
     // Update the entire UI
     updateUI() {
+        this.updateLanguageUI();
         this.renderEntries();
         this.updateStats();
         this.updateAlphabet();
@@ -115,13 +187,27 @@ const GlossaryApp = {
         this.updateLevels();
     },
 
+    // Update language-dependent UI elements
+    updateLanguageUI() {
+        // Toggle intro texts
+        if (this.dom.introDe && this.dom.introEn) {
+            this.dom.introDe.style.display = this.currentLang === 'de' ? 'block' : 'none';
+            this.dom.introEn.style.display = this.currentLang === 'en' ? 'block' : 'none';
+        }
+
+        // Update stat labels
+        this.dom.statLabels.forEach(label => {
+            const text = label.dataset[this.currentLang];
+            if (text) label.textContent = text;
+        });
+    },
+
     // Render filtered entries grouped by letter
     renderEntries() {
-        const container = document.getElementById('glossary-entries');
         const filtered = this.getFilteredEntries();
 
         if (filtered.length === 0) {
-            container.innerHTML = '<div class="loading-state"><p>Keine Einträge gefunden.</p></div>';
+            this.dom.entriesContainer.innerHTML = `<div class="loading-state"><p>${this.t('noResults')}</p></div>`;
             return;
         }
 
@@ -138,10 +224,10 @@ const GlossaryApp = {
             html += this.renderLetterSection(letter, grouped[letter]);
         });
 
-        container.innerHTML = html;
+        this.dom.entriesContainer.innerHTML = html;
 
         // Add click handlers for expand/collapse
-        container.querySelectorAll('.term-header').forEach(header => {
+        this.dom.entriesContainer.querySelectorAll('.term-header').forEach(header => {
             header.addEventListener('click', () => {
                 header.closest('.term-card').classList.toggle('expanded');
             });
@@ -150,11 +236,12 @@ const GlossaryApp = {
 
     // Render a letter section with entries
     renderLetterSection(letter, entries) {
+        const countLabel = entries.length === 1 ? this.t('term') : this.t('terms');
         return `
             <section class="letter-section" id="letter-${letter}">
                 <div class="letter-heading">
                     <div class="letter-char">${letter}</div>
-                    <div class="letter-meta">${entries.length} ${entries.length === 1 ? 'Begriff' : 'Begriffe'}</div>
+                    <div class="letter-meta">${entries.length} ${countLabel}</div>
                 </div>
                 ${entries.map(e => this.renderEntryCard(e)).join('')}
             </section>
@@ -167,7 +254,7 @@ const GlossaryApp = {
         const bodyHtml = this.formatBody(entry.body, entry.id);
         const sourcesHtml = entry.sources.length > 0 ? `
             <div class="term-sources">
-                <h4>Quellen</h4>
+                <h4>${this.t('sources')}</h4>
                 <ul>
                     ${entry.sources.map(s => `<li>${this.formatSource(s)}</li>`).join('')}
                 </ul>
@@ -308,15 +395,15 @@ const GlossaryApp = {
     // Update statistics
     updateStats() {
         const filtered = this.getFilteredEntries();
-        document.getElementById('stat-terms').textContent = filtered.length;
-        document.getElementById('stat-categories').textContent = this.allTags.size;
+        this.dom.statTerms.textContent = filtered.length;
+        this.dom.statCategories.textContent = this.allTags.size;
     },
 
     // Update alphabet navigation
     updateAlphabet() {
         const usedLetters = new Set(this.entries.map(e => e.title.charAt(0).toUpperCase()));
 
-        document.querySelectorAll('.alpha-btn').forEach(btn => {
+        this.dom.alphaButtons.forEach(btn => {
             const letter = btn.textContent.trim();
             if (usedLetters.has(letter)) {
                 btn.classList.remove('disabled');
@@ -330,7 +417,6 @@ const GlossaryApp = {
 
     // Update category list
     updateCategories() {
-        const container = document.querySelector('.category-list');
         const tagCounts = {};
 
         this.entries.forEach(entry => {
@@ -344,11 +430,12 @@ const GlossaryApp = {
 
         const sortedTags = Object.entries(tagCounts)
             .sort((a, b) => b[1] - a[1])
-            .slice(0, 10);
+            .slice(0, this.config.maxCategories);
 
+        const allLabel = this.currentLang === 'de' ? 'Alle' : 'All';
         let html = `
             <div class="category-item active" data-category="all">
-                <span>Alle</span>
+                <span>${allLabel}</span>
                 <span class="count">${this.entries.length}</span>
             </div>
         `;
@@ -362,12 +449,12 @@ const GlossaryApp = {
             `;
         });
 
-        container.innerHTML = html;
+        this.dom.categoryList.innerHTML = html;
 
         // Re-attach event listeners
-        container.querySelectorAll('.category-item').forEach(item => {
+        this.dom.categoryList.querySelectorAll('.category-item').forEach(item => {
             item.addEventListener('click', () => {
-                container.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+                this.dom.categoryList.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
                 this.activeFilters.category = item.dataset.category;
                 this.renderEntries();
@@ -381,7 +468,7 @@ const GlossaryApp = {
         const levelCounts = { basic: 0, intermediate: 0, advanced: 0 };
         this.entries.forEach(e => levelCounts[e.level]++);
 
-        document.querySelectorAll('.level-item').forEach(item => {
+        this.dom.levelItems.forEach(item => {
             const level = item.dataset.level;
             const countEl = item.querySelector('span:last-child');
             if (countEl && levelCounts[level] !== undefined) {
@@ -393,27 +480,26 @@ const GlossaryApp = {
     // Setup event listeners
     setupEventListeners() {
         // Search input
-        const searchInput = document.getElementById('search');
         let searchTimeout;
-        searchInput.addEventListener('input', (e) => {
+        this.dom.searchInput.addEventListener('input', (e) => {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
                 this.activeFilters.search = e.target.value;
                 this.renderEntries();
                 this.updateStats();
-            }, 200);
+            }, this.config.debounceMs);
         });
 
         // Keyboard shortcut for search
         document.addEventListener('keydown', (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
-                searchInput.focus();
+                this.dom.searchInput.focus();
             }
         });
 
         // Level filters
-        document.querySelectorAll('.level-item').forEach(item => {
+        this.dom.levelItems.forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('active');
                 const level = item.dataset.level;
@@ -430,11 +516,11 @@ const GlossaryApp = {
         });
 
         // Language toggle
-        document.querySelectorAll('.lang-btn').forEach(btn => {
+        this.dom.langButtons.forEach(btn => {
             btn.addEventListener('click', async () => {
                 const newLang = btn.textContent.trim().toLowerCase();
                 if (newLang !== this.currentLang) {
-                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.dom.langButtons.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     this.currentLang = newLang;
                     this.allTags.clear();
@@ -444,7 +530,7 @@ const GlossaryApp = {
         });
 
         // Smooth scroll for alphabet
-        document.querySelectorAll('.alpha-btn').forEach(btn => {
+        this.dom.alphaButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 if (!btn.classList.contains('disabled')) {
                     e.preventDefault();
@@ -501,11 +587,11 @@ const GlossaryApp = {
             this.activeFilters.levels = new Set(['basic', 'intermediate', 'advanced']);
 
             // Update UI elements
-            document.getElementById('search').value = '';
-            document.querySelectorAll('.category-item').forEach(item => {
+            this.dom.searchInput.value = '';
+            this.dom.categoryList.querySelectorAll('.category-item').forEach(item => {
                 item.classList.toggle('active', item.dataset.category === 'all');
             });
-            document.querySelectorAll('.level-item').forEach(item => {
+            this.dom.levelItems.forEach(item => {
                 item.classList.add('active');
             });
 
@@ -537,9 +623,8 @@ const GlossaryApp = {
             }
 
             // Scroll with offset for fixed header
-            const headerOffset = 90;
             const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const offsetPosition = elementPosition + window.pageYOffset - this.config.headerOffset;
 
             window.scrollTo({
                 top: offsetPosition,
@@ -551,7 +636,7 @@ const GlossaryApp = {
                 element.style.boxShadow = '0 0 0 3px var(--primary-light)';
                 setTimeout(() => {
                     element.style.boxShadow = '';
-                }, 2000);
+                }, this.config.highlightDurationMs);
             }
         }
     },
@@ -560,7 +645,7 @@ const GlossaryApp = {
     handleUrlHash() {
         if (window.location.hash) {
             const id = window.location.hash.substring(1);
-            setTimeout(() => this.scrollToEntry(id), 300);
+            setTimeout(() => this.scrollToEntry(id), this.config.hashScrollDelayMs);
         }
     },
 
@@ -570,7 +655,7 @@ const GlossaryApp = {
         this.activeFilters.category = tag;
 
         // Update category list UI
-        document.querySelectorAll('.category-item').forEach(item => {
+        this.dom.categoryList.querySelectorAll('.category-item').forEach(item => {
             item.classList.remove('active');
             if (item.dataset.category === tag) {
                 item.classList.add('active');
@@ -578,7 +663,7 @@ const GlossaryApp = {
         });
 
         // Scroll to top of entries
-        document.querySelector('.glossary-content').scrollIntoView({ behavior: 'smooth' });
+        this.dom.glossaryContent.scrollIntoView({ behavior: 'smooth' });
 
         // Re-render
         this.renderEntries();
@@ -587,19 +672,7 @@ const GlossaryApp = {
 
     // Format tag display name (ai-engineering -> AI-Engineering, etc.)
     formatTagDisplay(tag) {
-        const displayNames = {
-            'ai-engineering': 'AI-Engineering',
-            'fundamentals': 'Fundamentals',
-            'architecture': 'Architecture',
-            'training': 'Training',
-            'prompting': 'Prompting',
-            'agents': 'Agents',
-            'safety': 'Safety',
-            'evaluation': 'Evaluation',
-            'governance': 'Governance',
-            'benchmarks': 'Benchmarks'
-        };
-        return displayNames[tag] || this.capitalizeFirst(tag);
+        return this.tagDisplayNames[tag] || this.capitalizeFirst(tag);
     },
 
     // Utility: capitalize first letter
