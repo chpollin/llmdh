@@ -894,6 +894,45 @@ A processor developed by Google specifically designed for machine learning. Unli
 
 * Wikipedia. "Tensor Processing Unit". [https://en.wikipedia.org/wiki/Tensor_Processing_Unit](https://en.wikipedia.org/wiki/Tensor_Processing_Unit).
 
+## Agentic Coding Tools
+id: agentic-coding-tools
+en: Agentic Coding Tools
+tags: agents, ai-engineering
+level: intermediate
+
+Software tools that integrate language models as autonomous agents into development environments to not only assist with programming tasks but also execute them partially independently. Agentic systems differ from reactive code assistants through proactive task decomposition, state preservation across multiple interactions, integration of external tools into their reasoning loops, and adaptive strategy adjustment based on feedback. They can create and edit files, run tests, analyze errors, and iteratively develop solutions. The paradigm marks a transition from static, one-shot code generation to interactive, tool-supported workflows.
+
+Architecturally, several manifestations can be distinguished. **IDE-integrated systems** extend existing editors (often VS Code forks) with agentic capabilities and enable simultaneous editing of multiple files with automatic context indexing. **CLI-based agents** operate outside the IDE in the terminal, have access to the entire file system, and are suitable for complex, cross-project tasks such as refactoring or deployment automation. **Extensions for existing editors** offer similar functionality as plugins and often emphasize transparency through step-by-step approval mechanisms.
+
+Empirical studies show a significant discrepancy between benchmark performance and real-world acceptance: agents achieve high success rates on standardized benchmarks, yet their pull requests are accepted significantly less frequently in practice than human contributions, with the generated code tending to be structurally simpler.
+
+The boundaries between assistance and autonomy are fluid. Some tools require explicit confirmation before each file operation, while others work largely independently in auto-accept modes. Studies show that experienced developers maintain control over design decisions despite agentic support and regularly modify the generated outputs.
+
+Examples (as of 2025): Cursor, Windsurf, Claude Code, Cline, Roo Code, Aider, GitHub Copilot Agent Mode.
+
+* Wang, Huanting, et al. "AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities". arXiv:2508.11126. September 2025. [https://arxiv.org/abs/2508.11126](https://arxiv.org/abs/2508.11126)
+* Li, Hao, Haoxiang Zhang, and Ahmed E. Hassan. "The Rise of AI Teammates in Software Engineering (SE) 3.0: How Autonomous Coding Agents Are Reshaping Software Engineering". arXiv:2507.15003. July 2025. [https://arxiv.org/abs/2507.15003](https://arxiv.org/abs/2507.15003)
+
+## General-Purpose AI Agents
+id: general-purpose-agents
+en: General-Purpose AI Agents
+tags: agents, fundamentals
+level: intermediate
+
+Autonomous AI systems that are not restricted to a specific domain but can execute a broad spectrum of tasks in open digital environments. Unlike specialized [[#AI Agent|AI Agents]], they have the ability to interact with graphical user interfaces, control web browsers or desktop applications, and handle multi-step workflows without domain-specific adaptation. In the literature, they are also referred to as *OS Agents* (Operating System Agents) or *Agents for Computer Use*.
+
+Technically, these systems are based on the combination of multimodal language models with tools for environment interaction. The observation modality varies between screenshot-based visual perception, structured representations such as HTML or Accessibility Trees, and hybrid approaches. The action modality includes simulated mouse and keyboard inputs, touch gestures on mobile devices, or direct code execution. The agents interpret visual inputs, plan action sequences, and execute them iteratively while responding to feedback from the environment.
+
+Benchmarks such as GAIA, OSWorld, and WebArena measure the performance of these systems. Current evaluations show significant gaps between machine and human performance, especially for complex, multi-step tasks. The [[#Jagged Frontier]] manifests clearly: agents can achieve impressive results on some tasks while failing on seemingly simpler variants. Six central research gaps characterize the field: insufficient generalization, inefficient learning, limited planning capabilities, insufficient task complexity in benchmarks, lack of evaluation standardization, and a discrepancy between research conditions and practical deployment.
+
+Security concerns shape development. The ability to autonomously interact with user interfaces opens new attack vectors for [[#Prompt Injection]]. Human-in-the-loop requirements and sandbox environments address these risks, but the balance between autonomy and control remains an open research problem.
+
+Examples (as of 2025): OpenAI Operator, Anthropic Computer Use, Manus, Browser Use.
+
+* Sager, Pascal, et al. "A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions". arXiv:2501.16150. January 2025. [https://arxiv.org/abs/2501.16150](https://arxiv.org/abs/2501.16150)
+* Hu, Xueyu, et al. "OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use". arXiv:2508.04482. August 2025. [https://arxiv.org/abs/2508.04482](https://arxiv.org/abs/2508.04482)
+* Ning, Liangbo, et al. "A Survey of WebAgents: Towards Next-Generation AI Agents for Web Automation with Large Foundation Models". arXiv:2503.23350. March 2025. [https://arxiv.org/abs/2503.23350](https://arxiv.org/abs/2503.23350)
+
 # Resources
 
 * Glossary. Claude Docs. https://platform.claude.com/docs/en/about-claude/glossary

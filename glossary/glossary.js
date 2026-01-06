@@ -226,10 +226,10 @@ const GlossaryApp = {
 
         this.dom.entriesContainer.innerHTML = html;
 
-        // Add click handlers for expand/collapse
-        this.dom.entriesContainer.querySelectorAll('.term-header').forEach(header => {
-            header.addEventListener('click', () => {
-                header.closest('.term-card').classList.toggle('expanded');
+        // Add click handlers for expand/collapse (header and preview text)
+        this.dom.entriesContainer.querySelectorAll('.term-header, .term-preview').forEach(clickable => {
+            clickable.addEventListener('click', () => {
+                clickable.closest('.term-card').classList.toggle('expanded');
             });
         });
     },

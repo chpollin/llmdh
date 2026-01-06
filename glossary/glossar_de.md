@@ -894,6 +894,45 @@ Ein von Google entwickelter, speziell für maschinelles Lernen entworfener Proze
 
 * Wikipedia. „Tensor Processing Unit". [https://en.wikipedia.org/wiki/Tensor_Processing_Unit](https://en.wikipedia.org/wiki/Tensor_Processing_Unit).
 
+## Agentic Coding Tools
+id: agentic-coding-tools
+en: Agentic Coding Tools
+tags: agents, ai-engineering
+level: intermediate
+
+Softwarewerkzeuge, die Sprachmodelle als autonome Agenten in Entwicklungsumgebungen integrieren, um Programmieraufgaben nicht nur zu unterstützen, sondern teilweise selbstständig auszuführen. Agentische Systeme unterscheiden sich von reaktiven Code-Assistenten durch proaktive Aufgabenzerlegung, Zustandserhaltung über mehrere Interaktionen, Integration externer Werkzeuge in ihre Reasoning-Schleifen und adaptive Strategieanpassung basierend auf Feedback. Sie können Dateien erstellen und bearbeiten, Tests ausführen, Fehler analysieren und iterativ Lösungen entwickeln. Das Paradigma markiert einen Übergang von statischer, einmaliger Codegenerierung zu interaktiven, werkzeuggestützten Workflows.
+
+Architektonisch lassen sich mehrere Ausprägungen unterscheiden. **IDE-integrierte Systeme** erweitern bestehende Editoren (häufig VS-Code-Forks) um agentische Fähigkeiten und ermöglichen die gleichzeitige Bearbeitung mehrerer Dateien mit automatischer Kontextindizierung. **CLI-basierte Agenten** operieren außerhalb der IDE im Terminal, haben Zugriff auf das gesamte Dateisystem und eignen sich für komplexe, projektübergreifende Aufgaben wie Refactoring oder Deployment-Automatisierung. **Erweiterungen für bestehende Editoren** bieten ähnliche Funktionalität als Plugins und betonen häufig Transparenz durch schrittweise Genehmigungsmechanismen.
+
+Empirische Untersuchungen zeigen eine signifikante Diskrepanz zwischen Benchmark-Leistung und realer Akzeptanz: Agenten erreichen auf standardisierten Benchmarks hohe Erfolgsraten, doch ihre Pull Requests werden in der Praxis deutlich seltener akzeptiert als menschliche Beiträge, wobei der erzeugte Code tendenziell strukturell einfacher ausfällt.
+
+Die Grenzen zwischen Assistenz und Autonomie sind fließend. Manche Tools erfordern explizite Bestätigung vor jeder Dateioperation, andere arbeiten in Auto-Accept-Modi weitgehend selbstständig. Studien zeigen, dass erfahrene Entwickler trotz agentischer Unterstützung die Kontrolle über Designentscheidungen behalten und die generierten Ausgaben regelmäßig modifizieren.
+
+Beispiele (Stand 2025): Cursor, Windsurf, Claude Code, Cline, Roo Code, Aider, GitHub Copilot Agent Mode.
+
+* Wang, Huanting, et al. „AI Agentic Programming: A Survey of Techniques, Challenges, and Opportunities". arXiv:2508.11126. September 2025. [https://arxiv.org/abs/2508.11126](https://arxiv.org/abs/2508.11126)
+* Li, Hao, Haoxiang Zhang, und Ahmed E. Hassan. „The Rise of AI Teammates in Software Engineering (SE) 3.0: How Autonomous Coding Agents Are Reshaping Software Engineering". arXiv:2507.15003. Juli 2025. [https://arxiv.org/abs/2507.15003](https://arxiv.org/abs/2507.15003)
+
+## General-Purpose AI Agents
+id: general-purpose-agents
+en: General-Purpose AI Agents
+tags: agents, fundamentals
+level: intermediate
+
+Autonome KI-Systeme, die nicht auf eine spezifische Domäne beschränkt sind, sondern ein breites Spektrum von Aufgaben in offenen digitalen Umgebungen ausführen können. Im Unterschied zu spezialisierten [[#AI Agent|AI Agents]] verfügen sie über die Fähigkeit, mit grafischen Benutzeroberflächen zu interagieren, Webbrowser oder Desktop-Anwendungen zu steuern und mehrstufige Workflows ohne domänenspezifische Anpassung zu bewältigen. In der Literatur werden sie auch als *OS Agents* (Operating System Agents) oder *Agents for Computer Use* bezeichnet.
+
+Technisch basieren diese Systeme auf der Kombination von multimodalen Sprachmodellen mit Werkzeugen zur Umgebungsinteraktion. Die Beobachtungsmodalität variiert zwischen Screenshot-basierter visueller Wahrnehmung, strukturierten Repräsentationen wie HTML oder Accessibility Trees, und hybriden Ansätzen. Die Aktionsmodalität umfasst simulierte Maus- und Tastatureingaben, Touch-Gesten auf mobilen Geräten oder direkte Code-Ausführung. Die Agenten interpretieren visuelle Eingaben, planen Handlungssequenzen und führen diese iterativ aus, wobei sie auf Feedback aus der Umgebung reagieren.
+
+Benchmarks wie GAIA, OSWorld und WebArena messen die Leistungsfähigkeit dieser Systeme. Aktuelle Evaluierungen zeigen erhebliche Lücken zwischen maschineller und menschlicher Leistung, insbesondere bei komplexen, mehrstufigen Aufgaben. Die [[#Jagged Frontier]] manifestiert sich deutlich: Agenten können bei manchen Aufgaben beeindruckende Ergebnisse erzielen, während sie bei scheinbar einfacheren Varianten scheitern. Sechs zentrale Forschungslücken prägen das Feld: unzureichende Generalisierung, ineffizientes Lernen, limitierte Planungsfähigkeiten, zu geringe Aufgabenkomplexität in Benchmarks, fehlende Standardisierung der Evaluation und eine Diskrepanz zwischen Forschungsbedingungen und praktischem Einsatz.
+
+Sicherheitsbedenken prägen die Entwicklung. Die Fähigkeit, autonom mit Benutzeroberflächen zu interagieren, eröffnet neue Angriffsvektoren für [[#Prompt Injection]]. Human-in-the-Loop-Anforderungen und Sandbox-Umgebungen adressieren diese Risiken, doch die Balance zwischen Autonomie und Kontrolle bleibt ein offenes Forschungsproblem.
+
+Beispiele (Stand 2025): OpenAI Operator, Anthropic Computer Use, Manus, Browser Use.
+
+* Sager, Pascal, et al. „A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions". arXiv:2501.16150. Januar 2025. [https://arxiv.org/abs/2501.16150](https://arxiv.org/abs/2501.16150)
+* Hu, Xueyu, et al. „OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use". arXiv:2508.04482. August 2025. [https://arxiv.org/abs/2508.04482](https://arxiv.org/abs/2508.04482)
+* Ning, Liangbo, et al. „A Survey of WebAgents: Towards Next-Generation AI Agents for Web Automation with Large Foundation Models". arXiv:2503.23350. März 2025. [https://arxiv.org/abs/2503.23350](https://arxiv.org/abs/2503.23350)
+
 # Ressourcen
 
 * Glossary. Claude Docs. https://platform.claude.com/docs/en/about-claude/glossary
