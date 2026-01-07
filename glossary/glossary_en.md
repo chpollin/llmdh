@@ -6,7 +6,7 @@ en: Scaling Laws
 tags: training, fundamentals
 level: intermediate
 
-In the field of artificial intelligence, scaling laws refer to empirically determined principles that describe the quantitative relationship between the performance of a neural network and its scaling dimensions. These mathematical power laws enable precise prediction of how much a model's prediction error decreases when the number of [[#Parameters]], the size of the training dataset, or the available compute is increased. They serve as a central instrument for resource planning, as they indicate the optimal ratio at which model size and data volume must grow together to maximize efficiency and avoid bottlenecks like overfitting before actual training begins.
+In the field of artificial intelligence, scaling laws refer to empirically determined principles that describe the quantitative relationship between the performance of a neural network and its scaling dimensions. These mathematical power laws enable precise prediction of how much a model's prediction error decreases when the number of [[#parameter|parameters]], the size of the training dataset, or the available compute is increased. They serve as a central instrument for resource planning, as they indicate the optimal ratio at which model size and data volume must grow together to maximize efficiency and avoid bottlenecks like overfitting before actual training begins.
 
 * Kaplan, Jared, Sam McCandlish, Tom Henighan, et al. "Scaling Laws for Neural Language Models". arXiv:2001.08361. Preprint, arXiv, January 23, 2020. [https://doi.org/10.48550/arXiv.2001.08361](https://doi.org/10.48550/arXiv.2001.08361).
 
@@ -66,7 +66,7 @@ en: Inference
 tags: fundamentals, ai-engineering
 level: basic
 
-The process by which an already fully trained AI model is used to process new inputs and deliver results. In contrast to training (such as [[#Pre-Training]] or [[#Fine-Tuning]]), where the model learns and changes its internal connections, the model's knowledge remains static (frozen) during [[#Inference]].
+The process by which an already fully trained AI model is used to process new inputs and deliver results. In contrast to training (such as [[#Pre-Training]] or [[#Fine-Tuning]]), where the model learns and changes its internal connections, the model's knowledge remains static (frozen) during [[#inferenz|inference]].
 
 * Pope, Reiner, et al. "Efficiently Scaling Transformer Inference". _Proceedings of Machine Learning and Systems_, Vol. 5, 2023. [https://arxiv.org/abs/2211.05102](https://arxiv.org/abs/2211.05102).
 
@@ -80,7 +80,7 @@ Intelligence refers to an agent's ability to achieve goals across a wide variety
 
 In psychology, various conceptualizations are distinguished. Charles Spearman postulated in the early 20th century a general intelligence factor (_g_) that explains the positive correlations between different cognitive tests. Raymond Cattell and John Horn developed from the 1940s the distinction between **fluid intelligence** (Gf), the ability to solve novel problems independent of acquired knowledge, and **crystallized intelligence** (Gc), knowledge accumulated through experience and education. This distinction was later integrated with John Carroll's three-stratum model into the Cattell-Horn-Carroll theory (CHC), which today represents the most influential psychometric model of cognitive abilities.
 
-François Chollet defines intelligence in his paper "On the Measure of Intelligence" (2019) as _efficiency of skill acquisition on unknown tasks_. This definition emphasizes not performance on specific tasks but the capacity for [[#generalization|generalization]]. Chollet argues that skill can be "bought" through unlimited training data or built-in prior knowledge, which masks a system's actual generalization capability. He operationalizes this approach with the Abstraction and Reasoning Corpus ([[#arc-agi|ARC]]).
+François Chollet defines intelligence in his paper "On the Measure of Intelligence" (2019) as _efficiency of skill acquisition on unknown tasks_. This definition emphasizes not performance on specific tasks but the capacity for [[#generalisierung|generalization]]. Chollet argues that skill can be "bought" through unlimited training data or built-in prior knowledge, which masks a system's actual generalization capability. He operationalizes this approach with the Abstraction and Reasoning Corpus ([[#arc-agi|ARC]]).
 
 The American Psychological Association (APA) describes intelligence as "the ability of individuals to understand complex ideas, adapt effectively to the environment, learn from experience, engage in various forms of [[#reasoning|reasoning]], and overcome obstacles through deliberation." This definition emphasizes the multidimensionality of the construct.
 
@@ -147,7 +147,7 @@ en: Fine-Tuning
 tags: training
 level: intermediate
 
-The process of continuing to train an already pre-trained language model ([[#Pre-Training|Pre-trained Model]]) with a specific, smaller dataset. While pre-training builds broad knowledge and language understanding, fine-tuning serves to specialize the model for specific tasks (e.g., coding, medical analysis) or a particular writing style. It adapts the weights ([[#Parameters]]) so that the model imitates the patterns of the new dataset. Anthropic notes that models without this step (Bare Models) often struggle to follow instructions, as they are merely trained to predict text, not to act as helpful assistants.
+The process of continuing to train an already pre-trained language model ([[#Pre-Training|Pre-trained Model]]) with a specific, smaller dataset. While pre-training builds broad knowledge and language understanding, fine-tuning serves to specialize the model for specific tasks (e.g., coding, medical analysis) or a particular writing style. It adapts the weights ([[#parameter|parameters]]) so that the model imitates the patterns of the new dataset. Anthropic notes that models without this step (Bare Models) often struggle to follow instructions, as they are merely trained to predict text, not to act as helpful assistants.
 
 * Glossary. Claude Docs. https://platform.claude.com/docs/en/about-claude/glossary
 
@@ -179,7 +179,7 @@ en: Guardrails
 tags: safety, ai-engineering
 level: intermediate
 
-Runtime safety mechanisms placed between user inputs and model outputs to prevent undesirable behavior. Unlike [[#Red Teaming]] (pre-deployment testing) and [[#Alignment]] (training-time alignment), guardrails operate during [[#Inference]] and encompass both input validation (e.g., detecting [[#Prompt Injection]] attempts) and output control (e.g., blocking toxic content, schema validation of structured outputs). Typical implementations use rule-based filters, additional classification models, or the LLM itself for self-checking. However, practice shows that guardrails are more vulnerable than often assumed: the HackAPrompt study demonstrates that even sophisticated protection mechanisms can be bypassed through creative [[#Jailbreak|jailbreaks]], as the underlying language models cannot distinguish between legitimate and manipulative requests. Guardrails therefore form a complementary but not infallible protection layer in production LLM systems.
+Runtime safety mechanisms placed between user inputs and model outputs to prevent undesirable behavior. Unlike [[#Red Teaming]] (pre-deployment testing) and [[#Alignment]] (training-time alignment), guardrails operate during [[#inferenz|inference]] and encompass both input validation (e.g., detecting [[#Prompt Injection]] attempts) and output control (e.g., blocking toxic content, schema validation of structured outputs). Typical implementations use rule-based filters, additional classification models, or the LLM itself for self-checking. However, practice shows that guardrails are more vulnerable than often assumed: the HackAPrompt study demonstrates that even sophisticated protection mechanisms can be bypassed through creative [[#Jailbreak|jailbreaks]], as the underlying language models cannot distinguish between legitimate and manipulative requests. Guardrails therefore form a complementary but not infallible protection layer in production LLM systems.
 
 * Rebedea, Traian, et al. "NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails". _Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations_, 2023. [https://arxiv.org/abs/2310.10501](https://arxiv.org/abs/2310.10501).
 * Video: [Why securing AI is harder than anyone expected and guardrails are failing – Sander Schulhoff (HackAPrompt)](https://youtu.be/J9982NLmTXg)
@@ -200,7 +200,7 @@ en: Zero-Shot & Few-Shot Learning
 tags: prompting
 level: basic
 
-This is not a training phase where weights ([[#Parameters]]) are updated, but a form of [[#In-Context Learning]] where the model is conditioned "at runtime" exclusively through input in the [[#Context Window]]. While Zero-Shot uses only a natural language instruction without examples and One-Shot provides exactly one reference example, Few-Shot fills the context with as many demonstrations as possible (typically 10 to 100) to provide the model with the desired pattern.
+This is not a training phase where weights ([[#parameter|parameters]]) are updated, but a form of [[#In-Context Learning]] where the model is conditioned "at runtime" exclusively through input in the [[#Context Window]]. While Zero-Shot uses only a natural language instruction without examples and One-Shot provides exactly one reference example, Few-Shot fills the context with as many demonstrations as possible (typically 10 to 100) to provide the model with the desired pattern.
 
 * Brown, Tom B., et al. "Language Models are Few-Shot Learners". *Advances in Neural Information Processing Systems*, Vol. 33, 2020, pp. 1877–1901. [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165).
 
@@ -647,7 +647,7 @@ In classical logic and philosophy, three basic forms are distinguished. **Deduct
 
 In the context of LLMs, the term has acquired a specific technical meaning since 2024. "Reasoning Models" (also Large Reasoning Models, LRMs) refer to models that generate explicit intermediate steps before the final answer. These "Reasoning Traces" or "Chains of Thought" are intended to solve complex problems through stepwise decomposition. Technically, this is achieved through [[#test-time-compute|Inference-Time Scaling]]—increased computational effort during generation—as well as [[#reinforcement-learning|Reinforcement Learning]] that trains models to produce structured intermediate steps. Prominent examples include OpenAI's o1/o3 series and DeepSeek-R1.
 
-Whether these models actually "reason" or perform elaborate pattern recognition is disputed. Critics like François Chollet argue that LLMs have fundamental difficulties with [[#generalization|generalization]] to unknown problems. Apple's paper "The Illusion of Thinking" (Shojaee et al. 2025) showed that reasoning models initially expend more tokens for "thinking" as problem complexity increases, but completely fail beyond a threshold. Proponents counter that the definition of "real reasoning" itself is unclear and that functional problem-solving ability is more practically relevant than philosophical distinctions.
+Whether these models actually "reason" or perform elaborate pattern recognition is disputed. Critics like François Chollet argue that LLMs have fundamental difficulties with [[#generalisierung|generalization]] to unknown problems. Apple's paper "The Illusion of Thinking" (Shojaee et al. 2025) showed that reasoning models initially expend more tokens for "thinking" as problem complexity increases, but completely fail beyond a threshold. Proponents counter that the definition of "real reasoning" itself is unclear and that functional problem-solving ability is more practically relevant than philosophical distinctions.
 
 Sebastian Raschka defines reasoning pragmatically as "the process of answering questions that require complex, multi-step generation with intermediate steps." This operational definition sidesteps the question of whether the model "really thinks" and focuses on observable behavior.
 
@@ -733,7 +733,7 @@ An autonomous software system that executes goal-directed tasks by designing wor
 
 Modern AI Agents use [[#llm|LLMs]] as their central reasoning component. Weng (2023) describes three key components of such systems. **Planning** involves decomposing large tasks into manageable subgoals and self-reflection on past actions to refine future steps. **Memory** distinguishes short-term context ([[#in-context-learning|In-Context Learning]]) from long-term storage via external [[#vector-database|vector databases]] with fast retrieval. **[[#tool-use|Tool Use]]** extends model capabilities by connecting external APIs for information not contained in the model weights.
 
-In practice, AI Agents typically operate in a loop of perceiving, planning, and acting until the goal is achieved. Frameworks like [[#react|ReAct]] formalize this cycle, while [[#chain-of-thought|Chain-of-Thought]] prompting improves reasoning quality. For accessing external knowledge sources, many agents utilize [[#rag|RAG]] architectures.
+In practice, AI Agents typically operate in a loop of perceiving, planning, and acting until the goal is achieved. Frameworks like ReAct formalize this cycle, while [[#chain-of-thought|Chain-of-Thought]] prompting improves reasoning quality. For accessing external knowledge sources, many agents utilize [[#rag|RAG]] architectures.
 
 Sapkota et al. (2025) propose a taxonomic distinction where AI Agents operate as single systems without structured communication with other agents, while [[#agentic-ai|Agentic AI]] denotes orchestrated multi-agent architectures. This distinction is not generally established in the broader literature. Other sources use "agentic" as a property (autonomy, goal-directedness, adaptability) that can characterize both individual agents and multi-agent systems.
 
@@ -751,7 +751,7 @@ A [[#benchmark|benchmark]] for measuring general fluid intelligence, developed b
 
 The benchmark consists of grid-based visual reasoning tasks. Each task shows a few input-output pairs (typically two to five), from which the test taker must abstract the underlying transformation rule and apply it to new inputs. The format is inspired by Raven's Progressive Matrices from psychometric research.
 
-The tasks presuppose only "Core Knowledge Priors"—fundamental cognitive building blocks such as object persistence, spatial relationships, numbers, and counting. Culture-specific knowledge or language are deliberately excluded to enable fair comparison between humans and AI systems. Humans typically solve the tasks with high accuracy, while AI systems despite advances continue to struggle with [[#generalization|generalization]] from few examples.
+The tasks presuppose only "Core Knowledge Priors"—fundamental cognitive building blocks such as object persistence, spatial relationships, numbers, and counting. Culture-specific knowledge or language are deliberately excluded to enable fair comparison between humans and AI systems. Humans typically solve the tasks with high accuracy, while AI systems despite advances continue to struggle with [[#generalisierung|generalization]] from few examples.
 
 ARC-AGI exists in multiple versions. ARC-AGI-2 (2025) contains tasks that are more resistant to brute-force approaches. ARC-AGI-3 is intended to introduce interactive reasoning environments.
 
@@ -877,7 +877,7 @@ en: Parameters
 tags: fundamentals, architecture
 level: basic
 
-The internal configuration variables (primarily weights and biases) of a neural network that are learned and adjusted during the training process through mathematical optimization (backpropagation) to minimize prediction error. They represent the strength of connections between artificial neurons and thus store all extracted knowledge and capabilities of the model in the form of gigantic number matrices. During [[#Inference]], these values remain static; the sheer number of parameters (often measured in billions) is considered, according to [[#Scaling Laws]], the primary indicator of a model's potential capacity, while simultaneously directly determining the need for compute and graphics memory (VRAM).
+The internal configuration variables (primarily weights and biases) of a neural network that are learned and adjusted during the training process through mathematical optimization (backpropagation) to minimize prediction error. They represent the strength of connections between artificial neurons and thus store all extracted knowledge and capabilities of the model in the form of gigantic number matrices. During [[#inferenz|inference]], these values remain static; the sheer number of parameters (often measured in billions) is considered, according to [[#Scaling Laws]], the primary indicator of a model's potential capacity, while simultaneously directly determining the need for compute and graphics memory (VRAM).
 
 * Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. _Deep Learning_. MIT Press, 2016. [http://www.deeplearningbook.org](http://www.deeplearningbook.org/).
 
@@ -887,7 +887,7 @@ en: Mixture of Experts
 tags: architecture
 level: advanced
 
-A model architecture where the neural network is not activated as a single monolithic block but is divided into many small sub-networks ("experts"). For each token, a "router" decides which experts (usually only 1-2) are activated. This allows models with extremely many parameters (e.g., GPT-4, Mixtral) that are nevertheless fast and cost-effective in [[#Inference]], since only a fraction of the network computes at any time.
+A model architecture where the neural network is not activated as a single monolithic block but is divided into many small sub-networks ("experts"). For each token, a "router" decides which experts (usually only 1-2) are activated. This allows models with extremely many parameters (e.g., GPT-4, Mixtral) that are nevertheless fast and cost-effective in [[#inferenz|inference]], since only a fraction of the network computes at any time.
 
 * Fedus, William, Barret Zoph, and Noam Shazeer. "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity". _Journal of Machine Learning Research_, Vol. 23, 2022. [https://arxiv.org/abs/2101.03961](https://arxiv.org/abs/2101.03961).
 
@@ -897,7 +897,7 @@ en: Quantization
 tags: ai-engineering, architecture
 level: intermediate
 
-A technique to reduce the memory footprint and computational load of an [[#llm|LLM]] by reducing the precision of model [[#parameter|weights]] (e.g., from 16-bit floating-point numbers to 4-bit integers). This makes it possible to run huge models on consumer hardware (local laptops/GPUs), often with only minimal quality loss. Particularly relevant for [[#Open Weights]] models.
+A technique to reduce the memory footprint and computational load of an [[#llm|LLM]] by reducing the precision of model [[#parameter|weights]] (e.g., from 16-bit floating-point numbers to 4-bit integers). This makes it possible to run huge models on consumer hardware (local laptops/GPUs), often with only minimal quality loss. Particularly relevant for [[#open-weights|Open Weights]] models.
 
 * Dettmers, Tim, et al. "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale". _Advances in Neural Information Processing Systems_, Vol. 35, 2022. [https://arxiv.org/abs/2208.07339](https://arxiv.org/abs/2208.07339).
 
@@ -959,7 +959,7 @@ en: Test-Time Compute
 tags: architecture, prompting
 level: advanced
 
-A paradigm where compute is not only massively invested in model training but is deliberately deployed during [[#Inference]] ("test time"). Instead of immediately predicting the next token like classical LLMs (System-1 thinking: intuitive, fast), the model uses additional compute time to internally simulate different solution paths, correct errors, and verify steps (System-2 thinking: analytical, slow) before outputting an answer. This approach is the core of "Reasoning Models" like OpenAI o1.
+A paradigm where compute is not only massively invested in model training but is deliberately deployed during [[#inferenz|inference]] ("test time"). Instead of immediately predicting the next token like classical LLMs (System-1 thinking: intuitive, fast), the model uses additional compute time to internally simulate different solution paths, correct errors, and verify steps (System-2 thinking: analytical, slow) before outputting an answer. This approach is the core of "Reasoning Models" like OpenAI o1.
 
 * OpenAI o1 System Card. https://openai.com/index/learning-to-reason-with-llms/
 
@@ -969,7 +969,7 @@ en: Test-Time Adaptation
 tags: architecture, training
 level: advanced
 
-The process by which an AI model does not simply retrieve its frozen training knowledge but expends additional compute during [[#Inference]] (test time) to specifically adapt to the problem at hand.
+The process by which an AI model does not simply retrieve its frozen training knowledge but expends additional compute during [[#inferenz|inference]] (test time) to specifically adapt to the problem at hand.
 
 * Test-Time Adaptation: A New Frontier in AI. https://youtu.be/C6sSs6NgANo
 
@@ -1021,6 +1021,24 @@ Examples (as of 2025): OpenAI Operator, Anthropic Computer Use, Manus, Browser U
 * Sager, Pascal, et al. "A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions". arXiv:2501.16150. January 2025. [https://arxiv.org/abs/2501.16150](https://arxiv.org/abs/2501.16150)
 * Hu, Xueyu, et al. "OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use". arXiv:2508.04482. August 2025. [https://arxiv.org/abs/2508.04482](https://arxiv.org/abs/2508.04482)
 * Ning, Liangbo, et al. "A Survey of WebAgents: Towards Next-Generation AI Agents for Web Automation with Large Foundation Models". arXiv:2503.23350. March 2025. [https://arxiv.org/abs/2503.23350](https://arxiv.org/abs/2503.23350)
+
+## Symbolic AI
+id: symbolic-ai
+en: Symbolic AI (GOFAI)
+tags: fundamentals, architecture
+level: intermediate
+
+Approaches to Artificial Intelligence that represent knowledge through discrete symbols and process it using formal inference rules from mathematical logic. The symbols refer to entities and relations of a domain. Representations are inspectable, inferences traceable and explainable. The alternative term "Good Old-Fashioned AI" (GOFAI) was coined by John Haugeland (1985).
+
+Core technologies include ontologies, knowledge graphs, rule-based systems, automated theorem proving, and planning systems. RDF, OWL, and SHACL are standardized languages for knowledge representation.
+
+In contrast to connectionist approaches (neural networks, [[#llm|LLMs]]), Symbolic AI operates on structured, formalized data rather than statistical patterns in unstructured data. Hybrid architectures (Neuro-Symbolic AI) combine both paradigms to unite the strengths of each approach: the learning capability of neural networks with the explainability and logical consistency of symbolic systems.
+
+The term was largely synonymous with "AI" until the 2000s. With the rise of machine learning and especially deep learning, the distinction became necessary.
+
+* Haugeland, John. _Artificial Intelligence: The Very Idea_. MIT Press, 1985.
+* Russell, Stuart, and Peter Norvig. _Artificial Intelligence: A Modern Approach_. 4th ed. Pearson, 2020, Chapters 1–2.
+* Wikipedia. "Symbolic artificial intelligence". [https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence](https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence).
 
 # Resources
 

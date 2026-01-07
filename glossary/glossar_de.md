@@ -733,7 +733,7 @@ Ein autonomes Softwaresystem, das zielgerichtete Aufgaben ausführt, indem es Wo
 
 Moderne AI Agents nutzen [[#llm|LLMs]] als zentrale Reasoning-Komponente. Weng (2023) beschreibt drei Schlüsselkomponenten solcher Systeme. **Planning** umfasst die Zerlegung großer Aufgaben in handhabbare Teilziele sowie Selbstreflexion über vergangene Aktionen zur Verfeinerung zukünftiger Schritte. **Memory** unterscheidet kurzfristigen Kontext ([[#in-context-learning|In-Context Learning]]) und langfristige Speicherung über externe [[#vector-database|Vektordatenbanken]] mit schnellem Retrieval. **[[#tool-use|Tool Use]]** erweitert die Modellfähigkeiten durch Anbindung externer APIs für Informationen, die in den Modellgewichten nicht enthalten sind.
 
-In der Praxis arbeiten AI Agents typischerweise in einer Schleife aus Wahrnehmen, Planen und Handeln, bis das Ziel erreicht ist. Frameworks wie [[#react|ReAct]] formalisieren diesen Zyklus, während [[#chain-of-thought|Chain-of-Thought]]-Prompting die Reasoning-Qualität verbessert. Für den Zugriff auf externe Wissensquellen nutzen viele Agenten [[#rag|RAG]]-Architekturen.
+In der Praxis arbeiten AI Agents typischerweise in einer Schleife aus Wahrnehmen, Planen und Handeln, bis das Ziel erreicht ist. Frameworks wie ReAct formalisieren diesen Zyklus, während [[#chain-of-thought|Chain-of-Thought]]-Prompting die Reasoning-Qualität verbessert. Für den Zugriff auf externe Wissensquellen nutzen viele Agenten [[#rag|RAG]]-Architekturen.
 
 Sapkota et al. (2025) schlagen eine taxonomische Unterscheidung vor, bei der AI Agents als Einzelsysteme ohne strukturierte Kommunikation mit anderen Agenten operieren, während [[#agentic-ai|Agentic AI]] orchestrierte Multi-Agent-Architekturen bezeichnet. Diese Unterscheidung ist in der breiteren Literatur nicht allgemein etabliert. Andere Quellen verwenden „agentic" als Eigenschaft (Autonomie, Zielgerichtetheit, Anpassungsfähigkeit), die sowohl einzelne Agenten als auch Multi-Agent-Systeme kennzeichnen kann.
 
@@ -897,7 +897,7 @@ en: Quantization
 tags: ai-engineering, architecture
 level: intermediate
 
-Ein Verfahren zur Reduktion des Speicherbedarfs und der Rechenlast eines [[#llm|LLMs]], indem die Genauigkeit der Modell-[[#parameter|Gewichte]] reduziert wird (z. B. von 16-Bit-Gleitkommazahlen auf 4-Bit-Ganzzahlen). Dies ermöglicht es, riesige Modelle auf consumer-Hardware (lokalen Laptops/GPUs) laufen zu lassen, oft mit nur minimalem Qualitätsverlust. Besonders relevant für [[#Open Weights]]-Modelle.
+Ein Verfahren zur Reduktion des Speicherbedarfs und der Rechenlast eines [[#llm|LLMs]], indem die Genauigkeit der Modell-[[#parameter|Gewichte]] reduziert wird (z. B. von 16-Bit-Gleitkommazahlen auf 4-Bit-Ganzzahlen). Dies ermöglicht es, riesige Modelle auf consumer-Hardware (lokalen Laptops/GPUs) laufen zu lassen, oft mit nur minimalem Qualitätsverlust. Besonders relevant für [[#open-weights|Open Weights]]-Modelle.
 
 * Dettmers, Tim, et al. „LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale". _Advances in Neural Information Processing Systems_, Bd. 35, 2022. [https://arxiv.org/abs/2208.07339](https://arxiv.org/abs/2208.07339).
 
@@ -1021,6 +1021,24 @@ Beispiele (Stand 2025): OpenAI Operator, Anthropic Computer Use, Manus, Browser 
 * Sager, Pascal, et al. „A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions". arXiv:2501.16150. Januar 2025. [https://arxiv.org/abs/2501.16150](https://arxiv.org/abs/2501.16150)
 * Hu, Xueyu, et al. „OS Agents: A Survey on MLLM-based Agents for General Computing Devices Use". arXiv:2508.04482. August 2025. [https://arxiv.org/abs/2508.04482](https://arxiv.org/abs/2508.04482)
 * Ning, Liangbo, et al. „A Survey of WebAgents: Towards Next-Generation AI Agents for Web Automation with Large Foundation Models". arXiv:2503.23350. März 2025. [https://arxiv.org/abs/2503.23350](https://arxiv.org/abs/2503.23350)
+
+## Symbolic AI
+id: symbolic-ai
+en: Symbolic AI (GOFAI)
+tags: fundamentals, architecture
+level: intermediate
+
+Ansätze der Künstlichen Intelligenz, die Wissen durch diskrete Symbole repräsentieren und mittels formaler Inferenzregeln aus mathematischer Logik verarbeiten. Die Symbole referieren auf Entitäten und Relationen einer Domäne. Repräsentationen sind inspizierbar, Schlussfolgerungen nachvollziehbar und erklärbar. Der englische Alternativbegriff „Good Old-Fashioned AI" (GOFAI) wurde von John Haugeland (1985) geprägt.
+
+Kerntechnologien umfassen Ontologien, Knowledge Graphs, regelbasierte Systeme, automatisches Beweisen und Planungssysteme. RDF, OWL und SHACL sind standardisierte Sprachen für Wissensrepräsentation.
+
+Im Kontrast zu konnektionistischen Ansätzen (neuronale Netze, [[#llm|LLMs]]) operiert Symbolic AI auf strukturierten, formalisierten Daten statt auf statistischen Mustern in unstrukturierten Daten. Hybride Architekturen (Neuro-Symbolic AI) kombinieren beide Paradigmen, um die Stärken beider Ansätze zu vereinen: die Lernfähigkeit neuronaler Netze mit der Erklärbarkeit und logischen Konsistenz symbolischer Systeme.
+
+Der Begriff war bis in die 2000er Jahre weitgehend synonym mit „AI". Mit dem Aufstieg maschinellen Lernens und insbesondere des Deep Learning wurde die Unterscheidung notwendig.
+
+* Haugeland, John. _Artificial Intelligence: The Very Idea_. MIT Press, 1985.
+* Russell, Stuart, und Peter Norvig. _Artificial Intelligence: A Modern Approach_. 4. Aufl. Pearson, 2020, Kapitel 1–2.
+* Wikipedia. „Symbolic artificial intelligence". [https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence](https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence).
 
 # Ressourcen
 
