@@ -1025,7 +1025,7 @@ Examples (as of 2025): OpenAI Operator, Anthropic Computer Use, Manus, Browser U
 ## Symbolic AI
 id: symbolic-ai
 en: Symbolic AI (GOFAI)
-tags: fundamentals, architecture
+tags: fundamentals, architecture, wip
 level: intermediate
 
 Approaches to Artificial Intelligence that represent knowledge through discrete symbols and process it using formal inference rules from mathematical logic. The symbols refer to entities and relations of a domain. Representations are inspectable, inferences traceable and explainable. The alternative term "Good Old-Fashioned AI" (GOFAI) was coined by John Haugeland (1985).
@@ -1039,6 +1039,24 @@ The term was largely synonymous with "AI" until the 2000s. With the rise of mach
 * Haugeland, John. _Artificial Intelligence: The Very Idea_. MIT Press, 1985.
 * Russell, Stuart, and Peter Norvig. _Artificial Intelligence: A Modern Approach_. 4th ed. Pearson, 2020, Chapters 1–2.
 * Wikipedia. "Symbolic artificial intelligence". [https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence](https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence).
+
+## Machine Learning
+id: machine-learning
+en: Machine Learning
+tags: fundamentals, training, wip
+level: basic
+
+A subfield of Artificial Intelligence in which systems learn from data without being explicitly programmed. In contrast to [[#symbolic-ai|Symbolic AI]], where rules are manually defined, Machine Learning automatically extracts patterns and relationships from training data through statistical optimization.
+
+Three fundamental learning paradigms are distinguished. **Supervised Learning** trains models on labeled data to make predictions for new inputs (e.g., classification, regression). **Unsupervised Learning** finds structures in unlabeled data (e.g., clustering, dimensionality reduction). **[[#reinforcement-learning|Reinforcement Learning]]** optimizes behavioral strategies through reward and punishment in an environment.
+
+**Deep Learning** denotes a subcategory that uses deep neural networks with many layers. [[#llm|Large Language Models]] are in turn a specific deep learning architecture based on the [[#transformer|Transformer]] architecture and specialized for language processing.
+
+The hierarchy is: AI → Machine Learning → Deep Learning → LLMs. Not all machine learning models are neural networks (e.g., Random Forests, Support Vector Machines, Gradient Boosting), and not all neural networks are LLMs.
+
+* Mitchell, Tom M. _Machine Learning_. McGraw-Hill, 1997.
+* Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. _Deep Learning_. MIT Press, 2016. [http://www.deeplearningbook.org](http://www.deeplearningbook.org/).
+* Wikipedia. "Machine learning". [https://en.wikipedia.org/wiki/Machine_learning](https://en.wikipedia.org/wiki/Machine_learning).
 
 # Resources
 

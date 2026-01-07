@@ -1025,7 +1025,7 @@ Beispiele (Stand 2025): OpenAI Operator, Anthropic Computer Use, Manus, Browser 
 ## Symbolic AI
 id: symbolic-ai
 en: Symbolic AI (GOFAI)
-tags: fundamentals, architecture
+tags: fundamentals, architecture, wip
 level: intermediate
 
 Ansätze der Künstlichen Intelligenz, die Wissen durch diskrete Symbole repräsentieren und mittels formaler Inferenzregeln aus mathematischer Logik verarbeiten. Die Symbole referieren auf Entitäten und Relationen einer Domäne. Repräsentationen sind inspizierbar, Schlussfolgerungen nachvollziehbar und erklärbar. Der englische Alternativbegriff „Good Old-Fashioned AI" (GOFAI) wurde von John Haugeland (1985) geprägt.
@@ -1039,6 +1039,24 @@ Der Begriff war bis in die 2000er Jahre weitgehend synonym mit „AI". Mit dem A
 * Haugeland, John. _Artificial Intelligence: The Very Idea_. MIT Press, 1985.
 * Russell, Stuart, und Peter Norvig. _Artificial Intelligence: A Modern Approach_. 4. Aufl. Pearson, 2020, Kapitel 1–2.
 * Wikipedia. „Symbolic artificial intelligence". [https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence](https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence).
+
+## Machine Learning
+id: machine-learning
+en: Machine Learning
+tags: fundamentals, training, wip
+level: basic
+
+Teilgebiet der Künstlichen Intelligenz, bei dem Systeme aus Daten lernen, ohne explizit programmiert zu werden. Im Gegensatz zu [[#symbolic-ai|Symbolic AI]], wo Regeln manuell definiert werden, extrahiert Machine Learning Muster und Zusammenhänge automatisch aus Trainingsdaten durch statistische Optimierung.
+
+Drei grundlegende Lernparadigmen werden unterschieden. **Supervised Learning** (überwachtes Lernen) trainiert Modelle auf gelabelten Daten, um Vorhersagen für neue Eingaben zu treffen (z. B. Klassifikation, Regression). **Unsupervised Learning** (unüberwachtes Lernen) findet Strukturen in ungelabelten Daten (z. B. Clustering, Dimensionsreduktion). **[[#reinforcement-learning|Reinforcement Learning]]** optimiert Verhaltensstrategien durch Belohnung und Bestrafung in einer Umgebung.
+
+**Deep Learning** bezeichnet eine Unterkategorie, die tiefe neuronale Netze mit vielen Schichten verwendet. [[#llm|Large Language Models]] sind wiederum eine spezifische Deep-Learning-Architektur, die auf der [[#transformer|Transformer]]-Architektur basiert und auf Sprachverarbeitung spezialisiert ist.
+
+Die Hierarchie lautet: AI → Machine Learning → Deep Learning → LLMs. Nicht alle Machine-Learning-Modelle sind neuronale Netze (z. B. Random Forests, Support Vector Machines, Gradient Boosting), und nicht alle neuronalen Netze sind LLMs.
+
+* Mitchell, Tom M. _Machine Learning_. McGraw-Hill, 1997.
+* Goodfellow, Ian, Yoshua Bengio, und Aaron Courville. _Deep Learning_. MIT Press, 2016. [http://www.deeplearningbook.org](http://www.deeplearningbook.org/).
+* Wikipedia. „Machine learning". [https://en.wikipedia.org/wiki/Machine_learning](https://en.wikipedia.org/wiki/Machine_learning).
 
 # Ressourcen
 
