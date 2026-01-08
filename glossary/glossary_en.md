@@ -366,6 +366,23 @@ An evaluation method where a strong LLM (e.g., GPT-4) is used to assess the resp
 
 * Zheng, Lianmin, et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena". _Advances in Neural Information Processing Systems_, Vol. 36, 2024. [https://arxiv.org/abs/2306.05685](https://arxiv.org/abs/2306.05685).
 
+## Catastrophic Forgetting
+id: catastrophic-forgetting
+en: Catastrophic Forgetting
+tags: training, fundamentals
+level: intermediate
+
+Catastrophic Forgetting (also known as Catastrophic Interference) refers to the phenomenon where neural networks abruptly and almost completely lose previously acquired knowledge when trained on new tasks or data. The term was introduced in 1989 by Michael McCloskey and Neal J. Cohen, and further investigated by Roger Ratcliff in 1990.
+
+The cause lies in how neural networks store knowledge. Unlike traditional databases that store information in separate memory units, neural networks distribute their knowledge across the weights of all connections in the network. When training on new tasks, these weights are overwritten by the optimization process, causing the configurations for earlier tasks to be lost.
+
+An illustrative example from research history demonstrates the problem: McCloskey and Cohen trained a network first on simple addition problems with the number one (1+1, 1+2, and so on). When the network was subsequently taught addition problems with the number two, it lost the ability to solve the original problems, even though it had previously mastered them reliably.
+
+The problem can be traced back to the Stability-Plasticity Dilemma, which Stephen Grossberg formulated as early as 1980. Stability describes the ability to preserve what has been learned, while plasticity describes the ability to absorb new information. Both properties compete with each other, as the mechanisms that enable remembering also make change more difficult. The optimal balance between these two poles remains an unsolved fundamental problem in AI research and is closely connected to [[#Continual Learning]].
+
+* McCloskey, Michael and Neal J. Cohen. "Catastrophic Interference in Connectionist Networks: The Sequential Learning Problem". _Psychology of Learning and Motivation_ 24 (1989): 109–165. [https://doi.org/10.1016/S0079-7421(08)60536-8](https://doi.org/10.1016/S0079-7421(08)60536-8)
+* Ratcliff, Roger. "Connectionist Models of Recognition Memory: Constraints Imposed by Learning and Forgetting Functions". _Psychological Review_ 97, No. 2 (1990): 285–308. [https://doi.org/10.1037/0033-295X.97.2.285](https://doi.org/10.1037/0033-295X.97.2.285)
+
 ## Chain of Thought (CoT)
 id: chain-of-thought
 en: Chain of Thought
@@ -559,6 +576,23 @@ Constitutional AI (CAI) is a training method developed by Anthropic where an AI 
 
 * Bai, Yuntao, Saurav Kadavath, Sandipan Kundu, et al. "Constitutional AI: Harmlessness from AI Feedback". arXiv:2212.08073. Preprint, arXiv, December 15, 2022. [https://doi.org/10.48550/arXiv.2212.08073](https://doi.org/10.48550/arXiv.2212.08073).
 * Claude's Constitution. https://www.anthropic.com/research/claudes-constitution
+
+## Continual Learning
+id: continual-learning
+en: Continual Learning
+tags: training, fundamentals
+level: intermediate
+
+Continual Learning (also known as Lifelong Learning or incremental learning) refers to the ability of a system to acquire new information or skills over time without losing previously acquired knowledge. For humans, this is self-evident: someone who learns to play guitar and later adds violin doesn't forget how to play guitar, even if some rustiness sets in. Neural networks behave fundamentally differently and are prone to [[#Catastrophic Forgetting]].
+
+Research distinguishes three fundamental scenarios according to van de Ven et al. (2022): Task-incremental learning, where clearly distinguishable tasks are learned sequentially; Domain-incremental learning, where the same type of problem is learned in different contexts; and Class-incremental learning, where a model must learn to distinguish between an increasing number of classes. The latter is considered the most difficult scenario.
+
+For practical application with large language models, a supplementary heuristic can be established: Context-based recall within a session is considered largely solved through large [[#Context Window|context windows]]. Cross-session recall uses external storage systems and [[#Retrieval Augmented Generation (RAG)]], though retrieval of relevant information does not work reliably. Task-specific adaptation through [[#Fine-Tuning]] often leads to loss of general capabilities. True Continual Learning in the narrower research sense means updating model weights in real-time without degradation of existing knowledge.
+
+Two competing positions exist in the research community. Skeptics argue that the [[#Transformer]] architecture inherently has this limitation and scaling will not solve the problem—a new architectural paradigm is required. Pragmatists hold that system-level solutions such as extended context windows, better retrieval systems, and intelligent information disclosure can achieve functionally equivalent results without solving the algorithmic problem.
+
+* van de Ven, Gido M., Tinne Tuytelaars and Andreas S. Tolias. "Three Types of Incremental Learning". _Nature Machine Intelligence_ 4 (2022): 1185–1197. [https://doi.org/10.1038/s42256-022-00568-3](https://doi.org/10.1038/s42256-022-00568-3)
+* Parisi, German I., et al. "Continual Lifelong Learning with Neural Networks: A Review". _Neural Networks_ 113 (2019): 54–71. [https://doi.org/10.1016/j.neunet.2019.01.012](https://doi.org/10.1016/j.neunet.2019.01.012)
 
 ## Character (Persona)
 id: character
