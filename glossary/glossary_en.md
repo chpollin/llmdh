@@ -224,6 +224,23 @@ A learning behavior where the model essentially stores the training data as a lo
 
 * Arpit, Devansh, et al. "A Closer Look at Memorization in Deep Networks". _Proceedings of the 34th International Conference on Machine Learning_, 2017. [https://arxiv.org/abs/1706.05394](https://arxiv.org/abs/1706.05394).
 
+## GraphRAG
+id: graphrag
+en: GraphRAG (Graph Retrieval-Augmented Generation)
+tags: ai-engineering, architecture
+level: intermediate
+
+An extension of the [[#rag|RAG]] paradigm that leverages graph-structured data sources to augment generative models. Unlike classical RAG, which represents documents as independent units in a vector space and retrieves them via similarity search, GraphRAG utilizes the relational structure of graphs to make entities, their relationships, and contextual connections available for generation.
+
+Classical RAG operates on unstructured text corpora that are segmented into chunks and indexed as [[#embedding|vector embeddings]]. The retrieval process is based on semantic similarity between query and documents. GraphRAG extends this approach in three dimensions: First, the use of heterogeneous data formats such as triples, paths, and subgraphs. Second, the consideration of dependencies between information units through edge relations. Third, the integration of domain-specific relation types that go beyond pure text similarity.
+
+A GraphRAG system typically comprises five components. The Query Processor transforms user queries through entity recognition, relation extraction, or structuring into graph query languages like SPARQL or Cypher. The Retriever extracts relevant nodes, edges, or subgraphs using graph traversal, [[#embedding|embedding]]-based search, or hybrid neural-symbolic methods. The Organizer refines the retrieved content through pruning, reranking, or verbalization for processing by [[#llm|language models]]. The Generator produces the final output. The Graph Data Source forms the structured knowledge base.
+
+Application areas include Knowledge Graphs for fact verification and question answering, Document Graphs for citation networks and summarization, Scientific Graphs for molecular structures and biomedical relationships, and Social Graphs for recommendation systems. Planning Graphs encode dependencies between action steps for [[#ai-agent|agent-based systems]].
+
+* Han, Haoyu, Yu Wang, Harry Shomer, et al. "Retrieval-Augmented Generation with Graphs (GraphRAG)". arXiv:2501.00309. Preprint, arXiv, January 8, 2025. [https://doi.org/10.48550/arXiv.2501.00309](https://doi.org/10.48550/arXiv.2501.00309).
+* Edge, Darren, et al. "From Local to Global: A Graph RAG Approach to Query-Focused Summarization". arXiv:2404.16130. Preprint, arXiv, 2024. [https://arxiv.org/abs/2404.16130](https://arxiv.org/abs/2404.16130).
+
 ## Grokking
 id: grokking
 en: Grokking

@@ -224,6 +224,23 @@ Ein Lernverhalten, bei dem das Modell die Trainingsdaten im Wesentlichen als Loo
 
 * Arpit, Devansh, et al. „A Closer Look at Memorization in Deep Networks". _Proceedings of the 34th International Conference on Machine Learning_, 2017. [https://arxiv.org/abs/1706.05394](https://arxiv.org/abs/1706.05394).
 
+## GraphRAG
+id: graphrag
+en: GraphRAG (Graph Retrieval-Augmented Generation)
+tags: ai-engineering, architecture
+level: intermediate
+
+Eine Erweiterung des [[#rag|RAG]]-Paradigmas, bei der graphstrukturierte Datenquellen zur Augmentierung generativer Modelle herangezogen werden. Im Unterschied zu klassischem RAG, das Dokumente als unabhängige Einheiten in einem Vektorraum repräsentiert und über Ähnlichkeitssuche abruft, nutzt GraphRAG die relationale Struktur von Graphen, um Entitäten, deren Beziehungen und kontextuelle Zusammenhänge für die Generierung verfügbar zu machen.
+
+Klassisches RAG operiert auf unstrukturierten Textkorpora, die in Chunks segmentiert und als [[#embedding|Vektorembeddings]] indiziert werden. Der Retrieval-Prozess basiert auf semantischer Ähnlichkeit zwischen Anfrage und Dokumenten. GraphRAG ergänzt diesen Ansatz um drei Dimensionen: Erstens die Nutzung heterogener Datenformate wie Tripel, Pfade und Subgraphen. Zweitens die Berücksichtigung von Abhängigkeiten zwischen Informationseinheiten durch Kantenrelationen. Drittens die Integration domänenspezifischer Relationstypen, die über reine Textähnlichkeit hinausgehen.
+
+Ein GraphRAG-System umfasst typischerweise fünf Komponenten. Der Query Processor transformiert Nutzeranfragen durch Entitätserkennung, Relationsextraktion oder Strukturierung in Graphabfragesprachen wie SPARQL oder Cypher. Der Retriever extrahiert relevante Knoten, Kanten oder Subgraphen mittels Graph-Traversierung, [[#embedding|Embedding]]-basierter Suche oder hybrider neural-symbolischer Verfahren. Der Organizer verfeinert die abgerufenen Inhalte durch Pruning, Reranking oder Verbalisierung für die Verarbeitung durch [[#llm|Sprachmodelle]]. Der Generator produziert die finale Ausgabe. Die Graph Data Source bildet die strukturierte Wissensbasis.
+
+Anwendungsbereiche umfassen Knowledge Graphs für Faktenverifikation und Question Answering, Document Graphs für Zitationsnetzwerke und Summarization, Scientific Graphs für molekulare Strukturen und biomedizinische Zusammenhänge sowie Social Graphs für Empfehlungssysteme. Planning Graphs kodieren Abhängigkeiten zwischen Handlungsschritten für [[#ai-agent|agentenbasierte Systeme]].
+
+* Han, Haoyu, Yu Wang, Harry Shomer, et al. „Retrieval-Augmented Generation with Graphs (GraphRAG)". arXiv:2501.00309. Preprint, arXiv, 8. Januar 2025. [https://doi.org/10.48550/arXiv.2501.00309](https://doi.org/10.48550/arXiv.2501.00309).
+* Edge, Darren, et al. „From Local to Global: A Graph RAG Approach to Query-Focused Summarization". arXiv:2404.16130. Preprint, arXiv, 2024. [https://arxiv.org/abs/2404.16130](https://arxiv.org/abs/2404.16130).
+
 ## Grokking
 id: grokking
 en: Grokking
