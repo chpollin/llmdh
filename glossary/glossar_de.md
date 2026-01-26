@@ -273,6 +273,21 @@ Ein Framework zur Problemlösung, das ursprünglich über einfaches Prompting hi
 
 * Yao, Shunyu, et al. „Tree of Thoughts: Deliberate Problem Solving with Large Language Models". arXiv:2305.10601. 2023. [https://arxiv.org/abs/2305.10601](https://arxiv.org/abs/2305.10601).
 
+## AI Literacy
+id: ai-literacy
+en: AI Literacy
+tags: fundamentals, governance
+level: basic
+
+Ein Bündel von Kompetenzen, das Individuen befähigt, KI-Technologien kritisch zu bewerten, effektiv mit KI zu kommunizieren und zusammenzuarbeiten sowie KI als Werkzeug in verschiedenen Kontexten einzusetzen. Long und Magerko (2020) prägten den Begriff in einer einflussreichen CHI-Studie und identifizierten 17 Kernkompetenzen, die sie in fünf Cluster gruppierten.
+
+Das Konzept umfasst vier Dimensionen. **Grundlagenwissen** bezeichnet das Verständnis dessen, was KI ist und wie sie funktioniert, einschließlich der Unterscheidung zwischen regelbasierten Systemen und maschinellem Lernen, der Rolle von Trainingsdaten und der Grenzen aktueller Systeme. **Kritische Bewertung** meint die Fähigkeit, KI-Ausgaben auf Plausibilität, [[#Bias]] und [[#Halluzinationen (Konfabulationen)|Konfabulationen]] zu prüfen sowie die Grenzen der eigenen Urteilsfähigkeit zu erkennen. **Ethik und Haltung** umfasst die Reflexion über gesellschaftliche Implikationen, Machtasymmetrien und die Frage, wann KI-Einsatz angemessen ist. **Praktische Anwendung** bezeichnet die Fähigkeit, KI-Werkzeuge effektiv für eigene Ziele zu nutzen, einschließlich [[#Prompt Engineering]] und der Integration in Arbeitsabläufe.
+
+AI Literacy unterscheidet sich von verwandten Konzepten wie *Digital Literacy* (breiter, umfasst alle digitalen Technologien) und *Data Literacy* (fokussiert auf Datenverständnis und -analyse). Sie ist keine statische Kompetenz, sondern muss mit der Entwicklung der Technologie mitwachsen. Die Pluralform *AI Literacies* betont, dass es sich um ein heterogenes Bündel kontextabhängiger Fähigkeiten handelt, nicht um eine einzelne, universelle Kompetenz.
+
+* Long, Duri, und Brian Magerko. „What is AI Literacy? Competencies and Design Considerations". _Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems_, Association for Computing Machinery, 2020, 1–16. [https://doi.org/10.1145/3313831.3376727](https://doi.org/10.1145/3313831.3376727).
+* Ng, Davy Tsz Kit, Jac Ka Lok Leung, Samuel Kai Wah Chu, und Maggie Shen Qiao. „Conceptualizing AI Literacy: An Exploratory Review". _Computers and Education: Artificial Intelligence_, Bd. 2, 2021. [https://doi.org/10.1016/j.caeai.2021.100041](https://doi.org/10.1016/j.caeai.2021.100041).
+
 ## AI Slop
 id: ai-slop
 en: AI Slop
@@ -344,6 +359,22 @@ Ein KI-Modell, das sich während Training und Tests scheinbar sicher verhält, a
 * Rational Animations. „AI Sleeper Agents: How Anthropic Trains and Catches Them". _YouTube_, 30. August 2025. [https://youtu.be/Z3WMt_ncgUI](https://youtu.be/Z3WMt_ncgUI).
 * Computerphile. „Sleeper Agents in Large Language Models". _YouTube_, 12. September 2025. [https://youtu.be/wL22URoMZjo](https://youtu.be/wL22URoMZjo).
 
+## Small Language Model (SLM)
+id: slm
+en: Small Language Model
+tags: fundamentals, architecture
+level: basic
+
+Sprachmodelle mit typischerweise weniger als 10 Milliarden [[#Parameter|Parametern]], die im Vergleich zu größeren [[#llm|LLMs]] auf Effizienz und spezialisierte Aufgaben optimiert sind. Während LLMs als Generalisten fungieren, lassen sich SLMs als Spezialisten charakterisieren, die bei fokussierten Aufgaben wie Dokumentenklassifikation, Code-Routing oder Zusammenfassung vergleichbare oder bessere Leistung bei geringeren Kosten erzielen.
+
+Die Vorteile von SLMs liegen in drei Bereichen. **Inferenzgeschwindigkeit** resultiert aus weniger Berechnungen pro Vorhersage. **Kosteneffizienz** ergibt sich aus geringerem GPU-Speicherbedarf und niedrigeren Betriebskosten. **Governance und Datenschutz** werden erleichtert, da SLMs On-Premise ohne externe API-Aufrufe betrieben werden können, was für regulierte Branchen relevant ist.
+
+Die Grenze zwischen SLM und LLM ist nicht scharf definiert und verschiebt sich mit dem technologischen Fortschritt. Modelle, die vor wenigen Jahren als groß galten, fallen heute in den SLM-Bereich. Die Unterscheidung ist daher weniger eine absolute Größenkategorie als eine funktionale Einordnung nach Einsatzprofil.
+
+Beispiele (Stand 2025) umfassen IBMs Granite-Familie, Microsofts Phi-Modelle und kleinere Varianten von Mistral.
+
+* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2025. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
+
 ## Open Weights
 id: open-weights
 en: Open Weights (vs. Open Source)
@@ -361,6 +392,12 @@ tags: fundamentals
 level: basic
 
 Bezeichnet die leistungsfähigsten KI-Modelle eines gegebenen Zeitpunkts, die den aktuellen Stand der Technik in ihren jeweiligen Anwendungsbereichen definieren. Frontier Models erfordern typischerweise erhebliche Rechenressourcen im Training und zeigen Fähigkeiten, die über frühere Modellgenerationen hinausgehen. Der Begriff wird häufig im Kontext von KI-Sicherheit und Regulierung verwendet, um Modelle mit potenziell höherem Risikoprofil zu kennzeichnen. Er stammt aus der Selbstbeschreibung führender KI-Labore und wird kritisiert, weil er eine Fortschrittsnarrative transportiert und die Definitionshoheit über den Stand der Technik bei kommerziell interessierten Akteuren belässt.
+
+Funktional zeichnen sich Frontier Models durch überlegene Fähigkeiten in komplexem [[#Reasoning]], mehrstufiger Planung und [[#tool-use|Tool Use]] aus. Sie bilden typischerweise die Grundlage für [[#Agentic AI|agentic capabilities]], da sie längere Reasoning-Ketten kohärent aufrechterhalten und autonome Workflows orchestrieren können. Die Abgrenzung zu [[#llm|LLMs]] und [[#slm|SLMs]] ist primär funktional, nicht rein quantitativ; ein Modell gilt als Frontier, wenn es zum Zeitpunkt seiner Veröffentlichung die Leistungsgrenzen in relevanten [[#Benchmark|Benchmarks]] verschiebt.
+
+Beispiele (Stand Jänner 2026) umfassen Claude Opus 4.5 von Anthropic, Gemini 3 von Google und GPT-5.2 von OpenAI.
+
+* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2025. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
 
 ## Jagged Frontier
 id: jagged-frontier
@@ -644,7 +681,10 @@ level: basic
 
 Ein auf neuronalen Netzen basierendes probabilistisches Modell, das auf riesigen Textmengen trainiert wurde, um statistische Muster der Sprache zu erlernen. Es zeichnet sich durch eine hohe Parameteranzahl (Milliarden bis Billionen) und emergente Fähigkeiten aus, die über die reine Sprachmodellierung hinausgehen (z. B. logisches Schließen).
 
+LLMs fungieren als Generalisten mit breitem Wissen über viele Domänen und der Fähigkeit zu nuanciertem Reasoning bei variablen Anfragen. Sie werden von [[#slm|Small Language Models]] abgegrenzt, die auf Effizienz und spezialisierte Aufgaben optimiert sind, sowie von [[#frontier-model|Frontier Models]], die den jeweils aktuellen Stand der Technik repräsentieren. Diese Kategorien sind nicht disjunkt, sondern beschreiben unterschiedliche Dimensionen desselben Technologiefelds.
+
 * Zhao, Wayne Xin, et al. „A Survey of Large Language Models". _arXiv preprint_, 2023. [https://arxiv.org/abs/2303.18223](https://arxiv.org/abs/2303.18223).
+* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2025. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
 
 ## Token
 id: token
@@ -788,6 +828,8 @@ In der Praxis arbeiten AI Agents typischerweise in einer Schleife aus Wahrnehmen
 
 Sapkota et al. (2025) schlagen eine taxonomische Unterscheidung vor, bei der AI Agents als Einzelsysteme ohne strukturierte Kommunikation mit anderen Agenten operieren, während [[#agentic-ai|Agentic AI]] orchestrierte Multi-Agent-Architekturen bezeichnet. Diese Unterscheidung ist in der breiteren Literatur nicht allgemein etabliert. Andere Quellen verwenden „agentic" als Eigenschaft (Autonomie, Zielgerichtetheit, Anpassungsfähigkeit), die sowohl einzelne Agenten als auch Multi-Agent-Systeme kennzeichnen kann.
 
+Die Fähigkeit zur autonomen Aufgabenausführung korreliert mit der Modellklasse. [[#frontier-model|Frontier Models]] weisen typischerweise die stärksten agentic capabilities auf, da komplexe mehrstufige Workflows kohärentes Reasoning über längere Ketten erfordern. Allerdings können auch [[#slm|SLMs]] in eingeschränkten Domänen agentisch operieren, sofern die Aufgabenkomplexität begrenzt bleibt.
+
 * Sapkota, Ranjan, Konstantinos I. Roumeliotis, und Manoj Karkee. „AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges". _Information Fusion_ 126 (2025): 103599. [https://doi.org/10.1016/j.inffus.2025.103599](https://doi.org/10.1016/j.inffus.2025.103599).
 * Weng, Lilian. „LLM Powered Autonomous Agents". _Lil'Log_, Juni 2023. [https://lilianweng.github.io/posts/2023-06-23-agent/](https://lilianweng.github.io/posts/2023-06-23-agent/).
 * IBM Technology. „Is this the YEAR or DECADE of AI Agents & Agentic AI?". _YouTube_. [https://youtu.be/ZeZozy3lsJg](https://youtu.be/ZeZozy3lsJg).
@@ -929,6 +971,8 @@ tags: fundamentals, architecture
 level: basic
 
 Bezeichnen die internen Konfigurationsvariablen (primär Gewichte und Biases) eines neuronalen Netzes, die während des Trainingsprozesses durch mathematische Optimierung (Backpropagation) gelernt und justiert werden, um den Vorhersagefehler zu minimieren. Sie repräsentieren die Stärke der Verbindungen zwischen den künstlichen Neuronen und speichern somit das gesamte extrahierte Wissen sowie die Fähigkeiten des Modells in Form von gigantischen Zahlenmatrizen. Während der [[#Inferenz]] bleiben diese Werte statisch; die schiere Anzahl der Parameter (oft in Milliarden gemessen) gilt gemäß den [[#Scaling Laws]] als primärer Indikator für die potenzielle Kapazität eines Modells, bestimmt jedoch gleichzeitig direkt den Bedarf an Rechenleistung und Grafikspeicher (VRAM).
+
+Die Parameterzahl ist jedoch kein alleiniger Indikator für Modellleistung. [[#Mixture of Experts (MoE)|MoE-Architekturen]] können bei gleicher Inferenzgeschwindigkeit deutlich mehr Parameter aufweisen, da nur ein Bruchteil pro Token aktiviert wird. Zudem beeinflussen Trainingsqualität, Datenauswahl und [[#Post-Training]] die Fähigkeiten stärker als die reine Größe. Die pauschale Gleichsetzung von „mehr Parameter = besseres Modell" ist daher irreführend, was auch die Leistungsfähigkeit moderner [[#slm|SLMs]] bei spezialisierten Aufgaben demonstriert.
 
 * Goodfellow, Ian, Yoshua Bengio, und Aaron Courville. _Deep Learning_. MIT Press, 2016. [http://www.deeplearningbook.org](http://www.deeplearningbook.org/).
 
