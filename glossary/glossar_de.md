@@ -373,7 +373,7 @@ Die Grenze zwischen SLM und LLM ist nicht scharf definiert und verschiebt sich m
 
 Beispiele (Stand 2025) umfassen IBMs Granite-Familie, Microsofts Phi-Modelle und kleinere Varianten von Mistral.
 
-* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2025. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
+* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2026. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
 
 ## Open Weights
 id: open-weights
@@ -397,7 +397,7 @@ Funktional zeichnen sich Frontier Models durch überlegene Fähigkeiten in kompl
 
 Beispiele (Stand Jänner 2026) umfassen Claude Opus 4.5 von Anthropic, Gemini 3 von Google und GPT-5.2 von OpenAI.
 
-* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2025. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
+* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2026. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
 
 ## Jagged Frontier
 id: jagged-frontier
@@ -684,7 +684,7 @@ Ein auf neuronalen Netzen basierendes probabilistisches Modell, das auf riesigen
 LLMs fungieren als Generalisten mit breitem Wissen über viele Domänen und der Fähigkeit zu nuanciertem Reasoning bei variablen Anfragen. Sie werden von [[#slm|Small Language Models]] abgegrenzt, die auf Effizienz und spezialisierte Aufgaben optimiert sind, sowie von [[#frontier-model|Frontier Models]], die den jeweils aktuellen Stand der Technik repräsentieren. Diese Kategorien sind nicht disjunkt, sondern beschreiben unterschiedliche Dimensionen desselben Technologiefelds.
 
 * Zhao, Wayne Xin, et al. „A Survey of Large Language Models". _arXiv preprint_, 2023. [https://arxiv.org/abs/2303.18223](https://arxiv.org/abs/2303.18223).
-* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2025. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
+* IBM Technology. „LLMs vs. SLMs vs. FMs: How to Choose the Right AI Model". _YouTube_, 2026. [https://youtu.be/AVQzG2MY858](https://youtu.be/AVQzG2MY858).
 
 ## Token
 id: token
